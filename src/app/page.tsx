@@ -8,6 +8,7 @@
   import {Slogan}  from "@/sections/Slogan";
   import { InternMain } from "@/sections/InternMain";
   import  Features  from "@/sections/Features";
+  import { FeaturesGrid } from "@/sections/FeaturesGrid";
 
   export default function Home() {
     return (
@@ -21,6 +22,8 @@
     <Testimonials />
     <CallToAction />
     <Footer />
+
+    <FeaturesGrid  />
     <InternMain />
     </>
   );
