@@ -1,30 +1,33 @@
   import Header from "@/sections/Header"; 
   import Hero from "@/sections/Hero";
   import {LogoTicker} from "@/sections/LogoTicker";
-  import { ProductShowcase } from "@/sections/ProductShowcase";
+  import { BoostYourProductivity } from "@/sections/BoostYourProductivity";
   import { Testimonials } from "@/sections/Testimonials";
   import { Footer } from "@/sections/Footer";
-  import { CallToAction } from "@/sections/CallToAction";
-  import {Slogan}  from "@/sections/Slogan";
-  import { InternMain } from "@/sections/InternMain";
-  import  Features  from "@/sections/Features";
-  import { FeaturesGrid } from "@/sections/FeaturesGrid";
-
+  import {InternHomeExplore } from "@/sections/InternHomeExplore";
+  import {SmartBiz}  from "@/sections/SmartBiz";
+  import  InternOldTemplate  from "@/sections/InternOldTemplate";
+  import  Features from "@/sections/Features";
+  import { Internship } from "@/sections/Internship";
+  import  { InternCall } from "@/sections/InternCall";
+  
+  
   export default function Home() {
     return (
     <>
     <Header />
     <Hero />
     <LogoTicker />
-    <ProductShowcase />
+    <BoostYourProductivity />
     <Features />
-    <Slogan />
+    <SmartBiz />
     <Testimonials />
-    <CallToAction />
-    <Footer />
+    <InternHomeExplore />
+    
 
-    <FeaturesGrid  />
-    <InternMain />
+    <Internship />
+    <InternCall />
+    <Footer />
     </>
   );
-  }
+}
