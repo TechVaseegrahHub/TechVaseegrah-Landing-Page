@@ -6,13 +6,12 @@
   import { Footer } from "@/sections/Footer";
   import {InternHomeExplore } from "@/sections/InternHomeExplore";
   import {SmartBiz}  from "@/sections/SmartBiz";
-  import  InternOldTemplate  from "@/sections/InternOldTemplate";
   import  Features from "@/sections/Features";
   import { Internship } from "@/sections/Internship";
   import  { InternCall } from "@/sections/InternCall";
-  
-  
-  export default function Home() {
+  import { FeaturesCards } from "@/sections/FeaturesCards";
+   
+  export default function Home () {
     return (
     <>
     <Header />
@@ -23,8 +22,7 @@
     <SmartBiz />
     <Testimonials />
     <InternHomeExplore />
-    
-
+    < FeaturesCards/>
     <Internship />
     <InternCall />
     <Footer />

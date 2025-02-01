@@ -1,6 +1,6 @@
 "use client";
-import internImage from "@/assets/Team2.png";
-import codeImage from "@/assets/c++ programing.png";
+import internImage from "@/assets/ai-brain.png";
+//import codeImage from "@/assets/Team3.png";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -30,21 +30,21 @@ export const InternCall =()=> {
            <Image 
                 src={internImage} 
                 alt="Intern team img" 
-                className="absolute top-6 left-[calc(85%+36px)]"
-                height={300}
-                width={300}
+                className="absolute -left-[250px] -top-[10px]"
+                height={180}
+                width={180}
             />
             </motion.div>
-            <motion.div style={{translateY}}>
+            {/*<motion.div style={{translateY}}>
             <Image 
                  src={codeImage} 
                  alt="CSS code img" 
-                 className="absolute -top-[-50px] right-[calc(90%+84px)]"
-                 height={200}
-                 width={200}
+                 className="absolute -right-[331px] -bottom-[30px]"
+                 height={350}
+                 width={350}
                  
             /> 
-            </motion.div>
+            </motion.div>*/}
             
             <h2 className="section-title">
                 Transform Your Knowledge into Experience.

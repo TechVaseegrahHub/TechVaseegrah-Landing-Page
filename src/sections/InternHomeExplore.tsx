@@ -1,6 +1,6 @@
 "use client";
 import ArrowRight from "@/assets/arrow-right.svg";
-import starImage from "@/assets/02.png";
+import starImage from "@/assets/intern.png";
 import springImage from "@/assets/9.png";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -44,7 +44,7 @@ export const InternHomeExplore = () => {
             alt="Spring Image"
             height={148}
             width={168}
-            className="absolute -right-[331px] -bottom-[30px]"
+            className="absolute -right-[331px] -bottom-[10px]"
             style={{
               translateY,
             }}
