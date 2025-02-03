@@ -23,7 +23,7 @@
     <SmartBiz />
     <Testimonials />
     <InternHomeExplore />
- 
+    <FeaturesCards/>
     <Internship />
     <InternCall />
     <ContactUs />
