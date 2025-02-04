@@ -40,7 +40,7 @@ export const Internship = () => {
   const imageRotate = useTransform(scrollYProgress, [0, 1], [30, -30])
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-24 overflow-x-clip mt-10 md:mt-20">
+    <section ref={sectionRef} className="py-12 md:py-24 overflow-x-clip mt-2 md:mt-10">
       <div className="container">
         <div className="flex flex-col gap-8 md:gap-56">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">

@@ -7,9 +7,9 @@ import { useEffect, useRef } from "react";
 
 export const InternCall =()=> {
 
-    const containerRef = useRef <HTMLDivElement>(null);
+    const sectionRef = useRef <HTMLDivElement>(null);
     const { scrollYProgress }=useScroll({
-        target: containerRef,
+        target: sectionRef,
         offset: ['start end','end end'],
     });
 
@@ -18,11 +18,12 @@ export const InternCall =()=> {
 
     }, []);
 
-    const translateY=useTransform(scrollYProgress, [0,1],[40, -40]);
+    const translateY=useTransform(scrollYProgress, [0,1],[150, -150]);
     return(  
-        <div 
-            className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 mt-20" 
-            ref={containerRef}
+        <section
+        ref={sectionRef}
+            className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip" 
+           
         >
         
         <div className="section-heading relative">
@@ -30,7 +31,7 @@ export const InternCall =()=> {
            <Image 
                 src={internImage} 
                 alt="Intern team img" 
-                className="absolute -left-[250px] -top-[10px]"
+                className="absolute -left-[270px] -bottom-[280px]"
                 height={180}
                 width={180}
             />
@@ -39,10 +40,9 @@ export const InternCall =()=> {
             <Image 
                  src={codeImage} 
                  alt="CSS code img" 
-                 className="absolute -right-[331px] -bottom-[350px]"
+                 className="absolute -right-[331px] -bottom-[400px] hidden sm:block"
                  height={320}
-                 width={320}
-                 
+                 width={310}
             /> 
             </motion.div>
             
@@ -65,8 +65,8 @@ export const InternCall =()=> {
             </button>
         </form>
         </div>
-    </div>    
-    )
+    </section>    
+    );
 };
 
 export default InternCall;

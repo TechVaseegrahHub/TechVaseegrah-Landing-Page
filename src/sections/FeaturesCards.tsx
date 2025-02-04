@@ -2,6 +2,8 @@
 import Tag from "@/components/Tag"
 import { twMerge } from "tailwind-merge"
 import { useEffect, useState } from "react"
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const cardData = [
   {
@@ -36,6 +38,11 @@ const cardData = [
 export const FeaturesCards = () => {
   const [selectedCardIndex, setSelectedCardIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
 
   useEffect(() => {
     if (isHovered) return
@@ -48,13 +55,17 @@ export const FeaturesCards = () => {
   }, [selectedCardIndex, isHovered])
 
   return (
-    <section className="py-20">
+    <section 
+    ref={sectionRef}
+    className="py-20 overflow-x-clip  ">
       <div className="container">
-      <div className="section-heading">
-        <div className="flex justify-center">
+      <div className="section-heading md:text-5xl lg:text-6xl text-center">
+        <div className="flex justify-center ">
           <Tag>Internships</Tag>
         </div>
-        <h2 className="section-title mt-5">Start Your Career with Tech Vaseegrah!</h2>
+        <h2 className="section-title mt-5">
+          Start Your Career with Tech Vaseegrah!
+        </h2>
         <p className="section-description mt-5">
         Interns gain practical skills by working 
         on real-world projects alongside experienced 
@@ -66,7 +77,7 @@ export const FeaturesCards = () => {
             {cardData.map(({ image, title, description, color }, cardIndex) => (
               <div
                 key={title}
-                className="relative z-0 p-8 md:p-10 max-w-[280px] md:max-w-[320px] group"
+                className="relative z-0 p-8 md:p-10 max-w-xs md:max-md group"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 style={{
@@ -92,10 +103,10 @@ export const FeaturesCards = () => {
                     />
                   </div>
                 </div>
-                <h3 className="section-title text-3xl md:text-4xl ">{title}</h3>
+                <h3 className="section-title text-3xl mt-12 ">{title}</h3>
                 <p className="section-description mt-5">{description}</p>
                 <div className="flex justify-between mt-12">
-                  <button className="btn-primary btn">Apply</button> 
+                  <button className="btn-primary btn text-[15px] ">Apply</button> 
                 {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -128,6 +139,6 @@ export const FeaturesCards = () => {
       </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
