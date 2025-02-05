@@ -1,14 +1,13 @@
 "use client";
-import cogImage from "@/assets/3.png";
-import cylinderImage from "@/assets/0018.png";
-import noodleImage from "@/assets/0017.png";
+import aiRobotImage from "@/assets/ai-robot.png";
+import cloudImage from "@/assets/cloud-computing.png";
+import networkImage from "@/assets/network-neural.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
-  const staticText = "Automate your";
+  const staticText = "Automate your ";
   const animatedWords = ["Chatting", "Fulfillment", "Processes", "Business"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
@@ -20,19 +19,33 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [animatedWords.length]);
 
-  return (
-    <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_at_bottom_left,_#183EC2,_#EAEEFE_100%)] overflow-x-clip">
+    // Scroll-based transformations
+    const heroRef = useRef(null);
+    const { scrollYProgress }=useScroll({
+    target: heroRef,
+    offset:["start end", "end start"],});
+    
+    const translateY=useTransform(scrollYProgress, [0,1], [150, -150]);
+  
+    return (
+    <section ref={heroRef} className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_at_bottom_left,_#183EC2,_#EAEEFE_100%)] overflow-x-clip">
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
-            {/* Tagline */}
-            <div className="text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-light">
-              Tech Vaseegrah
-            </div>
+           
+          {/* Tagline */}
+          {/* <div className="text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-light">
+                  Tech Vaseegrah
+              </div>*/}
 
             {/* Static + Animated Words */}
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6 min-w-[120px]">
-              {staticText}{" "}
+            <h1 className="text-5xl md:text-7xl font-bold 
+                           tracking-tighter bg-gradient-to-b
+                          from-black to-[#001E80] 
+                           text-transparent bg-clip-text 
+                           mt-6 min-w-[120px]">
+             
+            {staticText}{" "}
               <motion.span
                 key={animatedWords[currentWordIndex]} // Ensure each word has a unique key for animation
                 initial={{ opacity: 0 }}
@@ -47,10 +60,11 @@ export default function Hero() {
 
             {/* Subtext */}
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
-              Transform your business with cutting-edge website
-              development, artificial intelligence, and software solutions
-              that enhance productivity, drive growth,
-              and ensure exceptional efficiency and success.
+               Transform your business with cutting-edge 
+               website development, artificial intelligence, 
+               and software solutions that enhance productivity, 
+               drive growth, and ensure exceptional efficiency 
+               and success.
             </p>
 
             {/* Buttons */}
@@ -60,10 +74,11 @@ export default function Hero() {
           </div>
 
           {/* Images */}
+          
           <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
             <motion.img
-              src={cogImage.src}
-              alt="Cog image"
+              src={aiRobotImage.src}
+              alt="Ai Robot"
               className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
               animate={{
                 translateY: [-30, 30],
@@ -71,25 +86,35 @@ export default function Hero() {
               transition={{
                 repeat: Infinity,
                 repeatType: "mirror",
-                duration: 10,
+                duration: 3,
+                ease:"easeInOut",
               }}
             />
-            <Image
-              src={cylinderImage}
+            <motion.img
+              src={cloudImage.src}
               width={220}
               height={220}
-              alt="Cylinder image"
+              alt="Cloud Computer"
               className="hidden md:block -top-8 -left-32 md:absolute"
+              style={{
+                translateY: translateY,
+              }}
+             
+          
             />
-            <Image
-              src={noodleImage}
+            <motion.img
+              src={networkImage.src}
               width={220}
-              alt="Noodle image"
+              alt="Network Neural"
               className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
+              style={{
+                rotate:30,
+                translateY: translateY,
+              }}
             />
           </div>
         </div>
       </div>
     </section>
   );
-}
+};

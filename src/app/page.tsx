@@ -11,6 +11,7 @@
   import  { InternCall } from "@/sections/InternCall";
   import { FeaturesCards } from "@/sections/FeaturesCards";
   import { ContactUs } from "@/sections/ContactUs";
+  //import  { Projects }  from "@/sections/Projects";
    
   export default function Home () {
     return (
@@ -27,6 +28,7 @@
     <Internship />
     <InternCall />
     <ContactUs />
+    
     <Footer />
     </>
   );
