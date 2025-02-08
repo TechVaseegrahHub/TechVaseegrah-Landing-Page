@@ -3,88 +3,131 @@ import productImage from "@/assets/bill-z.jpeg";
 import stockupImage from "@/assets/stock-up.png";
 import rockectImage from "@/assets/startup-rocket.png";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
+
+const MotionImage = motion(Image); // Motion-wrapped Image component
+
+// Framer Motion Variants
+const heroVariant: Variants = {
+  start: {},
+  end: {
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const heroChildVariant: Variants = {
+  start: {
+    y: 30,
+    opacity: 0,
+    filter: "blur(1px)",
+  },
+  end: {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export const BoostYourProductivity = () => {
   const sectionRef = useRef(null);
-  const billZ = useRef<HTMLDivElement>(null);
+  const heroBannerRef = useRef<HTMLElement>(null);
 
-  // Scroll progress for the section
+  const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
+
+  const { scrollYProgress } = useScroll({
+    target: heroBannerRef,
+    offset: ["start 1080px", "50% start"],
+  });
+
+  const scrollYTransform = useTransform(scrollYProgress, [0, 1], [0.85, 1.15]);
+  const scale = useSpring(scrollYTransform, {
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const { scrollYProgress: sectionScrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Scroll progress for the billZ image
-  const { scrollYProgress: billZScrollYProgress } = useScroll({
-    target: billZ,
-    offset: ["start end", "end start"],
-  });
-
-  // Transformations for the section
   const translateY = useTransform(sectionScrollYProgress, [0, 1], [150, -150]);
-
-  // Transformations for the billZ image
-  const rotateX = useTransform(billZScrollYProgress, [0, 1], [50, 10]);
-  const opacity = useTransform(billZScrollYProgress, [0, 1], [1, 1]);
 
   return (
     <section
       ref={sectionRef}
       className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24 overflow-x-clip"
     >
-      <div className="container">
+      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
-            <div className="tag">Boost your productivity</div>
+            <motion.div variants={heroChildVariant} className="tag">
+              Boost your productivity
+            </motion.div>
           </div>
-          <h2 className="section-title mt-5">
+          <motion.h2 variants={heroChildVariant} className="section-title mt-5">
             A more effective way to track progress
-          </h2>
-          <p className="section-description mt-5">
+          </motion.h2>
+          <motion.p variants={heroChildVariant} className="section-description mt-5">
             Effortlessly turn your ideas into a fully functional, responsive,
             SaaS website in just minutes with this template.
-          </p>
+          </motion.p>
         </div>
+
         <div className="relative">
           <motion.div
-            ref={billZ}
-            style={{
-              opacity: opacity,
-              rotateX: rotateX,
-              transformPerspective: "800px",
-            }}
+            className="mt-10"
+            initial={{ y: 120, opacity: 0, filter: "blur(5px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1.5, delay: 0.5, ease: "backInOut" }}
+            ref={heroBannerRef}
+            style={{ scale }}
           >
-            <Image
-              src={productImage}
-              alt="Bill Z"
-              className="mt-10"
-            />
+            <Image src={productImage} alt="Bill Z" className="mt-10" />
           </motion.div>
 
-          <motion.img
-            src={stockupImage.src}
+          {/* Blurry glow effect */}
+          <motion.div
+            className="absolute bg-blue- inset-5 blur-[50px] -z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 0.5, ease: "backInOut" }}
+          ></motion.div>
+
+          <motion.div
+            className="absolute inset-0 bg-blue- blur-[200px] scale-y-75 scale-x-125 rounded-full -z-10"
+            initial={{ scale: 0.4, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
+          ></motion.div>
+
+          <MotionImage
+            variants={heroChildVariant}
+            src={stockupImage}
             alt="Stock Up"
             height={262}
             width={302}
             className="hidden md:block absolute -right-36 -top-32"
-            style={{
-              translateY,
-            }}
+            style={{ translateY }}
           />
-          <motion.img
-            src={rockectImage.src}
+          <MotionImage
+            variants={heroChildVariant}
+            src={rockectImage}
             alt="Rocket Startup"
             height={248}
             width={268}
             className="hidden md:block absolute bottom-24 -left-36"
-            style={{
-              translateY,
-            }}
+            style={{ translateY }}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,10 +1,11 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import Image from "next/image"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Navigation, Autoplay } from "swiper/modules"
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import React from "react";
 
 import "swiper/css"
 import "swiper/css/pagination"

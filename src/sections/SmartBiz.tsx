@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export const SmartBiz = () => {
-  const sectionRef = useRef(null)
+  const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150])
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   return (
     <section ref={sectionRef} className="py-1 relative mb-10">
@@ -20,7 +20,7 @@ export const SmartBiz = () => {
             Transforming small businesses into{" "}
             <span className="relative">
               <span className="group inline-block">
-                <span className="bg-gradient-to-r from-black to-[#001E80] bg-clip-text text-transparent">
+                <span className="bg-[#001E80] bg-clip-text text-transparent animate-pulse">
                   Smart biz
                 </span>
                 <video
@@ -37,6 +37,5 @@ export const SmartBiz = () => {
         </div>
       </div>
     </section>
-  )
-}
-
+  );
+};

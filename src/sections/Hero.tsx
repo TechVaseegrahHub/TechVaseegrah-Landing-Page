@@ -7,7 +7,8 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
-  const staticText = "Automate your ";
+  const staticText = "Automate";
+  const staticText2 ="Your";
   const animatedWords = ["Chatting", "Fulfillment", "Processes", "Business"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
@@ -45,21 +46,24 @@ export default function Hero() {
                            text-transparent bg-clip-text 
                            mt-6 min-w-[120px]">
              
-            {staticText}{" "}
+            {staticText}
+            <br />
+            {staticText2}
+            <br />
               <motion.span
                 key={animatedWords[currentWordIndex]} // Ensure each word has a unique key for animation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-black to-[#001E80]"
+                className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-black to-[#001E80] "
               >
                 {animatedWords[currentWordIndex]}
               </motion.span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-xl text-[#010D3E] tracking-tight mt-6">
+            <p className="text-xl text-[#010D3E] tracking-tight mt-6 ">
                Transform your business with cutting-edge 
                website development, artificial intelligence, 
                and software solutions that enhance productivity, 
@@ -74,8 +78,7 @@ export default function Hero() {
           </div>
 
           {/* Images */}
-          
-          <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
+            <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
             <motion.img
               src={aiRobotImage.src}
               alt="Ai Robot"
