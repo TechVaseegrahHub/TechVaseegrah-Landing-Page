@@ -5,7 +5,7 @@ export default function Avatar(props: HTMLAttributes<HTMLDivElement>){
     const {className, children, ...otherProps}= props;
     return(
         <div className={twMerge(
-           "size-40 overflow-hidden p-1 flex items-center justify-center", 
+           "size-40 overflow-hidden p-1 flex items-center justify-center ", 
         className
         )}
         {...otherProps}

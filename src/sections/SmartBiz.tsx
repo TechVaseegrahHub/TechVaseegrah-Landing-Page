@@ -1,10 +1,25 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants, useInView } from "framer-motion";
+
+
+const heroVariant: Variants = {
+  start: { y: 30, opacity: 0, filter: "blur(0px)" },
+  end: {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition:{ duration: 1.5, delay: 0.5, ease: "backInOut" }
+  },
+}
+
+
 
 export const SmartBiz = () => {
   const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-50px" })
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -14,9 +29,9 @@ export const SmartBiz = () => {
 
   return (
     <section ref={sectionRef} className="py-1 relative mb-10">
-      <div className="container">
+      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="flex items-center justify-center">
-          <p className="text-4xl font-extrabold text-black/40 text-center">
+          <p className=" section-title text-4xl  text-black/40 text-center">
             Transforming small businesses into{" "}
             <span className="relative">
               <span className="group inline-block">
@@ -35,7 +50,7 @@ export const SmartBiz = () => {
             </span>
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

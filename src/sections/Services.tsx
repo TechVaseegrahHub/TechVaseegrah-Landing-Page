@@ -27,7 +27,7 @@ const heroChildVariant: Variants = {
 };
 
 
-export const InternHomeExplore = () => {
+export const Services = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
  
@@ -53,19 +53,24 @@ export const InternHomeExplore = () => {
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-           Exciting Internship Opportunities
+           What We Do
           </motion.h2>
+
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+                Develop your skills with <br />
+                Tech Vaseegrah!
+              </h2>
           
-          <motion.p
+         {/*<motion.p
            variants={heroChildVariant}
            className="section-description mt-5">
             Benefit from expert mentorship, 
             cutting-edge tech exposure, and 
             networking opportunities to jumpstart 
             your professional journey.
-          </motion.p>
+          </motion.p> */}
           
-          <motion.img
+      {/*    <motion.img
             variants={heroChildVariant}
             src={starImage.src}
             alt="Star Image"
@@ -96,7 +101,7 @@ export const InternHomeExplore = () => {
             variants={heroChildVariant}
             className="btn btn-primary">
             Explore
-          </motion.button>
+          </motion.button> */}
         
           </div>
       </motion.div>

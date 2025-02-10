@@ -11,6 +11,7 @@
   import  { InternCall } from "@/sections/InternCall";
   import { FeaturesCards } from "@/sections/FeaturesCards";
   import { ContactUs } from "@/sections/ContactUs";
+ // import { Services }  from "@/sections/Services";
    
   export default function Home () {
     return (
@@ -25,7 +26,6 @@
     <Features />
     <SmartBiz />
     <InternHomeExplore />
-
     <Footer />
     </>
   );

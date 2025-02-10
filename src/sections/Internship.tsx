@@ -69,7 +69,10 @@ export const Internship = () => {
               <ul className="flex flex-col gap-8 mt-12">
                 {listItems.map((item, index) => (
                   <li key={index} className="flex items-center gap-3 md:gap-4">
-                    <div className="inline-flex flex-shrink-0 justify-center items-center size-6 md:size-8 outline outline-3 md:outline-4 -outline-offset-3 md:-outline-offset-4 rounded-full outline-blue-500/50">
+                    <div className="inline-flex flex-shrink-0 justify-center 
+                                    items-center size-6 md:size-8 outline 
+                                    outline-3 md:outline-4 -outline-offset-3 
+                                    md:-outline-offset-4 rounded-full outline-blue-500/50">
                       <div className="size-1 md:size-1.5 bg-blue-700 rounded-full"></div>
                     </div>
                     <span className="text-lg md:text-xl font-bold text-[#010D3E]">{item}</span>

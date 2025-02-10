@@ -22,7 +22,7 @@ const heroChildVariant: Variants = {
   start: {
     y: 30,
     opacity: 0,
-    filter: "blur(1px)",
+    filter: "blur(0px)",
   },
   end: {
     y: 0,
@@ -84,7 +84,7 @@ export const BoostYourProductivity = () => {
         <div className="relative">
           <motion.div
             className="mt-10"
-            initial={{ y: 120, opacity: 0, filter: "blur(5px)" }}
+            initial={{ y: 120, opacity: 0, filter: "blur(0px)" }}
             animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.5, delay: 0.5, ease: "backInOut" }}
             ref={heroBannerRef}
