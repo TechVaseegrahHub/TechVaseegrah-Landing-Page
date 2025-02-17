@@ -6,7 +6,7 @@ import avatar1 from "@/assets/Whatsapp.png"
 import avatar2 from "@/assets/Instagram.png"
 import avatar3 from "@/assets/0005.png"
 import Avatar from "@/components/Avatar"
-import { motion, type Variants, useInView } from "framer-motion"
+import { motion, type Variants, useInView, AnimatePresence } from "framer-motion"
 import { useRef, useState } from "react"
 
 const features = [
@@ -44,7 +44,7 @@ const featureCardVariant: Variants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition:{ duration: 2, delay: 0.5, ease: "backInOut" },
+    transition: { duration: 2, delay: 0.5, ease: "backInOut" },
   },
 }
 
@@ -57,24 +57,33 @@ const featureListVariant: Variants = {
   }),
 }
 
-export default function Features() {
+export default function Products() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-50px" })
   const [isHeroComplete, setHeroComplete] = useState(false)
 
   return (
     <section className="py-20" ref={sectionRef}>
-      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container"onAnimationComplete={() => setHeroComplete(true)}>
+      <motion.div
+        variants={heroVariant}
+        initial="start"
+        animate={isInView ? "end" : "start"}
+        className="container"
+        onAnimationComplete={() => setHeroComplete(true)}
+      >
         <motion.div variants={heroChildVariant} className="flex justify-center">
           <Tag>Products</Tag>
         </motion.div>
 
-        <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-          Our Major Products for <br /> Ecommerce Industry
+        <motion.h2 
+              variants={heroChildVariant} 
+              className="section-title mt-5">
+              Our Major Products for <br /> Ecommerce Industry
         </motion.h2>
 
         <motion.div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">
-          {[{
+          {[
+            {
               title: "GoWhats",
               description:
                 "Simplify customer connections with GoWhats! Manage orders, automate messages, and offer real-time support using our powerful WhatsApp API—streamlining communication and boosting efficiency.",
@@ -91,7 +100,8 @@ export default function Features() {
               description:
                 "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
               avatar: avatar2,
-            }].map((card, index) => (
+            },
+          ].map((card, index) => (
             <motion.div
               key={card.title}
               variants={featureCardVariant}
@@ -104,16 +114,23 @@ export default function Features() {
                 description={card.description}
                 className="md:col-span-2 lg:col-span-1 group hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-shadow duration-300 ease-in-out"
               >
-                <div className="aspect-video flex items-center justify-center group-hover:-translate-y-6 transition duration-300">
-                  <Avatar className="z-10">
-                    <Image
-                      src={card.avatar || "/placeholder.svg"}
-                      alt={`Avatar for ${card.title}`}
-                      width={120}
-                      height={120}
-                    />
-                  </Avatar>
-                </div>
+                <AnimatePresence>
+                  <motion.div
+                    className="aspect-video flex items-center justify-center"
+                    initial={{ y: 0 }}
+                    whileHover={{ y: -24 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <Avatar className="z-10">
+                      <Image
+                        src={card.avatar || "/placeholder.svg"}
+                        alt={`Avatar for ${card.title}`}
+                        width={120}
+                        height={120}
+                      />
+                    </Avatar>
+                  </motion.div>
+                </AnimatePresence>
               </FeatureCard>
             </motion.div>
           ))}

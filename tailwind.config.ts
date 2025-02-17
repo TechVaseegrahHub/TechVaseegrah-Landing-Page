@@ -15,7 +15,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        parabole: ['Parabole', 'sans-serif'], // Add Parabole font
+        parabole: ["Parabole", "sans-serif"],
       },
       container: {
         center: true,
@@ -23,6 +23,10 @@ const config: Config = {
           DEFAULT: "20px",
           lg: "80px",
         },
+      },
+      spacing: {
+        "200px": "200px",
+        "300px": "300px",
       },
     },
   },
