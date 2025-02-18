@@ -37,7 +37,7 @@ const heroChildVariant: Variants = {
 
 export const BoostYourProductivity = () => {
   const sectionRef = useRef(null);
-  const heroBannerRef = useRef<HTMLElement>(null);
+  const heroBannerRef = useRef<HTMLDivElement>(null);
 
   const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
 
