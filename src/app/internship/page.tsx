@@ -2,7 +2,7 @@
 
 import { JobCards } from "@/sections/JobCards";
 import { Internship } from "@/sections/Internship";
-import InternCall from "@/sections/InternCall";
+import { InternCall } from "@/sections/InternCall";
 
 export default function InternshipPage() {
   return (

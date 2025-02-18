@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import Image from "next/image"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Autoplay } from "swiper/modules"
+import { useRef, useEffect } from "react";
+import { motion, useScroll, useTransform, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/autoplay"
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
-import roboimg from "@/assets/17.png"
-import internImage1 from "@/assets/intern6.jpeg"
-import internImage2 from "@/assets/intern2.jpeg"
-import internImage3 from "@/assets/intern7.jpeg"
-import internImage4 from "@/assets/intern4.jpeg"
-import internImage5 from "@/assets/intern5.jpeg"
+import roboimg from "@/assets/17.png";
+import internImage1 from "@/assets/intern6.jpeg";
+import internImage2 from "@/assets/intern2.jpeg";
+import internImage3 from "@/assets/intern7.jpeg";
+import internImage4 from "@/assets/intern4.jpeg";
+import internImage5 from "@/assets/intern5.jpeg";
 
-const internPhotos = [internImage1, internImage2, internImage3, internImage4, internImage5]
+const internPhotos = [internImage1, internImage2, internImage3, internImage4, internImage5];
 
 const listItems = [
   "Mentorship and Training",
@@ -25,26 +25,62 @@ const listItems = [
   "Professional Development",
   "Learning Resources",
   "Flexible Work Environment",
-]
+];
 
 export const Internship = () => {
-  const sectionRef = useRef(null)
+  const sectionRef = useRef(null);
+  const controls = useAnimation();
+  const inView = useInView(sectionRef, { once: true, threshold: 0.3 }); // ✅ Animations trigger once
 
+  // ✅ Smooth Image Scroll Animation (Parallax + Rotation)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  // 🔥 MORE NOTICEABLE ROTATION EFFECT
-  const imageTranslateY = useTransform(scrollYProgress, [0, 1], [120, -120]) // Moves up/down more
-  const imageRotate = useTransform(scrollYProgress, [0, 1], [30, -30]) // Bigger rotation effect
+  const imageTranslateY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const imageRotate = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+
+  // ✅ Left to Right Animation (Text & Image)
+  const slideInLeftVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2, duration: 0.8, ease: "easeInOut" },
+    }),
+  };
+
+  // ✅ Fade In Up Animation (for "Our Interns at Work" & Swiper)
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.3, duration: 0.8, ease: "easeInOut" },
+    }),
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   return (
     <section ref={sectionRef} className="py-12 md:py-24 overflow-x-clip mt-2 md:mt-10">
-      <div className="container">
-        <div className="flex flex-col gap-8 md:gap-56">
+      <motion.div className="container" initial="hidden" animate={controls} key="internship-section">
+        <div className="flex flex-col gap-8 md:gap-32">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
-            <div className="col-span-1 md:hidden">
+            
+            {/* ✅ Rotating 3D Image (Mobile View) */}
+            <motion.div
+              custom={0}
+              variants={slideInLeftVariants}
+              initial="hidden"
+              animate={controls}
+              className="col-span-1 md:hidden flex justify-center"
+            >
               <motion.div
                 className="relative inline-flex z-0 md:mt-[-6rem] w-full justify-center"
                 style={{
@@ -54,30 +90,60 @@ export const Internship = () => {
               >
                 <Image src={roboimg} alt="Animated 3D image" className="w-3/4 max-w-xs" />
               </motion.div>
-            </div>
-            <div className="col-span-1 md:col-span-2">
-              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            </motion.div>
+
+            {/* ✅ Text Content (Left to Right Animation) */}
+            <motion.div className="col-span-1 md:col-span-2">
+              <motion.h2
+                custom={1}
+                variants={slideInLeftVariants}
+                initial="hidden"
+                animate={controls}
+                className="font-heading font-black text-3xl sm:text-4xl md:text-5xl bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
+              >
                 Develop your skills with <br />
                 Tech Vaseegrah!
-              </h2>
-              <p className="text-lg md:text-xl tracking-tight text-[#010D3E] mt-6 md:mt-8">
+              </motion.h2>
+
+              <motion.p
+                custom={2}
+                variants={slideInLeftVariants}
+                initial="hidden"
+                animate={controls}
+                className="text-lg md:text-xl tracking-tight text-[#010D3E] mt-6 md:mt-8"
+              >
                 We offer internships to empower students with industrial-level experience and hands-on learning in
                 cutting-edge technologies. Gain mentorship from industry experts, work on real-world projects, and
                 bridge academic learning with practical skills for a successful career in software and IT.
-              </p>
-              <ul className="flex flex-col gap-8 mt-12">
+              </motion.p>
+
+              <motion.ul className="flex flex-col gap-8 mt-10">
                 {listItems.map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 md:gap-4">
+                  <motion.li
+                    key={index}
+                    custom={index + 3}
+                    variants={slideInLeftVariants}
+                    initial="hidden"
+                    animate={controls}
+                    className="flex items-center gap-3 md:gap-4"
+                  >
                     <div className="inline-flex flex-shrink-0 justify-center items-center size-6 md:size-8 outline outline-3 md:outline-4 -outline-offset-3 md:-outline-offset-4 rounded-full outline-blue-500/50">
                       <div className="size-1 md:size-1.5 bg-blue-700 rounded-full"></div>
                     </div>
                     <span className="text-lg md:text-xl font-bold text-[#010D3E]">{item}</span>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
-            </div>
+              </motion.ul>
+            </motion.div>
 
-            <div className="hidden md:block md:self-start">
+            {/* ✅ Rotating 3D Image (Desktop View) */}
+            <motion.div
+              custom={4}
+              variants={slideInLeftVariants}
+              initial="hidden"
+              animate={controls}
+              className="hidden md:block md:self-start"
+            >
               <motion.div
                 className="relative inline-flex z-0 md:mt-[-6rem]"
                 style={{
@@ -85,20 +151,32 @@ export const Internship = () => {
                   rotate: imageRotate,
                 }}
               >
-                <Image
-                  src={roboimg}
-                  alt="Animated 3D image"
-                  className="w-full md:size-96 max-w-none"
-                />
+                <Image src={roboimg} alt="Animated 3D image" className="w-full md:size-96 max-w-none" />
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Swiper Slider for Intern Photos */}
-      <div className="mt-16 md:mt-24">
-        <h3 className="section-title mb-5 text-[35px]">Our Interns at Work</h3>
+      {/* ✅ Step 1: "Our Interns at Work" (Fades In Up) */}
+      <motion.div
+        className="mt-16 md:mt-24 text-center"
+        variants={fadeInUpVariants}
+        initial="hidden"
+        animate={controls}
+        custom={5}
+      >
+        <h3 className="section-title mb-5 text-[35px]">Our Interns </h3>
+      </motion.div>
+
+      {/* ✅ Step 2: Swiper Photos (Fade In Up) */}
+      <motion.div
+        className="mt-8"
+        variants={fadeInUpVariants}
+        initial="hidden"
+        animate={controls}
+        custom={6}
+      >
         <Swiper
           slidesPerView={1}
           spaceBetween={20}
@@ -117,31 +195,17 @@ export const Internship = () => {
         >
           {internPhotos.map((photo, index) => (
             <SwiperSlide key={index}>
-              <div className="flex justify-center items-center h-full">
+              <motion.div className="flex justify-center items-center h-full">
                 <Image
                   src={photo}
                   alt={`Intern Photo ${index + 1}`}
                   className="rounded-lg w-full h-auto max-h-[60vh] object-cover shadow-md transition-transform duration-300 hover:scale-[1.02]"
                 />
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-      
-      {/* Swiper Custom Styles */}
-      <style jsx global>{`
-        .swiper-pagination-bullet {
-          background-color: #D3D3D3;
-          opacity: 0.5;
-          transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active {
-          background-color: #A9A9A9;
-          opacity: 1;
-          transform: scale(1.2);
-        }
-      `}</style>
+      </motion.div>
     </section>
-  )
-}
+  );
+};

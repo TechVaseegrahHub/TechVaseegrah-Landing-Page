@@ -4,6 +4,8 @@ import springImage from "@/assets/9.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
+import Tag from "@/components/Tag";
+
 
 
 // Framer motion variants
@@ -49,6 +51,13 @@ export const InternHomeExplore = () => {
         className="container">
           
           <div className="section-heading relative">
+          
+          <motion.div  
+              variants={heroChildVariant} 
+              className="flex justify-center mb-6">
+        
+              <Tag>Career Boost</Tag>
+          </motion.div>
           
           <motion.h2            
            variants={heroChildVariant}
