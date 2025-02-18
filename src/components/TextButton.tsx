@@ -1,4 +1,5 @@
 import { twMerge } from "tailwind-merge"
+import { ComponentPropsWithoutRef } from "react";
 
 
 export const TextButton = (props: ComponentPropsWithoutRef <'button'> &{color?: string}
