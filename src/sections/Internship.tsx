@@ -30,7 +30,7 @@ const listItems = [
 export const Internship = () => {
   const sectionRef = useRef(null);
   const controls = useAnimation();
-  const inView = useInView(sectionRef, { once: true, threshold: 0.3 }); // ✅ Animations trigger once
+  const inView = useInView(sectionRef, { once: true, amount: 0.3 }); // ✅ Animations trigger once
 
   // ✅ Smooth Image Scroll Animation (Parallax + Rotation)
   const { scrollYProgress } = useScroll({
