@@ -42,7 +42,7 @@ export const InternCall = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#D2DCFF] py-20 overflow-x-clip">
+      className="bg-gradient-to-b from-white -[#D2DCFF] py-20 overflow-x-clip">
       
       <motion.div
         variants={heroVariant}
@@ -55,7 +55,7 @@ export const InternCall = () => {
 
             <motion.div  
                 variants={heroChildVariant} 
-                className="flex justify-center mb-6">
+                className="flex justify-center mb-8">
                     
             <Tag>Kickstart Your Future.</Tag>
             </motion.div>
@@ -69,7 +69,7 @@ export const InternCall = () => {
           <motion.p
            variants={heroChildVariant}
            className="section-description mt-5">
-          Intern with Us & Work on Real Projects!
+           Intern with Us and Gain Hands On Experience on Real World Projects!
           </motion.p>
           
           <motion.img
@@ -119,7 +119,6 @@ export const InternCall = () => {
     </section>
   );
 };
-
 
 
 

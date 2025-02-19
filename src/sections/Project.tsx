@@ -68,7 +68,7 @@ export const Project = () => {
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag">
-            What&#39; new
+            What&#39;s new
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">

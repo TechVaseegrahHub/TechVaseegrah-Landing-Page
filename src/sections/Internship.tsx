@@ -3,6 +3,8 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
+import roboimg from "@/assets/17.png";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
@@ -10,7 +12,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
-import roboimg from "@/assets/17.png";
 import internImage1 from "@/assets/intern6.jpeg";
 import internImage2 from "@/assets/intern2.jpeg";
 import internImage3 from "@/assets/intern7.jpeg";
@@ -27,19 +28,22 @@ const listItems = [
   "Flexible Work Environment",
 ];
 
+
 export const Internship = () => {
   const sectionRef = useRef(null);
   const controls = useAnimation();
-  const inView = useInView(sectionRef, { once: true, amount: 0.3 }); // ✅ Animations trigger once
+  const inView = useInView(sectionRef, { once: true, amount: 0.3 });
 
-  // ✅ Smooth Image Scroll Animation (Parallax + Rotation)
+  // ✅ Scroll-based Animations for FAST, FLUID Rotation
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  const imageTranslateY = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const imageRotate = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+  // 🚀 **Increased Rotation Speed & Range**
+  const imageRotate = useTransform(scrollYProgress, [0, 1], ["-40deg", "40deg"]);
+  const imageTranslateY = useTransform(scrollYProgress, [0, 1], ["80px", "-80px"]); // Increased depth
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]); // Zoom effect
 
   // ✅ Left to Right Animation (Text & Image)
   const slideInLeftVariants = {
@@ -47,20 +51,20 @@ export const Internship = () => {
     visible: (i: number) => ({
       opacity: 1,
       x: 0,
-      transition: { delay: i * 0.2, duration: 0.8, ease: "easeInOut" },
+      transition: { delay: i * 0.2, duration: 0.6, ease: "easeInOut" },
     }),
   };
 
-  // ✅ Fade In Up Animation (for "Our Interns at Work" & Swiper)
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.3, duration: 0.8, ease: "easeInOut" },
-    }),
-  };
-
+    // ✅ Fade In Up Animation (for "Our Interns at Work" & Swiper)
+    const fadeInUpVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: { delay: i * 0.3, duration: 0.8, ease: "easeInOut" },
+      }),
+    };
+  
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -73,7 +77,7 @@ export const Internship = () => {
         <div className="flex flex-col gap-8 md:gap-32">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
             
-            {/* ✅ Rotating 3D Image (Mobile View) */}
+            {/* ✅ Faster Rotating Image (Mobile View) */}
             <motion.div
               custom={0}
               variants={slideInLeftVariants}
@@ -86,13 +90,14 @@ export const Internship = () => {
                 style={{
                   y: imageTranslateY,
                   rotate: imageRotate,
+                  scale: imageScale,
                 }}
               >
                 <Image src={roboimg} alt="Animated 3D image" className="w-3/4 max-w-xs" />
               </motion.div>
             </motion.div>
 
-            {/* ✅ Text Content (Left to Right Animation) */}
+            {/* ✅ Text Content */}
             <motion.div className="col-span-1 md:col-span-2">
               <motion.h2
                 custom={1}
@@ -116,7 +121,6 @@ export const Internship = () => {
                 cutting-edge technologies. Gain mentorship from industry experts, work on real-world projects, and
                 bridge academic learning with practical skills for a successful career in software and IT.
               </motion.p>
-
               <motion.ul className="flex flex-col gap-8 mt-10">
                 {listItems.map((item, index) => (
                   <motion.li
@@ -136,7 +140,7 @@ export const Internship = () => {
               </motion.ul>
             </motion.div>
 
-            {/* ✅ Rotating 3D Image (Desktop View) */}
+            {/* ✅ Faster Rotating Image (Desktop View) */}
             <motion.div
               custom={4}
               variants={slideInLeftVariants}
@@ -149,6 +153,7 @@ export const Internship = () => {
                 style={{
                   y: imageTranslateY,
                   rotate: imageRotate,
+                  scale: imageScale,
                 }}
               >
                 <Image src={roboimg} alt="Animated 3D image" className="w-full md:size-96 max-w-none" />
@@ -157,8 +162,7 @@ export const Internship = () => {
           </div>
         </div>
       </motion.div>
-
-
+      
       {/* ✅ Swiper Section */}
       <motion.div
         className="mt-16 md:mt-24 text-center"

@@ -95,8 +95,9 @@ export const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400 text-center">
             &copy; {new Date().getFullYear()} Tech Vaseegrah, Inc. All rights reserved.
+            
           </p>
         </div>
       </div>
