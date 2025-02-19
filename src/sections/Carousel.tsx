@@ -15,6 +15,8 @@ import { cn } from "@/lib/utilss";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/components/ui/useOutsideClick";
+import type { StaticImageData } from "next/image"; // ✅ Import StaticImageData
+
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -22,7 +24,7 @@ interface CarouselProps {
 }
 
 type Card = {
-  src: string;
+  src: string | StaticImageData;
   title: string;
   category: string;
   content: React.ReactNode;
@@ -257,7 +259,7 @@ export const Card = ({
           </motion.p>
         </div>
         <BlurImage
-          src={card.src}
+          src={typeof card.src === "string" ? card.src : card.src.src}
           alt={card.title}
           fill
           className="object-cover absolute z-10 inset-0"
