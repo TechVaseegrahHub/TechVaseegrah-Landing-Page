@@ -158,7 +158,8 @@ export const Internship = () => {
         </div>
       </motion.div>
 
-      {/* ✅ Step 1: "Our Interns at Work" (Fades In Up) */}
+
+      {/* ✅ Swiper Section */}
       <motion.div
         className="mt-16 md:mt-24 text-center"
         variants={fadeInUpVariants}
@@ -166,38 +167,30 @@ export const Internship = () => {
         animate={controls}
         custom={5}
       >
-        <h3 className="section-title mb-5 text-[35px]">Our Interns </h3>
+        <h3 className="section-title mb-5 text-[35px]">Our Interns</h3>
       </motion.div>
 
-      {/* ✅ Step 2: Swiper Photos (Fade In Up) */}
-      <motion.div
-        className="mt-8"
-        variants={fadeInUpVariants}
-        initial="hidden"
-        animate={controls}
-        custom={6}
-      >
+      <motion.div className="mt-8" variants={fadeInUpVariants} initial="hidden" animate={controls} custom={6}>
         <Swiper
           slidesPerView={1}
           spaceBetween={20}
           centeredSlides={true}
           loop={true}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           modules={[Pagination, Autoplay]}
+          pagination={{
+            el: ".custom-pagination",
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet",
+            bulletActiveClass: "swiper-pagination-bullet-active",
+          }}
           className="w-full max-w-4xl mx-auto px-4 md:px-0"
         >
           {internPhotos.map((photo, index) => (
             <SwiperSlide key={index}>
               <motion.div className="flex justify-center items-center h-full">
                 <Image
-                  src={photo}
+                  src={photo || "/placeholder.svg"}
                   alt={`Intern Photo ${index + 1}`}
                   className="rounded-lg w-full h-auto max-h-[60vh] object-cover shadow-md transition-transform duration-300 hover:scale-[1.02]"
                 />
@@ -206,6 +199,32 @@ export const Internship = () => {
           ))}
         </Swiper>
       </motion.div>
+
+      {/* ✅ Pagination Dots Below the Swiper */}
+      <div className="custom-pagination flex justify-center mt-6">
+        <div className="pagination-dots flex space-x-2">
+          {internPhotos.map((_, index) => (
+            <div
+              key={index}
+              className="w-2 h-2 bg-gray-300 rounded-full transition-all duration-300 hover:bg-gray-500 cursor-pointer"
+            />
+          ))}
+        </div>
+      </div>
+
+      <style jsx global>{`
+        .swiper-pagination-bullet {
+          width: 8px !important;
+          height: 8px !important;
+          background-color: #e0e0e0 !important;
+          opacity: 1 !important;
+          transition: all 0.3s ease !important;
+        }
+        .swiper-pagination-bullet-active {
+          background-color: #001E80 !important;
+          transform: scale(1.5) !important;
+        }
+      `}</style>
     </section>
   );
 };

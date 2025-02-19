@@ -3,6 +3,7 @@
 import { StripeCard } from "@/sections/StripeCard";
 import { Project } from "@/sections/Project";
 import { Carousel, Card } from "@/sections/Carousel";
+
 import Image from "next/image";
 
 // ✅ Import images correctly
@@ -135,7 +136,8 @@ export default function ProjectPage() {
           <Card key={index} card={project} index={index} />
         ))}
       />
-
+      <StripeCard />
+      <Project />
     </div>
   );
 }
