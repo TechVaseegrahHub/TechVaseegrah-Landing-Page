@@ -47,10 +47,9 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/50 backdrop-blur-lg shadow-md" : "bg-transparent"
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white/50 backdrop-blur-lg shadow-md`}
     >
+
       {/* 🔥 Top Banner (Hidden with smooth effect when scrolled past hero) */}
      {/* <div
         className={`bg-black text-white text-sm py-2 transition-all duration-500 ease-in-out ${
@@ -67,7 +66,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="transition-opacity duration-300 hover:opacity-80" onClick={closeMenu}>
-            <Image src={Logo || "/placeholder.svg"} alt="Tech V Logo" height={160} width={160} />
+            <Image src={Logo || "/placeholder.svg"} alt="Tech V Logo" height={170} width={170} />
           </Link>
 
           {/* 🔥 Desktop Menu */}

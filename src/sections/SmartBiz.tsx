@@ -31,7 +31,7 @@ export const SmartBiz = () => {
     <section ref={sectionRef} className="py-1 relative mb-10">
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="flex items-center justify-center">
-          <p className=" section-title text-4xl  text-black/40 text-center">
+          <p className=" section-title text-5xl  text-black/40 text-center">
             Transforming small businesses into{" "}
             <span className="relative">
               <span className="group inline-block">

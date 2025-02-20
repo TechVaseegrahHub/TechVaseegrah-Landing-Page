@@ -171,7 +171,7 @@ export const Internship = () => {
         animate={controls}
         custom={5}
       >
-        <h3 className="section-title mb-5 text-[35px]">Our Interns</h3>
+        <h3 className="section-title mb-5 text-[35px]">Our Interns at Work</h3>
       </motion.div>
 
       <motion.div className="mt-8" variants={fadeInUpVariants} initial="hidden" animate={controls} custom={6}>

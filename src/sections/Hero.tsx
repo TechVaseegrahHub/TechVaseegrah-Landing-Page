@@ -111,8 +111,8 @@ export default function Hero() {
             />
             <motion.img
               src={cloudImage.src}
-              width={220}
-              height={220}
+              width={250}
+              height={250}
               alt="Cloud Computer"
               className="hidden md:block -top-8 -left-32 md:absolute"
               style={{
@@ -121,7 +121,8 @@ export default function Hero() {
             />
             <motion.img
               src={networkImage.src}
-              width={220}
+              width={250}
+              height={250}
               alt="Network Neural"
               className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
               style={{

@@ -1,5 +1,5 @@
 "use client";
-import stockupImage from "@/assets/cloud-computing.png";
+import stockupImage from "@/assets/Rocket Launch .png";
 import rockectImage from "@/assets/ai-scanner.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
@@ -106,7 +106,7 @@ export const Project = () => {
             src={stockupImage}
             alt="Stock Up"
             height={262}
-            width={302}
+            width={262}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}
           />

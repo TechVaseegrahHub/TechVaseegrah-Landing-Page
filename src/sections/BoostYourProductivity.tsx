@@ -112,8 +112,8 @@ export const BoostYourProductivity = () => {
             variants={heroChildVariant}
             src={stockupImage}
             alt="Stock Up"
-            height={262}
-            width={302}
+            height={300}
+            width={300}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}
           />
@@ -121,8 +121,8 @@ export const BoostYourProductivity = () => {
             variants={heroChildVariant}
             src={rockectImage}
             alt="Rocket Startup"
-            height={248}
-            width={268}
+            height={300}
+            width={300}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />

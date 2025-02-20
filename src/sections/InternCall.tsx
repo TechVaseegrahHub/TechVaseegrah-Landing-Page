@@ -1,12 +1,11 @@
 "use client";
+
 import starImage from "@/assets/intern.png";
 import springImage from "@/assets/9.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 import Tag from "@/components/Tag";
-
-
 
 // Framer motion variants
 const heroVariant: Variants = {
@@ -28,7 +27,6 @@ const heroChildVariant: Variants = {
   },
 };
 
-
 export const InternCall = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -42,7 +40,7 @@ export const InternCall = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white -[#D2DCFF] py-20 overflow-x-clip">
+      className="bg-gradient-to-b from-white -[#D2DCFF] pt-20 overflow-x-clip">
       
       <motion.div
         variants={heroVariant}
@@ -57,19 +55,19 @@ export const InternCall = () => {
                 variants={heroChildVariant} 
                 className="flex justify-center mb-8">
                     
-            <Tag>Kickstart Your Future.</Tag>
+            <Tag>Join the Internship</Tag>
             </motion.div>
           
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-            Launch Your Career.
+            Transform Your Knowledge into Experience
           </motion.h2>
           
           <motion.p
            variants={heroChildVariant}
            className="section-description mt-5">
-           Intern with Us and Gain Hands On Experience on Real World Projects!
+           Intern with Us and Gain Hands On Experience on Real World Projects
           </motion.p>
           
           <motion.img
@@ -100,16 +98,16 @@ export const InternCall = () => {
           <div className="flex gap-2 mt-10 justify-center">
                 <motion.form
                 variants={heroChildVariant} 
-                className="mt-10 flex flex-col 
+                className="mt-15 flex flex-col 
                            gap-2.5 max-w-sm 
                            mx-auto sm:flex-row">
              <input 
                type="email" 
                placeholder="Your@mail.com" 
-               className="h-12 bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
+               className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
             
             <button className="btn btn-primary">
-                Kick Start
+                Join
             </button>
         </motion.form> 
       
