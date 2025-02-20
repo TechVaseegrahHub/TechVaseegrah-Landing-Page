@@ -1,7 +1,7 @@
 "use client";
 
-import starImage from "@/assets/intern.png";
-import springImage from "@/assets/9.png";
+import starImage from "@/assets/hand-bulb.png";
+import springImage from "@/assets/Team.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -74,8 +74,8 @@ export const InternCall = () => {
             variants={heroChildVariant}
             src={starImage.src}
             alt="Star Image"
-            height={300}
-            width={300}
+            height={330}
+            width={330}
             className="absolute -left-[350px] -top-[100px]"
             style={{
               translateY,
@@ -86,8 +86,8 @@ export const InternCall = () => {
             variants={heroChildVariant}
             src={springImage.src}
             alt="Spring Image"
-            height={148}
-            width={168}
+            height={280}
+            width={280}
             className="absolute -right-[331px] -bottom-[10px]"
             style={{
               translateY,
