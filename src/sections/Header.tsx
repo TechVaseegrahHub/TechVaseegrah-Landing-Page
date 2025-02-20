@@ -91,15 +91,15 @@ export default function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6 text-black" /> : <Menu className="h-6 w-6 text-black" />}
+            {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-black" />}
           </button>
         </div>
       </div>
 
       {/* 🔥 Mobile Menu */}
       <div
-        className={`fixed inset-0 h-screen w-full z-40 backdrop-blur-xl bg-black/80 transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-5"
+        className={`fixed inset-0 h-screen w-full z-40 backdrop-blur-2xl bg-black/90 transition-all duration-500 ease-in-out ${
+          isMenuOpen ? "opacity-100 visible translate-y-0 scale-100" : "opacity-0 invisible -translate-y-5 scale-95"
         }`}
       >
         <nav className="flex flex-col items-center justify-center h-full space-y-8 text-white">
