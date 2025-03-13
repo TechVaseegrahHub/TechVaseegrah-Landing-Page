@@ -1,14 +1,13 @@
 "use client";
-import starImage from "@/assets/intern.png";
-import springImage from "@/assets/9.png";
+
+import internImage from "@/assets/intern.png";
+import jobImage from "@/assets/job.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 import Tag from "@/components/Tag";
 
-
-
-// Framer motion variants
+{/* Framer motion variants */}
 const heroVariant: Variants = {
   start: {},
   end: {
@@ -28,7 +27,6 @@ const heroChildVariant: Variants = {
   },
 };
 
-
 export const InternHomeExplore = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -39,6 +37,7 @@ export const InternHomeExplore = () => {
   });
 
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
     <section
       ref={sectionRef}
@@ -57,6 +56,7 @@ export const InternHomeExplore = () => {
               className="flex justify-center mb-6">
         
               <Tag>Career Boost</Tag>
+          
           </motion.div>
           
           <motion.h2            
@@ -76,34 +76,31 @@ export const InternHomeExplore = () => {
           
           <motion.img
             variants={heroChildVariant}
-            src={starImage.src}
+            src={internImage.src}
             alt="Star Image"
             height={300}
             width={300}
             className="absolute -left-[350px] -top-[100px]"
             style={{
               translateY,
-            }}
-          />
+            }}/>
           
           <motion.img
             variants={heroChildVariant}
-            src={springImage.src}
+            src={jobImage.src}
             alt="Spring Image"
-            height={148}
-            width={168}
+            height={200}
+            width={200}
             className="absolute -right-[331px] -bottom-[10px]"
             style={{
               translateY,
-            }}
-          />
-        </div>
+            }}/>
+        
+          </div>
 
           <div className="flex gap-2 mt-10 justify-center">
-          
-          <motion.button 
-            variants={heroChildVariant}
-            className="btn btn-primary">
+
+          <motion.button variants={heroChildVariant} className="btn btn-primary">
             Explore
           </motion.button>
         

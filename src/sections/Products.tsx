@@ -19,25 +19,32 @@ const features = [
   "Smart Guides",
 ]
 
-// Framer motion variants
 const heroVariant: Variants = {
   start: {},
   end: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.4,
     },
   },
 }
 
 const heroChildVariant: Variants = {
-  start: { y: 30, opacity: 0, filter: "blur(0px)" },
+  start: { 
+    y: 30, 
+    opacity: 0, 
+    filter: "blur(0px)" 
+  },
+  
   end: {
     y: 0,
     opacity: 1,
     filter: "blur(0px)",
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" 
+    },
   },
-}
+};
 
 const featureCardVariant: Variants = {
   hidden: { x: 150, opacity: 0 },
@@ -77,10 +84,12 @@ export default function Products() {
 
         <motion.h2 
               variants={heroChildVariant} 
-              className="section-title mt-5">
-              Our Major Products for <br /> Ecommerce Industry
+              className="section-title mt-5 text-center"
+        >
+          Our Major Products for <br /> Ecommerce Industry
         </motion.h2>
 
+        {/* 🔥 Product Cards (Effects Intact) */}
         <motion.div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">
           {[
             {
@@ -101,42 +110,52 @@ export default function Products() {
                 "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
               avatar: avatar2,
             },
-          ].map((card, index) => (
-            <motion.div
-              key={card.title}
-              variants={featureCardVariant}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ delay: index * 0.2 }}
-            >
-              <FeatureCard
-                title={card.title}
-                description={card.description}
-                className="md:col-span-2 lg:col-span-1 group hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-shadow duration-300 ease-in-out"
+          ].map((card, index) => {
+            const [isTapped, setIsTapped] = useState(false)
+
+            return (
+              <motion.div
+                key={card.title}
+                variants={featureCardVariant}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ delay: index * 0.2 }}
               >
-                <AnimatePresence>
-                  <motion.div
-                    className="aspect-video flex items-center justify-center"
-                    initial={{ y: 0 }}
-                    whileHover={{ y: -24 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    <Avatar className="z-10">
-                      <Image
-                        src={card.avatar || "/placeholder.svg"}
-                        alt={`Avatar for ${card.title}`}
-                        width={120}
-                        height={120}
-                      />
-                    </Avatar>
-                  </motion.div>
-                </AnimatePresence>
-              </FeatureCard>
-            </motion.div>
-          ))}
+                <FeatureCard
+                  title={card.title}
+                  description={card.description}
+                  className="md:col-span-2 lg:col-span-1 group hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-shadow duration-300 ease-in-out"
+                >
+                  <AnimatePresence>
+                    <motion.div
+                      className="aspect-video flex items-center justify-center"
+                      initial={{ y: 0 }}
+                      animate={isTapped ? { y: -24 } : { y: 0 }}
+                      whileHover={{ y: -24 }} // Desktop Hover
+                      onTouchStart={() => {
+                        setIsTapped(true)
+                        setTimeout(() => setIsTapped(false), 1000) // Reset effect after 1s
+                      }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <Avatar className="z-10">
+                        <Image
+                          src={card.avatar || "/placeholder.svg"}
+                          alt={`Avatar for ${card.title}`}
+                          width={120}
+                          height={120}
+                        />
+                      </Avatar>
+                    </motion.div>
+                  </AnimatePresence>
+                </FeatureCard>
+              </motion.div>
+            )
+          })}
         </motion.div>
 
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
+        {/* 🔥 Feature List - No Shadow Hover Effect */}
+        <div className="mt-12 flex flex-wrap gap-3 justify-center">
           {features.map((feature, index) => (
             <motion.div
               key={feature}
@@ -144,9 +163,9 @@ export default function Products() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               custom={index}
-              className="bg-neutral-100 border border-white/10 inline-flex px-3 md:px-5 md:py-2 py-1.5 rounded-2xl gap-3 items-center"
+              className="bg-neutral-100 border border-white/10 inline-flex px-3 md:px-5 md:py-2 py-1.5 rounded-2xl gap-3 items-center transition-none"
             >
-              <span className="bg-blue-800 text-white w-5 h-5 rounded-full inline-flex items-center justify-center text-xl">
+              <span className="bg-blue-800 text-white w-5 h-5 rounded-full inline-flex items-center justify-center text-lg">
                 &#10038;
               </span>
               <span className="font-medium md:text-lg">{feature}</span>

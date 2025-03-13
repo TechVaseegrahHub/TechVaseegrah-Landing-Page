@@ -104,7 +104,7 @@ export const Internship = () => {
                 variants={slideInLeftVariants}
                 initial="hidden"
                 animate={controls}
-                className="font-heading font-black text-3xl sm:text-4xl md:text-5xl bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
+                className="section-title text-left"
               >
                 Develop your skills with <br />
                 Tech Vaseegrah!

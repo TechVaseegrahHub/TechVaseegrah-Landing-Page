@@ -1,11 +1,11 @@
 "use client";
-import stockupImage from "@/assets/Rocket Launch .png";
-import rockectImage from "@/assets/ai-scanner.png";
+import rocketImage from "@/assets/rocket-launch.png";
+import aiImage from "@/assets/ai-scanner.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const MotionImage = motion(Image); // Motion-wrapped Image component
+const MotionImage = motion(Image); 
 
 // Framer Motion Variants
 const heroVariant: Variants = {
@@ -82,10 +82,9 @@ export const Project = () => {
           
           </motion.p>
         </div>
-
+        
         <div className="relative">
   
-
           {/* Blurry glow effect */}
           <motion.div
             className="absolute bg-blue- inset-5 blur-[50px] -z-10"
@@ -103,8 +102,8 @@ export const Project = () => {
 
           <MotionImage
             variants={heroChildVariant}
-            src={stockupImage}
-            alt="Stock Up"
+            src={rocketImage}
+            alt="Rocket Lanuch"
             height={262}
             width={262}
             className="hidden md:block absolute -right-36 -top-32"
@@ -112,14 +111,13 @@ export const Project = () => {
           />
           <MotionImage
             variants={heroChildVariant}
-            src={rockectImage}
-            alt="Rocket Startup"
+            src={aiImage}
+            alt="AI Scanner "
             height={240}
             width={240}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
-          />
-          
+          />        
         </div>
       </motion.div>
     </section>

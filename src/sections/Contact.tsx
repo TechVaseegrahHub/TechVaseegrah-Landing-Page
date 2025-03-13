@@ -1,6 +1,6 @@
 "use client";
 
-import stockupImage from "@/assets/High Five Hand Gesture.png";
+import stockupImage from "@/assets/high-fi.png";
 import rockectImage from "@/assets/q-a.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView, useAnimation } from "framer-motion";

@@ -96,7 +96,7 @@ export const JobCards = () => {
           </motion.div>
 
           {/* ✅ Heading - Animates second */}
-          <motion.h2 custom={1} initial="hidden" animate={controls} variants={fadeInUpVariants} className="section-title mt-3">
+          <motion.h2 custom={1} initial="hidden" animate={controls} variants={fadeInUpVariants} className="section-title mt-5 text-center">
             Start Your Career with Tech Vaseegrah!
           </motion.h2>
 

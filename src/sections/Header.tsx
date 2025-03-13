@@ -47,11 +47,11 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-white/50 backdrop-blur-lg shadow-md`}
+      className={`sticky top-0 z-[1000] transition-all duration-300 bg-white/50 backdrop-blur-lg shadow-md`}
     >
 
       {/* 🔥 Top Banner (Hidden with smooth effect when scrolled past hero) */}
-     {/* <div
+      <div
         className={`bg-black text-white text-sm py-2 transition-all duration-500 ease-in-out ${
           isHeroCrossed ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
         }`}
@@ -59,7 +59,7 @@ export default function Header() {
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/80">Transforming small businesses into SMART BIZ 🔥</p>
         </div>
-      </div> */}
+      </div> 
 
       {/* 🔥 Navbar */}
       <div className="container mx-auto px-4">
@@ -74,7 +74,7 @@ export default function Header() {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/internship">Internship</NavLink>
             <NavLink href="/projects">Projects</NavLink>
-            <NavLink href="/service">Service</NavLink>
+            <NavLink href="/tech-v-services">Services</NavLink>
             <Link
               href="/contact"
               className="relative overflow-hidden bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight group"

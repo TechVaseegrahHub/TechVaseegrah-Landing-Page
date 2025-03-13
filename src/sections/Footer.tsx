@@ -1,12 +1,10 @@
 "use client"
-
 import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Instagram, Linkedin, Github, MessageCircle } from "lucide-react"
 import logoImage from "@/assets/unnamed.png";
-
 
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <motion.a
@@ -129,4 +127,3 @@ export const Footer = () => {
     </footer>
   )
 }
-

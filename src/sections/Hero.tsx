@@ -4,7 +4,6 @@ import cloudImage from "@/assets/cloud-computing.png"
 import networkImage from "@/assets/network-neural.png"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
-import { ArrowUpRight } from "lucide-react"
 
 const animationVariants = {
   initial: { y: 20, opacity: 0 },
@@ -13,8 +12,7 @@ const animationVariants = {
 }
 
 export default function Hero() {
-  const staticText = "Automate"
-  const staticText2 = "Your"
+  const staticText = "Automate Your"
   const animatedWords = ["Chatting", "Fulfillment", "Processes", "Business"]
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
 
@@ -44,14 +42,14 @@ export default function Hero() {
         <div className="md:flex items-center flex flex-col md:flex-row">
           <div className="md:w-[478px] w-full">
             {/* Static + Animated Words */}
-            <div className="text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight">
+          
+          {/*  <div className="text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight">
               Tech Vaseegrah
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mt-6 min-w-[120px]">
-              <span className="bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            </div>  */}
+          
+            <h1 className="text-5xl font-semibold md:text-7xl px-35 tracking-tighter mt-20 min-w-[120px]">
+              <span className="bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text ">
                 {staticText}
-                <br />
-                {staticText2}
               </span>
               <br />
               <div className="relative h-[1.2em] overflow-hidden">
@@ -76,21 +74,28 @@ export default function Hero() {
 
             {/* Subtext */}
             <p className="text-xl text-[#010D3E] tracking-tight mt-6 max-w-[90%] mx-auto md:mx-0 md:max-w-full">
-              Transform your business with cutting-edge website development, artificial intelligence, and software
-              solutions that enhance productivity, drive growth, and ensure exceptional efficiency and success.
+              Transform your business with cutting-edge website 
+              development, artificial intelligence, and software
+              solutions that enhance productivity, drive growth, 
+              and ensure exceptional efficiency and success.
             </p>
 
-            {/* Contact Button  9047667375
+            {/* CONTACT BUTTON 
             <div className="mt-[40px] flex justify-center md:justify-start">
-              <button className="group relative inline-flex items-center rounded-lg gap-2 px-7 py-3 text-bm font-medium bg-black text-[#ffffff] transition-colors duration-300 ease-in-out hover:text-white">
-                <span className="relative z-10">Contact Us</span>
-                <span className="absolute inset-0 rounded-lg bg-[#2950DA] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-[400ms] ease-in-out"></span>
-                <ArrowUpRight
+              <button className="group relative inline-flex items-center 
+                                rounded-lg gap-2 px-7 py-3 text-bm 
+                                font-medium bg-black text-[#ffffff] 
+                                transition-colors duration-300 
+                                ease-in-out hover:text-white">
+              <span className="relative z-10">Contact Us</span>
+              <span className="absolute inset-0 rounded-lg bg-[#2950DA] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-[400ms] ease-in-out"></span>
+              <ArrowUpRight
                   size={18}
                   className="relative z-10 text-white  transition-colors duration-300 ease-in-out"
-                />
+            />
               </button>
             </div>*/}
+          
           </div>
 
           {/* Images */}
@@ -114,7 +119,7 @@ export default function Hero() {
               width={250}
               height={250}
               alt="Cloud Computer"
-              className="hidden md:block -top-8 -left-32 md:absolute"
+              className="hidden md:block bottom-[470px] right-[900px] md:absolute"
               style={{
                 translateY: translateY,
               }}

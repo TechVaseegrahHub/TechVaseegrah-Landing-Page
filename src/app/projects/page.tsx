@@ -1,9 +1,7 @@
 "use client";
 
-import { StripeCard } from "@/sections/StripeCard";
 import { Project } from "@/sections/Project";
 import { Carousel, Card } from "@/sections/Carousel";
-
 import Image from "next/image";
 
 // ✅ Import images correctly
@@ -11,10 +9,8 @@ import aiChatBotImage from "@/assets/ai-chat-bot.jpeg"; // Ensure it's in the `/
 import eComImage from "@/assets/ecom.jpeg";
 import f3Image from "@/assets/f3.jpg";
 
-
 // ✅ Sample Data for Carousel
-const projectCards = [
- 
+const projectCards = [ 
   {
     src: aiChatBotImage, // ✅ Imported image
     title: "AI Product Generator",
@@ -50,6 +46,7 @@ const projectCards = [
 
                </p>,
   },
+  
   {
     src: eComImage, // ✅ Image from the `public` folder
     title: "E-Commerce Analytics",
@@ -84,6 +81,7 @@ const projectCards = [
                 satisfaction.
               </p>,
   },
+  
   {
     src:  f3Image, // ✅ Image from the `public` folder
     title: "F3 Engine",
@@ -136,8 +134,6 @@ export default function ProjectPage() {
           <Card key={index} card={project} index={index} />
         ))}
       />
-      <StripeCard />
-      <Project />
     </div>
   );
 }

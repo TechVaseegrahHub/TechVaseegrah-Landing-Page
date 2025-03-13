@@ -1,4 +1,5 @@
 "use client";
+
 import productImage from "@/assets/bill-z.jpeg";
 import stockupImage from "@/assets/stock-up.png";
 import rockectImage from "@/assets/startup-rocket.png";
@@ -8,8 +9,8 @@ import { useRef } from "react";
 
 const MotionImage = motion(Image); // Motion-wrapped Image component
 
-// Framer Motion Variants
-const heroVariant: Variants = {
+
+const heroVariant: Variants = { // Framer Motion Variants
   start: {},
   end: {
     transition: {
@@ -115,8 +116,8 @@ export const BoostYourProductivity = () => {
             height={300}
             width={300}
             className="hidden md:block absolute -right-36 -top-32"
-            style={{ translateY }}
-          />
+            style={{ translateY }}/>
+          
           <MotionImage
             variants={heroChildVariant}
             src={rockectImage}
@@ -124,8 +125,8 @@ export const BoostYourProductivity = () => {
             height={300}
             width={300}
             className="hidden md:block absolute bottom-24 -left-36"
-            style={{ translateY }}
-          />
+            style={{ translateY }}/>
+ 
         </div>
       </motion.div>
     </section>
