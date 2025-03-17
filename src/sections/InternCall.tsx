@@ -1,7 +1,7 @@
 "use client";
 
 import bulbImage from "@/assets/job.png";
-import internCallImage from "@/assets/team.png";
+import internCallImage from "@/assets/startup-rocket.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
