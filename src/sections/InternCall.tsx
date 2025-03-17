@@ -30,13 +30,14 @@ const heroChildVariant: Variants = {
 export const InternCall = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
- 
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
     <section
       ref={sectionRef}
@@ -49,7 +50,6 @@ export const InternCall = () => {
         className="container">
           
           <div className="section-heading relative">
-
 
             <motion.div  
                 variants={heroChildVariant} 
@@ -70,54 +70,51 @@ export const InternCall = () => {
            Intern with Us and Gain Hands On Experience on Real World Projects
           </motion.p>
           
-          <motion.img
+          {/* ✅ Use Next.js Image for better performance */}
+          <motion.div
             variants={heroChildVariant}
-            src={bulbImage.src}
-            alt="Bulb img"
-            height={200}
-            width={200}
             className="absolute -left-[300px] -top-[20px]"
-            style={{
-              translateY,
-            }}
-          /> 
-          
-          <motion.img
+            style={{ translateY }}>
+            <Image
+              src={bulbImage}
+              alt="Bulb img"
+              height={200}
+              width={200}
+              priority
+            />
+          </motion.div>
+
+          <motion.div
             variants={heroChildVariant}
-            src={interncallImage.src}
-            alt="Team img"
-            height={280}
-            width={280}
             className="absolute -right-[331px] -bottom-[10px]"
-            style={{
-              translateY,
-            }}
-          />
+            style={{ translateY }}>
+            <Image
+              src={interncallImage}
+              alt="Team img"
+              height={280}
+              width={280}
+              priority
+            />
+          </motion.div>
         </div>
 
-          <div className="flex gap-2 mt-10 justify-center">
-                <motion.form
-                variants={heroChildVariant} 
-                className="mt-15 flex flex-col 
-                           gap-2.5 max-w-sm 
-                           mx-auto sm:flex-row">
-             <input 
-               type="email" 
-               placeholder="Your@mail.com" 
-               className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
-            
-            <button className="btn btn-primary">
-                Join
-            </button>
-        </motion.form> 
-      
-        
-          </div>
+        <div className="flex gap-2 mt-10 justify-center">
+          <motion.form
+            variants={heroChildVariant} 
+            className="mt-15 flex flex-col 
+                       gap-2.5 max-w-sm 
+                       mx-auto sm:flex-row">
+          <input 
+            type="email" 
+            placeholder="Your@mail.com" 
+            className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
+          
+          <button className="btn btn-primary">
+              Join
+          </button>
+          </motion.form> 
+        </div>
       </motion.div>
     </section>
   );
 };
-
-
-
-
