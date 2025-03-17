@@ -1,6 +1,4 @@
 "use client";
-// import bulbImage from "@/assets/job.png";
-// import interncallImage from "@/assets/team.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -70,31 +68,6 @@ export const SeoCall = () => {
              Request a fully custom proposal for your business to get started!
           </motion.p>
           
-      {/*
-          <motion.img
-            variants={heroChildVariant}
-            src={bulbImage.src}
-            alt="Bulb img"
-            height={200}
-            width={200}
-            className="absolute -left-[300px] -top-[20px]"
-            style={{
-              translateY,
-            }}
-          /> 
-          
-          <motion.img
-            variants={heroChildVariant}
-            src={interncallImage.src}
-            alt="Team img"
-            height={280}
-            width={280}
-            className="absolute -right-[331px] -bottom-[10px]"
-            style={{
-              translateY,
-            }}
-          />   */}
-
         </div>
           <div className="flex gap-2 mt-10 justify-center">
                 <motion.form
