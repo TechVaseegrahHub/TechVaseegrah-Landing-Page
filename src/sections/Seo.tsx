@@ -1,6 +1,6 @@
 "use client";
-import rocketImage from "@/assets/rocket-launch.png";
-import aiImage from "@/assets/ai-scanner.png";
+import rocketImage from "@/assets/email-marketing.png";
+import aiImage from "@/assets/rocket-2.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -74,17 +74,15 @@ export const Seo = () => {
           </div>
           <div className="w-full flex justify-center">
           <motion.h2 variants={heroChildVariant} className="section-title mt-3 w-auto whitespace-nowrap">
-          What is SEO? Can it help you??
+          Professional SEO Services <br/> for Driving Traffic, Leads, & Sales
           </motion.h2>
           </div>
-          <motion.p variants={heroChildVariant} className="section-description mt-5 " >
-          When someone searches online for something you sell, 
-          whether it be a product or a service, you would 
-          certainly hope that your business was front and center! 
-          SEO is the process that gets you to the top of search results. 
-          This leads to increased visibility from targeted traffic that 
-          generates revenue driving traffic to your business.
-          
+          <motion.p variants={heroChildVariant} className="section-description mt-5" >
+          SEO boosts your business&apos;s online visibility, 
+          ensuring it appears at the top of search results 
+          when potential customers look for products or 
+          services you offer. This targeted traffic increases 
+          engagement and drives revenue.
           </motion.p>
         </div>
         
@@ -109,8 +107,8 @@ export const Seo = () => {
             variants={heroChildVariant}
             src={rocketImage}
             alt="Rocket Lanuch"
-            height={262}
-            width={262}
+            height={220}
+            width={220}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}
           />
@@ -118,8 +116,8 @@ export const Seo = () => {
             variants={heroChildVariant}
             src={aiImage}
             alt="AI Scanner "
-            height={240}
-            width={240}
+            height={220}
+            width={220}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />        

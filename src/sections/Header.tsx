@@ -74,7 +74,7 @@ export default function Header() {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/internship">Internship</NavLink>
             <NavLink href="/projects">Projects</NavLink>
-            <NavLink href="/tech-v-services">Services</NavLink>
+            <NavLink href="/techservices">Services</NavLink>
             <Link
               href="/contact"
               className="relative overflow-hidden bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight group"

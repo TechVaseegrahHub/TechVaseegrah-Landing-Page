@@ -1,7 +1,6 @@
 "use client";
-
-import bulbImage from "@/assets/job.png";
-import interncallImage from "@/assets/team.png";
+// import bulbImage from "@/assets/job.png";
+// import interncallImage from "@/assets/team.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -61,16 +60,17 @@ export const SeoCall = () => {
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-            Let&apos;s Drive SEO Growth Together
+            Let&apos;s Rank Higher
 
           </motion.h2>
           
           <motion.p
            variants={heroChildVariant}
            className="section-description mt-5">
-             Get expert help, starting with a custom SEO strategy for your business.
+             Request a fully custom proposal for your business to get started!
           </motion.p>
           
+      {/*
           <motion.img
             variants={heroChildVariant}
             src={bulbImage.src}
@@ -93,9 +93,9 @@ export const SeoCall = () => {
             style={{
               translateY,
             }}
-          />
-        </div>
+          />   */}
 
+        </div>
           <div className="flex gap-2 mt-10 justify-center">
                 <motion.form
                 variants={heroChildVariant} 
@@ -110,15 +110,9 @@ export const SeoCall = () => {
             <button className="btn btn-primary" style={{ whiteSpace: 'nowrap' }}>
                 Get SEO Proposal
             </button>
-        </motion.form> 
-      
-        
-          </div>
+        </motion.form>         
+        </div>
       </motion.div>
     </section>
   );
 };
-
-
-
-

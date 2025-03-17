@@ -8,20 +8,20 @@ import { usePathname } from "next/navigation"; // ✅ Detects page change
 
 const cardData = [
   {
-    image: "/assets/images/Code.png",
+    image: "/assets/images/Networking.png",
     title: "Dedicated SEO Team",
     description: "Your dedicated account manager, backed by SEO experts, ensures a tailored strategy with content, backlinks, and technical optimization.",
     color: "fuchsia",
   },
   {
-    image: "/assets/images/Laptop.png",
+    image: "/assets/images/Growth-Graph.png",
     title: "Custom SEO strategy",
     description:
       "We tailor SEO strategies to your industry, ensuring a unique approach that aligns with your business and audience.",
     color: "lime",
   },
   {
-    image: "/assets/images/0014.png",
+    image: "/assets/images/Idea.png",
     title: "Powerful Technology Included",
     description:
       "Our strategies use advanced software to track SEO performance, ensuring transparency, accountability, and alignment with your revenue goals.",
