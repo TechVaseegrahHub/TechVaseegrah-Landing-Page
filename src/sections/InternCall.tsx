@@ -1,7 +1,7 @@
 "use client";
 
 import bulbImage from "@/assets/job.png";
-import interncallImage from "@/assets/team.png";
+import internCallImage from "@/assets/team.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -89,7 +89,7 @@ export const InternCall = () => {
             className="absolute -right-[331px] -bottom-[10px]"
             style={{ translateY }}>
             <Image
-              src={interncallImage}
+              src={internCallImage}
               alt="Team img"
               height={280}
               width={280}
