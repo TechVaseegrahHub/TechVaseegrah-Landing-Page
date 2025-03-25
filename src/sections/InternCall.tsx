@@ -1,7 +1,7 @@
 "use client";
 
 import bulbImage from "@/assets/job.png";
-import internCallImage from "@/assets/startup-rocket.png";
+import internCallImage from "@/assets/team.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -41,7 +41,7 @@ export const InternCall = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white -[#D2DCFF] pt-20 overflow-x-clip">
+      className="bg-gradient-to-b from-white -[#D2DCFF] pt-20 mt-16 overflow-x-clip">
       
       <motion.div
         variants={heroVariant}
@@ -61,7 +61,7 @@ export const InternCall = () => {
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-            Transform Your Knowledge into Experience
+            Turn Knowledge <br className="hidden md:block" /> into Action.
           </motion.h2>
           
           <motion.p
@@ -99,20 +99,25 @@ export const InternCall = () => {
         </div>
 
         <div className="flex gap-2 mt-10 justify-center">
-          <motion.form
-            variants={heroChildVariant} 
-            className="mt-15 flex flex-col 
-                       gap-2.5 max-w-sm 
-                       mx-auto sm:flex-row">
-          <input 
-            type="email" 
-            placeholder="Your@mail.com" 
-            className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
-          
-          <button className="btn btn-primary">
-              Join
-          </button>
-          </motion.form> 
+        <motion.form
+  variants={heroChildVariant}
+  className="mt-15 flex flex-col sm:flex-row items-center gap-2.5 w-full max-w-md mx-auto px-4"
+>
+  <input
+    type="email"
+    placeholder="Your@mail.com"
+    className="h-12 w-full bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] outline-none border border-gray-300"
+  />
+
+  <button
+    className="btn btn-primary px-6 py-3 text-sm sm:text-base"
+    type="submit"
+  >
+    Join
+  </button>
+</motion.form>
+
+
         </div>
       </motion.div>
     </section>

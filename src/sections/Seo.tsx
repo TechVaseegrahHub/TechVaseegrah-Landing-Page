@@ -5,8 +5,7 @@ import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
-
-const MotionImage = motion(Image); 
+const MotionImage = motion(Image);
 
 // Framer Motion Variants
 const heroVariant: Variants = {
@@ -63,31 +62,36 @@ export const Seo = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b  -[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24  overflow-x-clip"
     >
-      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
+      <motion.div
+        variants={heroVariant}
+        initial="start"
+        animate={isInView ? "end" : "start"}
+        className="container"
+      >
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag">
-            Search Engine Optimization
+              Search Engine Optimization
             </motion.div>
           </div>
           <div className="w-full flex justify-center">
-          <motion.h2 variants={heroChildVariant} className="section-title mt-3 w-auto whitespace-nowrap">
-          Professional SEO Services <br/> for Driving Traffic, Leads, & Sales
-          </motion.h2>
+            <motion.h2
+              variants={heroChildVariant}
+              className="section-title mt-3 w-auto whitespace-normal md:whitespace-nowrap"
+            >
+              Professional SEO Services <br /> for Driving Traffic, Leads, & Sales
+            </motion.h2>
           </div>
-          <motion.p variants={heroChildVariant} className="section-description mt-5" >
-          SEO boosts your business&apos;s online visibility, 
-          ensuring it appears at the top of search results 
-          when potential customers look for products or 
-          services you offer. This targeted traffic increases 
-          engagement and drives revenue.
+          <motion.p variants={heroChildVariant} className="section-description mt-5">
+            SEO boosts your business&apos;s online visibility, ensuring it appears at the top
+            of search results when potential customers look for products or services you offer.
+            This targeted traffic increases engagement and drives revenue.
           </motion.p>
         </div>
-        
+
         <div className="relative">
-  
           {/* Blurry glow effect */}
           <motion.div
             className="absolute bg-blue- inset-5 blur-[50px] -z-10"
@@ -106,7 +110,7 @@ export const Seo = () => {
           <MotionImage
             variants={heroChildVariant}
             src={rocketImage}
-            alt="Rocket Lanuch"
+            alt="Rocket Launch"
             height={220}
             width={220}
             className="hidden md:block absolute -right-36 -top-32"
@@ -115,17 +119,14 @@ export const Seo = () => {
           <MotionImage
             variants={heroChildVariant}
             src={aiImage}
-            alt="AI Scanner "
+            alt="AI Scanner"
             height={220}
             width={220}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
-          />        
+          />
         </div>
       </motion.div>
-
-
-      
     </section>
   );
 };

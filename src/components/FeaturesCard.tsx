@@ -5,9 +5,9 @@ export default function FeatureCard(props: {
     children?: React.ReactNode;
     className?: string;
 }) {
-    const { title, description,children, className } = props;
+    const { title, description, children, className } = props;
     return (
-        <div className={twMerge("bg-white border border-black/10 p-6 rounded-3xl", className)}>
+        <div className={twMerge("bg-white border border-black/10 p-6 rounded-3xl flex flex-col h-full", className)}>
             <div className="aspect-video">{children}</div>
             <div>
               <h3 className="section-title text-4xl mt-5">{title}</h3>

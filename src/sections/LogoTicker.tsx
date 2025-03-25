@@ -5,7 +5,6 @@ import echoLogo from "@/assets/bestbrand.png";
 import celestialLogo from "@/assets/biogloworganics.png";
 import pulseLogo from "@/assets/Cleansoindia.png";
 import apexLogo from "@/assets/decara.png";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -29,6 +28,7 @@ export const LogoTicker = () => {
             <Image
               src={acmeLogo}
               alt="Acme Logo"
+    
               className="logo-ticker-image"
             />
             <Image

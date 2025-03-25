@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: [  "images.unsplash.com",
+      "assets.aceternity.com","your-external-image-domain.com" ], // ✅ Allow images from Unsplash
+  },
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -27,8 +32,6 @@ const nextConfig = {
 
     return config;
   },
-
-  // ...other config
 };
 
 export default nextConfig;

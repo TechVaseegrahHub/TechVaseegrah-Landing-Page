@@ -97,18 +97,22 @@ export default function Products() {
               description:
                 "Simplify customer connections with GoWhats! Manage orders, automate messages, and offer real-time support using our powerful WhatsApp API—streamlining communication and boosting efficiency.",
               avatar: avatar1,
+              
+              
             },
             {
               title: "F3 Engine",
               description:
                 "F3 Engine simplifies e-commerce with automated printing, packing, tracking, and inventory management. Streamline order dispatch, boost efficiency, and enhance customer satisfaction—focus on growth, not manual tasks!",
               avatar: avatar3,
+               
             },
             {
               title: "Instamatic",
               description:
                 "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
               avatar: avatar2,
+             
             },
           ].map((card, index) => {
             const [isTapped, setIsTapped] = useState(false)

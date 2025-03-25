@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 import Tag from "@/components/Tag";
+import Link from "next/link";
 
 {/* Framer motion variants */}
 const heroVariant: Variants = {
@@ -99,12 +100,12 @@ export const InternHomeExplore = () => {
           </div>
 
           <div className="flex gap-2 mt-10 justify-center">
-
-          <motion.button variants={heroChildVariant} className="btn btn-primary">
+         <Link href="/internship">
+         <motion.button variants={heroChildVariant} className="btn btn-primary">
             Explore
           </motion.button>
-        
-          </div>
+         </Link>
+        </div>
       </motion.div>
     </section>
   );

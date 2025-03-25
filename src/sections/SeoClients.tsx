@@ -14,14 +14,14 @@ export default function SeoClients() {
           <div className="space-y-2">
             <h2 className="section-title mb-6">Trusted by Industry Leaders</h2>
             <p className="section-description mb-8">
-                We&apos;re proud to work with some of the most innovative companies across the globe.
+              We&apos;re proud to work with some of the most innovative companies across the globe.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-center mt-8">
             {Array.from({ length: 6 }).map((_, i) => (
               <div
-                 key={i}
-                className="flex items-center justify-center p-4 grayscale transition-all hover:grayscale-0 hover:scale-110"
+                key={i}
+                className="flex items-center justify-center p-4"
               >
                 <Image
                   // Choose a logo from the array based on index modulo the array length

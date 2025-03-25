@@ -1,4 +1,7 @@
 "use client";
+
+import bulbImage from "@/assets/job.png";
+import internCallImage from "@/assets/startup-rocket.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -27,17 +30,18 @@ const heroChildVariant: Variants = {
 export const SeoCall = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
- 
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white -[#D2DCFF] pt-20 overflow-x-clip">
+      className="bg-gradient-to-b from-[#FFF] to-[#D2DCFF] pt-20 overflow-x-clip">
       
       <motion.div
         variants={heroVariant}
@@ -47,43 +51,68 @@ export const SeoCall = () => {
           
           <div className="section-heading relative">
 
-
             <motion.div  
                 variants={heroChildVariant} 
                 className="flex justify-center mb-8">
                     
-            <Tag>Boost Your Visibility</Tag>
+            <Tag>Boost SEO </Tag>
             </motion.div>
           
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-            Let&apos;s Rank Higher
-
+           Let&rsquo;s Drive SEO Growth Together
           </motion.h2>
           
           <motion.p
            variants={heroChildVariant}
            className="section-description mt-5">
-             Request a fully custom proposal for your business to get started!
+           Get expert help, starting with a custom SEO strategy for your business.
           </motion.p>
           
+          {/* ✅ Use Next.js Image for better performance */}
+          <motion.div
+            variants={heroChildVariant}
+            className="absolute -left-[300px] -top-[20px]"
+            style={{ translateY }}>
+            <Image
+              src={bulbImage}
+              alt="Bulb img"
+              height={200}
+              width={200}
+              priority
+            />
+          </motion.div>
+
+          <motion.div
+            variants={heroChildVariant}
+            className="absolute -right-[331px] -bottom-[10px]"
+            style={{ translateY }}>
+            <Image
+              src={internCallImage}
+              alt="Team img"
+              height={280}
+              width={280}
+              priority
+            />
+          </motion.div>
         </div>
-          <div className="flex gap-2 mt-10 justify-center">
-                <motion.form
-                variants={heroChildVariant} 
-                className="mt-15 flex flex-col 
-                           gap-2.5 max-w-sm 
-                           mx-auto sm:flex-row">
-             <input 
-               type="email" 
-               placeholder="Enter your website" 
-               className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
-            
-            <button className="btn btn-primary" style={{ whiteSpace: 'nowrap' }}>
-                Get SEO Proposal
-            </button>
-        </motion.form>         
+
+        <div className="flex gap-2 mt-10  justify-center">
+          <motion.form
+            variants={heroChildVariant} 
+            className="mt-15 flex flex-col 
+                       gap-2.5 max-w-sm 
+                       mx-auto sm:flex-row">
+          <input 
+            type="email" 
+            placeholder="Your@mail.com" 
+            className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
+          
+          <button className="btn btn-primary">
+              Join
+          </button>
+          </motion.form> 
         </div>
       </motion.div>
     </section>

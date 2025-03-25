@@ -1,12 +1,15 @@
 "use client";
-import React, { useEffect, useRef, useState, createContext, useContext, } from "react";
-import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX, } from "@tabler/icons-react";
+import React, { useEffect, useRef, useState, createContext, useContext } from "react";
+import {
+  IconArrowNarrowLeft,
+  IconArrowNarrowRight,
+  IconX,
+} from "@tabler/icons-react";
 import { cn } from "@/lib/utilss";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/components/ui/useOutsideClick";
 import type { StaticImageData } from "next/image"; // ✅ Import StaticImageData
-
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -90,7 +93,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
             )}
           ></div>
 
@@ -102,10 +105,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           >
             {items.map((item, index) => (
               <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{
                   opacity: 1,
                   y: 0,
@@ -117,7 +117,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
+                className="last:pr-[5%] md:last:pr-[33%] rounded-3xl"
               >
                 {item}
               </motion.div>
@@ -197,34 +197,36 @@ export const Card = ({
               exit={{ opacity: 0 }}
               className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"
             />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              ref={containerRef}
-              layoutId={layout ? `card-${card.title}` : undefined}
-              className="max-w-5xl mx-auto bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
-            >
-              <button
-                className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
-                onClick={handleClose}
+            <div className="flex justify-center items-start pt-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                ref={containerRef}
+                layoutId={layout ? `card-${card.title}` : undefined}
+                className="max-w-5xl mx-auto bg-gradient-to-b from-[#D2DCFF] to-[#fff] h-fit z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
               >
-                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
-              </button>
-              <motion.p
-                layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium  text-[#010D3E]"
-              >
-                {card.category}
-              </motion.p>
-              <motion.p
-                layoutId={layout ? `title-${card.title}` : undefined}
-                className="text-2xl md:text-5xl font-semibold  from-black to-[#001E80]"
-              >
-                {card.title}
-              </motion.p>
-              <div className="py-10">{card.content}</div>
-            </motion.div>
+                <button
+                  className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+                  onClick={handleClose}
+                >
+                  <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                </button>
+                <motion.p
+                  layoutId={layout ? `category-${card.title}` : undefined}
+                  className="text-base font-medium text-[#010D3E]"
+                >
+                  {card.category}
+                </motion.p>
+                <motion.p
+                  layoutId={layout ? `title-${card.title}` : undefined}
+                  className="text-2xl md:text-5xl font-semibold from-black to-[#001E80]"
+                >
+                  {card.title}
+                </motion.p>
+                <div className="py-10">{card.content}</div>
+              </motion.div>
+            </div>
           </div>
         )}
       </AnimatePresence>

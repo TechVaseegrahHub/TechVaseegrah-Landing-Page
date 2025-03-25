@@ -16,7 +16,6 @@
     <SmartBiz />
     <Testimonials />  
     <InternHomeExplore /> 
-
     </>
   );
 };

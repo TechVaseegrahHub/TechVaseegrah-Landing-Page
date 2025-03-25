@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, Variants, useInView } from "framer-mot
 
 
 const heroVariant: Variants = {
-  start: { y: 30, opacity: 0, filter: "blur(0px)" },
+  start: { y: 30, opacity: 0, filter: "blur(2px)" },
   end: {
     y: 0,
     opacity: 1,

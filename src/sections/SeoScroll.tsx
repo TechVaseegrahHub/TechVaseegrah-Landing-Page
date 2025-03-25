@@ -67,11 +67,11 @@ export default function SeoScroll() {
     <section className="relative py-24 overflow-hidden" ref={containerRef}>
       {/* Background Gradient */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] -z-10"
+        className="absolute inset-0 bg-gradient-to-b from-[#FFFFFF] to-[#FFFFFF] -z-10"
         style={{ y: backgroundY }}
       />
           <div className="flex justify-center">
-            <motion.div  className="tag mb-10">
+            <motion.div  className="tag mb-6">
               SEO Services
             </motion.div>
           </div>

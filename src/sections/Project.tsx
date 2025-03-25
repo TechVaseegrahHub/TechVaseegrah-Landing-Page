@@ -62,7 +62,7 @@ export const Project = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b  -[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-gradient-to-b-[#D2DCFF] py-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
