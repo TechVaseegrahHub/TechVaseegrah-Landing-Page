@@ -49,18 +49,6 @@ export default function Header() {
     <header
       className={`sticky top-0 z-[1000] transition-all duration-300 bg-white/50 backdrop-blur-lg shadow-md`}
     >
-
-      {/* 🔥 Top Banner (Hidden with smooth effect when scrolled past hero) */}
-      {/* <div
-        className={`bg-black text-white text-sm py-2 transition-all duration-500 ease-in-out ${
-          isHeroCrossed ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
-        }`}
-      >
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-white/80">Transforming small businesses into SMART BIZ 🔥</p>
-        </div>
-      </div>  */}
-
       {/* 🔥 Navbar */}
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
@@ -75,7 +63,7 @@ export default function Header() {
             <NavLink href="/internship">Internship</NavLink>
             <NavLink href="/projects">Projects</NavLink>
             <NavLink href="/seo">SEO Services</NavLink>
-            <NavLink href="/mbainternships">MBA Internship Programs</NavLink>
+            <NavLink href="/mbaintern">MBA Internship Programs</NavLink>
             <Link
               href="/contact"
               className="relative overflow-hidden bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight group"
@@ -113,6 +101,15 @@ export default function Header() {
           <MobileNavLink href="/projects" onClick={closeMenu}>
             Projects
           </MobileNavLink>
+          
+          <MobileNavLink href="/seo" onClick={closeMenu}>
+            SEO Services
+          </MobileNavLink>
+            
+          <MobileNavLink href="/mbaintern" onClick={closeMenu}>
+            MBA Internship Programs
+          </MobileNavLink>
+          
           <MobileNavLink href="/service" onClick={closeMenu}>
             Service
           </MobileNavLink>

@@ -10,7 +10,6 @@ import SeoScroll from "@/sections/SeoScroll";
 import seo1 from "@/assets/seo1.jpeg";
 import seo2 from "@/assets/seo2.jpeg";
 import seo3 from "@/assets/seo-employee.jpeg";
-import Mbag from "@/sections/Mbag";
 
 const testimonialsData = [
   {
@@ -40,9 +39,7 @@ export default function TechServices() {
     <div className="min-h-screen py-16">
 
       <Seo />
-      <SeoScroll/>
-      <Mbag/>
-     
+      <SeoScroll/>     
       <AnimatedTestimonials testimonials={testimonialsData} autoplay={true} />
       <SeoClients/>
       <FaqSeo />

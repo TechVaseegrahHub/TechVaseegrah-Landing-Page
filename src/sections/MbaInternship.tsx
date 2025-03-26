@@ -116,8 +116,8 @@ export const MbaInternship = () => {
             variants={heroChildVariant}
             src={aiImage}
             alt="AI Scanner "
-            height={300}
-            width={300}
+            height={260}
+            width={260}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />        

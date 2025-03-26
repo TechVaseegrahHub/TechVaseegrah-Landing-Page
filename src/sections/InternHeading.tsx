@@ -1,8 +1,6 @@
 "use client";
-
-// import productImage from "@/assets/bill-z.jpeg";
 import stockupImage from "@/assets/01.png";
-import rockectImage from "@/assets/4.png";
+import rockectImage from "@/assets/books.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -86,17 +84,6 @@ export const InternHeading = () => {
         </div>
 
         <div className="relative">
-          {/* <motion.div
-            className="mt-10"
-            initial={{ y: 120, opacity: 0, filter: "blur(0px)" }}
-            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1.5, delay: 0.5, ease: "backInOut" }}
-            ref={heroBannerRef}
-            style={{ scale }}
-          >
-            <Image src={productImage} alt="Bill Z" className="mt-10" />
-          </motion.div> */}
-
           {/* Blurry glow effect */}
           <motion.div
             className="absolute bg-blue- inset-5 blur-[50px] -z-10"
@@ -116,8 +103,8 @@ export const InternHeading = () => {
             variants={heroChildVariant}
             src={stockupImage}
             alt="Stock Up"
-            height={310}
-            width={310}
+            height={300}
+            width={300}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}/>
           
