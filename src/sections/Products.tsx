@@ -29,22 +29,21 @@ const heroVariant: Variants = {
 }
 
 const heroChildVariant: Variants = {
-  start: { 
-    y: 30, 
-    opacity: 0, 
-    filter: "blur(0px)" 
+  start: {
+    y: 30,
+    opacity: 0,
+    filter: "blur(0px)",
   },
-  
   end: {
     y: 0,
     opacity: 1,
     filter: "blur(0px)",
-    transition: { 
-      duration: 0.5, 
-      ease: "easeOut" 
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
-};
+}
 
 const featureCardVariant: Variants = {
   hidden: { x: 150, opacity: 0 },
@@ -57,7 +56,7 @@ const featureCardVariant: Variants = {
 
 const featureListVariant: Variants = {
   hidden: { opacity: 0, y: 10 },
-  visible: (index) => ({
+  visible: (index: number) => ({
     opacity: 1,
     y: 0,
     transition: { duration: 0.4, delay: 1.5 + index * 0.2, ease: "easeInOut" },
@@ -68,6 +67,43 @@ export default function Products() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-50px" })
   const [isHeroComplete, setHeroComplete] = useState(false)
+
+  const productCards = [
+    {
+      title: "GoWhats",
+      description:
+        "Simplify customer connections with GoWhats! Manage orders, automate messages, and offer real-time support using our powerful WhatsApp API—streamlining communication and boosting efficiency.",
+      avatar: avatar1,
+    },
+    {
+      title: "F3 Engine",
+      description:
+        "F3 Engine simplifies e-commerce with automated printing, packing, tracking, and inventory management. Streamline order dispatch, boost efficiency, and enhance customer satisfaction—focus on growth, not manual tasks!",
+      avatar: avatar3,
+    },
+    {
+      title: "Instamatic",
+      description:
+        "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
+      avatar: avatar2,
+    },
+  ]
+
+  const [tappedStates, setTappedStates] = useState<boolean[]>(
+    new Array(productCards.length).fill(false)
+  )
+
+  const handleTouch = (index: number) => {
+    const newStates = [...tappedStates]
+    newStates[index] = true
+    setTappedStates(newStates)
+
+    setTimeout(() => {
+      const resetStates = [...tappedStates]
+      resetStates[index] = false
+      setTappedStates(resetStates)
+    }, 1000)
+  }
 
   return (
     <section className="py-20" ref={sectionRef}>
@@ -82,40 +118,13 @@ export default function Products() {
           <Tag>Products</Tag>
         </motion.div>
 
-        <motion.h2 
-              variants={heroChildVariant} 
-              className="section-title mt-5 text-center"
-        >
+        <motion.h2 variants={heroChildVariant} className="section-title mt-5 text-center">
           Our Major Products for <br /> Ecommerce Industry
         </motion.h2>
 
-        {/* 🔥 Product Cards (Effects Intact) */}
         <motion.div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">
-          {[
-            {
-              title: "GoWhats",
-              description:
-                "Simplify customer connections with GoWhats! Manage orders, automate messages, and offer real-time support using our powerful WhatsApp API—streamlining communication and boosting efficiency.",
-              avatar: avatar1,
-              
-              
-            },
-            {
-              title: "F3 Engine",
-              description:
-                "F3 Engine simplifies e-commerce with automated printing, packing, tracking, and inventory management. Streamline order dispatch, boost efficiency, and enhance customer satisfaction—focus on growth, not manual tasks!",
-              avatar: avatar3,
-               
-            },
-            {
-              title: "Instamatic",
-              description:
-                "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
-              avatar: avatar2,
-             
-            },
-          ].map((card, index) => {
-            const [isTapped, setIsTapped] = useState(false)
+          {productCards.map((card, index) => {
+            const isTapped = tappedStates[index]
 
             return (
               <motion.div
@@ -135,16 +144,13 @@ export default function Products() {
                       className="aspect-video flex items-center justify-center"
                       initial={{ y: 0 }}
                       animate={isTapped ? { y: -24 } : { y: 0 }}
-                      whileHover={{ y: -24 }} // Desktop Hover
-                      onTouchStart={() => {
-                        setIsTapped(true)
-                        setTimeout(() => setIsTapped(false), 1000) // Reset effect after 1s
-                      }}
+                      whileHover={{ y: -24 }}
+                      onTouchStart={() => handleTouch(index)}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                       <Avatar className="z-10">
                         <Image
-                          src={card.avatar || "/placeholder.svg"}
+                          src={card.avatar}
                           alt={`Avatar for ${card.title}`}
                           width={120}
                           height={120}
@@ -158,7 +164,6 @@ export default function Products() {
           })}
         </motion.div>
 
-        {/* 🔥 Feature List - No Shadow Hover Effect */}
         <div className="mt-12 flex flex-wrap gap-3 justify-center">
           {features.map((feature, index) => (
             <motion.div
