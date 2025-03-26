@@ -1,120 +1,59 @@
-"use client";
+"use client"
+import type React from "react"
+import { useState } from "react"
 
-import bulbImage from "@/assets/job.png";
-import internCallImage from "@/assets/startup-rocket.png";
-import Image from "next/image";
-import { motion, Variants, useScroll, useTransform, useInView } from "framer-motion";
-import { useRef } from "react";
-import Tag from "@/components/Tag";
+export default function SeoCall() {
+  const [email, setEmail] = useState("")
+  const [submitted, setSubmitted] = useState(false)
 
-// Framer motion variants
-const heroVariant: Variants = {
-  start: {},
-  end: {
-    transition: {
-      staggerChildren: 0.4,
-    },
-  },
-};
-
-const heroChildVariant: Variants = {
-  start: { y: 30, opacity: 0, filter: 'blur(0px)' },
-  end: {
-    y: 0,
-    opacity: 1,
-    filter: 'blur(0px)',
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
-};
-
-export const SeoCall = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!email) return
+    // Handle submission logic (e.g., API call)
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
+    setEmail("")
+  }
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFF] to-[#D2DCFF] pt-20 overflow-x-clip">
-      
-      <motion.div
-        variants={heroVariant}
-        initial="start"
-        animate={isInView ? "end" : "start"}
-        className="container">
-          
-          <div className="section-heading relative">
-
-            <motion.div  
-                variants={heroChildVariant} 
-                className="flex justify-center mb-8">
-                    
-            <Tag>Boost SEO </Tag>
-            </motion.div>
-          
-          <motion.h2            
-           variants={heroChildVariant}
-           className="section-title">
-           Let&rsquo;s Drive SEO Growth Together
-          </motion.h2>
-          
-          <motion.p
-           variants={heroChildVariant}
-           className="section-description mt-5">
-           Get expert help, starting with a custom SEO strategy for your business.
-          </motion.p>
-          
-          {/* ✅ Use Next.js Image for better performance */}
-          <motion.div
-            variants={heroChildVariant}
-            className="absolute -left-[300px] -top-[20px]"
-            style={{ translateY }}>
-            <Image
-              src={bulbImage}
-              alt="Bulb img"
-              height={200}
-              width={200}
-              priority
-            />
-          </motion.div>
-
-          <motion.div
-            variants={heroChildVariant}
-            className="absolute -right-[331px] -bottom-[10px]"
-            style={{ translateY }}>
-            <Image
-              src={internCallImage}
-              alt="Team img"
-              height={280}
-              width={280}
-              priority
-            />
-          </motion.div>
+    <section className="w-full bg-white py-8 sm:py-12 px-4 sm:px-6">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Left: Heading & Subheading */}
+        <div className="flex flex-col md:ml-32 md:mt-10 text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2 section-title md:text-left md:text-5xl">
+          Let&rsquo;s Drive SEO Growth Together
+          </h2>
+          <p className="text-lg sm:text-xl section-description max-w-lg mx-auto md:mx-0 md:text-left">
+          Get expert help, starting with a custom SEO strategy for your business.
+          </p>
         </div>
 
-        <div className="flex gap-2 mt-10  justify-center">
-          <motion.form
-            variants={heroChildVariant} 
-            className="mt-15 flex flex-col 
-                       gap-2.5 max-w-sm 
-                       mx-auto sm:flex-row">
-          <input 
-            type="email" 
-            placeholder="Your@mail.com" 
-            className="h-12  bg-white/90 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] flex-1"/>
-          
-          <button className="btn btn-primary">
-              Join
-          </button>
-          </motion.form> 
+        {/* Right: Form & Privacy Note */}
+        <div className="flex flex-col items-center md:items-start w-full md:w-auto md:mr-36 mt-6 md:mt-0">
+          <form onSubmit={handleSubmit} className="flex items-center space-x-3 w-full max-w-md">
+            <div className="relative flex-1 md:flex-none">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="h-12 w-full md:w-64 px-4 rounded-md border border-gray-300 text-black focus:outline-none"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              {/* Thank-you overlay */}
+              {submitted && (
+                <div className="absolute inset-0 flex items-center justify-center bg-green-600/80 rounded-md">
+                  <span className="text-white font-medium">Thank you!</span>
+                </div>
+              )}
+            </div>
+            <button type="submit" className="btn btn-primary h-12 px-6 whitespace-nowrap">
+            Get SEO Proposal
+            </button>
+          </form>
         </div>
-      </motion.div>
+      </div>
     </section>
-  );
-};
+  )
+}
+

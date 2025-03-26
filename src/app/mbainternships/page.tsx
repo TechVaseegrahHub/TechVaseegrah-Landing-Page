@@ -1,12 +1,11 @@
 "use client";
 
-// import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
 
 import { MbaInternship } from "@/sections/MbaInternship";
-import {MbaProgram}  from "@/sections/MbaProgram";
+import MbaProgram  from "@/sections/MbaProgram";
 import  MbaScroll  from "@/sections/MbaScroll";
 import FaqMba from "@/sections/FaqMba";
-import { MbaCall } from "@/sections/MbaCall";
+import  MbaCall  from "@/sections/MbaCall";
 
 import seo1 from "@/assets/seo1.jpeg";
 import seo2 from "@/assets/seo2.jpeg";
@@ -42,24 +41,20 @@ const testimonialsData = [
 
 export default function TechServices() {
   return (
+
     <div className="min-h-screen py-16">      
-      {/* <AnimatedTestimonials testimonials={testimonialsData} autoplay={true} /> */}
+  
+  
       <MbaInternship/>
-      {/* 
-      <MbaScroll />
-      <MbaPhotos />
-      <FaqMba />
-     
-      */}
-    
-      <MbaImages/>
-    
+   {/* 
+          <MbaScroll />
+          <MbaPhotos />
+          <FaqMba />     */}
+      <MbaImages/>    
       <MbaProgram />
       <MbaCurriculam/>
       <MbaCall />  
      
-     
-      
     </div>
   );
 }

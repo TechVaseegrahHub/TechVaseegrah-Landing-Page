@@ -82,7 +82,7 @@ export default function SeoScroll() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="section-title mb-6"
+            className="section-title mb-6 md:text-5xl"
           >
             Our SEO Services
           </motion.h2>

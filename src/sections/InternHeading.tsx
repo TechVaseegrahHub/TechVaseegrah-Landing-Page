@@ -2,7 +2,7 @@
 
 // import productImage from "@/assets/bill-z.jpeg";
 import stockupImage from "@/assets/01.png";
-import rockectImage from "@/assets/books.png";
+import rockectImage from "@/assets/4.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -116,8 +116,8 @@ export const InternHeading = () => {
             variants={heroChildVariant}
             src={stockupImage}
             alt="Stock Up"
-            height={300}
-            width={300}
+            height={310}
+            width={310}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}/>
           
@@ -125,8 +125,8 @@ export const InternHeading = () => {
             variants={heroChildVariant}
             src={rockectImage}
             alt="Rocket Startup"
-            height={300}
-            width={300}
+            height={260}
+            width={260}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}/>
  

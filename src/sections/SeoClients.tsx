@@ -12,10 +12,7 @@ export default function SeoClients() {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="section-title mb-6">Trusted by Industry Leaders</h2>
-            <p className="section-description mb-8">
-              We&apos;re proud to work with some of the most innovative companies across the globe.
-            </p>
+            <h2 className="section-title md:text-5xl mb-6">Trusted by Industry Leaders</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-center mt-8">
             {Array.from({ length: 6 }).map((_, i) => (

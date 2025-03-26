@@ -1,166 +1,76 @@
-"use client";
+import { BarChart3, LineChart, PieChart, Briefcase, Target, Users } from "lucide-react"
+import { cn } from "@/lib/utils"
 
-import Tag from "@/components/Tag";
-import { twMerge } from "tailwind-merge";
-import { useEffect, useState, useRef } from "react";
-import { motion, useMotionValue, animate, useInView, useAnimation } from "framer-motion";
-import { usePathname } from "next/navigation"; // ✅ Detects page change
-
-const cardData = [
-  {
-    image: "/assets/images/Networking.png",
-    title: "Industry-Relevant Curriculum",
-    description: "Designed with insights from business leaders and industry experts.",
-    color: "fuchsia",
-  },
-  {
-    image: "/assets/images/Growth-Graph.png",
-    title: "Real-World Case Studies",
-    description:
-      " Learn from the success and failures of top companies.",
-    color: "lime",
-  },
-  {
-    image: "/assets/images/Idea.png",
-    title: "Hands-on Business Projects",
-    description:
-      "Work on live business scenarios to develop critical thinking.",
-    color: "cyan",
-  },
-
-  {
-    image: "/assets/images/seo-tools.png",
-    title: "Networking Opportunities",
-    description:
-      "Connect with like-minded entrepreneurs, investors, and mentors.",
-    color: "violet",
-  },
-
-];
-
-export const MbaProgram = () => {
-  const [selectedCardIndex, setSelectedCardIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [currentCardWidth, setCurrentCardWidth] = useState(320);
-
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
-
-  const pathname = usePathname(); // ✅ Detects page navigation
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView, pathname]); // ✅ Re-trigger animation on page change
-
-  // ✅ Heading Animation (Bottom-to-Top)
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 50 }, // Start below
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.15, duration: 0.7, ease: "easeInOut" },
-    }),
-  };
-
-  // ✅ JobCards Animation (Right-to-Left with Staggered Effect)
-  const jobCardsVariants = {
-    hidden: { opacity: 0, x: 100 }, // Start from right
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: { delay: 0.3 + i * 0.2, duration: 0.9, ease: "easeInOut" },
-    }),
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      setCurrentCardWidth(320);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+export default function MbaProgram() {
+  const features = [
+    {
+      icon: <Briefcase className="h-5 w-5" />,
+      title: "Business Strategy & Entrepreneurship",
+      description: "Access high-quality video content covering all essential topics and concepts in the program.",
+    },
+    {
+      icon: <BarChart3 className="h-5 w-5"/>,
+      title: "Financial Management & Accounting",
+      description: "Comprehensive reading resources including articles, research papers, and supplementary texts.",
+    },
+    {
+      icon: <Target className="h-5 w-5" />,
+      title: "Marketing & Brand Building",
+      description: "Participate in hands-on workshops designed to reinforce learning through practical application.",
+    },
+    {
+      icon: <Users className="h-5 w-5" />,
+      title: "Leadership & Organizational Development",
+      description: "View the complete program timeline with important dates, deadlines, and milestones.",
+    },
+    {
+      icon: <LineChart className="h-5 w-5" />,
+      title: "Operations & Business Scaling",
+      description: "Download and access all course materials, including slides, templates, and reference guides.",
+    },
+    {
+      icon: <PieChart className="h-5 w-5" />,
+      title: "Certification",
+      description: "Information about program completion requirements and certification process.",
+    },
+  ]
 
   return (
-    <section className="py-16 overflow-hidden">
-      <motion.div className="container" ref={ref} key={pathname} initial="hidden" animate={controls}>
-        <div className="section-heading md:text-5xl lg:text-6xl text-center">
+    <div className="w-full max-w-[1300px] mx-auto px-4 sm:px-6 py-14 md:py-20 bg-white">
+      <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-12">
+        <div className="lg:col-span-4 lg:pr-6">
+          <span className="tag mb-4">
+            MBA Program
+          </span>
 
-          {/* ✅ Tag - Animates first */}
-          {/* <motion.div custom={0} initial="hidden" animate={controls} variants={fadeInUpVariants} className="flex justify-center">
-            <Tag>Internships</Tag>
-          </motion.div> */}
-
-          {/* ✅ Heading - Animates second */}
-          <div className="w-full flex justify-center">
-          <motion.h2 custom={1} initial="hidden" animate={controls} variants={fadeInUpVariants} className="section-title mt-3 w-auto whitespace-nowrap ">
-          Why Choose Our MBA Business Program?
-          </motion.h2>
-          </div>
-
-          {/* ✅ Subheading - Animates third */}
-          {/* <motion.p custom={2} initial="hidden" animate={controls} variants={fadeInUpVariants} className="section-description mt-3">
-            Interns gain practical skills by working on real-world projects alongside experienced professionals,
-            enhancing their knowledge and preparing them for future careers.
-          </motion.p> */}
-
-          {/* ✅ JobCards - Right-to-Left Animation */}
-          <motion.div className="mt-20 flex justify-center"> {/* ✅ Reduced margin-top */}
-            <motion.div
-              ref={containerRef}
-              className="flex flex-nowrap gap-4 md:gap-8 px-4 md:px-0"
-              drag={isMobile ? "x" : false}
-              dragConstraints={{ left: -(currentCardWidth * (cardData.length - 1)), right: 0 }}
-              dragElastic={0.1}
-              whileTap={{ cursor: isMobile ? "grabbing" : "auto" }}
-              style={{ x: useMotionValue(0) }}
-            >
-              {cardData.map(({ image, title, description, color }, cardIndex) => (
-                <motion.div
-                  key={title}
-                  custom={cardIndex}
-                  initial="hidden"
-                  animate={controls}
-                  variants={jobCardsVariants} // ✅ Added stagger effect per card
-                  className="relative z-0 p-8 md:p-10 group rounded-2xl"
-                  style={{
-                    width: currentCardWidth,
-                    flexShrink: 0,
-                    margin: isMobile ? "0 auto" : undefined, // Center align in mobile
-                  }}
-                >
-                  {/* ✅ Background Effect */}
-                  <div className={twMerge("absolute inset-0 rounded-2xl bg-opacity-40 -z-10 blur-2xl opacity-0 group-hover:opacity-50 transition duration-300",
-                    color === "lime" && "bg-lime-500",
-                    color === "cyan" && "bg-cyan-500",
-                    color === "violet" && "bg-violet-500"
-                  )}></div>
-
-                  {/* ✅ Card Styling */}
-                  <div className="absolute inset-0 bg-white -z-10 rounded-2xl border border-white/30 shadow-lg"></div>
-
-                  <div className="flex justify-center -mt-20">
-                    <div className="inline-flex relative">
-                      <img src={image || "/placeholder.svg"} alt="Pill img" className="size-36 group-hover:-translate-y-6 transition duration-300"/>
-                    </div>
-                  </div>
-                  <h3 className="section-title text-2xl mt-8">{title}</h3>
-                  <p className="section-description mt-3">{description}</p>
-                  {/* <div className="flex justify-center mt-1">
-                    <button className="btn-primary btn text-[15px] mt-3">Apply</button>
-                  </div> */}
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
+          <h2 className="text-3xl tracking-tight text-left md:text-4xl section-title mb-4">Program Curriculum</h2>
+          <p className="text-sm section-description md:text-xl text-left mb-3 leading-relaxed max-w-md">
+            Our comprehensive MBA curriculum is designed to equip you with essential business skills across key domains.
+          </p>
+  
         </div>
-      </motion.div>
-    </section>
-  );
-};
+        <div className="lg:col-span-8">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {features.map((feature, index) => (
+              <div key={index} className="flex flex-col gap-4 group">
+                <div
+                  className={cn(
+                    "flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-200",
+                    "bg-primary/5 text-primary group-hover:bg-primary/10",
+                  )}
+                >
+                  {feature.icon}
+                </div>
+                <div className="space-y-4">
+                  <h3 className="section-title text-base text-left md:text-xl ">{feature.title}</h3>
+                  <p className="text-sm text-[#010D3E]/80 leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+

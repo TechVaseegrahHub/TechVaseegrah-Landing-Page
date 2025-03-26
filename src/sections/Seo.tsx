@@ -72,14 +72,14 @@ export const Seo = () => {
       >
         <div className="section-heading">
           <div className="flex justify-center">
-            <motion.div variants={heroChildVariant} className="tag">
+            <motion.div variants={heroChildVariant} className="tag mb-6">
               Search Engine Optimization
             </motion.div>
           </div>
           <div className="w-full flex justify-center">
             <motion.h2
               variants={heroChildVariant}
-              className="section-title mt-3 w-auto whitespace-normal md:whitespace-nowrap"
+              className="section-title mt-3 w-auto whitespace-normal md:whitespace-nowrap md:text-5xl"
             >
               Professional SEO Services <br /> for Driving Traffic, Leads, & Sales
             </motion.h2>

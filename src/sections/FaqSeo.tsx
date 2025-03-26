@@ -52,7 +52,7 @@ export default function FaqSeo() {
   return (
     <section className=" w-full max-w-4xl mx-auto py-16 px-4 sm:px-6">
       <div className="text-center mb-12">
-        <h2 className="section-title mt-8 mb-6">Frequently Asked Questions.</h2>
+        <h2 className="section-title md:text-5xl mt-8 mb-6">Frequently Asked Questions.</h2>
       </div>
 
       <div className="space-y-4">

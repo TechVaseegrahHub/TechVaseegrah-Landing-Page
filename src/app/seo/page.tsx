@@ -1,7 +1,7 @@
 "use client";
 
 import { Seo } from "@/sections/Seo";
-import { SeoCall } from "@/sections/SeoCall";
+import  SeoCall  from "@/sections/SeoCall";
 import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
 import  SeoClients  from "@/sections/SeoClients";
 import FaqSeo from "@/sections/FaqSeo";
@@ -42,8 +42,9 @@ export default function TechServices() {
       <Seo />
       <SeoScroll/>
       <Mbag/>
-      <SeoClients/>
+     
       <AnimatedTestimonials testimonials={testimonialsData} autoplay={true} />
+      <SeoClients/>
       <FaqSeo />
       <SeoCall /> 
     

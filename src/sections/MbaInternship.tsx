@@ -1,6 +1,6 @@
 "use client";
-import rocketImage from "@/assets/9.png";
-import aiImage from "@/assets/rocket-2.png";
+import rocketImage from "@/assets/01.png";
+import aiImage from "@/assets/Books.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -107,8 +107,8 @@ export const MbaInternship = () => {
             variants={heroChildVariant}
             src={rocketImage}
             alt="Rocket Lanuch"
-            height={220}
-            width={220}
+            height={300}
+            width={300}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}
           />
@@ -116,8 +116,8 @@ export const MbaInternship = () => {
             variants={heroChildVariant}
             src={aiImage}
             alt="AI Scanner "
-            height={220}
-            width={220}
+            height={300}
+            width={300}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />        
