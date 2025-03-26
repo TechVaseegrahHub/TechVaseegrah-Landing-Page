@@ -84,6 +84,7 @@ export const InternHeading = () => {
         </div>
 
         <div className="relative">
+
           {/* Blurry glow effect */}
           <motion.div
             className="absolute bg-blue- inset-5 blur-[50px] -z-10"
@@ -112,8 +113,8 @@ export const InternHeading = () => {
             variants={heroChildVariant}
             src={rockectImage}
             alt="Rocket Startup"
-            height={260}
-            width={260}
+            height={300}
+            width={300}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}/>
  

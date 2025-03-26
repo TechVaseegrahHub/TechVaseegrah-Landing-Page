@@ -1,10 +1,9 @@
 "use client";
 import rocketImage from "@/assets/01.png";
-import aiImage from "@/assets/Books.png";
+import aiImage from "@/assets/books.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
-
 
 const MotionImage = motion(Image); 
 
@@ -116,16 +115,13 @@ export const MbaInternship = () => {
             variants={heroChildVariant}
             src={aiImage}
             alt="AI Scanner "
-            height={260}
-            width={260}
+            height={290}
+            width={290}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />        
         </div>
       </motion.div>
-
-
-      
     </section>
   );
 };
