@@ -19,7 +19,7 @@ export default function NewsletterSection() {
     <section className="w-full bg-white py-8 sm:py-12 px-4 sm:px-6">
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left: Heading & Subheading */}
-        <div className="flex flex-col md:ml-32 md:mt-10 text-center md:text-left">
+        <div className="flex flex-col md:ml-32 md:mt-10 text-center md:text-left md:mb-16">
           <h2 className="text-2xl sm:text-3xl font-bold mb-2 section-title md:text-left md:text-5xl">
             Enroll Today & Transform Your Business Journey!
           </h2>

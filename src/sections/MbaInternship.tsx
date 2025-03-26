@@ -67,7 +67,7 @@ export const MbaInternship = () => {
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
-            <motion.div variants={heroChildVariant} className="tag">
+            <motion.div variants={heroChildVariant} className="tag mb-8">
             MBA Business Program 
             </motion.div>
           </div>

@@ -39,7 +39,7 @@ export default function MbaProgram() {
     <div className="w-full max-w-[1300px] mx-auto px-4 sm:px-6 py-14 md:py-20 bg-white">
       <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4 lg:pr-6">
-          <span className="tag mb-4">
+          <span className="tag mb-8">
             MBA Program
           </span>
 

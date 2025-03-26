@@ -109,10 +109,7 @@ export default function Header() {
           <MobileNavLink href="/mbaintern" onClick={closeMenu}>
             MBA Internship Programs
           </MobileNavLink>
-          
-          <MobileNavLink href="/service" onClick={closeMenu}>
-            Service
-          </MobileNavLink>
+
           <Link
             href="/contact"
             className="bg-white text-black px-8 py-3 rounded-full text-lg font-medium transition-colors duration-300 hover:bg-gray-200"
