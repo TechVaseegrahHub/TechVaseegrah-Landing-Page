@@ -20,7 +20,7 @@ export default function MbaImages() {
               on theory, this industry-driven program blends 
               academic excellence with real-world case studies, 
               business simulations, and hands-on projects. 
-              Whether you're launching a startup, scaling an 
+              Whether you&apos;re launching a startup, scaling an 
               existing business, or preparing for a leadership 
               role, this program will equip you with the tools, 
               frameworks, and strategies needed to succeed.
