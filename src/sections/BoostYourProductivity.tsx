@@ -1,5 +1,4 @@
 "use client";
-
 import productImage from "@/assets/bill-z.jpeg";
 import stockupImage from "@/assets/stock-up.png";
 import rockectImage from "@/assets/startup-rocket.png";
@@ -8,8 +7,6 @@ import { motion, Variants, useScroll, useSpring, useTransform, useInView } from 
 import { useRef } from "react";
 
 const MotionImage = motion(Image); // Motion-wrapped Image component
-
-
 const heroVariant: Variants = { // Framer Motion Variants
   start: {},
   end: {
