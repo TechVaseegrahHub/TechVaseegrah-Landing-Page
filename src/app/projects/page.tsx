@@ -1,8 +1,6 @@
 "use client";
-
 import { Project } from "@/sections/Project";
 import { Carousel, Card } from "@/sections/Carousel";
-import Image from "next/image";
 
 // ✅ Import images correctly
 import aiChatBotImage from "@/assets/ai-chat-bot.jpeg"; // Ensure it's in the `/public` folder
@@ -125,7 +123,7 @@ const projectCards = [
 
 export default function ProjectPage() {
   return (
-    <div className="min-h-screen py-16">
+    <div>
       <Project />
 
       {/* ✅ Pass correct `src` values to `next/image` */}

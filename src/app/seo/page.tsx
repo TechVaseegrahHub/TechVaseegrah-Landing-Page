@@ -1,5 +1,4 @@
 "use client";
-
 import { Seo } from "@/sections/Seo";
 import  SeoCall  from "@/sections/SeoCall";
 import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
@@ -36,15 +35,13 @@ const testimonialsData = [
 
 export default function TechServices() {
   return (
-    <div className="min-h-screen py-16">
-
+    <div>
       <Seo />
       <SeoScroll/>     
       <AnimatedTestimonials testimonials={testimonialsData} autoplay={true} />
       <SeoClients/>
       <FaqSeo />
-      <SeoCall /> 
-    
+      <SeoCall />    
     </div>
   );
 }

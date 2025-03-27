@@ -39,7 +39,6 @@ const faqs: FAQItem[] = [
     answer:
       "We incorporate a collaborative feedback process with dedicated revision rounds at key project milestones. Our iterative approach ensures your vision is accurately implemented throughout development.",
   },
-
 ]
 
 export default function FaqSeo() {
@@ -50,9 +49,11 @@ export default function FaqSeo() {
   }
 
   return (
-    <section className=" w-full max-w-4xl mx-auto py-16 px-4 sm:px-6">
-      <div className="text-center mb-12">
-        <h2 className="section-title md:text-5xl mt-8 mb-6">Frequently Asked Questions.</h2>
+    <section className="w-full max-w-4xl mx-auto py-8 md:py-12 lg:py-16 px-4 sm:px-6">
+      <div className="mb-12">
+        <h2 className="section-title text-3xl md:text-4xl lg:text-5xl mt-6 md:mt-8 mb-4 md:mb-6">
+          Frequently Asked Questions.
+        </h2>
       </div>
 
       <div className="space-y-4">
@@ -66,15 +67,15 @@ export default function FaqSeo() {
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="flex justify-between items-center w-full p-6 text-left"
+              className="flex items-start md:items-center w-full p-4 md:p-6 text-left"
               aria-expanded={openIndex === index}
               aria-controls={`faq-answer-${index}`}
             >
-              <h3 className=" text-2xl section-title">{faq.question}</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl section-title flex-1 pr-3 text-left">{faq.question}</h3>
               <motion.div
                 animate={{ rotate: openIndex === index ? 180 : 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="flex-shrink-0 ml-2"
+                className="flex-shrink-0 mt-1 md:mt-0"
               >
                 <ChevronDown className="h-5 w-5 text-muted-foreground" />
               </motion.div>
@@ -89,8 +90,8 @@ export default function FaqSeo() {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
-                  <div className="px-6 pb-6 pt-0 ">
-                    <p className=" section-description text-xl text-left ">{faq.answer}</p>
+                  <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
+                    <p className="section-description text-base md:text-lg lg:text-xl text-left">{faq.answer}</p>
                   </div>
                 </motion.div>
               )}
