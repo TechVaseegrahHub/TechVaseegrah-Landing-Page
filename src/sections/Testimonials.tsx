@@ -17,7 +17,7 @@ const testimonials = [
   {
     text: "Exceptional service! The team was professional, friendly, and went above and beyond to help..",
     imageSrc: avatar1.src,
-    name: "Prem",
+    name: "Prem kumar",
     username: "@jamietechguru00",
   },
   {
