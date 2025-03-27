@@ -85,7 +85,7 @@ export const Footer = () => {
               <SocialIcon href="https://www.instagram.com/techvaseegrah/" label="Instagram">
                 <Instagram size={16} />
               </SocialIcon>
-              <SocialIcon href="www.youtube.com/@TechVaseegrah" label="YouTube">
+              <SocialIcon href="https://youtube.com/@techvaseegrah?si=rPp2emhWCnE7-57X" label="YouTube">
                 <Youtube size={16} />
               </SocialIcon>
             </div>
