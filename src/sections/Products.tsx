@@ -2,7 +2,7 @@
 import Tag from "@/components/Tag"
 import FeatureCard from "@/components/FeaturesCard"
 import Image from "next/image"
-import avatar1 from "@/assets/Whatsapp.png"
+import avatar1 from "@/assets/gowhats.png"
 import avatar2 from "@/assets/Instagram.png"
 import avatar3 from "@/assets/f3.jpg"
 import Avatar from "@/components/Avatar"
@@ -82,7 +82,7 @@ export default function Products() {
       avatar: avatar3,
     },
     {
-      title: "Instamatic",
+      title: "InstaX Bot",
       description:
         "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
       avatar: avatar2,

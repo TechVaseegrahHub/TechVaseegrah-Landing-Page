@@ -15,7 +15,7 @@ import React from "react";
 
 const testimonials = [
   {
-    text: "Ajithey Kaduvuley Kaduvuley Ajithey!!.",
+    text: "Exceptional service! The team was professional, friendly, and went above and beyond to help..",
     imageSrc: avatar1.src,
     name: "Prem",
     username: "@jamietechguru00",
