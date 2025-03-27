@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Instagram, Linkedin, Facebook, ChevronUp } from "lucide-react"
+import { Instagram, Linkedin, Facebook, Youtube, ChevronUp } from "lucide-react"
 import logoImage from "@/assets/unnamed.png"
 
 const SocialIcon = ({ href, children, label }: { href: string; children: React.ReactNode; label: string }) => (
@@ -76,14 +76,17 @@ export const Footer = () => {
 
             {/* Social Media Links */}
             <div className="flex justify-center sm:justify-start gap-4 mt-5">
-              <SocialIcon href="https://linkedin.com" label="LinkedIn">
+              <SocialIcon href="https://www.linkedin.com/company/tech-vaseegrah/posts/?feedView=all" label="LinkedIn">
                 <Linkedin size={16} />
               </SocialIcon>
-              <SocialIcon href="https://facebook.com" label="Facebook">
+              <SocialIcon href="https://www.facebook.com/people/Tech-Vaseegrah/61558676843990/" label="Facebook">
                 <Facebook size={16} />
               </SocialIcon>
-              <SocialIcon href="https://instagram.com" label="Instagram">
+              <SocialIcon href="https://www.instagram.com/techvaseegrah/" label="Instagram">
                 <Instagram size={16} />
+              </SocialIcon>
+              <SocialIcon href="www.youtube.com/@TechVaseegrah" label="YouTube">
+                <Youtube size={16} />
               </SocialIcon>
             </div>
           </div>

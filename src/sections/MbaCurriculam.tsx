@@ -5,13 +5,13 @@ export default function MbaCurriculam() {
     {
       title: "Industry-Relevant Curriculum",
       description:
-        "Designed with insights from business leaders and industry experts.",
+        "Stay ahead with a syllabus curated by successful business leaders, entrepreneurs, and industry experts.",
       icon: <Users className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
     },
     {
       title: "Real-World Case Studies",
       description:
-        "Learn from the success and failures of top companies.",
+        "Gain insights through real-world business case studies, live projects, and interactive workshops.",
       icon: <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
     },
     {

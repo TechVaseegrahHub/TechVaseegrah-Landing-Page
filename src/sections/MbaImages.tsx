@@ -7,15 +7,23 @@ export default function MbaImages() {
       <div className="space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-5">
-            <h2 className="text-5xl font-bold tracking-tight section-title text-left">Our people</h2>
+            <h2 className="md:text-5xl text-4xl font-bold tracking-tight section-title text-left">Our Intern</h2>
             <div className="space-y-4">
               <p className="section-description text-left text-base">
-                Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem minus
-                ut molestiae velit error quod. Excepturi quidem expedita molestias quas.
+              The MBA Business Program is designed for entrepreneurs, 
+              usiness owners, and students who aspire to gain advanced 
+              business knowledge, strategic leadership skills, and 
+              hands-on experience in managing and scaling businesses
               </p>
               <p className="section-description text-left text-base">
-                Anim quis id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.
+              Unlike traditional MBA programs that focus primarily 
+              on theory, this industry-driven program blends 
+              academic excellence with real-world case studies, 
+              business simulations, and hands-on projects. 
+              Whether you're launching a startup, scaling an 
+              existing business, or preparing for a leadership 
+              role, this program will equip you with the tools, 
+              frameworks, and strategies needed to succeed.
               </p>
             </div>
           </div>
