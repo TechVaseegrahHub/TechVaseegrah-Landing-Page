@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Instagram, Linkedin, Facebook, Youtube, ChevronUp } from "lucide-react"
-import logoImage from "@/assets/tech-v-logo.png"
+import logoImage from "@/assets/techv.png"
 
 const SocialIcon = ({ href, children, label }: { href: string; children: React.ReactNode; label: string }) => (
   <motion.a
@@ -62,8 +62,8 @@ export const Footer = () => {
               >
                 <Image
                   src={logoImage || "/placeholder.svg"}
-                  height={180}
-                  width={180}
+                  height={160}
+                  width={160}
                   alt="Tech Vaseegrah Logo"
                   className="rounded-full shadow-sm"
                 />
