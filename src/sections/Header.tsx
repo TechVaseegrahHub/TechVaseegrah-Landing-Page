@@ -85,16 +85,16 @@ export default function Header() {
               onMouseEnter={() => handleDropdownEnter("services")}
               onMouseLeave={handleDropdownLeave}
             >
-              <DropdownLink href="/internship" onClick={closeAll}>
+              <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Web Development
               </DropdownLink>
-              <DropdownLink href="/internship" onClick={closeAll}>
+              <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Social Media Marketing
               </DropdownLink>
-              <DropdownLink href="/internship" onClick={closeAll}>
+              <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Social Media Management
               </DropdownLink>
-              <DropdownLink href="/internship" onClick={closeAll}>
+              <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Branding &amp; Consultation
               </DropdownLink>
               <DropdownLink href="/seo" onClick={closeAll}>
@@ -288,16 +288,16 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
           <motion.div variants={itemVariants} className="flex flex-col text-center">
             <span className="text-gray-500 text-sm uppercase mb-2">Services</span>
             <div className="flex flex-col space-y-3">
-              <MobileLink href="/internship" onClick={onClose}>
+              <MobileLink href="/undermaintain" onClick={onClose}>
                 Web Development
               </MobileLink>
-              <MobileLink href="/internship" onClick={onClose}>
+              <MobileLink href="/undermaintain" onClick={onClose}>
                 Social Media Marketing
               </MobileLink>
-              <MobileLink href="/seo" onClick={onClose}>
+              <MobileLink href="/undermaintain" onClick={onClose}>
               Social Media Management
               </MobileLink>
-              <MobileLink href="/seo" onClick={onClose}>
+              <MobileLink href="/undermaintain" onClick={onClose}>
               Branding &amp; Consulation
               </MobileLink>
               <MobileLink href="/seo" onClick={onClose}>

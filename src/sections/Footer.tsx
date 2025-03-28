@@ -97,7 +97,8 @@ export const Footer = () => {
             <ul className="space-y-1">
             {[
                 { name: "About", href: "/about" },
-                { name: "Careers", href: "/internship" } // Updated "Careers" link to point to internship
+                { name: "Careers", href: "/internship" },
+                { name: "Contact", href: "/contact" }  // Updated "Careers" link to point to internship
               ].map((link) => (
                 <FooterLink key={link.name} href={link.href}>
                   {link.name}
@@ -110,8 +111,8 @@ export const Footer = () => {
            <div className="lg:col-span-3 sm:mt-2">
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Resources</h3>
             <ul className="space-y-1">
-              {["Blog", "Documentation", "Help Center", "Contact"].map((item) => (
-                <FooterLink key={item} href="#">
+              {["Blog", "Documentation", "Help Center"].map((item) => (
+                <FooterLink key={item} href="/undermaintain">
                   {item}
                 </FooterLink>
               ))}
@@ -122,9 +123,9 @@ export const Footer = () => {
           <div className="lg:col-span-3 sm:mt-2">
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Legal</h3>
             <ul className="space-y-1 ">
-              <FooterLink href="#">Privacy Policy</FooterLink>
-              <FooterLink href="#">Terms of Service</FooterLink>
-              <FooterLink href="#">Cookie Policy</FooterLink>
+              <FooterLink href="/undermaintain">Privacy Policy</FooterLink>
+              <FooterLink href="/undermaintain">Terms of Service</FooterLink>
+              <FooterLink href="/undermaintain">Cookie Policy</FooterLink>
             </ul>
           </div>
         </div>
