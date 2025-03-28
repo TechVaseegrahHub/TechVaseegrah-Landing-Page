@@ -99,9 +99,9 @@ export const InternHomeExplore = () => {
         
           </div>
 
-          <div className="flex gap-2 mt-10 justify-center">
+          <div className="flex gap-2 mt-10 justify-center ">
          <Link href="/internship">
-         <motion.button variants={heroChildVariant} className="btn btn-primary">
+         <motion.button variants={heroChildVariant} className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200">
             Explore
           </motion.button>
          </Link>

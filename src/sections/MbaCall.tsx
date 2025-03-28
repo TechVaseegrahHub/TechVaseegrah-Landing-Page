@@ -47,7 +47,7 @@ export default function NewsletterSection() {
                 </div>
               )}
             </div>
-            <button type="submit" className="btn btn-primary h-12 px-6 whitespace-nowrap">
+            <button type="submit" className="bg-black text-white  rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200h-12 px-6 h-12 whitespace-nowrap">
               Apply Now
             </button>
           </form>
