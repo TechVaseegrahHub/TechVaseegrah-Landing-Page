@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   title: "Tech Vaseegrah",
   description: "Transforming small businesses into smart businesses",
   icons: {
-    icon: "/unnamed.png",  // Path to your favicon (ensure it's correct)
+    icon: "/unnamed.png",
+    apple: "/unnamed.png",  
   },
 };
 

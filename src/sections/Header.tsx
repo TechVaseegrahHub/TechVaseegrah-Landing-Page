@@ -3,153 +3,256 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
-import Logo from "@/assets/tech-v-logo.png"
+import { Menu, X, ChevronDown } from "lucide-react"
+import Logo from "@/assets/tech-v-logo.png";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-  const [isScrolled, setIsScrolled] = useState<boolean>(false)
-  const [isHeroCrossed, setIsHeroCrossed] = useState<boolean>(false)
-  const heroRef = useRef<HTMLDivElement>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Handle scroll event to check if hero section is crossed
+  // Cleanup timeouts on unmount
   useEffect(() => {
-    const handleScroll = () => {
-      // Check if the user has scrolled down
-      setIsScrolled(window.scrollY > 0)
-
-      // Check if the hero section is out of view
-      if (heroRef.current) {
-        const heroRect = heroRef.current.getBoundingClientRect()
-        setIsHeroCrossed(heroRect.bottom <= 0) // Hero section is crossed when its bottom is above the viewport
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current)
       }
     }
-
-    // Attach the scroll event listener
-    window.addEventListener("scroll", handleScroll)
-
-    // Cleanup the event listener on unmount
-    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Disable body scroll when mobile menu is open
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "unset"
-    return () => {
-      document.body.style.overflow = "unset"
+  const handleDropdownEnter = (dropdown: string) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
     }
-  }, [isMenuOpen])
+    setActiveDropdown(dropdown)
+  }
 
-  // Close mobile menu
-  const closeMenu = () => {
+  const handleDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 300) // Increased delay for better UX
+  }
+
+  const toggleMobileMenu = () => {
+    setIsMenuOpen(prev => !prev)
+  }
+
+  const closeAll = () => {
     setIsMenuOpen(false)
+    setActiveDropdown(null)
   }
 
   return (
-    <header
-      className={`sticky top-0 z-[1000] transition-all duration-300 bg-white/50 backdrop-blur-lg shadow-md`}
-    >
-      {/* 🔥 Navbar */}
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="transition-opacity duration-300 hover:opacity-80" onClick={closeMenu}>
-            <Image src={Logo || "/placeholder.svg"} alt="Tech V Logo" height={170} width={170} />
-          </Link>
+          <Link href="/" className="z-50" onClick={closeAll}>
+  <Image 
+    src={Logo} 
+    alt="Company Logo" 
+    width={170}  // Set your desired display width
+    height={60}  // Set your desired display height
+    priority    // Optional: if this is above-the-fold content
+    className="object-contain" // Ensures proper aspect ratio
+  />
+</Link>
 
-          {/* 🔥 Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-6 text-gray-800">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/internship">Internship</NavLink>
-            <NavLink href="/projects">Projects</NavLink>
-            <NavLink href="/seo">SEO Services</NavLink>
-            <NavLink href="/mbaintern">MBA Internship Programs</NavLink>
-            <Link
-              href="/contact"
-              className="relative overflow-hidden bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight group"
-              onClick={closeMenu}
+            
+            {/* Internships Dropdown */}
+            <Dropdown 
+              title="Internships"
+              isActive={activeDropdown === "internships"}
+              onMouseEnter={() => handleDropdownEnter("internships")}
+              onMouseLeave={handleDropdownLeave}
             >
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-black">Contact Us</span>
-              <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <DropdownLink href="/internship" onClick={closeAll}>
+                Internships
+              </DropdownLink>
+              <DropdownLink href="/mbaintern" onClick={closeAll}>
+                MBA Internships
+              </DropdownLink>
+            </Dropdown>
+
+            <NavLink href="/projects">Projects</NavLink>
+
+            {/* Services Dropdown */}
+            <Dropdown 
+              title="Services"
+              isActive={activeDropdown === "services"}
+              onMouseEnter={() => handleDropdownEnter("services")}
+              onMouseLeave={handleDropdownLeave}
+            >
+              <DropdownLink href="/internship" onClick={closeAll}>
+              Web Development
+              
+              </DropdownLink>
+              <DropdownLink href="/internship" onClick={closeAll}>
+              App Development
+              </DropdownLink>
+              <DropdownLink href="/seo" onClick={closeAll}>
+              SEO Services
+              </DropdownLink>
+            </Dropdown>
+
+            <Link 
+              href="/contact" 
+              className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200"
+              onClick={closeAll}
+            >
+              Contact
             </Link>
           </nav>
 
-          {/* 🔥 Mobile Menu Button */}
-          <button
-            className="md:hidden z-50 p-2 transition-all duration-300 focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2 z-50"
+            onClick={toggleMobileMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-black" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Menu className="h-6 w-6 text-black" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* 🔥 Mobile Menu */}
-      <div
-        className={`fixed inset-0 h-screen w-full z-40 backdrop-blur-2xl bg-black/90 transition-all duration-500 ease-in-out ${
-          isMenuOpen ? "opacity-100 visible translate-y-0 scale-100" : "opacity-0 invisible -translate-y-5 scale-95"
-        }`}
-      >
-        <nav className="flex flex-col items-center justify-center h-full space-y-8 text-white">
-          <MobileNavLink href="/" onClick={closeMenu}>
-            Home
-          </MobileNavLink>
-          <MobileNavLink href="/internship" onClick={closeMenu}>
-            Internship
-          </MobileNavLink>
-          <MobileNavLink href="/projects" onClick={closeMenu}>
-            Projects
-          </MobileNavLink>
-          
-          <MobileNavLink href="/seo" onClick={closeMenu}>
-            SEO Services
-          </MobileNavLink>
-            
-          <MobileNavLink href="/mbaintern" onClick={closeMenu}>
-            MBA Internship Programs
-          </MobileNavLink>
-
-          <Link
-            href="/contact"
-            className="bg-white text-black px-8 py-3 rounded-full text-lg font-medium transition-colors duration-300 hover:bg-gray-200"
-            onClick={closeMenu}
-          >
-            Contact Us
-          </Link>
-        </nav>
-      </div>
+      {/* Mobile Menu Overlay */}
+      <MobileMenu isOpen={isMenuOpen} onClose={closeAll} />
     </header>
   )
 }
 
-/* 🔥 Desktop NavLink */
-interface NavLinkProps {
-  href: string
+// Dropdown Component
+const Dropdown = ({ 
+  title, 
+  isActive, 
+  onMouseEnter, 
+  onMouseLeave, 
+  children 
+}: {
+  title: string
+  isActive: boolean
+  onMouseEnter: () => void
+  onMouseLeave: () => void
   children: React.ReactNode
+}) => {
+  return (
+    <div 
+      className="relative group"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <button 
+        className="flex items-center gap-1 hover:text-black transition-colors"
+        aria-expanded={isActive}
+      >
+        {title}
+        <ChevronDown className={`h-4 w-4 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+      </button>
+      
+      <div 
+        className={`absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg transition-all duration-200 ${
+          isActive 
+            ? 'opacity-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <div className="py-1">
+          {children}
+        </div>
+      </div>
+    </div>
+  )
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
-  <Link
-    href={href}
-    className="relative group text-gray-800 hover:text-black focus-visible:text-black active:text-black transition-colors duration-300"
-  >
-    <span>{children}</span>
-    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full group-focus-visible:w-full group-active:w-full"></span>
-  </Link>
-)
-
-/* 🔥 Mobile NavLink */
-interface MobileNavLinkProps {
+// Dropdown Link Component
+const DropdownLink = ({ 
+  href, 
+  onClick, 
+  children 
+}: {
   href: string
   onClick: () => void
   children: React.ReactNode
+}) => {
+  return (
+    <Link
+      href={href}
+      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+      onClick={onClick}
+    >
+      {children}
+    </Link>
+  )
 }
 
-const MobileNavLink: React.FC<MobileNavLinkProps> = ({ href, onClick, children }) => (
+// Mobile Menu Component
+const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+  return (
+    <div
+      className={`fixed inset-0 bg-black/90 backdrop-blur-lg z-40 transition-all duration-300 ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}
+    >
+      <div className="flex flex-col items-center justify-center h-full space-y-6 p-4">
+        <MobileLink href="/" onClick={onClose}>Home</MobileLink>
+        
+        <div className="flex flex-col items-center">
+          <span className="text-gray-400 text-sm uppercase mb-2">Internships</span>
+          <MobileLink href="/internships" onClick={onClose}>All Internships</MobileLink>
+          <MobileLink href="/mbaintern" onClick={onClose}>MBA Internships</MobileLink>
+        </div>
+        
+        <MobileLink href="/projects" onClick={onClose}>Projects</MobileLink>
+        
+        <div className="flex flex-col items-center">
+          <span className="text-gray-400 text-sm uppercase mb-2">Services</span>
+          <MobileLink href="/seo" onClick={onClose}>SEO Services</MobileLink>
+          <MobileLink href="/web-development" onClick={onClose}>Web Development</MobileLink>
+          <MobileLink href="/app-development" onClick={onClose}>App Development</MobileLink>
+        </div>
+        
+        <MobileLink 
+          href="/contact" 
+          onClick={onClose}
+          className="bg-white text-black px-6 py-3 rounded-lg font-medium"
+        >
+          Contact Us
+        </MobileLink>
+      </div>
+    </div>
+  )
+}
+
+// Link Components
+const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
+  <Link href={href} className="hover:text-black transition-colors">
+    {children}
+  </Link>
+)
+
+const MobileLink = ({ 
+  href, 
+  onClick, 
+  children,
+  className = ""
+}: { 
+  href: string
+  onClick: () => void
+  children: React.ReactNode
+  className?: string
+}) => (
   <Link
     href={href}
-    className="text-white text-xl font-medium transition-colors duration-300 hover:text-gray-300 focus-visible:text-gray-300 active:text-gray-300"
+    className={`text-white text-xl py-2 ${className}`}
     onClick={onClick}
   >
     {children}
