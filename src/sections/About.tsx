@@ -24,7 +24,7 @@ function About() {
       <article className='relative overflow-hidden flex-grow'>
         <div className='info p-2 translate-y-0 group-hover:-translate-y-20 transition-all duration-300'>
           <p className='md:text-2xl font-semibold section-title text-left'>SreeKarrthiyen Mahadevan</p>
-          <p className='sm:text-base text-sm section-description text-left'>CEO & Design Engineer</p>
+          <p className='sm:text-base text-sm section-description text-left'>CEO & Digital Consultant</p>
         </div>
         <button className='absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3 text-3xl font-medium transition-all duration-300 w-full text-center section-title'>
            Founder & CEO 

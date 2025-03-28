@@ -4,8 +4,8 @@ import { Carousel, Card } from "@/sections/Carousel";
 
 // ✅ Import images correctly
 import aiChatBotImage from "@/assets/insta-x-bot.png"; // Ensure it's in the `/public` folder
-import eComImage from "@/assets/f3.jpg";
-import f3Image from "@/assets/gowhats.png";
+import eComImage from "@/assets/f3logo.png";
+import f3Image from "@/assets/go.png";
 
 // ✅ Sample Data for Carousel
 const projectCards = [ 

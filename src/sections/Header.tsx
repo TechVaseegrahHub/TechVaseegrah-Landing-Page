@@ -70,7 +70,7 @@ export default function Header() {
               onMouseLeave={handleDropdownLeave}
             >
               <DropdownLink href="/internship" onClick={closeAll}>
-                Internships
+               IT Internships
               </DropdownLink>
               <DropdownLink href="/mbaintern" onClick={closeAll}>
                 MBA Internships
@@ -271,7 +271,7 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
             <span className="text-gray-500 text-sm uppercase mb-2">Internships</span>
             <div className="flex flex-col space-y-3">
               <MobileLink href="/internship" onClick={onClose}>
-                Internships
+               IT Internships
               </MobileLink>
               <MobileLink href="/mbaintern" onClick={onClose}>
                 MBA Internships
@@ -292,10 +292,16 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
                 Web Development
               </MobileLink>
               <MobileLink href="/internship" onClick={onClose}>
-                App Development
+                Social Media Marketing
               </MobileLink>
               <MobileLink href="/seo" onClick={onClose}>
-                SEO Services
+              Social Media Management
+              </MobileLink>
+              <MobileLink href="/seo" onClick={onClose}>
+              Branding &amp; Consulation
+              </MobileLink>
+              <MobileLink href="/seo" onClick={onClose}>
+              SEO Service
               </MobileLink>
             </div>
           </motion.div>
