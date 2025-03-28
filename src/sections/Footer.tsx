@@ -96,7 +96,7 @@ export const Footer = () => {
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Company</h3>
             <ul className="space-y-1">
             {[
-                { name: "About", href: "#" },
+                { name: "About", href: "/about" },
                 { name: "Careers", href: "/internship" } // Updated "Careers" link to point to internship
               ].map((link) => (
                 <FooterLink key={link.name} href={link.href}>
