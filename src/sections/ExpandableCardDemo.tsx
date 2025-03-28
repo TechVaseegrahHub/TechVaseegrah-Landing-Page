@@ -150,7 +150,7 @@ const cards = [
   {
     description: "Internship",
     title: "Web Development",
-    src: "/assets/images/code.png",
+    src: "/assets/images/0013.png",
     ctaText: "Apply",
     ctaLink: "",
     content: () => (
