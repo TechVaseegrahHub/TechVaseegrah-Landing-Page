@@ -1,6 +1,6 @@
 "use client";
-import rocketImage from "@/assets/email-marketing.png";
-import aiImage from "@/assets/rocket-2.png";
+import rocketImage from "@/assets/seop.png";
+import aiImage from "@/assets/seop2.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";

@@ -1,6 +1,6 @@
 "use client";
-import rocketImage from "@/assets/rocket-launch.png";
-import aiImage from "@/assets/ai-scanner.png";
+import rocketImage from "@/assets/abtp.png";
+import aiImage from "@/assets/abtp2.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -116,9 +116,9 @@ export const AboutHead = () => {
             variants={heroChildVariant}
             src={aiImage}
             alt="AI Scanner "
-            height={240}
-            width={240}
-            className="hidden md:block absolute bottom-24 -left-36"
+            height={220}
+            width={220}
+            className="hidden md:block absolute bottom-20 -left-36"
             style={{ translateY }}
           />        
         </div>
