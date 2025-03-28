@@ -3,16 +3,16 @@ import { Project } from "@/sections/Project";
 import { Carousel, Card } from "@/sections/Carousel";
 
 // ✅ Import images correctly
-import aiChatBotImage from "@/assets/ai-chat-bot.jpeg"; // Ensure it's in the `/public` folder
-import eComImage from "@/assets/ecom.jpeg";
-import f3Image from "@/assets/f3.jpg";
+import aiChatBotImage from "@/assets/insta-x-bot.png"; // Ensure it's in the `/public` folder
+import eComImage from "@/assets/f3.jpg";
+import f3Image from "@/assets/gowhats.png";
 
 // ✅ Sample Data for Carousel
 const projectCards = [ 
   {
     src: aiChatBotImage, // ✅ Imported image
-    title: "AI Product Generator",
-    category: "Technology",
+    title: "InstaX Bot",
+    category: "AI",
     content: <p>
                 Generate AI-powered product descriptions.
                 All-in-one order processing platform 
@@ -47,8 +47,8 @@ const projectCards = [
   
   {
     src: eComImage, // ✅ Image from the `public` folder
-    title: "E-Commerce Analytics",
-    category: "Business",
+    title: "F3 Engine",
+    category: "Technology",
     content: <p>
                 Analyze your sales data with AI-driven insights.
                 All-in-one order processing platform 
@@ -82,7 +82,7 @@ const projectCards = [
   
   {
     src:  f3Image, // ✅ Image from the `public` folder
-    title: "F3 Engine",
+    title: "GoWhats",
     category: "AI",
     content: <p>
                 All-in-one order processing platform 
@@ -123,7 +123,7 @@ const projectCards = [
 
 export default function ProjectPage() {
   return (
-    <div>
+    <div className="mb-10">
       <Project />
 
       {/* ✅ Pass correct `src` values to `next/image` */}

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, ChevronDown } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 import Logo from "@/assets/tech-v-logo.png";
 
 export default function Header() {
@@ -30,7 +31,7 @@ export default function Header() {
   const handleDropdownLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null)
-    }, 300) // Increased delay for better UX
+    }, 300)
   }
 
   const toggleMobileMenu = () => {
@@ -48,21 +49,20 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="z-50" onClick={closeAll}>
-  <Image 
-    src={Logo} 
-    alt="Company Logo" 
-    width={170}  // Set your desired display width
-    height={60}  // Set your desired display height
-    priority    // Optional: if this is above-the-fold content
-    className="object-contain" // Ensures proper aspect ratio
-  />
-</Link>
+            <Image 
+              src={Logo} 
+              alt="Company Logo" 
+              width={170}
+              height={60}
+              priority
+              className="object-contain"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <NavLink href="/">Home</NavLink>
             
-            {/* Internships Dropdown */}
             <Dropdown 
               title="Internships"
               isActive={activeDropdown === "internships"}
@@ -79,7 +79,6 @@ export default function Header() {
 
             <NavLink href="/projects">Projects</NavLink>
 
-            {/* Services Dropdown */}
             <Dropdown 
               title="Services"
               isActive={activeDropdown === "services"}
@@ -87,20 +86,25 @@ export default function Header() {
               onMouseLeave={handleDropdownLeave}
             >
               <DropdownLink href="/internship" onClick={closeAll}>
-              Web Development
-              
+                Web Development
               </DropdownLink>
               <DropdownLink href="/internship" onClick={closeAll}>
-              App Development
+                Social Media Marketing
+              </DropdownLink>
+              <DropdownLink href="/internship" onClick={closeAll}>
+                Social Media Management
+              </DropdownLink>
+              <DropdownLink href="/internship" onClick={closeAll}>
+                Branding &amp; Consultation
               </DropdownLink>
               <DropdownLink href="/seo" onClick={closeAll}>
-              SEO Services
+                SEO Services
               </DropdownLink>
             </Dropdown>
-
+            
             <Link 
               href="/contact" 
-              className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200"
+              className="bg-black text-white  rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200h-12 px-4 py-2"
               onClick={closeAll}
             >
               Contact
@@ -109,12 +113,12 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 z-50"
+            className="md:hidden p-2 z-50 rounded-md hover:bg-gray-100 transition-colors"
             onClick={toggleMobileMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-white" />
+              <X className="h-6 w-6 text-black" />
             ) : (
               <Menu className="h-6 w-6 text-black" />
             )}
@@ -123,7 +127,11 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <MobileMenu isOpen={isMenuOpen} onClose={closeAll} />
+      <AnimatePresence>
+        {isMenuOpen && (
+          <MobileMenu isOpen={isMenuOpen} onClose={closeAll} />
+        )}
+      </AnimatePresence>
     </header>
   )
 }
@@ -153,22 +161,29 @@ const Dropdown = ({
         aria-expanded={isActive}
       >
         {title}
-        <ChevronDown className={`h-4 w-4 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+        <motion.span
+          animate={{ rotate: isActive ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="h-4 w-4" />
+        </motion.span>
       </button>
       
-      <div 
-        className={`absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg transition-all duration-200 ${
-          isActive 
-            ? 'opacity-100 translate-y-0 pointer-events-auto' 
-            : 'opacity-0 -translate-y-2 pointer-events-none'
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ 
+          opacity: isActive ? 1 : 0,
+          y: isActive ? 0 : -10
+        }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className={`absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg ${
+          isActive ? 'pointer-events-auto' : 'pointer-events-none'
         }`}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
       >
         <div className="py-1">
           {children}
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
@@ -186,7 +201,7 @@ const DropdownLink = ({
   return (
     <Link
       href={href}
-      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200"
       onClick={onClick}
     >
       {children}
@@ -196,46 +211,121 @@ const DropdownLink = ({
 
 // Mobile Menu Component
 const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+  const menuVariants = {
+    hidden: { 
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        staggerChildren: 0.05,
+        delayChildren: 0.1
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
-    <div
-      className={`fixed inset-0 bg-black/90 backdrop-blur-lg z-40 transition-all duration-300 ${
-        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={menuVariants}
+      className="fixed inset-0 bg-white/95 backdrop-blur-md z-40 pt-24"
+      style={{
+        top: '80px',
+        height: 'calc(100vh - 80px)'
+      }}
     >
-      <div className="flex flex-col items-center justify-center h-full space-y-6 p-4">
-        <MobileLink href="/" onClick={onClose}>Home</MobileLink>
-        
-        <div className="flex flex-col items-center">
-          <span className="text-gray-400 text-sm uppercase mb-2">Internships</span>
-          <MobileLink href="/internships" onClick={onClose}>All Internships</MobileLink>
-          <MobileLink href="/mbaintern" onClick={onClose}>MBA Internships</MobileLink>
-        </div>
-        
-        <MobileLink href="/projects" onClick={onClose}>Projects</MobileLink>
-        
-        <div className="flex flex-col items-center">
-          <span className="text-gray-400 text-sm uppercase mb-2">Services</span>
-          <MobileLink href="/seo" onClick={onClose}>SEO Services</MobileLink>
-          <MobileLink href="/web-development" onClick={onClose}>Web Development</MobileLink>
-          <MobileLink href="/app-development" onClick={onClose}>App Development</MobileLink>
-        </div>
-        
-        <MobileLink 
-          href="/contact" 
-          onClick={onClose}
-          className="bg-white text-black px-6 py-3 rounded-lg font-medium"
+      <div className="container mx-auto px-6 py-4 h-full overflow-y-auto">
+        <motion.div 
+          className="flex flex-col space-y-6 max-w-md mx-auto"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+              }
+            }
+          }}
         >
-          Contact Us
-        </MobileLink>
+          <motion.div variants={itemVariants} className="text-center">
+            <MobileLink href="/" onClick={onClose}>
+              Home
+            </MobileLink>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="flex flex-col text-center">
+            <span className="text-gray-500 text-sm uppercase mb-2">Internships</span>
+            <div className="flex flex-col space-y-3">
+              <MobileLink href="/internship" onClick={onClose}>
+                Internships
+              </MobileLink>
+              <MobileLink href="/mbaintern" onClick={onClose}>
+                MBA Internships
+              </MobileLink>
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="text-center">
+            <MobileLink href="/projects" onClick={onClose}>
+              Projects
+            </MobileLink>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="flex flex-col text-center">
+            <span className="text-gray-500 text-sm uppercase mb-2">Services</span>
+            <div className="flex flex-col space-y-3">
+              <MobileLink href="/internship" onClick={onClose}>
+                Web Development
+              </MobileLink>
+              <MobileLink href="/internship" onClick={onClose}>
+                App Development
+              </MobileLink>
+              <MobileLink href="/seo" onClick={onClose}>
+                SEO Services
+              </MobileLink>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            variants={itemVariants}
+            className="pt-4 text-center"
+          >
+            <MobileLink 
+              href="/contact" 
+              onClick={onClose}
+              className="bg-black text-white px-6 py-3 rounded-lg font-medium tracking-tight hover:bg-white transition-colors duration-200"
+            >
+              Contact Us
+            </MobileLink>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 // Link Components
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-  <Link href={href} className="hover:text-black transition-colors">
+  <Link 
+    href={href} 
+    className="hover:text-black transition-colors duration-200 relative group"
+  >
     {children}
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
   </Link>
 )
 
@@ -252,9 +342,15 @@ const MobileLink = ({
 }) => (
   <Link
     href={href}
-    className={`text-white text-xl py-2 ${className}`}
+    className={`text-gray-800 text-lg py-2 hover:text-black transition-colors duration-200 ${className}`}
     onClick={onClick}
   >
-    {children}
+    <motion.span
+      whileHover={{ x: 5 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="inline-block"
+    >
+      {children}
+    </motion.span>
   </Link>
 )

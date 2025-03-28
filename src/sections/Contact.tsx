@@ -171,9 +171,8 @@ export const Contact = () => {
             <div className="mt-8 md:mt-10">
               <p className="text-gray-700 font-medium">Connect with us:</p>
               <div className="flex space-x-6 mt-4">
-                <SocialButton link="https://linkedin.com" icon={<FaLinkedin size={24} />} />
-                <SocialButton link="https://github.com" icon={<FaGithub size={24} />} />
-                <SocialButton link="https://instagram.com" icon={<FaInstagram size={24} />} />
+                <SocialButton link="https://www.linkedin.com/company/tech-vaseegrah/posts/?feedView=all" icon={<FaLinkedin size={24} />} />
+                <SocialButton link="https://www.instagram.com/techvaseegrah/" icon={<FaInstagram size={24} />} />
                 <SocialButton link="https://wa.me/+918524089733" icon={<FaWhatsapp size={24} />} />
                 <SocialButton link="mailto:admin@techvaseegrah.com" icon={<FaEnvelope size={24} />} />
               </div>
@@ -224,7 +223,7 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className="w-full bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all flex items-center justify-center"
+              className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all flex items-center justify-center"
               disabled={isSubmitting}
             >
               {isSubmitting ? <Loader2 className="animate-spin h-5 w-5 mr-2" /> : <Send className="h-5 w-5 mr-2" />}

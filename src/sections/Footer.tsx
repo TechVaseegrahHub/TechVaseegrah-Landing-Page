@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Instagram, Linkedin, Facebook, Youtube, ChevronUp } from "lucide-react"
-import logoImage from "@/assets/unnamed.png"
+import logoImage from "@/assets/tech-v-logo.png"
 
 const SocialIcon = ({ href, children, label }: { href: string; children: React.ReactNode; label: string }) => (
   <motion.a
@@ -62,8 +62,8 @@ export const Footer = () => {
               >
                 <Image
                   src={logoImage || "/placeholder.svg"}
-                  height={52}
-                  width={52}
+                  height={180}
+                  width={180}
                   alt="Tech Vaseegrah Logo"
                   className="rounded-full shadow-sm"
                 />
@@ -95,7 +95,7 @@ export const Footer = () => {
           <div className="lg:col-span-2 sm:mt-2">
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Company</h3>
             <ul className="space-y-1">
-              {["About", "Careers", "Press", "News"].map((item) => (
+              {["About", "Careers",].map((item) => (
                 <FooterLink key={item} href="#">
                   {item}
                 </FooterLink>
@@ -104,7 +104,7 @@ export const Footer = () => {
           </div>
 
           {/* Resources Section */}
-          <div className="lg:col-span-3 sm:mt-2">
+          {/* <div className="lg:col-span-3 sm:mt-2">
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Resources</h3>
             <ul className="space-y-1">
               {["Blog", "Documentation", "Help Center", "Contact"].map((item) => (
@@ -113,7 +113,7 @@ export const Footer = () => {
                 </FooterLink>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Legal Section */}
           <div className="lg:col-span-3 sm:mt-2">
