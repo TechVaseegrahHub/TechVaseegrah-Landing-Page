@@ -95,16 +95,19 @@ export const Footer = () => {
           <div className="lg:col-span-2 sm:mt-2">
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Company</h3>
             <ul className="space-y-1">
-              {["About", "Careers",].map((item) => (
-                <FooterLink key={item} href="#">
-                  {item}
+            {[
+                { name: "About", href: "#" },
+                { name: "Careers", href: "/internship" } // Updated "Careers" link to point to internship
+              ].map((link) => (
+                <FooterLink key={link.name} href={link.href}>
+                  {link.name}
                 </FooterLink>
               ))}
             </ul>
           </div>
 
           {/* Resources Section */}
-          {/* <div className="lg:col-span-3 sm:mt-2">
+           <div className="lg:col-span-3 sm:mt-2">
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Resources</h3>
             <ul className="space-y-1">
               {["Blog", "Documentation", "Help Center", "Contact"].map((item) => (
@@ -113,7 +116,7 @@ export const Footer = () => {
                 </FooterLink>
               ))}
             </ul>
-          </div> */}
+          </div> 
 
           {/* Legal Section */}
           <div className="lg:col-span-3 sm:mt-2">
