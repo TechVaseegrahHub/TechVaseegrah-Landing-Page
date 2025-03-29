@@ -2,7 +2,6 @@
 import Image from "next/image";
 import maintenanceImg from "@/assets/34.png";
 
-
 export default function UnderMaintain() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] flex flex-col justify-center items-center px-4 py-16 sm:px-6 lg:px-8">
