@@ -177,14 +177,14 @@ export default function AboutUs() {
                 bio: "",
               },
               {
-                name: "Mrs. Sujitha Kumaran",
+                name: "Ms. Sujitha Kumaran",
                 role: "Meta developer",
-                image: "/sujitha.jpg",
+                image: "/sujitha3.jpg",
                 bio: "",
               },
 
          {
-                name: "Mrs. S.Peararulselvi",
+                name: "Ms. S.Peararulselvi",
                 role: "Web App Developer",
                 image: "/peruarul.png",
                 bio: "",
@@ -213,7 +213,7 @@ export default function AboutUs() {
 
               {
                 name: "Mr. Parthasarathi",
-                role: "UI/UX Designer",
+                role: "Product Designer",
                 image: "/partha.png",
                 bio: "",
               },
@@ -227,7 +227,7 @@ export default function AboutUs() {
               },
         
               {
-                name: "Mrs. Shalini S",
+                name: "Ms. Shalini S",
                 role: "Auditor",
                 image: "/shalini.png",
                 bio: "",
