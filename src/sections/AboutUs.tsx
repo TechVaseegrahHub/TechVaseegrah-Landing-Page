@@ -6,233 +6,84 @@ export default function AboutUs() {
   return (
     <section className="w-full py-24 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF]">
       <div className="container px-4 md:px-6">
-        {/* Header */}
-        {/* <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-20">
-          <div className="space-y-3 md:space-y-4">
-            <div className="tag mb-4">About Us</div>
-            <h2
-              className="text-2xl md:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tighter 
-                           mb-4 md:mb-6 bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text px-4">
-              We build digital solutions
-            </h2>
-
-            <p className="max-w-[900px] text-[#010D3E] text-sm md:text-base lg:text-lg xl:text-xl px-4 md:px-6">
-              We&apos;re a team of passionate developers, designers, and strategists dedicated to transforming ideas into
-              powerful digital experiences.
-            </p>
-          </div>
-        </div> */}
-
-        {/* Our Company Section */}
-        {/* <div className="max-w-5xl mx-auto mb-24">
-          <h3 className="text-2xl font-bold text-center mb-12">Our Company</h3>
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold">Innovative Solutions Since 2020</h3>
-              <p className="text-gray-500">
-                Founded with a vision to bridge the gap between complex technology and business needs, we've grown into
-                a full-service digital partner for companies across industries.
-              </p>
-              <div className="space-y-2">
-                {[
-                  "Custom software development",
-                  "Cloud infrastructure",
-                  "AI & machine learning solutions",
-                  "Digital transformation consulting",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <Button className="mt-4 group">
-                Learn more about our services
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
-            <div className="relative aspect-video overflow-hidden rounded-xl">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Modern office space with team working"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
-            <div className="text-center">
-              <div className="text-3xl font-bold">50+</div>
-              <div className="text-sm text-gray-500">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">25</div>
-              <div className="text-sm text-gray-500">Team Members</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">12</div>
-              <div className="text-sm text-gray-500">Countries Served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">98%</div>
-              <div className="text-sm text-gray-500">Client Satisfaction</div>
-            </div>
-          </div>
-        </div> */}
-
-        {/* Our Mission Section */}
-        {/* <div className="max-w-5xl mx-auto my-16 md:my-24 px-4">
-          <h3
-            className="text-2xl md:text-4xl tracking-tighter font-extrabold text-center mb-8 md:mb-12 bg-gradient-to-b from-black to-[#001E80] 
-                         text-transparent bg-clip-text"
-          >
-            Our Mission
-          </h3>
-          <div className="grid gap-6 md:gap-8 md:grid-cols-2 items-center">
-            <div className="relative aspect-video overflow-hidden rounded-xl md:order-1 order-2 h-[200px] sm:h-[250px] md:h-auto shadow-md hover:shadow-lg transition-shadow duration-300">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Team collaboration session"
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="space-y-3 md:space-y-4 md:order-2 order-1">
-              <h3
-                className="text-xl md:text-2xl font-bold bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text"
-              >
-                Empowering Business Through Technology
-              </h3>
-              <p className="text-sm md:text-base text-[#010D3E]">
-                Our mission is to democratize access to cutting-edge technology, making digital transformation
-                accessible to businesses of all sizes. We believe in creating solutions that are not just
-                technologically advanced, but also user-friendly and business-focused.
-              </p>
-              <div className="space-y-3 md:space-y-4 pt-3 md:pt-4">
-                <div>
-                  <h4
-                    className="font-medium text-base md:text-lg bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text"
-                  >
-                    Innovation
-                  </h4>
-                  <p className="text-xs md:text-sm text-[#010D3E]">
-                    We constantly explore new technologies and approaches to solve complex problems.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    className="font-medium text-base md:text-lg bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text"
-                  >
-                    Quality
-                  </h4>
-                  <p className="text-xs md:text-sm text-[#010D3E]">
-                    We never compromise on the quality of our work, ensuring robust and scalable solutions.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    className="font-medium text-base md:text-lg bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text"
-                  >
-                    Partnership
-                  </h4>
-                  <p className="text-xs md:text-sm text-[#010D3E]">
-                    We view our clients as partners, working collaboratively to achieve shared goals.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         {/* Our Team Section */}
         <div className="max-w-5xl mx-auto mt-16 md:mt-24 px-4">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-            <h3
-              className="text-2xl md:text-4xl font-extrabold mb-3 md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text tracking-tighter"
-            >
-              Our Team
+            <h3 className="text-2xl md:text-4xl font-extrabold mb-3 
+                           md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
+                           text-transparent bg-clip-text tracking-tighter">
+                Our Team
             </h3>
             <p className="text-sm md:text-base text-[#010D3E] px-4">
-            Our team brings together diverse skills in technology and business, driven by a passion for innovation and excellence.
+              Our team brings together diverse skills in technology and business,
+               driven by a passion for innovation and excellence.
             </p>
           </div>
           <div className="grid gap-4 md:gap-6 lg:gap-8 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 px-2 sm:px-0">
             {[
-              {
-                name: "Mr. SreeKarrthiyen Mahadevan",
-                role: "CEO & Founder",
-                image: "/sreeKarrthiyen.jpg",
-                bio: "",
-              },
-              {
-                name: "Mr. Sharan Sivakumar",
-                role: "Chief Sales Executive",
-                image: "/sharan.jpeg",
-                bio: "",
-              },
-              {
-                name: "Ms. Sujitha Kumaran",
-                role: "Meta developer",
-                image: "/sujitha3.jpg",
-                bio: "",
-              },
-
-         {
-                name: "Ms. S.Peararulselvi",
-                role: "Web App Developer",
-                image: "/peruarul.png",
-                bio: "",
-              },
-
-              {
-                name: "Mr. Balaji Selvaraj",
-                role: "Website Developer",
-                image: "/balaji.jpg",
-                bio: "",
-              },
-
-             {
-                name: "Mrs. Priyadharshini",
-                role: "Web Developer",
-                image: "/priya.png",
-                bio: "",
-              },
-
-             {
-                name: "Mr. ManiKandan S",
-                role: "Web Developer & Designer",
-                image: "/mani.png",
-                bio: "",
-              },
-
-              {
-                name: "Mr. Parthasarathi",
-                role: "Product Designer",
-                image: "/partha.png",
-                bio: "",
-              },
-
-
-             {
-                name: "Mr. HariSanjay J",
-                role: "On-Page and Off-page SEO Specialist",
-                image: "/hari.png",
-                bio: "",
-              },
-        
-              {
-                name: "Ms. Shalini S",
-                role: "Auditor",
-                image: "/shalini.png",
-                bio: "",
-              },
-            ].map((member, index) => (
+  {
+    name: "Mr. SreeKarrthiyen Mahadevan",
+    role: "CEO & Founder",
+    image: "/sreeKarrthiyen.jpg",
+    bio: "An visionary, Mr. SreeKarrthiyen Mahadevan founded our company to drive innovation and excellence.",
+  },
+  {
+    name: "Mr. Sharan Sivakumar",
+    role: "Chief Sales Executive",
+    image: "/person.png",
+    bio: "As Chief Sales Executive, Mr. Sharan Sivakumar leverages his deep industry knowledge to drive business growth.",
+  },
+  {
+    name: "Ms. Sujitha Kumaran",
+    role: "Meta Developer",
+    image: "/sujitha3.jpg",
+    bio: "Ms. Sujitha Kumaran is a talented Meta Developer passionate about creating immersive digital experiences.",
+  },
+  {
+    name: "Ms. S.Peararulselvi",
+    role: "Web App Developer",
+    image: "/peruarul.png",
+    bio: "Ms. S.Peararulselvi builds robust and user-friendly web applications with a keen eye for detail.",
+  },
+  {
+    name: "Mr. Balaji Selvaraj",
+    role: "Website Developer",
+    image: "/balaji.jpg",
+    bio: "Mr. Balaji Selvaraj is dedicated to delivering innovative and high-quality web solutions.",
+  },
+  {
+    name: "Mrs. Priyadharshini",
+    role: "Web Developer",
+    image: "/priya.png",
+    bio: "Mrs. Priyadharshini focuses on creating responsive and engaging web experiences for our clients.",
+  },
+  {
+    name: "Mr. ManiKandan S",
+    role: "Web Developer & Designer",
+    image: "/mani.png",
+    bio: "Mr. ManiKandan S merges technical expertise with creative design to produce compelling digital products.",
+  },
+  {
+    name: "Mr. Parthasarathi",
+    role: "Product Designer",
+    image: "/partha.png",
+    bio: "Mr. Parthasarathi crafts intuitive product designs that enhance user interaction and satisfaction.",
+  },
+  { 
+    name: "Mr. HariSanjay J",
+    role: "On-Page and Off-Page SEO Specialist",
+    image: "/hari.png",
+    bio: "Mr. HariSanjay J uses his SEO expertise to boost online visibility and improve search rankings.",
+  },
+  {
+    name: "Ms. Shalini S",
+    role: "Auditor",
+    image: "/shalini.png",
+    bio: "Ms. Shalini S ensures transparency and accuracy in our processes with meticulous attention to detail.",
+  },
+]
+.map((member, index) => (
               <Card
                 key={index}
                 className="overflow-hidden border-0 shadow-sm transition-all duration-300 hover:shadow-md group"
@@ -255,15 +106,8 @@ export default function AboutUs() {
               </Card>
             ))}
           </div>
-          {/* <div className="text-center pt-8">
-            <Button variant="outline" className="group">
-              View all team members
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div> */}
         </div>
       </div>
     </section>
   )
 }
-
