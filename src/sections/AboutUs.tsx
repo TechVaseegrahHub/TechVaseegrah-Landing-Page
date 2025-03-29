@@ -169,13 +169,13 @@ export default function AboutUs() {
                 name: "Mr. SreeKarrthiyen Mahadevan",
                 role: "CEO & Founder",
                 image: "/ceo2.jpg",
-                bio: "Former Google engineer with 15+ years of experience in software development and tech leadership.",
+                bio: "",
               },
               {
                 name: "Mr. Sharan Sivakumar",
                 role: "Chief Sales Executive, TECH VASEEGRAH",
                 image: "/ce.jpeg",
-                bio: "AI specialist with a PhD in Computer Science and multiple patents in machine learning applications.",
+                bio: "",
               },
               {
                 name: "Michael Rodriguez",
