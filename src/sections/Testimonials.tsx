@@ -1,13 +1,13 @@
 "use client";
-import avatar1 from "@/assets/avatar-1.png";
-import avatar2 from "@/assets/avatar-2.png";
-import avatar3 from "@/assets/avatar-3.png";
-import avatar4 from "@/assets/avatar-4.png";
-import avatar5 from "@/assets/avatar-5.png";
-import avatar6 from "@/assets/avatar-6.png";
-import avatar7 from "@/assets/avatar-7.png";
-import avatar8 from "@/assets/avatar-8.png";
-import avatar9 from "@/assets/avatar-9.png";
+import avatar1 from "@/assets/avatar.jpg";
+import avatar2 from "@/assets/avatar.jpg";
+import avatar3 from "@/assets/avatar.jpg";
+import avatar4 from "@/assets/avatar.jpg";
+import avatar5 from "@/assets/avatar.jpg";
+import avatar6 from "@/assets/avatar.jpg";
+import avatar7 from "@/assets/avatar.jpg";
+import avatar8 from "@/assets/avatar.jpg";
+import avatar9 from "@/assets/avatar.jpg";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
@@ -15,58 +15,58 @@ import React from "react";
 
 const testimonials = [
   {
-    text: "Exceptional service! The team was professional, friendly, and went above and beyond to help..",
+    text: " Tech vaseegrah support was too good. I really wish that tech vaseegrah should get more such challenging projects so that he can show and utilise his potential to its fullest..My best wishes  to entire Tech vaseegrah team..",
     imageSrc: avatar1.src,
-    name: "Prem kumar",
-    username: "@jamietechguru00",
+    name: "jeganathan",
+    username: "",
   },
   {
-    text: "Our team's productivity has skyrocketed since we started using this tool. ",
+    text: "I needed a website for my business then i across came at Techvaseegrah for website developer  they developed my website very well and good customer support.I statisfied with that website. They really supported me very well.",
     imageSrc: avatar2.src,
-    name: "Josh Smith",
-    username: "@jjsmith",
+    name: "Vidhya Sri",
+    username: "",
   },
   {
-    text: "This app has completely transformed how I manage my projects and deadlines.",
+    text: " i recenty subscribe F3 engine for my website. for printing my wensite orders, the application was very usefull for my business. now i dispatch more orders in a single day. thank You Tech Vaseegrah!🙏🏼 keep supporting business owners💪🏼",
     imageSrc: avatar3.src,
-    name: "Morgan Lee",
-    username: "@morganleewhiz",
+    name: "Balaji",
+    username: "",
   },
   {
-    text: "I was amazed at how quickly we were able to integrate this app into our workflow.",
+    text: "The team at Tech Vaseegarah was professional and quick. They handled everything, from design to setup, and made it super easy for me. The website turned out amazing!",
     imageSrc: avatar4.src,
-    name: "Casey Jordan",
-    username: "@caseyj",
+    name: "Shanmuga priya",
+    username: "",
   },
   {
-    text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
+    text: "Tech Vaseegarah built my website just the way I imagined. They paid attention to every detail and made sure everything worked well. Very happy with their service..!Now my website looks nice.",
     imageSrc: avatar5.src,
-    name: "Taylor Kim",
-    username: "@taylorkimm",
+    name: "MalathiMurugan",
+    username: "",
   },
   {
-    text: "The customizability and integration capabilities of this app are top-notch.",
+    text: "Tech Vaseegarah did a great job on my business website. They understood what I wanted and created a clean, professional site. The team was helpful and easy to work with. Highly recommend!",
     imageSrc: avatar6.src,
-    name: "Riley Smith",
-    username: "@rileysmith1",
+    name: "Ashwin",
+    username: "",
   },
   {
     text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
     imageSrc: avatar7.src,
     name: "Jordan Patels",
-    username: "@jpatelsdesign",
+    username: "",
   },
   {
-    text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
+    text: " Tech Vaseegarah did a great job on my website. They understood what I needed and made it look professional and easy to use. I’m really happy with their work",
     imageSrc: avatar8.src,
-    name: "Sam Dawson",
-    username: "@dawsontechtips",
+    name: "Prabu shankar",
+    username: "",
   },
   {
     text: "Its user-friendly interface and robust features support our diverse needs.",
     imageSrc: avatar9.src,
-    name: "Casey Harper",
-    username: "@casey09",
+    name: "Saravanan",
+    username: "",
   },
 ];
 

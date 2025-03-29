@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import maintenanceImg from "@/assets/34.png";
+import maintenanceImg from "@/assets/5.png";
 
 export default function UnderMaintain() {
   return (
