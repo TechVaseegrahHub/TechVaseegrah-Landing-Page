@@ -59,7 +59,7 @@ export default function AboutUs() {
     bio: "Mrs. Priyadharshini focuses on creating responsive and engaging web experiences for our clients.",
   },
   {
-    name: "Mr. ManiKandan S",
+    name: "Mr. ManiKandan ",
     role: "Web Developer & Designer",
     image: "/mani.png",
     bio: "Mr. ManiKandan S merges technical expertise with creative design to produce compelling digital products.",
