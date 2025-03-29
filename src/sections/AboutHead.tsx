@@ -72,7 +72,7 @@ export const AboutHead = () => {
             </motion.div> */}
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-          Were changing the way people connect
+          We&apos;re changing the way people connect
 
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5">
