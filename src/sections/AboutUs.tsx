@@ -18,7 +18,7 @@ export default function AboutUs() {
             </h2>
 
             <p className="max-w-[900px] text-[#010D3E] text-sm md:text-base lg:text-lg xl:text-xl px-4 md:px-6">
-              We're a team of passionate developers, designers, and strategists dedicated to transforming ideas into
+              We&apos;re a team of passionate developers, designers, and strategists dedicated to transforming ideas into
               powerful digital experiences.
             </p>
           </div>
