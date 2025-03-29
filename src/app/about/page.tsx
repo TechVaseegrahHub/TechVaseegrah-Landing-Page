@@ -9,8 +9,9 @@ export default function About() {
     <div>
       <AboutTitle/>
       <AboutHeading/>
-      <AboutValue/>
+     
       <AboutUs/>
+      <AboutValue/>
     </div>
   );
 }
