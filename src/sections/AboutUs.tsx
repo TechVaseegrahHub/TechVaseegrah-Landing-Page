@@ -7,7 +7,7 @@ export default function AboutUs() {
     <section className="w-full py-24 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF]">
       <div className="container px-4 md:px-6">
         {/* Header */}
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-20">
+        {/* <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-20">
           <div className="space-y-3 md:space-y-4">
             <div className="tag mb-4">About Us</div>
             <h2
@@ -22,7 +22,7 @@ export default function AboutUs() {
               powerful digital experiences.
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Our Company Section */}
         {/* <div className="max-w-5xl mx-auto mb-24">
@@ -82,9 +82,9 @@ export default function AboutUs() {
         </div> */}
 
         {/* Our Mission Section */}
-        <div className="max-w-5xl mx-auto my-16 md:my-24 px-4">
+        {/* <div className="max-w-5xl mx-auto my-16 md:my-24 px-4">
           <h3
-            className="text-3xl md:text-4xl font-extrabold text-center mb-8 md:mb-12 bg-gradient-to-b from-black to-[#001E80] 
+            className="text-2xl md:text-4xl tracking-tighter font-extrabold text-center mb-8 md:mb-12 bg-gradient-to-b from-black to-[#001E80] 
                          text-transparent bg-clip-text"
           >
             Our Mission
@@ -147,20 +147,19 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Our Team Section */}
         <div className="max-w-5xl mx-auto mt-16 md:mt-24 px-4">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
             <h3
-              className="text-3xl md:text-4xl font-extrabold mb-3 md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text"
+              className="text-2xl md:text-4xl font-extrabold mb-3 md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
+                           text-transparent bg-clip-text tracking-tighter"
             >
               Our Team
             </h3>
             <p className="text-sm md:text-base text-[#010D3E] px-4">
-              Our diverse team brings together expertise from various domains of technology and business, united by a
-              passion for innovation and excellence.
+            Our team brings together diverse skills in technology and business, driven by a passion for innovation and excellence.
             </p>
           </div>
           <div className="grid gap-4 md:gap-6 lg:gap-8 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 px-2 sm:px-0">
@@ -168,38 +167,70 @@ export default function AboutUs() {
               {
                 name: "Mr. SreeKarrthiyen Mahadevan",
                 role: "CEO & Founder",
-                image: "/ceo2.jpg",
+                image: "/sreeKarrthiyen.jpg",
                 bio: "",
               },
               {
                 name: "Mr. Sharan Sivakumar",
-                role: "Chief Sales Executive, TECH VASEEGRAH",
-                image: "/ce.jpeg",
+                role: "Chief Sales Executive",
+                image: "/sharan.jpeg",
                 bio: "",
               },
               {
-                name: "Michael Rodriguez",
-                role: "Design Director",
-                image: "/placeholder.svg?height=400&width=400",
-                bio: "Award-winning UX designer who has shaped digital experiences for Fortune 500 companies.",
+                name: "Mrs. Sujitha Kumaran",
+                role: "Meta developer",
+                image: "/sujitha.jpg",
+                bio: "",
               },
-              {
-                name: "Priya Sharma",
-                role: "Head of Operations",
-                image: "/placeholder.svg?height=400&width=400",
-                bio: "Business strategist with expertise in scaling tech startups and optimizing processes.",
+
+         {
+                name: "Mrs. S.Peararulselvi",
+                role: "Web App Developer",
+                image: "/peruarul.png",
+                bio: "",
               },
+
               {
-                name: "David Kim",
-                role: "Lead Developer",
-                image: "/placeholder.svg?height=400&width=400",
-                bio: "Full-stack developer specializing in cloud architecture and distributed systems.",
+                name: "Mr. Balaji Selvaraj",
+                role: "Website Developer",
+                image: "/balaji.jpg",
+                bio: "",
               },
+
+             {
+                name: "Mrs. Priyadharshini",
+                role: "Web Developer",
+                image: "/priya.png",
+                bio: "",
+              },
+
+             {
+                name: "Mr. ManiKandan S",
+                role: "Web Developer & Designer",
+                image: "/mani.png",
+                bio: "",
+              },
+
               {
-                name: "Emma Wilson",
-                role: "Client Success Manager",
-                image: "/placeholder.svg?height=400&width=400",
-                bio: "Customer experience expert focused on building long-term client relationships.",
+                name: "Mr. Parthasarathi",
+                role: "UI/UX Designer",
+                image: "/partha.png",
+                bio: "",
+              },
+
+
+             {
+                name: "Mr. HariSanjay J",
+                role: "On-Page and Off-page SEO Specialist",
+                image: "/hari.png",
+                bio: "",
+              },
+        
+              {
+                name: "Mrs. Shalini S",
+                role: "Auditor",
+                image: "/shalini.png",
+                bio: "",
               },
             ].map((member, index) => (
               <Card
