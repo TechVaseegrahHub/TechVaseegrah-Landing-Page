@@ -49,7 +49,7 @@ export default function AboutUs() {
   {
     name: "Mr. Balaji Selvaraj",
     role: "Website Developer",
-    image: "/balaji.jpg",
+    image: "/balaji1.jpg",
     bio: "Mr. Balaji Selvaraj is dedicated to delivering innovative and high-quality web solutions.",
   },
   {
