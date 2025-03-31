@@ -8,7 +8,7 @@ export default function TermsOfService() {
         Tech Vaseegrah - Terms of Service
         </h2>
 
-        <div className=" text-black max-w-none space-y-6 text-xl">
+        <div className=" text-black max-w-none space-y-6 text-lg">
 
           <h3>
             <strong>1. Services </strong>

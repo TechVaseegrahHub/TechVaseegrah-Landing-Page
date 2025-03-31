@@ -8,7 +8,7 @@ export default function Privacy() {
         Tech Vaseegrah - Privacy Policy
         </h2>
 
-        <div className=" text-black max-w-none space-y-6 text-xl">
+        <div className=" text-black max-w-none space-y-6 text-lg">
 
           <p>
             Tech Vaseegrah values your privacy and is committed to protecting your personal information. 
