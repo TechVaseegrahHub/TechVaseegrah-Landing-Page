@@ -3,7 +3,7 @@ import { Project } from "@/sections/Project";
 import { Carousel, Card } from "@/sections/Carousel";
 
 // ✅ Import images correctly
-import aiChatBotImage from "@/assets/insta-x-bot.png"; // Ensure it's in the `/public` folder
+import aiChatBotImage from "@/assets/instaxbot.png"; // Ensure it's in the `/public` folder
 import eComImage from "@/assets/f3logo.png";
 import f3Image from "@/assets/go.png";
 

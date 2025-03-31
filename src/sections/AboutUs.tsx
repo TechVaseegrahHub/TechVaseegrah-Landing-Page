@@ -8,9 +8,9 @@ export default function AboutUs() {
       <div className="container px-4 md:px-6">
 
         {/* Our Team Section */}
-        <div className="max-w-5xl mx-auto mt-16 md:mt-24 px-4">
+        <div className="max-w-5xl mx-auto  px-4">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-            <h3 className="text-2xl md:text-4xl font-extrabold mb-3 
+            <h3 className="text-2xl md:text-5xl font-extrabold mb-3 
                            md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
                            text-transparent bg-clip-text tracking-tighter">
                 Our Team
@@ -22,12 +22,7 @@ export default function AboutUs() {
           </div>
           <div className="grid gap-4 md:gap-6 lg:gap-8 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 px-2 sm:px-0">
             {[
-  {
-    name: "Mr. SreeKarrthiyen Mahadevan",
-    role: "CEO & Founder",
-    image: "/sreeKarrthiyen.jpg",
-    bio: "An visionary, Mr. SreeKarrthiyen Mahadevan founded our company to drive innovation and excellence.",
-  },
+
   {
     name: "Mr. Sharan Sivakumar",
     role: "Chief Sales Executive",
@@ -42,7 +37,7 @@ export default function AboutUs() {
   },
   {
     name: "Ms. S.Peararulselvi",
-    role: "Web App Developer",
+    role: "Software Developer",
     image: "/peruarul.png",
     bio: "Ms. S.Peararulselvi builds robust and user-friendly web applications with a keen eye for detail.",
   },
@@ -78,7 +73,7 @@ export default function AboutUs() {
   },
   {
     name: "Ms. Shalini S",
-    role: "Auditor",
+    role: "Accountant",
     image: "/shalini.png",
     bio: "Ms. Shalini S ensures transparency and accuracy in our processes with meticulous attention to detail.",
   },

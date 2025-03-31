@@ -1,13 +1,42 @@
-"use client"
-import type React from "react"
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
-import { Instagram, Linkedin, Facebook, Youtube, ChevronUp } from "lucide-react"
-import logoImage from "@/assets/techv.png"
+"use client";
 
-const SocialIcon = ({ href, children, label }: { href: string; children: React.ReactNode; label: string }) => (
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Instagram, Linkedin, Facebook, Youtube, ChevronUp } from "lucide-react";
+import logoImage from "@/assets/techv.png";
+
+// Updated FooterLink Component that accepts an optional onClick prop.
+// Since we're using Next.js 13, we can pass onClick directly to Link.
+type FooterLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+};
+
+const FooterLink = ({ href, children, onClick }: FooterLinkProps) => (
+  <li>
+    <Link
+      href={href}
+      onClick={onClick}
+      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm inline-block py-1.5"
+    >
+      {children}
+    </Link>
+  </li>
+);
+
+const SocialIcon = ({
+  href,
+  children,
+  label,
+}: {
+  href: string;
+  children: React.ReactNode;
+  label: string;
+}) => (
   <motion.a
     href={href}
     target="_blank"
@@ -19,34 +48,23 @@ const SocialIcon = ({ href, children, label }: { href: string; children: React.R
   >
     {children}
   </motion.a>
-)
-
-const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <li>
-    <Link
-      href={href}
-      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm inline-block py-1.5"
-    >
-      {children}
-    </Link>
-  </li>
-)
+);
 
 export const Footer = () => {
-  const [showScrollButton, setShowScrollButton] = useState(false)
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollButton(window.scrollY > 300)
-    }
+      setShowScrollButton(window.scrollY > 300);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-10">
@@ -68,24 +86,34 @@ export const Footer = () => {
                   className="rounded-full shadow-sm"
                 />
               </motion.div>
-
               <p className="text-sm text-gray-400 max-w-xs text-center sm:text-left">
                 Innovative technology solutions for modern businesses.
               </p>
             </div>
-
             {/* Social Media Links */}
             <div className="flex justify-center sm:justify-start gap-4 mt-5">
-              <SocialIcon href="https://www.linkedin.com/company/tech-vaseegrah/posts/?feedView=all" label="LinkedIn">
+              <SocialIcon
+                href="https://www.linkedin.com/company/tech-vaseegrah/posts/?feedView=all"
+                label="LinkedIn"
+              >
                 <Linkedin size={16} />
               </SocialIcon>
-              <SocialIcon href="https://www.facebook.com/people/Tech-Vaseegrah/61558676843990/" label="Facebook">
+              <SocialIcon
+                href="https://www.facebook.com/people/Tech-Vaseegrah/61558676843990/"
+                label="Facebook"
+              >
                 <Facebook size={16} />
               </SocialIcon>
-              <SocialIcon href="https://www.instagram.com/techvaseegrah/" label="Instagram">
+              <SocialIcon
+                href="https://www.instagram.com/techvaseegrah/"
+                label="Instagram"
+              >
                 <Instagram size={16} />
               </SocialIcon>
-              <SocialIcon href="https://youtube.com/@techvaseegrah?si=rPp2emhWCnE7-57X" label="YouTube">
+              <SocialIcon
+                href="https://youtube.com/@techvaseegrah?si=rPp2emhWCnE7-57X"
+                label="YouTube"
+              >
                 <Youtube size={16} />
               </SocialIcon>
             </div>
@@ -93,12 +121,14 @@ export const Footer = () => {
 
           {/* Company Section */}
           <div className="lg:col-span-2 sm:mt-2">
-            <h3 className="text-white font-medium mb-3 text-base tracking-wide">Company</h3>
+            <h3 className="text-white font-medium mb-3 text-base tracking-wide">
+              Company
+            </h3>
             <ul className="space-y-1">
-            {[
+              {[
                 { name: "About", href: "/about" },
                 { name: "Careers", href: "/internship" },
-                { name: "Contact", href: "/contact" }  // Updated "Careers" link to point to internship
+                { name: "Contact", href: "/contact" },
               ].map((link) => (
                 <FooterLink key={link.name} href={link.href}>
                   {link.name}
@@ -108,8 +138,10 @@ export const Footer = () => {
           </div>
 
           {/* Resources Section */}
-           <div className="lg:col-span-3 sm:mt-2">
-            <h3 className="text-white font-medium mb-3 text-base tracking-wide">Resources</h3>
+          <div className="lg:col-span-3 sm:mt-2">
+            <h3 className="text-white font-medium mb-3 text-base tracking-wide">
+              Resources
+            </h3>
             <ul className="space-y-1">
               {["Blog", "Documentation", "Help Center"].map((item) => (
                 <FooterLink key={item} href="/undermaintain">
@@ -117,15 +149,24 @@ export const Footer = () => {
                 </FooterLink>
               ))}
             </ul>
-          </div> 
+          </div>
 
           {/* Legal Section */}
           <div className="lg:col-span-3 sm:mt-2">
-            <h3 className="text-white font-medium mb-3 text-base tracking-wide">Legal</h3>
-            <ul className="space-y-1 ">
-              <FooterLink href="/undermaintain">Privacy Policy</FooterLink>
+            <h3 className="text-white font-medium mb-3 text-base tracking-wide">
+              Legal
+            </h3>
+            <ul className="space-y-1">
+              <FooterLink href="/privacy">Privacy Policy</FooterLink>
               <FooterLink href="/terms">Terms of Service</FooterLink>
-              <FooterLink href="/undermaintain">Cookie Policy</FooterLink>
+              <FooterLink
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Cookie Policy
+              </FooterLink>
             </ul>
           </div>
         </div>
@@ -157,5 +198,5 @@ export const Footer = () => {
         )}
       </AnimatePresence>
     </footer>
-  )
-}
+  );
+};
