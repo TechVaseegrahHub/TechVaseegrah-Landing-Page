@@ -9,7 +9,6 @@ export default function About() {
     <div>
       <AboutTitle/>
       <AboutHeading/>
-     
       <AboutUs/>
       <AboutValue/>
     </div>

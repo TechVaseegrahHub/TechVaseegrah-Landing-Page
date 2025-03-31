@@ -124,7 +124,7 @@ export const Footer = () => {
             <h3 className="text-white font-medium mb-3 text-base tracking-wide">Legal</h3>
             <ul className="space-y-1 ">
               <FooterLink href="/undermaintain">Privacy Policy</FooterLink>
-              <FooterLink href="/undermaintain">Terms of Service</FooterLink>
+              <FooterLink href="/terms">Terms of Service</FooterLink>
               <FooterLink href="/undermaintain">Cookie Policy</FooterLink>
             </ul>
           </div>
