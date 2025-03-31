@@ -14,7 +14,7 @@ export default function Privacy() {
             Tech Vaseegrah values your privacy and is committed to protecting your personal information. 
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information 
             when you use our web development, SEO, social media marketing, and social media management 
-            services collectively, "Services". By using our Services, you acknowledge and agree to the 
+            services collectively, &quot;Services&quot;. By using our Services, you acknowledge and agree to the 
             practices outlined in this policy.
           </p>
 
