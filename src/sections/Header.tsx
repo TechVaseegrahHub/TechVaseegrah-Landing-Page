@@ -62,6 +62,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <NavLink href="/">Home</NavLink>
+            <NavLink href="/projects">Products</NavLink>
             
             <Dropdown 
               title="Internships"
@@ -77,10 +78,8 @@ export default function Header() {
               </DropdownLink>
             </Dropdown>
 
-            <NavLink href="/projects">Projects</NavLink>
-
             <Dropdown 
-              title="Services"
+              title="Solutions"
               isActive={activeDropdown === "services"}
               onMouseEnter={() => handleDropdownEnter("services")}
               onMouseLeave={handleDropdownLeave}
@@ -90,9 +89,6 @@ export default function Header() {
               </DropdownLink>
               <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Social Media Marketing
-              </DropdownLink>
-              <DropdownLink href="/undermaintain" onClick={closeAll}>
-                Social Media Management
               </DropdownLink>
               <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Branding &amp; Consultation
@@ -267,6 +263,14 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
             </MobileLink>
           </motion.div>
 
+
+          <motion.div variants={itemVariants} className="text-center">
+            <MobileLink href="/projects" onClick={onClose}>
+              Products
+            </MobileLink>
+          </motion.div>
+
+
           <motion.div variants={itemVariants} className="flex flex-col text-center">
             <span className="text-gray-500 text-sm uppercase mb-2">Internships</span>
             <div className="flex flex-col space-y-3">
@@ -279,23 +283,16 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="text-center">
-            <MobileLink href="/projects" onClick={onClose}>
-              Projects
-            </MobileLink>
-          </motion.div>
+     
 
           <motion.div variants={itemVariants} className="flex flex-col text-center">
-            <span className="text-gray-500 text-sm uppercase mb-2">Services</span>
+            <span className="text-gray-500 text-sm uppercase mb-2">Solutions</span>
             <div className="flex flex-col space-y-3">
               <MobileLink href="/undermaintain" onClick={onClose}>
                 Web Development
               </MobileLink>
               <MobileLink href="/undermaintain" onClick={onClose}>
                 Social Media Marketing
-              </MobileLink>
-              <MobileLink href="/undermaintain" onClick={onClose}>
-              Social Media Management
               </MobileLink>
               <MobileLink href="/undermaintain" onClick={onClose}>
               Branding &amp; Consulation

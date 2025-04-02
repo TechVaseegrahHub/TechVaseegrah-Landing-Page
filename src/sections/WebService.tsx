@@ -1,6 +1,6 @@
 "use client";
-import stockupImage from "@/assets/left-lamp.png";
-import rockectImage from "@/assets/cloud-code.png";
+import stockupImage from "@/assets/cloud-code.png";
+import rockectImage from "@/assets/hand-bulb.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -97,8 +97,8 @@ export const WebService = () => {
             variants={heroChildVariant}
             src={stockupImage}
             alt="Stock Up"
-            height={360}
-            width={360}
+            height={300}
+            width={300}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}/>
           
