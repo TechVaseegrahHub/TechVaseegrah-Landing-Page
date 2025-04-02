@@ -11,10 +11,6 @@ export default function About() {
       <AboutTitle/>
       {/* <CeoPhoto/> */}
       <AboutHeading/>
-      
-    
-      
-
       <AboutUs/>
       <AboutValue/>
     </div>

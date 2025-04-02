@@ -1,5 +1,5 @@
 "use client";
-import productImage from "@/assets/bill-z.jpeg";
+import productImage from "@/assets/bill-z.png";
 import stockupImage from "@/assets/stock-up.png";
 import rockectImage from "@/assets/startup-rocket.png";
 import Image from "next/image";
