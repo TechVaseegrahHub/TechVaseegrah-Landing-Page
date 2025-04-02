@@ -67,9 +67,9 @@ export default function AboutUs() {
   },
   { 
     name: "Mr. HariSanjay J",
-    role: "On-Page and Off-Page SEO Specialist",
+    role: "Mern Stack Developer",
     image: "/hari.png",
-    bio: "Mr. HariSanjay J uses his SEO expertise to boost online visibility and improve search rankings.",
+    bio: "Mr. HariSanjay J uses his expertise to boost online visibility and improve search rankings.",
   },
   {
     name: "Ms. Shalini S",

@@ -85,38 +85,18 @@ const projectCards = [
     title: "GoWhats",
     category: "AI",
     content: <p>
-                All-in-one order processing platform 
-                that streamlines e-commerce operations, 
-                from printing and packing to tracking and 
-                inventory management. It helps website owners 
-                stay organized, efficient, and enhance customer 
-                satisfaction.
-                All-in-one order processing platform 
-                that streamlines e-commerce operations, 
-                from printing and packing to tracking and 
-                inventory management. It helps website owners 
-                stay organized, efficient, and enhance customer 
-                satisfaction.All-in-one order processing platform 
-                that streamlines e-commerce operations, 
-                from printing and packing to tracking and 
-                inventory management. It helps website owners 
-                stay organized, efficient, and enhance customer 
-                satisfaction.All-in-one order processing platform 
-                that streamlines e-commerce operations, 
-                from printing and packing to tracking and 
-                inventory management. It helps website owners 
-                stay organized, efficient, and enhance customer 
-                satisfaction.All-in-one order processing platform 
-                that streamlines e-commerce operations, 
-                from printing and packing to tracking and 
-                inventory management. It helps website owners 
-                stay organized, efficient, and enhance customer 
-                satisfaction.All-in-one order processing platform 
-                that streamlines e-commerce operations, 
-                from printing and packing to tracking and 
-                inventory management. It helps website owners 
-                stay organized, efficient, and enhance customer 
-                satisfaction.
+                GoWhats is an all-in-one WhatsApp API SaaS application 
+                built to streamline and automate every aspect of e-commerce 
+                operations.<br/>
+                From printing and packing to order tracking, inventory 
+                management, and order holding, GoWhats simplifies the 
+                entire workflow for online sellers. With powerful tools like 
+                an intelligent chatbot and broadcast messaging, it helps 
+                businesses stay connected with customers, minimize manual 
+                tasks, and operate more efficiently all through WhatsApp.<br/>
+                No matter the size of your business, GoWhats keeps your 
+                operations smooth, your team organized, and your customers 
+                satisfied..
               </p>,
   },
 ];

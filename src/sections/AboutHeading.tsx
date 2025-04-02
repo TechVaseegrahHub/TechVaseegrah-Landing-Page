@@ -8,7 +8,7 @@ export default function AboutHeading() {
           <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-tighter 
          bg-gradient-to-b from-black to-[#001E80] 
          text-transparent bg-clip-text">
-            “Tech Vaseegrah isn&apos;t just a tech company or an IT startup - it&apos;s a military squad, fiercely trained and highly equipped to conquer the digital world.”<br/> <span className="block text-right">- Sreekarrthikeyan</span>
+ Under my leadership Tech Vaseegrah isn&apos;t just a tech company - it's a military squad, fiercely trained and highly equipped to conquer the digital world.<br/> <span className="block text-right">- Sreekarrthikeyan</span>
           </h2>
           <p className=" text-[#010D3E]">
             Our team of dedicated engineers, designers, and innovators is committed to creating cutting-edge solutions
@@ -33,11 +33,11 @@ export default function AboutHeading() {
          <article className='relative overflow-hidden  flex-grow'>
            <div className='info p-2 translate-y-0 group-hover:-translate-y-20 transition-all duration-300'>
              <p className='md:text-2xl font-semibold  bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text'>Mr. SreeKarrthiyen Mahadevan</p>
-             <p className='sm:text-base text-sm  text-[#010D3E]'>CEO &amp; Founder</p>
+         text-transparent bg-clip-text'>Mr.Sreekarrthikeyan Mahadevan</p>
+             <p className='sm:text-base text-sm   text-[#010D3E]'>CEO &amp; Founder | Tech Vaseegrah</p>
            </div>
-           <button className='absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3  text-3xl font-medium transition-all duration-300 w-full text-center bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text'>
+           <button className='absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3  text-3xl  transition-all duration-300 w-full text-center bg-gradient-to-b from-black to-[#001E80] 
+         text-transparent bg-clip-text font-bold tracking-tighter'>
              CEO &amp; Founder
            </button>
          </article>

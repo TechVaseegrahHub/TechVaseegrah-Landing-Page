@@ -74,18 +74,21 @@ export default function Products() {
       description:
         "Simplify customer connections with GoWhats! Manage orders, automate messages, and offer real-time support using our powerful WhatsApp API—streamlining communication and boosting efficiency.",
       avatar: avatar1,
+      learnMoreLink: "https://gowhats.vercel.app/", // Add your GoWhats link here
     },
     {
       title: "F3 Engine",
       description:
         "F3 Engine simplifies e-commerce with automated printing, packing, tracking, and inventory management. Streamline order dispatch, boost efficiency, and enhance customer satisfaction—focus on growth, not manual tasks!",
       avatar: avatar3,
+      learnMoreLink: "#",
     },
     {
       title: "InstaX Bot",
       description:
         "Instamatic's AI-powered Instagram automation automates direct message replies and instant comment responses, saving you time and boosting customer engagement. Streamline your social media communication effortlessly!",
       avatar: avatar2,
+      learnMoreLink: "#",
     },
   ]
 
@@ -137,6 +140,7 @@ export default function Products() {
                 <FeatureCard
                   title={card.title}
                   description={card.description}
+                  button={card.learnMoreLink} // Pass the Learn More link to the button prop
                   className="md:col-span-2 lg:col-span-1 group hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-shadow duration-300 ease-in-out"
                 >
                   <AnimatePresence>
@@ -158,6 +162,9 @@ export default function Products() {
                       </Avatar>
                     </motion.div>
                   </AnimatePresence>
+
+                
+                  
                 </FeatureCard>
               </motion.div>
             )
