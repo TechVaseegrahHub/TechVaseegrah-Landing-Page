@@ -4,19 +4,19 @@ import FeatureCard from "@/components/FeaturesCard"
 import Image from "next/image"
 import avatar1 from "@/assets/go.png"
 import avatar2 from "@/assets/instaxbot.png"
-import avatar3 from "@/assets/f3logo.png"
+import avatar3 from "@/assets/f3-icon.png"
 import Avatar from "@/components/Avatar"
 import { motion, type Variants, useInView, AnimatePresence } from "framer-motion"
 import { useRef, useState } from "react"
 
 const features = [
-  "Asset Library",
-  "Code Preview",
-  "Flow Mode",
-  "Smart Sync",
-  "Auto Layout",
-  "Fast Search",
-  "Smart Guides",
+  "Smart SaaS solutions",
+  "Next-gen business apps",
+  "One-Click Export",
+  "NanoTasks",
+  "Cloud Native",
+  "Live Updates",
+  "Multi-Tenant Support",
 ]
 
 const heroVariant: Variants = {

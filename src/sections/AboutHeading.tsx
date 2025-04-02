@@ -27,7 +27,7 @@ export default function AboutHeading() {
              alt='shoes'
              width={600}
              height={600}
-             className='h-full w-full  scale-105 group-hover:scale-100 grayscale group-hover:grayscale-0 object-cover transition-all duration-300'
+             className='h-full w-full  scale-105 group-hover:scale-100  group-hover:grayscale-0 object-cover transition-all duration-300'
            />
          </div>
          <article className='relative overflow-hidden  flex-grow'>

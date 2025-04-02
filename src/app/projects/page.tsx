@@ -3,8 +3,8 @@ import { Project } from "@/sections/Project";
 import { Carousel, Card } from "@/sections/Carousel";
 
 // ✅ Import images correctly
-import aiChatBotImage from "@/assets/instaxbot.png"; // Ensure it's in the `/public` folder
-import eComImage from "@/assets/f3logo.png";
+import aiChatBotImage from "@/assets/insta-x-bot.png"; // Ensure it's in the `/public` folder
+import eComImage from "@/assets/f3-icon.png";
 import f3Image from "@/assets/go.png";
 import billzzyImage from "@/assets/billzzy-icon.png";
 
@@ -108,18 +108,15 @@ const projectCards = [
     title: "Billzzy",
     category: "App",
     content: <p>
-                Empowering Your Sales, Simplifying Your Workflow
-                Streamline your billing process and boost productivity with automated address entry and smart order management.
-                <br/>
-                From printing and packing to order tracking, inventory 
-                management, and order holding, GoWhats simplifies the 
-                entire workflow for online sellers. With powerful tools like 
-                an intelligent chatbot and broadcast messaging, it helps 
-                businesses stay connected with customers, minimize manual 
-                tasks, and operate more efficiently all through WhatsApp.<br/>
-                No matter the size of your business, GoWhats keeps your 
-                operations smooth, your team organized, and your customers 
-                satisfied..
+               Captures orders by phone call or WhatsApp—even without a website!
+               Unleash seamless order management with Billzzy—your all-in-one 
+               billing and order processing platform. Automatically send order 
+               statements, generate payment links, and capture customer addresses in a snap. 
+               When a customer calls or messages, simply gather their details, confirm the 
+               product, and let Billzzy handle everything else—from printing and packing 
+               to tracking and inventory management. Streamline your entire sales flow 
+               and focus on growing your business, while Billzzy takes care of the heavy 
+               lifting.
               </p>,
   },
 ];
