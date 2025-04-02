@@ -8,7 +8,7 @@ export default function AboutHeading() {
           <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-tighter 
          bg-gradient-to-b from-black to-[#001E80] 
          text-transparent bg-clip-text">
- Under my leadership Tech Vaseegrah isn&apos;t just a tech company - it's a military squad, fiercely trained and highly equipped to conquer the digital world.<br/> <span className="block text-right">- Sreekarrthikeyan</span>
+ Under my leadership Tech Vaseegrah isn&apos;t just a tech company - it&apos;s a military squad, fiercely trained and highly equipped to conquer the digital world.<br/> <span className="block text-right">- Sreekarrthikeyan</span>
           </h2>
           <p className=" text-[#010D3E]">
             Our team of dedicated engineers, designers, and innovators is committed to creating cutting-edge solutions

@@ -13,7 +13,7 @@ export default function Web() {
 
           <p className="text-[#010D3E] mt-6">
             Due to strict data security regulations, banks can&apos;t use real working apps to demonstrate all their features
-            to potential clients. That's why UBS wanted to develop demo versions of its products. We pro- vided frontend
+            to potential clients. That&apos;s why UBS wanted to develop demo versions of its products. We provided frontend
             and UI services to create demos for personal and business banking, and wealth management.
           </p>
 {/* 
