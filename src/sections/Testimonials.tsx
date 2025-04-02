@@ -21,7 +21,7 @@ const testimonials = [
     username: "",
   },
   {
-    text: "I needed a website for my business then i across came at Techvaseegrah for website developer  they developed my website very well and good customer support.I statisfied with that website. They really supported me very well.",
+    text: "I needed a website for my business then i across came at Tech vaseegrah for website developer  they developed my website very well and good customer support.I statisfied with that website. They really supported me very well.",
     imageSrc: avatar2.src,
     name: "Vidhya Sri",
     username: "",
@@ -33,19 +33,19 @@ const testimonials = [
     username: "",
   },
   {
-    text: "The team at Tech Vaseegarah was professional and quick. They handled everything, from design to setup, and made it super easy for me. The website turned out amazing!",
+    text: "The team at Tech Vaseegrah was professional and quick. They handled everything, from design to setup, and made it super easy for me. The website turned out amazing!",
     imageSrc: avatar4.src,
     name: "Shanmuga priya",
     username: "",
   },
   {
-    text: "Tech Vaseegarah built my website just the way I imagined. They paid attention to every detail and made sure everything worked well. Very happy with their service..!Now my website looks nice.",
+    text: "Tech Vaseegrah built my website just the way I imagined. They paid attention to every detail and made sure everything worked well. Very happy with their service..!Now my website looks nice.",
     imageSrc: avatar5.src,
     name: "MalathiMurugan",
     username: "",
   },
   {
-    text: "Tech Vaseegarah did a great job on my business website. They understood what I wanted and created a clean, professional site. The team was helpful and easy to work with. Highly recommend!",
+    text: "Tech Vaseegrah did a great job on my business website. They understood what I wanted and created a clean, professional site. The team was helpful and easy to work with. Highly recommend!",
     imageSrc: avatar6.src,
     name: "Ashwin",
     username: "",
@@ -57,7 +57,7 @@ const testimonials = [
     username: "",
   },
   {
-    text: " Tech Vaseegarah did a great job on my website. They understood what I needed and made it look professional and easy to use. I’m really happy with their work",
+    text: " Tech Vaseegrah did a great job on my website. They understood what I needed and made it look professional and easy to use. I’m really happy with their work",
     imageSrc: avatar8.src,
     name: "Prabu shankar",
     username: "",
