@@ -45,7 +45,7 @@ function WebDevPhoto() {
              text-transparent bg-clip-text font-bold md:text-5xl">Professional Web Development Team</h1>
     
               <p className="text-[#010D3E] mt-6">
-              At Tech Vaseegrah, we understand that startups need quick, secure, and efficient solutions. That's why we helped UBS create secure demo versions of their products to showcase their services without compromising data privacy. With our frontend and UI expertise, we ensure your ideas are brought to life, enabling you to present your business confidently to clients and investors.
+              At Tech Vaseegrah, we understand that startups need quick, secure, and efficient solutions. That&apos;s why we helped UBS create secure demo versions of their products to showcase their services without compromising data privacy. With our frontend and UI expertise, we ensure your ideas are brought to life, enabling you to present your business confidently to clients and investors.
               </p>
 
             </div>

@@ -12,7 +12,7 @@ export default function Web() {
          text-transparent bg-clip-text font-bold md:text-5xl">Interactive demo app development for UBS</h1>
 
           <p className="text-[#010D3E] mt-6">
-            Due to strict data security regulations, banks can't use real working apps to demonstrate all their features
+            Due to strict data security regulations, banks can&apos;t use real working apps to demonstrate all their features
             to potential clients. That's why UBS wanted to develop demo versions of its products. We pro- vided frontend
             and UI services to create demos for personal and business banking, and wealth management.
           </p>
