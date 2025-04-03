@@ -18,13 +18,13 @@ const items = [
     tags: ['Floral', 'Highlands', 'Wildflowers', 'Colorful', 'Resilience'],
   },
 
-  // {
-  //   id: '3',
-  //   url: '/prem.jpeg',
-  //   title: 'Prem ',
-  //   description: 'MERN Stack Developer',
-  //   tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
-  // },
+  {
+    id: '3',
+    url: '/prem.jpeg',
+    title: 'Prem ',
+    description: 'MERN Stack Developer',
+    tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
+  },
 
   {
     id: '4',

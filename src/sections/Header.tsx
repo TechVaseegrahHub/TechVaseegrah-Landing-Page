@@ -282,9 +282,7 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
               </MobileLink>
             </div>
           </motion.div>
-
-     
-
+          
           <motion.div variants={itemVariants} className="flex flex-col text-center">
             <span className="text-gray-500 text-sm uppercase mb-2">Solutions</span>
             <div className="flex flex-col space-y-3">

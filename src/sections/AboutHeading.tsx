@@ -10,21 +10,12 @@ export default function AboutHeading() {
          text-transparent bg-clip-text">
           Under my leadership Tech Vaseegrah isn&apos;t just a tech company - it&apos;s a military squad, fiercely trained and highly equipped to conquer the digital world.<br/> <span className="block text-right">- Sreekarrthikeyan</span>
           </h2>
-          <p className=" text-[#010D3E]">
-            Our team of dedicated engineers, designers, and innovators is committed to creating cutting-edge solutions
-            that transform how businesses operate. We combine technical expertise with creative thinking to develop
-            products that make a real difference.
-          </p>
-          <p className="text-[#010D3E]">
-            Founded with a vision to revolutionize the tech landscape, we continue to push boundaries and explore new
-            possibilities. Our collaborative approach and customer-centric focus drive everything we do.
-          </p>
         </div>
       <div className='w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black  bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col'>
          <div className='w-full  rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300'>
            <Image
              src={'/ceo3.jpg'}
-             alt='shoes'
+             alt='CEO Portrait'
              width={600}
              height={600}
              className='h-full w-full  scale-105 group-hover:scale-100  group-hover:grayscale-0 object-cover transition-all duration-300'

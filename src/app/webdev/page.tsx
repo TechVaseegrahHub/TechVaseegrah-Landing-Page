@@ -12,7 +12,7 @@ export default function WebDev() {
     <div>
       <WebService />
       <WebSpec />
-      {/* <Web/> */}
+      <Web/> 
       <WebStacks/>
       <WebDevPhoto/>
       <WebFaq/>
