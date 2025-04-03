@@ -9,7 +9,7 @@ export default function SocialMedia() {
           {/* Left Content */}
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              We're changing the way people connect
+              Were changing the way people connect
             </h1>
             <p className="text-lg text-gray-600 mb-8">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
