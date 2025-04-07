@@ -3,11 +3,11 @@ import logo1 from "@/assets/vv.webp";
 import logo2 from "@/assets/c1.jpeg";
 import logo3 from "@/assets/mc.jpeg";
 import logo4 from "@/assets/c3.jpeg";
-import logo5 from "@/assets/amzfarmcol.png";
+// import logo5 from "@/assets/amzfarmcol.png";
 
 export default function SeoClients() {
   // Create an array of logos
-  const logos = [logo1, logo2, logo3, logo4, logo5];
+  const logos = [logo1, logo2, logo3, logo4];
 
   return (
     <section className="w-full py-12 md:py-24 bg-white">

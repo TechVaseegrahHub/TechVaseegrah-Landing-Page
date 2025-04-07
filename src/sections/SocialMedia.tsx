@@ -1,143 +1,121 @@
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+import stockupImage from "@/assets/te.png";
+import rockectImage from "@/assets/trending.png";
+import Image from "next/image";
+import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
+import { useRef } from "react";
 
-export default function SocialMedia() {
+const MotionImage = motion(Image); // Motion-wrapped Image component
+
+
+const heroVariant: Variants = { // Framer Motion Variants
+  start: {},
+  end: {
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const heroChildVariant: Variants = {
+  start: {
+    y: 30,
+    opacity: 0,
+    filter: "blur(0px)",
+  },
+  end: {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const SocialMedia = () => {
+  const sectionRef = useRef(null);
+  const heroBannerRef = useRef<HTMLDivElement>(null);
+
+  const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
+
+  const { scrollYProgress } = useScroll({
+    target: heroBannerRef,
+    offset: ["start 1080px", "50% start"],
+  });
+
+  const scrollYTransform = useTransform(scrollYProgress, [0, 1], [0.85, 1.15]);
+  const scale = useSpring(scrollYTransform, {
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const { scrollYProgress: sectionScrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const translateY = useTransform(sectionScrollYProgress, [0, 1], [150, -150]);
+
   return (
-    <main className="min-h-screen bg-white">
-      <section className="container mx-auto px-4 py-12 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left Content */}
-          <div className="max-w-xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Were changing the way people connect
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
-            </p>
-            <div className="flex flex-wrap gap-4 items-center">
-              <Link
-                href="#"
-                className="px-6 py-3 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition-colors"
-              >
-                Get started
-              </Link>
-              <Link href="#" className="flex items-center text-gray-700 font-medium hover:text-gray-900">
-                Live demo →
-              </Link>
-            </div>
+    <section
+      ref={sectionRef}
+      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-20  pb-24 overflow-x-clip"
+    >
+      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
+        <div className="section-heading">
+          <div className="flex justify-center">
+            <motion.div variants={heroChildVariant} className="tag ">
+           Social Media Marketing
+            </motion.div>
           </div>
-
-          {/* Right Image Grid */}
-          <div className="hidden lg:block relative h-[600px]">
-            {/* Top right image */}
-            <div className="absolute right-0 top-0 w-[180px] h-[240px]">
-              <div className="relative h-full w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=240&width=180"
-                  alt="Person smiling"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 180px"
-                />
-              </div>
-            </div>
-
-            {/* Middle right image - woman with laptop */}
-            <div className="absolute right-[200px] top-[160px] w-[220px] h-[200px]">
-              <div className="relative h-full w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=200&width=220"
-                  alt="Woman with laptop"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 220px"
-                />
-              </div>
-            </div>
-
-            {/* Bottom left image - meeting with whiteboard */}
-            <div className="absolute left-[100px] top-[300px] w-[220px] h-[200px]">
-              <div className="relative h-full w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=200&width=220"
-                  alt="Team meeting with whiteboard"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 220px"
-                />
-              </div>
-            </div>
-
-            {/* Bottom right image - office space */}
-            <div className="absolute right-[100px] bottom-0 w-[180px] h-[200px]">
-              <div className="relative h-full w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=200&width=180"
-                  alt="Office space"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 180px"
-                />
-              </div>
-            </div>
-
-            {/* Bottom far right image - person with plant */}
-            <div className="absolute right-0 bottom-[100px] w-[180px] h-[200px]">
-              <div className="relative h-full w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=200&width=180"
-                  alt="Person with plant"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 180px"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Image Grid (simplified version for small screens) */}
-          <div className="lg:hidden grid grid-cols-2 gap-3">
-            <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                alt="Woman with laptop"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-            </div>
-            <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                alt="Person smiling"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-            </div>
-            <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                alt="Team meeting with whiteboard"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-            </div>
-            <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                alt="Office space"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-            </div>
-          </div>
+          <motion.h2 variants={heroChildVariant} className="section-title mt-5">
+          We're changing the way people connect
+          </motion.h2>
+          <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
+          We help brands build authentic connections with their audience through creative storytelling, strategic content, and engaging campaigns. Grow your presence, reach the right people, and turn followers into loyal customers.
+          </motion.p>
         </div>
-      </section>
-    </main>
-  )
-}
 
+        <div className="relative">
+
+          {/* Blurry glow effect */}
+          <motion.div
+            className="absolute bg-blue- inset-5 blur-[50px] -z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 0.5, ease: "backInOut" }}
+          ></motion.div>
+
+          <motion.div
+            className="absolute inset-0 bg-blue- blur-[200px] scale-y-75 scale-x-125 rounded-full -z-10"
+            initial={{ scale: 0.4, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
+          ></motion.div>
+
+          <MotionImage
+            variants={heroChildVariant}
+            src={stockupImage}
+            alt="Stock Up"
+            height={280}
+            width={280}
+            className="hidden md:block absolute -right-36 -top-32"
+            style={{ translateY }}/>
+          
+          <MotionImage
+            variants={heroChildVariant}
+            src={rockectImage}
+            alt="Rocket Startup"
+            height={240}
+            width={240}
+            className="hidden md:block absolute bottom-24 -left-36"
+            style={{ translateY }}/>
+ 
+        </div>
+      </motion.div>
+    </section>
+  );
+};

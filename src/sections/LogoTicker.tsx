@@ -1,5 +1,5 @@
 "use client";
-import acmeLogo from "@/assets/amzfarm.png";
+// import acmeLogo from "@/assets/amzfarm.png";
 import quantumLogo from "@/assets/apffoods.png";
 import echoLogo from "@/assets/bestbrand.png";
 import celestialLogo from "@/assets/biogloworganics.png";
@@ -25,12 +25,12 @@ export const LogoTicker = () => {
               repeatType: "loop",
             }}
           >
-            <Image
+            {/* <Image
               src={acmeLogo}
               alt="Acme Logo"
     
               className="logo-ticker-image"
-            />
+            /> */}
             <Image
               src={quantumLogo}
               alt="Quantum Logo"
@@ -58,11 +58,11 @@ export const LogoTicker = () => {
             />
 
             {/* Second set of logos for animation */}
-            <Image
+            {/* <Image
               src={acmeLogo}
               alt="Acme Logo"
               className="logo-ticker-image"
-            />
+            /> */}
             <Image
               src={quantumLogo}
               alt="Quantum Logo"

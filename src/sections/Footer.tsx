@@ -158,9 +158,11 @@ export const Footer = () => {
               Resources
             </h3>
             <ul className="space-y-1">
-              {["Blog", "Documentation", "Help Center"].map((item) => (
-                <FooterLink key={item} href="/undermaintain">
-                  {item}
+              {[{ name: "Blog", href: "/blog" },
+                { name: "Documentation", href: "/undermaintain" },
+                { name: "Help Center", href: "/undermaintain" },].map((link) => (
+                  <FooterLink key={link.name} href={link.href}>
+                  {link.name}
                 </FooterLink>
               ))}
             </ul>

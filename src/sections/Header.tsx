@@ -87,15 +87,16 @@ export default function Header() {
               <DropdownLink href="/webdev" onClick={closeAll}>
                 Web Development
               </DropdownLink>
-              <DropdownLink href="/undermaintain" onClick={closeAll}>
+              <DropdownLink href="/seo" onClick={closeAll}>
+                SEO Services
+              </DropdownLink>
+              <DropdownLink href="/social" onClick={closeAll}>
                 Social Media Marketing
               </DropdownLink>
               <DropdownLink href="/undermaintain" onClick={closeAll}>
                 Branding &amp; Consultation
               </DropdownLink>
-              <DropdownLink href="/seo" onClick={closeAll}>
-                SEO Services
-              </DropdownLink>
+            
             </Dropdown>
             
             <Link 
@@ -289,15 +290,16 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void 
               <MobileLink href="/undermaintain" onClick={onClose}>
                 Web Development
               </MobileLink>
-              <MobileLink href="/undermaintain" onClick={onClose}>
+              <MobileLink href="/seo" onClick={onClose}>
+              SEO Service
+              </MobileLink>
+              <MobileLink href="/social" onClick={onClose}>
                 Social Media Marketing
               </MobileLink>
               <MobileLink href="/undermaintain" onClick={onClose}>
               Branding &amp; Consulation
               </MobileLink>
-              <MobileLink href="/seo" onClick={onClose}>
-              SEO Service
-              </MobileLink>
+       
             </div>
           </motion.div>
 
