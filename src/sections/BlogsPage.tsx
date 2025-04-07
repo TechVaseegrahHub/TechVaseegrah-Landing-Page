@@ -110,7 +110,7 @@ export default function BlogPage() {
             Empowering your business with cutting-edge digital solutions
           </p>
           <p className="text-lg text-gray-600 text-left mt-6">
-          In today's fast-paced, tech-driven world, staying ahead of the competition is essential to business success.
+          In today&apos;s fast-paced, tech-driven world, staying ahead of the competition is essential to business success.
           The right digital solutions can elevate your brand and create lasting connections with your customers.
           </p>
 
