@@ -72,7 +72,7 @@ export const SocialMedia = () => {
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-          We're changing the way people connect
+          We&apos;re changing the way people connect
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           We help brands build authentic connections with their audience through creative storytelling, strategic content, and engaging campaigns. Grow your presence, reach the right people, and turn followers into loyal customers.
