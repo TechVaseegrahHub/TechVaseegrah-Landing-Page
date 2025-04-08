@@ -404,7 +404,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                           </MobileNavItem>
                         </motion.div>
 
-                        <MobileNavItem href="/undermaintain" onClick={onClose}>
+                        <MobileNavItem href="/social" onClick={onClose}>
                           Social Media Marketing
                         </MobileNavItem>
                         <MobileNavItem href="/undermaintain" onClick={onClose}>
@@ -426,7 +426,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                             onClick={closeAll}
                             className="flex items-center justify-between py-3 px-6 text-xl font-medium text-gray-800 hover:bg-gray-100 rounded-xl transition-all duration-700 ease-in-out"
                           >
-                            BServices
+                            B-Services
                           </a>
                         </motion.div>
                       </div>
@@ -574,7 +574,7 @@ export default function Header() {
                 <Link href="/webdev" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
                   Web Development
                 </Link>
-                <Link href="/undermaintain" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
+                <Link href="/social" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
                   Social Media Marketing
                 </Link>
                 <Link href="/undermaintain" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
@@ -590,7 +590,7 @@ export default function Header() {
                   onClick={closeAll}
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
                 >          
-                  BServices
+                  B-Services
                 </a>
               </div>
             </Dropdown>
