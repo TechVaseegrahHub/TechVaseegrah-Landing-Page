@@ -8,13 +8,12 @@ import MbaCurriculam from "@/sections/MbaCurriculam";
 export default function TechServices() {
   return (
 
-     <div>       
+    <div>       
       <MbaInternship/>
       <MbaImages/>    
       <MbaProgram />
       <MbaCurriculam/>
-      <MbaCall />  
-     
+      <MbaCall />   
     </div>
   );
 }

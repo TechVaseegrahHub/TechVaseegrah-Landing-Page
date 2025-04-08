@@ -38,7 +38,7 @@ export default function SocialScroll() {
       title: "Strategy That Works",
       description:
         "We begin by understanding your business, audience, and goals. Then, we create a focused roadmap across platforms like Instagram, Facebook, LinkedIn, YouTube, and WhatsApp. Every post, every ad, every story is built with a clear purpose.",
-      image: "/assets/images/Business-target.png",
+      image: "/assets/images/target.png",
     },
     {
       id: 2,

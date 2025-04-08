@@ -33,11 +33,11 @@
 
   .section-title {
     @apply 
-         text-center text-3xl 
-         md:text-[54px] md:leading-[60px] 
-         font-bold tracking-tighter 
-         bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text;
+        text-center text-3xl 
+        md:text-[54px] md:leading-[60px] 
+        font-bold tracking-tighter 
+        bg-gradient-to-b from-black to-[#001E80] 
+        text-transparent bg-clip-text;
   }
 
   .section-description {
@@ -53,11 +53,11 @@
 
   .card {
     @apply 
-         p-10 border 
-         border-[#222222]/10 
-         rounded-3xl 
-         shadow-[0_7px_14px_#EAEAEA] 
-         max-w-xs w-full;
+        p-10 border 
+        border-[#222222]/10 
+        rounded-3xl 
+        shadow-[0_7px_14px_#EAEAEA] 
+        max-w-xs w-full;
   }
 }
 

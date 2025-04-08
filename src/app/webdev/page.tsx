@@ -16,8 +16,7 @@ export default function WebDev() {
       <WebStacks/>
       <WebDevPhoto/>
       <WebFaq/>
-      <WebCall />
-     
+      <WebCall /> 
     </div>
   );
 }

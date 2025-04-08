@@ -8,8 +8,6 @@ import eComImage from "@/assets/f3-icon.png";
 import f3Image from "@/assets/go.png";
 import billzzyImage from "@/assets/billzzy-icon.png";
 
-
-
 // ✅ Sample Data for Carousel
 const projectCards = [ 
   {
@@ -45,7 +43,7 @@ const projectCards = [
                 stay organized, efficient, and enhance customer 
                 satisfaction.
 
-               </p>,
+              </p>,
   },
   
   {
@@ -80,6 +78,7 @@ const projectCards = [
                 inventory management. It helps website owners 
                 stay organized, efficient, and enhance customer 
                 satisfaction.
+              
               </p>,
   },
   
@@ -100,6 +99,7 @@ const projectCards = [
                 No matter the size of your business, GoWhats keeps your 
                 operations smooth, your team organized, and your customers 
                 satisfied..
+              
               </p>,
   },
 
@@ -108,15 +108,15 @@ const projectCards = [
     title: "Billzzy",
     category: "App",
     content: <p>
-               Captures orders by phone call or WhatsApp—even without a website!
-               Unleash seamless order management with Billzzy—your all-in-one 
-               billing and order processing platform. Automatically send order 
-               statements, generate payment links, and capture customer addresses in a snap. 
-               When a customer calls or messages, simply gather their details, confirm the 
-               product, and let Billzzy handle everything else—from printing and packing 
-               to tracking and inventory management. Streamline your entire sales flow 
-               and focus on growing your business, while Billzzy takes care of the heavy 
-               lifting.
+              Captures orders by phone call or WhatsApp—even without a website!
+              Unleash seamless order management with Billzzy—your all-in-one 
+              billing and order processing platform. Automatically send order 
+              statements, generate payment links, and capture customer addresses in a snap. 
+              When a customer calls or messages, simply gather their details, confirm the 
+              product, and let Billzzy handle everything else—from printing and packing 
+              to tracking and inventory management. Streamline your entire sales flow 
+              and focus on growing your business, while Billzzy takes care of the heavy 
+              lifting.  
               </p>,
   },
 ];

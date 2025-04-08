@@ -17,21 +17,25 @@ export default function SocialCall() {
 
   return (
     <section className="w-full bg-white py-8 sm:py-12 px-4 sm:px-6">
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 lg:gap-4">
         {/* Left: Heading & Subheading */}
-        <div className="flex flex-col md:ml-32 md:mt-10 text-center md:text-left md:mb-12">
+        <div className="flex flex-col md:ml-32 md:mt-10 text-center md:text-left md:mb-12 w-full md:w-auto">
           <h2 className="text-2xl sm:text-3xl font-bold mb-2 section-title md:text-left md:text-5xl">
-          Let&rsquo;s Build Your Digital Presence Together
+            Let&rsquo;s Build Your Digital Presence Together
           </h2>
           <p className="text-lg sm:text-xl section-description max-w-lg mx-auto md:mx-0 md:text-left">
-          Ready to grow on social? Whether you&apos;re launching, scaling, or just starting out—we&apos;re here to make something remarkable happen..
+            Ready to grow on social? Whether you&apos;re launching, scaling, or just starting out we&apos;re here to
+            make something remarkable happen..
           </p>
         </div>
 
         {/* Right: Form & Privacy Note */}
-        <div className="flex flex-col items-center md:items-start w-full md:w-auto md:mr-36 mt-6 md:mt-0">
-          <form onSubmit={handleSubmit} className="flex items-center space-x-3 w-full max-w-md">
-            <div className="relative flex-1 md:flex-none">
+        <div className="flex flex-col items-center md:items-start w-full md:w-auto md:mr-36 mt-6 md:mt-0 md:flex-shrink-0">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row items-center sm:space-x-3 space-y-3 sm:space-y-0 w-full max-w-md md:max-w-none"
+          >
+            <div className="relative flex-1 w-full sm:flex-initial">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -47,8 +51,11 @@ export default function SocialCall() {
                 </div>
               )}
             </div>
-            <button type="submit" className="bg-black text-white  rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200h-12  h-12 px-6 whitespace-nowrap">
-            Get a free audit
+            <button
+              type="submit"
+              className="bg-black text-white rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200 h-12 px-6 whitespace-nowrap w-full sm:w-auto"
+            >
+              Get a free audit
             </button>
           </form>
         </div>

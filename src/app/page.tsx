@@ -5,11 +5,12 @@
   import {InternHomeExplore } from "@/sections/InternHomeExplore";
   import { SmartBiz }  from "@/sections/SmartBiz";
   import   Products  from "@/sections/Products";
-import UnderMaintain from "@/sections/UnderMaintain";
+
 
   export default function Home () {
     return (
     <>
+    
     <Hero />
     <LogoTicker />
     <BoostYourProductivity />

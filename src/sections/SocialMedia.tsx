@@ -1,18 +1,18 @@
 "use client";
+
 import stockupImage from "@/assets/te.png";
 import rockectImage from "@/assets/trending.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const MotionImage = motion(Image); // Motion-wrapped Image component
+const MotionImage = motion(Image);     //Motion-wrapped Image component
 
-
-const heroVariant: Variants = { // Framer Motion Variants
+const heroVariant: Variants = {         // Framer Motion Variants
   start: {},
   end: {
     transition: {
-      staggerChildren: 0.4,
+    staggerChildren: 0.4,
     },
   },
 };
@@ -28,8 +28,8 @@ const heroChildVariant: Variants = {
     opacity: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 0.5,
-      ease: "easeOut",
+    duration: 0.5,
+    ease: "easeOut",
     },
   },
 };
@@ -68,7 +68,7 @@ export const SocialMedia = () => {
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-           Social Media Marketing
+            Digital Presence Boost
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
@@ -113,7 +113,6 @@ export const SocialMedia = () => {
             width={240}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}/>
- 
         </div>
       </motion.div>
     </section>

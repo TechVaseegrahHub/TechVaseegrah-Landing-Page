@@ -11,13 +11,13 @@ export default function AboutUs() {
         <div className="max-w-5xl mx-auto  px-4">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
             <h3 className="text-2xl md:text-5xl font-extrabold mb-3 
-                           md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
-                           text-transparent bg-clip-text tracking-tighter">
+                            md:mb-4 bg-gradient-to-b from-black to-[#001E80] 
+                            text-transparent bg-clip-text tracking-tighter">
                 Our Team
             </h3>
             <p className="text-sm md:text-base text-[#010D3E] px-4">
               Our team brings together diverse skills in technology and business,
-               driven by a passion for innovation and excellence.
+                driven by a passion for innovation and excellence.
             </p>
           </div>
           <div className="grid gap-4 md:gap-6 lg:gap-8 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 px-2 sm:px-0">

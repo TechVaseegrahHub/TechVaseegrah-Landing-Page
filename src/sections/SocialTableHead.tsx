@@ -72,7 +72,7 @@ export const SocialTableHead = () => {
             </motion.div>
           </div> */}
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-          Why Brands Choose Tech Vaseegrah
+          Why Choose Tech Vaseegrah
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           We&apos;re a team of passionate developers, designers, and strategists dedicated to transforming ideas into powerful digital experiences.

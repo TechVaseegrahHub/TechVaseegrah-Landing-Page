@@ -10,12 +10,11 @@ import { SocialTableHead } from "@/sections/SocialTableHead";
 export default function socialMarketing() {
   return (
     <div>
-     <SocialMedia/>
-     <SocialScroll/>
-     <SocialTableHead/>
-     <SocialMediaTable/>
-     <SocialCall/>
-     
+      <SocialMedia/>
+      <SocialScroll/>
+      <SocialTableHead/>
+      <SocialMediaTable/>
+      <SocialCall/> 
     </div>
   );
 }

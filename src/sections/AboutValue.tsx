@@ -2,9 +2,7 @@ export default function AboutValue() {
     return (
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <div className="space-y-6 md:space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight 
-         bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text">Our values</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight  bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">Our values</h2>
           <p className="text-lg  text-[#010D3E] max-w-3xl">
           We believe that great organizations are built on strong principles.
           </p>
@@ -62,5 +60,3 @@ export default function AboutValue() {
       </section>
     )
   }
-  
-  
