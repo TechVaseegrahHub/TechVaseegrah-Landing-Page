@@ -8,7 +8,6 @@ import colorcrackersLogo from "@/assets/colour-crackers.png";
 import frelaLogo from "@/assets/frela.png";
 import hasiniaariLogo from "@/assets/hasini-aari.png";
 import hunnyLogo from "@/assets/hunny-bi.png";
-import naturalLogo from "@/assets/naturals.png"
 import jaiLogo from "@/assets/jai.png";
 import jungleLogo from "@/assets/jungle-meet.png";
 import magizhamLogo from "@/assets/magizham.png";
@@ -80,13 +79,6 @@ export const LogoTicker = () => {
             <Image
               src={hunnyLogo}
               alt="Hunny Bi"
-              className="logo-ticker-image h-14 w-18" 
-            />
-
-            
-            <Image
-              src={naturalLogo}
-              alt="Naturals"
               className="logo-ticker-image h-14 w-18" 
             />
 
@@ -176,12 +168,6 @@ export const LogoTicker = () => {
               src={hunnyLogo}
               alt="Hunny Bi"
               className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={naturalLogo}
-              alt="Naturals"
-              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
