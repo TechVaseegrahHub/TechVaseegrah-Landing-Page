@@ -1,5 +1,9 @@
 "use client"
 
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
+
 export default function WebStacks() {
   const technologies = [
     { name: "HTML5", icon: "/html.png", category: "frontend" },
@@ -19,40 +23,148 @@ export default function WebStacks() {
     { name: "Elementor", icon: "/Elementar.png", category: "cms" },
   ]
 
+  const allCategories = [
+    { id: "frontend", name: "Frontend" },
+    { id: "backend", name: "Backend" },
+    { id: "ecommerce", name: "E-Commerce" },
+    { id: "cms", name: "CMS" },
+    { id: "design", name: "Design" },
+  ]
+
+  const [activeCategory, setActiveCategory] = useState("frontend")
+
+  const filteredTechnologies = technologies.filter((tech) => tech.category === activeCategory)
+
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Clean, minimal header */}
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tighter 
-         bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text">
-            Digital eCommerce Technology Stack
-          </h2>
-          <p className="text-[#010D3E] max-w-2xl mx-auto text-lg">
-            As the best eCommerce digital marketing agency, we leverage cutting-edge technologies for all the
-            applications we develop.
-          </p>
+    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFFFF] to-[#E6ECFF] text-black">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading with editorial style */}
+        <div className="mb-10 md:mb-16">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-start md:items-center">
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl 
+                          font-bold tracking-tighter 
+                          bg-gradient-to-b from-black to-[#001E80] 
+                          text-transparent bg-clip-text">
+                          
+                          Technology Stack
+              </motion.h2>
+            </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-[#001A66] text-base sm:text-lg md:text-xl font-normal max-w-xl"
+            >
+            We use advanced technologies to create robust, scalable applications that offer seamless digital experiences.
+            </motion.p>
+          </div>
         </div>
 
-        {/* Simple, elegant technology grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-x-6 gap-y-12">
-          {technologies.map((tech) => (
-            <div key={tech.name} className="group flex flex-col items-center">
-              <div className="relative mb-4 w-16 h-16 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <img
-                  src={tech.icon || "/placeholder.svg?height=64&width=64"}
-                  alt={`${tech.name} logo`}
-                  className="w-full h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-110"
-                />
+        {/* Mobile Category Tabs */}
+        <div className="md:hidden mb-8">
+          <h3 className="text-sm uppercase tracking-wider text-[#001A66] font-medium mb-4">Categories</h3>
+          <div className="flex overflow-x-auto pb-2 gap-3 no-scrollbar">
+            {allCategories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`py-2 px-4 rounded-full whitespace-nowrap transition-all duration-200 text-sm shadow-sm ${
+                  activeCategory === category.id
+                    ? "bg-[#0033CC] text-white font-medium"
+                    : "bg-white text-[#4D4D4D] hover:bg-white/90"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-12 gap-6 md:gap-10">
+          {/* Desktop Categories - Hidden on mobile */}
+          <div className="hidden md:block md:col-span-3 lg:col-span-2">
+            <div className="md:sticky md:top-24 bg-white/90 p-5 rounded-lg shadow-sm">
+              <h3 className="text-sm uppercase tracking-wider text-[#001A66] font-semibold mb-5">Categories</h3>
+              <div className="flex md:flex-col gap-3">
+                {allCategories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`group flex items-center transition-all duration-200 py-2 px-3 rounded-md ${
+                      activeCategory === category.id
+                        ? "text-[#0033CC] font-medium bg-[#E6ECFF]"
+                        : "text-[#4D4D4D] hover:text-[#0033CC] hover:bg-[#F5F7FF]"
+                    }`}
+                  >
+                    <span className="text-base">{category.name}</span>
+                  </button>
+                ))}
               </div>
-              <span className="text-center text-sm font-medium text-slate-800">{tech.name}</span>
             </div>
-          ))}
+          </div>
+
+          {/* Technologies Grid */}
+          <div className="md:col-span-9 lg:col-span-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCategory}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"
+              >
+                {filteredTechnologies.map((tech, index) => (
+                  <TechItem key={`${tech.name}-${index}`} tech={tech} index={index} />
+                ))}
+
+                {/* Empty Message */}
+                {filteredTechnologies.length === 0 && (
+                  <div className="col-span-full py-12 text-center text-[#4D4D4D] font-light bg-white/80 rounded-xl shadow-sm">
+                    No technologies found in this category.
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
+function TechItem({ tech, index }: { tech: any; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.03, duration: 0.3 }}
+      className="group flex flex-col items-center"
+    >
+      <div className="aspect-square w-full flex items-center justify-center p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 transition-all duration-200 rounded-md bg-white shadow-sm hover:shadow-md">
+        <div className="relative w-full h-full flex items-center justify-center">
+          <Image
+            src={tech.icon || "/placeholder.svg"}
+            alt={tech.name}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ 
+                width: '70%',
+                height: 'auto',
+                objectFit: "contain" }}
+            className="transition-all duration-200 group-hover:scale-105"
+          />
+        </div>
+      </div>
+      <h3 className="text-xs sm:text-sm font-medium text-center text-[#333333] group-hover:text-[#0033CC] transition-colors duration-200">
+        {tech.name}
+      </h3>
+    </motion.div>
+  )
+}

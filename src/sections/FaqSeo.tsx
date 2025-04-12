@@ -11,34 +11,23 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What services do you offer?",
+    question: "Why is SEO important for a website?",
     answer:
-      "We offer a comprehensive range of digital services including web development, mobile app development, UI/UX design, digital marketing, and SEO optimization tailored to meet your business needs.",
+      "SEO helps websites rank higher, attract more visitors, and improve credibility. A well-optimized site gets more organic traffic, leading to better conversions and business growth.",
   },
 
   {
-    question: "How long does it take to complete a project?",
+    question: "How does Google My Business help local SEO?",
     answer:
-      "Project timelines vary depending on scope and complexity. A simple website might take 2-4 weeks, while more complex applications can take 2-3 months. We'll provide a detailed timeline during our initial consultation.",
+      "A Google My Business (GMB) profile improves local search visibility, helping businesses appear in Google Maps and local search results.",
   },
 
   {
-    question: "What is your pricing structure?",
+    question: "How do keywords affect SEO?",
     answer:
-      "We offer flexible pricing options including project-based quotes, hourly rates, and retainer packages. Each solution is customized based on your specific requirements and budget constraints.",
+      "Keywords help search engines understand your content. Using relevant and well-researched keywords improves rankings and visibility for targeted search queries",
   },
 
-  {
-    question: "Do you offer ongoing support after project completion?",
-    answer:
-      "Yes, we provide comprehensive post-launch support and maintenance packages to ensure your digital products remain up-to-date, secure, and performing optimally.",
-  },
-
-  {
-    question: "How do you handle revisions and feedback?",
-    answer:
-      "We incorporate a collaborative feedback process with dedicated revision rounds at key project milestones. Our iterative approach ensures your vision is accurately implemented throughout development.",
-  },
 ]
 
 export default function FaqSeo() {

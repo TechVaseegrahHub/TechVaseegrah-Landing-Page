@@ -38,28 +38,28 @@ export default function SeoScroll() {
       title: "Keyword Research & Strategy",
       description:
         "Find high-ranking, profitable keywords that drive targeted traffic to your website and improve your search engine rankings.",
-      image: "/assets/images/Networking.png",
+      image: "/assets/images/39.png",
     },
     {
       id: 2,
       title: "On-Page SEO",
       description:
         "Optimize content, meta tags, URLs, and internal links for better search visibility and improved user experience.",
-      image: "/assets/images/Idea.png",
+      image: "/assets/images/s.png",
     },
     {
       id: 3,
       title: "Off-Page SEO",
       description:
         "Build high-quality backlinks and strengthen domain authority through strategic outreach and relationship building.",
-      image: "/assets/images/trend.png",
+      image: "/assets/images/Bill.png",
     },
     {
       id: 4,
       title: "Technical SEO",
       description:
         "Improve website speed, mobile-friendliness, and indexing to enhance user experience and search engine crawlability.",
-      image: "/assets/images/cloud.png",
+      image: "/assets/images/9.png",
     },
   ];
 
@@ -117,7 +117,7 @@ export default function SeoScroll() {
           viewport={{ once: true }}
           className="mt-32 text-center"
         >
-          <button className="btn btn-primary">Get a Free SEO Audit</button>
+          {/* <button className="btn btn-primary">Get a Free SEO Audit</button> */}
         </motion.div>
       </div>
     </section>

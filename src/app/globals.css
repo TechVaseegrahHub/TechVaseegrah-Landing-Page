@@ -5,10 +5,10 @@
 @layer components {
   .btn {
     @apply 
-         px-4 py-2 rounded-lg 
-         font-medium inline-flex 
-         items-center justify-center 
-         tracking-tight;
+        px-4 py-2 rounded-lg 
+        font-medium inline-flex 
+        items-center justify-center 
+        tracking-tight;
   }
 
   .btn-primary {
@@ -25,10 +25,10 @@
 
   .tag {
     @apply 
-         text-sm inline-flex 
-         border border-[#222]/10 
-         px-3 py-1 rounded-lg 
-         tracking-tight;
+        text-sm inline-flex 
+        border border-[#222]/10 
+        px-3 py-1 rounded-lg 
+        tracking-tight;
   }
 
   .section-title {

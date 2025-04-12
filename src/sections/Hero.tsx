@@ -129,7 +129,7 @@ export default function Hero() {
               width={250}
               height={250}
               alt="Network Neural"
-              className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
+              className="hidden lg:block absolute top-[524px] right-[900px] rotate-[30deg]"
               style={{
                 rotate: 30,
                 translateY: translateY,

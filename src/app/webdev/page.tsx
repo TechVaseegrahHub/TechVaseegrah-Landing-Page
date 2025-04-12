@@ -1,22 +1,24 @@
 "use client";
-import { WebService } from "@/sections/WebService";
-import WebSpec from "@/sections/WebSpec";
-import Web from "@/sections/Web";
+import  WebService from "@/sections/WebService";
 import WebStacks from "@/sections/WebStacks";
-import  WebDevPhoto from "@/sections/WebDevPhoto";
+// import  WebDevPhoto from "@/sections/WebDevPhoto";
 import WebCall from "@/sections/WebCall";
 import WebFaq from "@/sections/WebFaq";
+import ChooseWeb from "@/sections/ChooseWeb";
+import { WebTableHead } from "@/sections/WebTableHead";
+import { WebHead } from "@/sections/WebHead";
 
 export default function WebDev() {
   return (
     <div>
+      <WebHead/>
       <WebService />
-      <WebSpec />
-      <Web/> 
       <WebStacks/>
-      <WebDevPhoto/>
-      <WebFaq/>
+      {/* <WebDevPhoto/> */}
+      <WebTableHead />
+      <ChooseWeb/>
       <WebCall /> 
+      <WebFaq/>
     </div>
   );
 }

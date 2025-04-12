@@ -23,7 +23,7 @@ interface Product {
 
 const products: Product[] = [
   { id: 1, name: "InstaX Bot", image: product1, href: "#" },
-  { id: 2, name: "F3 Engine", image: product2, href: "#" },
+  { id: 2, name: "F3 Engine", image: product2, href: "https://f3engine.com/" },
   { id: 3, name: "Billzzy", image: product3, href: "https://billzzy.com" },
   { id: 4, name: "GoWhats", image: product4, href: "https://gowhats.vercel.app/" },
 ]
@@ -404,15 +404,17 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                           </MobileNavItem>
                         </motion.div>
 
+                        <MobileNavItem href="/seo" onClick={onClose}>
+                          SEO Services
+                        </MobileNavItem>
+
                         <MobileNavItem href="/social" onClick={onClose}>
                           Social Media Marketing
                         </MobileNavItem>
                         <MobileNavItem href="/undermaintain" onClick={onClose}>
                           Branding &amp; Consultation
                         </MobileNavItem>
-                        <MobileNavItem href="/seo" onClick={onClose}>
-                          SEO Services
-                        </MobileNavItem>
+                   
 
                         <motion.div
                           whileHover={{ scale: 1.05 }}
@@ -574,15 +576,18 @@ export default function Header() {
                 <Link href="/webdev" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
                   Web Development
                 </Link>
-                <Link href="/social" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
-                  Social Media Marketing
-                </Link>
-                <Link href="/undermaintain" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
-                  Branding & Consultation
-                </Link>
+
                 <Link href="/seo" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
                   SEO Services
                 </Link>
+
+                <Link href="/social" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
+                  Social Media Marketing
+                </Link>
+                <Link href="/brand" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
+                  Branding & Consultation
+                </Link>
+            
                 <a
                   href="https://b-sevai-service.vercel.app/"
                   target="_blank"

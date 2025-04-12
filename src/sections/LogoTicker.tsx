@@ -1,14 +1,14 @@
 "use client";
-
 import apfLogo from "@/assets/apf.png";
 import amzLogo from "@/assets/amzf.png";
 import bgLogo from "@/assets/bg.png";
 import cleansoLogo from "@/assets/cleanso.png";
-// import decaraLogo from "@/assets/de-cara.png";
+import decaraLogo from "@/assets/de-cara.png";
 import colorcrackersLogo from "@/assets/colour-crackers.png";
 import frelaLogo from "@/assets/frela.png";
 import hasiniaariLogo from "@/assets/hasini-aari.png";
 import hunnyLogo from "@/assets/hunny-bi.png";
+import naturalLogo from "@/assets/naturals.png"
 import jaiLogo from "@/assets/jai.png";
 import jungleLogo from "@/assets/jungle-meet.png";
 import magizhamLogo from "@/assets/magizham.png";
@@ -38,179 +38,192 @@ export const LogoTicker = () => {
             <Image
               src={apfLogo}
               alt="Apf"
-              className="logo-ticker-image h-28 w-28"  // Increased size
+              className="logo-ticker-image h-14 w-18"  // Increased size
             />
 
             <Image
               src={amzLogo}
               alt="Amz Farm"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
+
             <Image
               src={bgLogo}
               alt="BG"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
+
             <Image
               src={cleansoLogo}
               alt="CleanSo"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
-            {/* <Image
-              src={decaraLogo}
-              alt="De Cara"
-              className="logo-ticker-image h-28 w-32"  
-            /> */}
 
             <Image
               src={frelaLogo}
               alt="Frela"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={hasiniaariLogo}
               alt="Hasini Aari Works"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
+
+            <Image
+              src={decaraLogo}
+              alt="De Cara"
+              className="logo-ticker-image h-14 w-18"  
+            /> 
 
             <Image
               src={hunnyLogo}
               alt="Hunny Bi"
-              className="logo-ticker-image h-20" 
+              className="logo-ticker-image h-14 w-18" 
+            />
+
+            
+            <Image
+              src={naturalLogo}
+              alt="Naturals"
+              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
               src={jaiLogo}
               alt="Jai"
-              className="logo-ticker-image h-28 w-28" 
+              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
               src={jungleLogo}
               alt="Jungle Meet"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={magizhamLogo}
               alt="Magizham"
-              className="logo-ticker-image h-28 w-28" 
+              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
               src={mamiveeduLogo}
               alt="Maami Veedu"
-              className="logo-ticker-image h-24"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={samudraLogo}
               alt="Samudra"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
-
-
             <Image
               src={colorcrackersLogo}
               alt="Color Crackers"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
             <Image
               src={sribariyaLogo}
               alt="Sri Bariya Skin Care"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             {/* Second set of logos for animation */}
             <Image
               src={apfLogo}
               alt="Apf"
-              className="logo-ticker-image h-28 w-28" 
+              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
               src={amzLogo}
               alt="Amz Farm"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
             <Image
               src={bgLogo}
               alt="BG"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
             <Image
               src={cleansoLogo}
               alt="CleanSo"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
-
-            {/* <Image
-              src={decaraLogo}
-              alt="De Cara"
-              className="logo-ticker-image h-28 w-32"  
-            /> */}
-
 
             <Image
               src={frelaLogo}
               alt="Frela"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={hasiniaariLogo}
               alt="Hasini Aari Works"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
+            />
+
+
+            <Image
+              src={decaraLogo}
+              alt="De Cara"
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={hunnyLogo}
               alt="Hunny Bi"
-              className="logo-ticker-image h-20"  
+              className="logo-ticker-image h-14 w-18"  
+            />
+
+            <Image
+              src={naturalLogo}
+              alt="Naturals"
+              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
               src={jaiLogo}
               alt="Jai"
-              className="logo-ticker-image h-28 w-28" 
+              className="logo-ticker-image h-14 w-18" 
             />
 
             <Image
               src={jungleLogo}
               alt="Jungle Meet"
-              className="logo-ticker-image h-28 w-30"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={magizhamLogo}
               alt="Magizham"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={mamiveeduLogo}
               alt="Maami Veedu"
-              className="logo-ticker-image h-24"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={samudraLogo}
               alt="Samudra"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
-
 
             <Image
               src={colorcrackersLogo}
               alt="Color Crackers"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
 
             <Image
               src={sribariyaLogo}
               alt="Sri Bariya Skin Care"
-              className="logo-ticker-image h-28 w-28"  
+              className="logo-ticker-image h-14 w-18"  
             />
           </motion.div>
         </div>
