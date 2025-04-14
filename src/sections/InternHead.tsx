@@ -1,6 +1,6 @@
 "use client";
-import stockupImage from "@/assets/01.png";
-import rockectImage from "@/assets/books.png";
+import rightSide from "@/assets/devs.png";
+import leftSide from "@/assets/books.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -34,7 +34,7 @@ const heroChildVariant: Variants = {
   },
 };
 
-export const InternHeading = () => {
+export const InternHead = () => {
   const sectionRef = useRef(null);
   const heroBannerRef = useRef<HTMLDivElement>(null);
 
@@ -102,19 +102,19 @@ export const InternHeading = () => {
 
           <MotionImage
             variants={heroChildVariant}
-            src={stockupImage}
-            alt="Stock Up"
-            height={300}
-            width={300}
+            src={rightSide}
+            alt="Developers"
+            height={280}
+            width={280}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}/>
           
           <MotionImage
             variants={heroChildVariant}
-            src={rockectImage}
-            alt="Rocket Startup"
-            height={300}
-            width={300}
+            src={leftSide}
+            alt="Books"
+            height={250}
+            width={250}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}/>
  

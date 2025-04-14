@@ -1,15 +1,15 @@
 "use client";
-import { InternHeading } from "@/sections/InternHeading";
+import { InternHead } from "@/sections/InternHead";
 import { ExpandableCardDemo } from "@/sections/ExpandableCardDemo";
-import  InternPhoto  from "@/sections/InternPhoto"
+import  InternPhotos  from "@/sections/InternPhotos"
 import InternJobTitle from "@/sections/InternJobTitle";
 import InternshipBenefits from "@/sections/InternshipBenefits";
 
 export default function InternshipPage() {
   return (
     <div>
-        <InternHeading />
-        <InternPhoto/>
+        <InternHead />
+        <InternPhotos/>
         <InternJobTitle />
         <ExpandableCardDemo /> 
         <InternshipBenefits/>
