@@ -1,19 +1,17 @@
 "use client";
 import AboutHeading from "@/sections/AboutHeading";
 import AboutMission from "@/sections/AboutMission";
+import AboutTeam from "@/sections/AboutTeam";
 import { AboutTitle } from "@/sections/AboutTitle";
-import AboutUs from "@/sections/AboutUs";
 import AboutValue from "@/sections/AboutValue";
-// import AboutGroup from "@/sections/AboutGroup";
 
 export default function About() {
   return (
     <div>
       <AboutTitle/>
       <AboutHeading/>
-      {/* <AboutGroup />  */}
-      <AboutUs/> 
       <AboutMission/>
+      <AboutTeam/>
       <AboutValue/>
     </div>
   );

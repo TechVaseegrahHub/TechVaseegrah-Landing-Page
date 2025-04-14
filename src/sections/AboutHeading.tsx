@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function AboutHeading() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24 mb-6">
+    <div className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24 mb-6 mr-7">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
         <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-tighter 

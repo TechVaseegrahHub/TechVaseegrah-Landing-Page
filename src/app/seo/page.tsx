@@ -38,13 +38,13 @@ export default function TechServices() {
   return (
     <div>
       <Seo/>
-      <SeoScroll/>  
+      <SeoScroll/> 
       <SeoTableHead />   
       <SeoTable />
-      {/* <AnimatedTestimonials testimonials={testimonialsData} autoplay={true} /> */}
-      <SeoClients/>
+      {/* <AnimatedTestimonials testimonials={testimonialsData} autoplay={true} /> */}  
+      <SeoClients/> 
+      <SeoCall /> 
       <FaqSeo />
-      <SeoCall />    
     </div>
   );
 }

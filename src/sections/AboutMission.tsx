@@ -60,14 +60,14 @@ export default function AboutMission() {
   }, []);
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 rounded-lg bg-white">
+    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 rounded-lg bg-white ml-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
         {/* Left column - Mission statement */}
         <div className="space-y-5 pt-0 md:pt-4 mr-0 lg:mr-24">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter 
                 bg-gradient-to-b from-black to-[#001E80] 
                 text-transparent bg-clip-text mb-4 sm:mb-6">Our Mission</h2>
-          <p className="w-full text-lg sm:text-xl md:w-[140%] md:text-[22px] leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E]">
+          <p className="w-full text-lg sm:text-xl md:w-[140%] md:text-[22px] leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E] ">
             Tech Vaseegrah, our mission is to
             transform small businesses into smart
             businesses by providing innovative
@@ -79,7 +79,7 @@ export default function AboutMission() {
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter 
                         bg-gradient-to-b from-black to-[#001E80] 
-                        text-transparent bg-clip-text mb-4 sm:mb-6">Vision</h2>
+                        text-transparent bg-clip-text mb-4 sm:mb-6 ">Our Vision</h2>
           <p className="w-full text-lg sm:text-xl md:w-[140%] md:text-[22px] leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E] mt-4 sm:mt-6">
             Our vision at Tech Vaseegrah is to be a leading catalyst in the digital
             transformation of small businesses,fostering innovation and sustainability.

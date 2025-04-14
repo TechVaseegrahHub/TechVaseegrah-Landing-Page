@@ -1,187 +1,166 @@
-"use client";
-import { useRef, useState, useEffect } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+"use client"
 
-interface SEOService {
-  id: number;
-  title: string;
-  description: string;
-  image?: string;
-}
+import { useEffect, useState, useRef } from "react"
+import { twMerge } from "tailwind-merge"
+import Tag from "@/components/Tag"
 
-export default function SeoScroll() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [activeService, setActiveService] = useState<number | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+const cardData = [
+  {
+    image: "/assets/images/7.png",
+    title: "Keyword Research & Strategy",
+    description:
+      "Find high-ranking, profitable keywords that drive targeted traffic to your website and improve your search engine rankings.",
+    color: "fuchsia",
+  },
 
-  // Check if mobile on mount and when window resizes
+  {
+    image: "/assets/images/8.png",
+    title: "On-Page SEO",
+    description:
+      "Optimize content, meta tags, URLs, and internal links for better search visibility and improved user experience.",
+    color: "lime",
+  },
+
+  {
+    image: "/assets/images/seo-r.png",
+    title: "Off-Page SEO",
+    description:
+      "Build high-quality backlinks and strengthen domain authority through strategic outreach and relationship building.",
+    color: "cyan",
+  },
+
+  {
+    image: "/assets/images/2(1).png",
+    title: "Technical SEO",
+    description:
+      "Improve website speed, mobile-friendliness, and indexing to enhance user experience and search engine crawlability.",
+    color: "violet",
+  },
+
+  {
+    image: "/assets/images/9(2).png",
+    title: "SEO content creation",
+    description:
+      "SEO content creation focuses on crafting high-quality, keyword-optimized content that improves search rankings, engages audiences, and drives organic traffic.",
+    color: "cyan",
+  },
+
+  {
+    image: "/assets/images/analysis.png",
+    title: "Competitor analysis",
+    description:
+      "Competitor analysis involves studying competitors' strategies, including SEO, content, and marketing tactics, to identify strengths, weaknesses, and opportunities for improvement",
+    color: "violet",
+  },
+]
+
+export default function SeoSroll() {
+  const [selectedCardIndex, setSelectedCardIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const sectionRef = useRef(null)
+
   useEffect(() => {
-    const checkIfMobile = () => setIsMobile(window.innerWidth < 768);
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Parallax Effect
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-
-  // SEO Services Data
-  const services: SEOService[] = [
-    {
-      id: 1,
-      title: "Keyword Research & Strategy",
-      description:
-        "Find high-ranking, profitable keywords that drive targeted traffic to your website and improve your search engine rankings.",
-      image: "/assets/images/39.png",
-    },
-    {
-      id: 2,
-      title: "On-Page SEO",
-      description:
-        "Optimize content, meta tags, URLs, and internal links for better search visibility and improved user experience.",
-      image: "/assets/images/s.png",
-    },
-    {
-      id: 3,
-      title: "Off-Page SEO",
-      description:
-        "Build high-quality backlinks and strengthen domain authority through strategic outreach and relationship building.",
-      image: "/assets/images/Bill.png",
-    },
-    {
-      id: 4,
-      title: "Technical SEO",
-      description:
-        "Improve website speed, mobile-friendliness, and indexing to enhance user experience and search engine crawlability.",
-      image: "/assets/images/9.png",
-    },
-  ];
+    if (isHovered) return
+    const timeout = setTimeout(() => {
+      setSelectedCardIndex((curr) => (curr === cardData.length - 1 ? 0 : curr + 1))
+    }, 5000) // Slide every 5 seconds
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [selectedCardIndex, isHovered])
 
   return (
-    <section className="relative py-24 overflow-hidden" ref={containerRef}>
-      {/* Background Gradient */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-[#FFFFFF] to-[#FFFFFF] -z-10"
-        style={{ y: backgroundY }}
-      />
+    <section ref={sectionRef} className="py-20 overflow-x-clip">
+      <div className="container">
+        <div className="section-heading md:text-5xl lg:text-6xl text-center">
           <div className="flex justify-center">
-            <motion.div  className="tag mb-6">
-              SEO Services
-            </motion.div>
+            <Tag>Services</Tag>
           </div>
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="text-center mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="section-title mb-6 md:text-5xl"
-          >
-            Our SEO Services
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="section-description"
-          >
-            Comprehensive SEO solutions to improve your online visibility and drive organic traffic
-          </motion.p>
-        </div>
+          <h2 className="section-title mt-5">Boost Your Online Visibility with SEO</h2>
+          <p className="section-description mt-5">
+            Our comprehensive SEO services help businesses improve their search rankings, drive targeted traffic, and
+            achieve sustainable growth through data-driven strategies.
+          </p>
+          <div className="mt-36 lg:mt-48 flex">
+            <div className="flex flex-none gap-8">
+              {cardData.map(({ image, title, description, color }, cardIndex) => (
+                <div
+                  key={title}
+                  className="relative z-0 p-8 md:p-10 max-w-xs md:max-md group"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  style={{
+                    transform: `translateX(calc((-100% - 2rem) * ${selectedCardIndex}))`,
+                    transition: "transform 0.5s ease-in-out",
+                  }}
+                >
+                  <div
+                    className={twMerge(
+                      "absolute size-16 rounded-xl bg-fuchsia-500 top-1.5 right-1.5 -z-10 blur-lg opacity-0 group-hover:opacity-100 transition duration-300",
+                      color === "lime" && "bg-lime-500",
+                      color === "cyan" && "bg-cyan-500",
+                      color === "violet" && "bg-violet-500",
+                    )}
+                  ></div>
+                  <div
+                    className={twMerge(
+                      "absolute size-16 rounded-xl bg-fuchsia-500 group-hover:bg-fuchsia-400 transition duration-300 top-1.5 right-1.5 -z-10",
+                      color === "lime" && "bg-lime-500 group-hover:bg-lime-400",
+                      color === "cyan" && "bg-cyan-500 group-hover:bg-cyan-400",
+                      color === "violet" && "bg-violet-500 group-hover:bg-violet-400",
+                    )}
+                  ></div>
+                  <div className="absolute inset-0 bg-white -z-10 rounded-2xl border border-white-700"></div>
+                  <div className="flex justify-center -mt-28">
+                    <div className="inline-flex relative">
+                      <div className="absolute h-4 w-[90%] left-[5%] top-[100%] bg-zinc-95/70 group-hover:bg-zinc-300/30 transition duration-300 rounded-[100%] [mask-image:radial-gradient(closest-side,black,transparent)]"></div>
+                      <img
+                        src={image || "/placeholder.svg?height=150&width=150"}
+                        alt={`${title} illustration`}
+                        className="size-50 group-hover:-translate-y-6 transition duration-300"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="section-title text-3xl mt-12">{title}</h3>
+                  <p className="section-description mt-5">{description}</p>
+                  {/* <div className="flex justify-between mt-12">
+                    <button className="btn-primary btn text-[15px]">Learn More</button>
+                  </div> */}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-center mt-10">
+            <div className="inline-flex gap-3 p-3">
+              {cardData.map(({ title, color }, cardIndex) => {
+                const isActive = cardIndex === selectedCardIndex
+                const colorClass = isActive
+                  ? color === "fuchsia"
+                    ? "bg-fuchsia-500"
+                    : color === "lime"
+                      ? "bg-lime-500"
+                      : color === "cyan"
+                        ? "bg-cyan-500"
+                        : "bg-violet-500"
+                  : "bg-zinc-200 hover:bg-zinc-300"
 
-        {/* ✅ Displaying Each Service */}
-        <div className="space-y-40 md:space-y-56 lg:space-y-64">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={service.id}
-              service={service}
-              index={index}
-              setActiveService={setActiveService}
-              isMobile={isMobile}
-            />
-          ))}
+                return (
+                  <button
+                    key={title}
+                    className={twMerge(
+                      "relative h-1.5 w-8 rounded-full transition-all duration-300 ease-in-out",
+                      isActive ? "w-12" : "",
+                      colorClass,
+                    )}
+                    onClick={() => setSelectedCardIndex(cardIndex)}
+                    aria-label={`View ${title}`}
+                  />
+                )
+              })}
+            </div>
+          </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-32 text-center"
-        >
-          {/* <button className="btn btn-primary">Get a Free SEO Audit</button> */}
-        </motion.div>
       </div>
     </section>
-  );
-}
-
-interface ServiceItemProps {
-  service: SEOService;
-  index: number;
-  setActiveService: (id: number | null) => void;
-  isMobile: boolean;
-}
-
-function ServiceItem({ service, index, setActiveService, isMobile }: ServiceItemProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const isInView = useInView(ref, {
-    once: false,
-    margin: "-40% 0px -40% 0px",
-    amount: 0.4,
-  });
-
-  useEffect(() => {
-    if (isInView) {
-      setActiveService(service.id);
-    }
-  }, [isInView, service.id, setActiveService]);
-
-  const isEven = index % 2 === 0;
-
-  return (
-    <motion.div
-      id={`service-${service.id}`}
-      ref={ref}
-      className={`flex flex-col ${isMobile ? "" : isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-16`}
-    >
-      {/* ✅ Left Section - Text Content */}
-      <motion.div
-        className="w-full md:w-1/2"
-        initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-      >
-        <h3 className="text-3xl section-title text-left mb-6">{service.title}</h3>
-        <p className="text-left section-description">{service.description}</p>
-      </motion.div>
-
-      {/* ✅ Right Section - Image */}
-      <motion.div
-        className="w-full md:w-1/2 flex justify-center"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7 }}
-      >
-        {service.image && (
-          <Image
-            src={service.image}
-            alt={service.title}
-            width={300}
-            height={300}
-            className=""
-          />
-        )}
-      </motion.div>
-    </motion.div>
-  );
+  )
 }

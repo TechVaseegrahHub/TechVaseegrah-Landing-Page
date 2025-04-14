@@ -1,6 +1,6 @@
 "use client";
-import rocketImage from "@/assets/seop.png";
-import aiImage from "@/assets/seop2.png";
+import rocketImage from "@/assets/seo3.png";
+import aiImage from "@/assets/seo4.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -111,8 +111,8 @@ export const Seo = () => {
             variants={heroChildVariant}
             src={rocketImage}
             alt="Rocket Launch"
-            height={220}
-            width={220}
+            height={240}
+            width={240}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}
           />
@@ -120,8 +120,8 @@ export const Seo = () => {
             variants={heroChildVariant}
             src={aiImage}
             alt="AI Scanner"
-            height={220}
-            width={220}
+            height={240}
+            width={240}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />
