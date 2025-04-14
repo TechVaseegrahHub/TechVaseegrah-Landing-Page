@@ -33,9 +33,11 @@ export default function ChooseBranding() {
       icon: <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
     },
   ]
+  
   return (
     <section className="bg-gradient-to-b from-[#FFFF] to-[#EAEEFE] lg:pb-24 overflow-x-clip mb-12 ">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+
         {/* <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mt-3 md:mt-5 mb-2 md:mb-3 section-title">Why Choose Our MBA Business Program?</h2>
           <p className="text-sm md:text-base lg:text-xl max-w-3xl mx-auto mt-3 md:mt-5 mb-6 md:mb-8 section-description">
@@ -63,4 +65,3 @@ export default function ChooseBranding() {
     </section>
   )
 }
-

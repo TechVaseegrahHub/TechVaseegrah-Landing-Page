@@ -118,7 +118,7 @@ export default function SplitContactForm() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 ">
       <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
         {/* Left Side - Heading and Info */}
         <div className="lg:w-1/2 lg:pr-6 xl:pr-8">

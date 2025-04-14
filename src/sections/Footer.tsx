@@ -117,7 +117,6 @@ export const Footer = () => {
               >
                 <Instagram size={16} />
               </SocialIcon>
-         
               <SocialIcon
                 href="https://x.com/Tech_Vaseegrah"
                 label="X"

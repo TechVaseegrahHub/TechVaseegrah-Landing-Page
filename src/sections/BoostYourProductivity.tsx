@@ -123,7 +123,6 @@ export const BoostYourProductivity = () => {
             width={300}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}/>
- 
         </div>
       </motion.div>
     </section>

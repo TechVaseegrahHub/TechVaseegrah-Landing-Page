@@ -68,7 +68,7 @@ export const BrandTableHead = () => {
         <div className="section-heading">
           {/* <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-           About Us
+            About Us
             </motion.div>
           </div> */}
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
@@ -113,7 +113,6 @@ export const BrandTableHead = () => {
             width={270}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}/>
- 
         </div>
       </motion.div>
     </section>

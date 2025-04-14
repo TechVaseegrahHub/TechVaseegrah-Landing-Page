@@ -28,5 +28,4 @@ function CeoPhoto() {
     </>
   );
 }
-
 export default CeoPhoto;

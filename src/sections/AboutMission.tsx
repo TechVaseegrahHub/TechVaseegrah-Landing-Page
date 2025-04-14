@@ -65,8 +65,8 @@ export default function AboutMission() {
         {/* Left column - Mission statement */}
         <div className="space-y-5 pt-0 md:pt-4 mr-0 lg:mr-24">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter 
-         bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text mb-4 sm:mb-6">Our Mission</h2>
+                bg-gradient-to-b from-black to-[#001E80] 
+                text-transparent bg-clip-text mb-4 sm:mb-6">Our Mission</h2>
           <p className="w-full text-lg sm:text-xl md:w-[140%] md:text-[22px] leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E]">
             Tech Vaseegrah, our mission is to
             transform small businesses into smart
@@ -78,8 +78,8 @@ export default function AboutMission() {
             and insights to thrive in a digital world.
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter 
-         bg-gradient-to-b from-black to-[#001E80] 
-         text-transparent bg-clip-text mb-4 sm:mb-6">Vision</h2>
+                        bg-gradient-to-b from-black to-[#001E80] 
+                        text-transparent bg-clip-text mb-4 sm:mb-6">Vision</h2>
           <p className="w-full text-lg sm:text-xl md:w-[140%] md:text-[22px] leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E] mt-4 sm:mt-6">
             Our vision at Tech Vaseegrah is to be a leading catalyst in the digital
             transformation of small businesses,fostering innovation and sustainability.
@@ -87,13 +87,13 @@ export default function AboutMission() {
             through smart technology and seamless integration.
           </p>
         </div>
-
+        
         {/* Right column - Statistics - Centered on mobile */}
         <div className="flex flex-col items-center md:items-start justify-center py-4 sm:py-8 md:py-0 ml-0 lg:ml-48 mt-8 md:mt-12 text-center md:text-left">
           <div className="space-y-8 sm:space-y-14">
             <div>
               <h3 className="text-3xl text-center sm:text-4xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] 
-                             text-transparent bg-clip-text">
+                              text-transparent bg-clip-text">
                 <span ref={websiteRef}>0+</span>
               </h3>
               <p className="text-base text-center sm:text-lg leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E] mt-1">Websites Developed</p>
@@ -101,7 +101,7 @@ export default function AboutMission() {
 
             <div className="mt-8 sm:mt-12">
               <h3 className="text-3xl text-center sm:text-4xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] 
-                             text-transparent bg-clip-text">
+                              text-transparent bg-clip-text">
                 <span ref={studentsRef}>0+</span>
               </h3>
               <p className="text-base text-center sm:text-lg leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E] mt-1">Trained Students</p>
@@ -109,7 +109,7 @@ export default function AboutMission() {
 
             <div className="mt-8 sm:mt-12">
               <h3 className="text-3xl text-center sm:text-4xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] 
-                             text-transparent bg-clip-text">
+                              text-transparent bg-clip-text">
                 <span ref={clientsRef}>0+</span>
               </h3>
               <p className="text-base text-center sm:text-lg leading-relaxed sm:leading-[30px] tracking-tight text-[#010D3E] mt-1">Happy Clients</p>
