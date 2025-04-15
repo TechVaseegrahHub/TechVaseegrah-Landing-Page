@@ -132,7 +132,6 @@ export default function SplitContactForm() {
               Fill out the form and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
-          
           <div className="space-y-4 sm:space-y-6">
             <ContactInfoItem
               icon={
@@ -198,7 +197,7 @@ export default function SplitContactForm() {
                   onChange={handleChange}
                 />
               </div>
-
+              
               <button
                 type="submit"
                 disabled={status === 'submitting'}

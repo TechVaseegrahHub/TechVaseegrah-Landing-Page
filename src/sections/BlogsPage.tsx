@@ -105,7 +105,7 @@ export default function BlogPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Hero section with minimal design */}
         <div className="mb-16 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-left">Tech Vaseegrah - Blog </h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-left">Blog </h1>
           <p className="text-lg text-gray-600 text-left">
             Empowering your business with cutting-edge digital solutions
           </p>
