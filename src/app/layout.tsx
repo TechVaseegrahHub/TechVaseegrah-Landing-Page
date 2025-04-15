@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { twMerge } from "tailwind-merge";
 import Header from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
