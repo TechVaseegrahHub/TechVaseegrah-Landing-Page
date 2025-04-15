@@ -1,6 +1,6 @@
 "use client";
-import stockupImage from "@/assets/6(2).png";
-import rockectImage from "@/assets/1(3).png";
+import rightSide from "@/assets/mobile-web.png";
+import leftSide from "@/assets/web-startup.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -98,7 +98,7 @@ return (
 
         <MotionImage
             variants={heroChildVariant}
-            src={stockupImage}
+            src={rightSide}
             alt="Stock Up"
             height={310}
             width={310}
@@ -106,7 +106,7 @@ return (
             style={{ translateY }}/>
         <MotionImage
             variants={heroChildVariant}
-            src={rockectImage}
+            src={leftSide}
             alt="Rocket Startup"
             height={280}
             width={280}

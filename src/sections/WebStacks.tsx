@@ -6,21 +6,21 @@ import Image from "next/image"
 
 export default function WebStacks() {
   const technologies = [
-    { name: "HTML5", icon: "/html.png", category: "frontend" },
-    { name: "CSS3", icon: "/css3.png", category: "frontend" },
-    { name: "JavaScript", icon: "/j-s.png", category: "frontend" },
+    { name: "HTML5", icon: "/html-5.png", category: "frontend" },
+    { name: "CSS3", icon: "/css-3.png", category: "frontend" },
+    { name: "JavaScript", icon: "/js.png", category: "frontend" },
     { name: "TypeScript", icon: "/ts.png", category: "frontend" },
-    { name: "React", icon: "/react-js.png", category: "frontend" },
+    { name: "React", icon: "/react.png", category: "frontend" },
     { name: "Express.js", icon: "/express.png", category: "backend" },
-    { name: "Node.js", icon: "/node.png", category: "backend" },
-    { name: "MongoDB", icon: "/mangodb.png", category: "backend" },
+    { name: "Node.js", icon: "/nodejs.png", category: "backend" },
+    { name: "MongoDB", icon: "/mongodb.png", category: "backend" },
     { name: "PHP", icon: "/php.png", category: "backend" },
     { name: "WooCommerce", icon: "/woo.png", category: "ecommerce" },
-    { name: "WordPress", icon: "/wp.png", category: "cms" },
+    { name: "WordPress", icon: "/wordpress.png", category: "cms" },
     { name: "Shopify", icon: "/shopify.png", category: "ecommerce" },
     { name: "Figma", icon: "/figm.png", category: "design" },
     { name: "Framer", icon: "/framer.png", category: "design" },
-    { name: "Elementor", icon: "/Elementar.png", category: "cms" },
+    { name: "Elementor", icon: "/elementor.png", category: "cms" },
   ]
 
   const allCategories = [

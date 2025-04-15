@@ -1,7 +1,7 @@
 "use client";
 
-import stockupImage from "@/assets/te.png";
-import rockectImage from "@/assets/trending.png";
+import rightSide from "@/assets/te.png";
+import leftSide from "@/assets/trending.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -100,8 +100,8 @@ export const Branding = () => {
 
           <MotionImage
             variants={heroChildVariant}
-            src={stockupImage}
-            alt="Stock Up"
+            src={rightSide}
+            alt="Team"
             height={280}
             width={280}
             className="hidden md:block absolute -right-36 -top-32"
@@ -109,8 +109,8 @@ export const Branding = () => {
           
           <MotionImage
             variants={heroChildVariant}
-            src={rockectImage}
-            alt="Rocket Startup"
+            src={leftSide}
+            alt="Branding"
             height={240}
             width={240}
             className="hidden md:block absolute bottom-24 -left-36"

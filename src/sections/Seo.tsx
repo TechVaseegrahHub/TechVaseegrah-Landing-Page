@@ -6,7 +6,6 @@ import { motion, Variants, useScroll, useSpring, useTransform, useInView } from 
 import { useRef } from "react";
 
 const MotionImage = motion(Image);
-
 // Framer Motion Variants
 const heroVariant: Variants = {
   start: {},

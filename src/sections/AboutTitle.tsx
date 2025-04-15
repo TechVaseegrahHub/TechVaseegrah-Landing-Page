@@ -1,12 +1,11 @@
 "use client";
-import stockupImage from "@/assets/Hybrid.png";
-import rockectImage from "@/assets/bulb.png";
+import rightSide from "@/assets/Hybrid.png";
+import leftSide from "@/assets/bulb.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const MotionImage = motion(Image); // Motion-wrapped Image component
-
 
 const heroVariant: Variants = { // Framer Motion Variants
   start: {},
@@ -98,8 +97,8 @@ export const AboutTitle = () => {
 
           <MotionImage
             variants={heroChildVariant}
-            src={stockupImage}
-            alt="Stock Up"
+            src={rightSide}
+            alt="Leaf"
             height={300}
             width={300}
             className="hidden md:block absolute -right-36 -top-32"
@@ -107,8 +106,8 @@ export const AboutTitle = () => {
           
           <MotionImage
             variants={heroChildVariant}
-            src={rockectImage}
-            alt="Rocket Startup"
+            src={leftSide}
+            alt="Bulb"
             height={270}
             width={270}
             className="hidden md:block absolute bottom-24 -left-36"

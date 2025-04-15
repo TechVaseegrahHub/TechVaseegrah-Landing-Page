@@ -52,7 +52,7 @@ export default function BrandingScroll() {
       title: "Rebranding & Brand Refresh",
       description:
         "We run targeted campaigns across Meta (Facebook & Instagram), LinkedIn, and Google ads, optimized for reach, engagement, and conversions. With smart targeting, A/B testing, and continuous optimization, we make every ad rupee count.",
-      image: "/assets/images/Growth-Graph.png",
+      image: "/assets/images/growth-graph.png",
     },
     {
       id: 4,

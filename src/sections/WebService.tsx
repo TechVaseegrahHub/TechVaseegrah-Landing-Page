@@ -66,8 +66,8 @@ export default function TechServicesSection() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="overflow-hidden rounded-lg">
                   <Image
-                    src="/2(1).png"
-                    alt="Before redesign"
+                    src="/web-design.png"
+                    alt="Website redesign"
                     width={180}
                     height={120}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -76,8 +76,8 @@ export default function TechServicesSection() {
                 </div>
                 <div className="overflow-hidden rounded-lg">
                   <Image
-                    src="/Programming.png"
-                    alt="After redesign"
+                    src="/web-stacks.png"
+                    alt="Web Stacks"
                     width={180}
                     height={120}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -104,8 +104,8 @@ export default function TechServicesSection() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="overflow-hidden rounded-lg">
                   <Image
-                    src="/1(2).png"
-                    alt="Before redesign"
+                    src="/ecom-website.png"
+                    alt="Ecommerce website"
                     width={180}
                     height={120}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -114,8 +114,8 @@ export default function TechServicesSection() {
                 </div>
                 <div className="overflow-hidden rounded-lg">
                   <Image
-                    src="/2(2).png"
-                    alt="After redesign"
+                    src="/ecom-mobile.png"
+                    alt="Ecommerce mobile"
                     width={180}
                     height={120}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -249,8 +249,8 @@ export default function TechServicesSection() {
               <div className="grid grid-cols-3 gap-2 mb-4">
                 <div className="overflow-hidden rounded-lg bg-gray-100 aspect-square">
                   <Image
-                    src="/b2.jpeg"
-                    alt="Design example"
+                    src="/ui-ux-1.jpeg"
+                    alt="UI UX Tools"
                     width={80}
                     height={80}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -258,8 +258,8 @@ export default function TechServicesSection() {
                 </div>
                 <div className="overflow-hidden rounded-lg bg-gray-100 aspect-square">
                   <Image
-                    src="/6.jpg"
-                    alt="Design example"
+                    src="/ui-ux-2.jpg"
+                    alt="UI UX Tools"
                     width={80}
                     height={80}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -267,8 +267,8 @@ export default function TechServicesSection() {
                 </div>
                 <div className="overflow-hidden rounded-lg bg-gray-100 aspect-square">
                   <Image
-                    src="/2.jpg"
-                    alt="Design example"
+                    src="/ui-ux-3.jpg"
+                    alt="UI UX Tools"
                     width={80}
                     height={80}
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"

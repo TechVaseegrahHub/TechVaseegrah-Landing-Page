@@ -31,7 +31,7 @@ export default function MbaImages() {
             <div className="relative h-72 sm:h-80 md:h-96 w-full overflow-hidden rounded-lg">
               <Image
                 src="/assets/images/intern-1.jpeg"
-                alt="Team members on a couch having a conversation"
+                alt="intern photo 1"
                 fill
                 className="object-cover"
                 priority
@@ -47,7 +47,7 @@ export default function MbaImages() {
             <div className="relative h-full w-full overflow-hidden rounded-lg">
               <Image
                 src="/assets/images/intern-2.jpeg"
-                alt="Team at the beach"
+                alt="intern photo 2"
                 fill
                 className="object-cover"
               />
@@ -59,7 +59,7 @@ export default function MbaImages() {
             <div className="relative h-full w-full overflow-hidden rounded-lg">
               <Image
                 src="/assets/images/intern-3.jpeg"
-                alt="Team meeting around a table"
+                alt="intern photo 3"
                 fill
                 className="object-cover"
               />
@@ -71,7 +71,7 @@ export default function MbaImages() {
             <div className="relative h-full w-full overflow-hidden rounded-lg">
               <Image
                 src="/assets/images/intern-4.jpeg"
-                alt="Team playing volleyball at sunset"
+                alt="intern photo 4"
                 fill
                 className="object-cover"
               />

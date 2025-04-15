@@ -6,7 +6,7 @@ import Tag from "@/components/Tag"
 
 const cardData = [
   {
-    image: "/assets/images/7.png",
+    image: "/assets/images/seo-1.png",
     title: "Keyword Research & Strategy",
     description:
       "Find high-ranking, profitable keywords that drive targeted traffic to your website and improve your search engine rankings.",
@@ -14,7 +14,7 @@ const cardData = [
   },
 
   {
-    image: "/assets/images/8.png",
+    image: "/assets/images/seo-2.png",
     title: "On-Page SEO",
     description:
       "Optimize content, meta tags, URLs, and internal links for better search visibility and improved user experience.",
@@ -22,7 +22,7 @@ const cardData = [
   },
 
   {
-    image: "/assets/images/seo-r.png",
+    image: "/assets/images/seo-3.png",
     title: "Off-Page SEO",
     description:
       "Build high-quality backlinks and strengthen domain authority through strategic outreach and relationship building.",
@@ -30,7 +30,7 @@ const cardData = [
   },
 
   {
-    image: "/assets/images/2(1).png",
+    image: "/assets/images/seo-4.png",
     title: "Technical SEO",
     description:
       "Improve website speed, mobile-friendliness, and indexing to enhance user experience and search engine crawlability.",
@@ -38,7 +38,7 @@ const cardData = [
   },
 
   {
-    image: "/assets/images/9(2).png",
+    image: "/assets/images/seo-tools.png",
     title: "SEO content creation",
     description:
       "SEO content creation focuses on crafting high-quality, keyword-optimized content that improves search rankings, engages audiences, and drives organic traffic.",
@@ -46,7 +46,7 @@ const cardData = [
   },
 
   {
-    image: "/assets/images/analysis.png",
+    image: "/assets/images/seo-6.png",
     title: "Competitor analysis",
     description:
       "Competitor analysis involves studying competitors' strategies, including SEO, content, and marketing tactics, to identify strengths, weaknesses, and opportunities for improvement",

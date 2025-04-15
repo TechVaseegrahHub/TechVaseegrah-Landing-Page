@@ -1,7 +1,6 @@
 "use client";
 import  WebService from "@/sections/WebService";
 import WebStacks from "@/sections/WebStacks";
-// import  WebDevPhoto from "@/sections/WebDevPhoto";
 import WebCall from "@/sections/WebCall";
 import WebFaq from "@/sections/WebFaq";
 import ChooseWeb from "@/sections/ChooseWeb";
@@ -14,7 +13,6 @@ export default function WebDev() {
       <WebHead/>
       <WebService />
       <WebStacks/>
-      {/* <WebDevPhoto/> */}
       <WebTableHead />
       <ChooseWeb/>
       <WebCall /> 

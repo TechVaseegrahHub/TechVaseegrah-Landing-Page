@@ -52,7 +52,7 @@ export default function SocialScroll() {
       title: "High-Performance Ad Campaigns",
       description:
         "We run targeted campaigns across Meta (Facebook & Instagram), LinkedIn, and Google ads, optimized for reach, engagement, and conversions. With smart targeting, A/B testing, and continuous optimization, we make every ad rupee count.",
-      image: "/assets/images/Growth-Graph.png",
+      image: "/assets/images/growth-graph.png",
     },
     {
       id: 4,
@@ -67,7 +67,7 @@ export default function SocialScroll() {
       title: "Transparent Reports & Insights",
       description:
         "No more guesswork. We deliver clear monthly reports with key metrics, insights, and actionable recommendations so you always know what's working and where to scale.",
-      image: "/assets/images/Read.png",
+      image: "/assets/images/read.png",
     },
 
 

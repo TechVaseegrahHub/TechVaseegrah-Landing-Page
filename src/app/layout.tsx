@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   title: "Tech Vaseegrah",
   description: "Transforming small businesses into smart businesses",
   icons: {
-    icon: "/unnamed.png",
-    apple: "/unnamed.png",  
+    icon: "/tech-vaseegrah.png",
+    apple: "/tech-vaseegrah.png",  
   },
 };
 
