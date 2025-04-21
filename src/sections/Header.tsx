@@ -408,10 +408,10 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                           SEO Services
                         </MobileNavItem>
 
-                        <MobileNavItem href="/social" onClick={onClose}>
+                        <MobileNavItem href="/undermaintain" onClick={onClose}>
                           Social Media Marketing
                         </MobileNavItem>
-                        <MobileNavItem href="/undermaintain" onClick={onClose}>
+                        <MobileNavItem href="/brand" onClick={onClose}>
                           Branding &amp; Consultation
                         </MobileNavItem>
                    
