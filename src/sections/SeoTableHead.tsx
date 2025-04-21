@@ -7,7 +7,6 @@ import { useRef } from "react";
 
 const MotionImage = motion(Image); // Motion-wrapped Image component
 
-
 const heroVariant: Variants = { // Framer Motion Variants
   start: {},
   end: {
@@ -68,7 +67,7 @@ export const SeoTableHead = () => {
         <div className="section-heading">
           {/* <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-           About Us
+            About Us
             </motion.div>
           </div> */}
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
@@ -80,7 +79,6 @@ export const SeoTableHead = () => {
         </div>
 
         <div className="relative">
-
           {/* Blurry glow effect */}
           <motion.div
             className="absolute bg-blue- inset-5 blur-[50px] -z-10"
@@ -113,7 +111,7 @@ export const SeoTableHead = () => {
             width={220}
             className="hidden md:block absolute bottom-24 -left-32"
             style={{ translateY }}/>
- 
+
         </div>
       </motion.div>
     </section>

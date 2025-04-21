@@ -119,7 +119,7 @@ export default function Hero() {
               width={260}
               height={260}
               alt="Cloud Computer"
-              className="hidden md:block bottom-[470px] right-[900px] md:absolute"
+              className="hidden md:block bottom-[450px] right-[900px] md:absolute"
               style={{
                 translateY: translateY,
               }}

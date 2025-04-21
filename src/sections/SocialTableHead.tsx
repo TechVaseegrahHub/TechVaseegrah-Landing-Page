@@ -1,6 +1,6 @@
 "use client";
-import stockupImage from "@/assets/Hybrid.png";
-import rockectImage from "@/assets/right-launch.png";
+import stockupImage from "@/assets/58.png";
+import rockectImage from "@/assets/r.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -100,8 +100,8 @@ export const SocialTableHead = () => {
             variants={heroChildVariant}
             src={stockupImage}
             alt="Stock Up"
-            height={300}
-            width={300}
+            height={280}
+            width={280}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}/>
           
@@ -109,9 +109,9 @@ export const SocialTableHead = () => {
             variants={heroChildVariant}
             src={rockectImage}
             alt="Rocket Startup"
-            height={270}
-            width={270}
-            className="hidden md:block absolute bottom-24 -left-36"
+            height={220}
+            width={220}
+            className="hidden md:block absolute bottom-24 -left-32"
             style={{ translateY }}/>
  
         </div>

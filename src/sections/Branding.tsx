@@ -1,7 +1,7 @@
 "use client";
 
-import rightSide from "@/assets/te.png";
-import leftSide from "@/assets/trending.png";
+import rightSide from "@/assets/analytics.png";
+import leftSide from "@/assets/idea.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -62,7 +62,7 @@ export const Branding = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-20  pb-24 overflow-x-clip"
+      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-24 pb-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
@@ -76,7 +76,7 @@ export const Branding = () => {
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           At Tech Vaseegrah, we believe your brand is your voice, your story, 
-          and your value.Our Branding & Consultation services help you build a 
+          and your value. Our Branding & Consultation services help you build a 
           strong identity, connect with your audience, and grow with purpose.
           </motion.p>
         </div>
@@ -102,8 +102,8 @@ export const Branding = () => {
             variants={heroChildVariant}
             src={rightSide}
             alt="Team"
-            height={280}
-            width={280}
+            height={200}
+            width={200}
             className="hidden md:block absolute -right-36 -top-32"
             style={{ translateY }}/>
           

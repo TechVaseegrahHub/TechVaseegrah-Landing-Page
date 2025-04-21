@@ -1,7 +1,7 @@
 "use client";
 
-import stockupImage from "@/assets/te.png";
-import rockectImage from "@/assets/trending.png";
+import stockupImage from "@/assets/mobile_shopping.png";
+import rockectImage from "@/assets/online_marketing.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";

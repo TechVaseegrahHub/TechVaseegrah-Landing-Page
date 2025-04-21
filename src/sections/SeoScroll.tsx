@@ -10,7 +10,7 @@ const cardData = [
     title: "Keyword Research & Strategy",
     description:
       "Find high-ranking, profitable keywords that drive targeted traffic to your website and improve your search engine rankings.",
-    color: "fuchsia",
+    color: "",
   },
 
   {
@@ -18,7 +18,7 @@ const cardData = [
     title: "On-Page SEO",
     description:
       "Optimize content, meta tags, URLs, and internal links for better search visibility and improved user experience.",
-    color: "lime",
+    color: "",
   },
 
   {
@@ -26,7 +26,7 @@ const cardData = [
     title: "Off-Page SEO",
     description:
       "Build high-quality backlinks and strengthen domain authority through strategic outreach and relationship building.",
-    color: "cyan",
+    color: "",
   },
 
   {
@@ -34,7 +34,7 @@ const cardData = [
     title: "Technical SEO",
     description:
       "Improve website speed, mobile-friendliness, and indexing to enhance user experience and search engine crawlability.",
-    color: "violet",
+    color: "",
   },
 
   {
@@ -42,7 +42,7 @@ const cardData = [
     title: "SEO content creation",
     description:
       "SEO content creation focuses on crafting high-quality, keyword-optimized content that improves search rankings, engages audiences, and drives organic traffic.",
-    color: "cyan",
+    color: "",
   },
 
   {
@@ -50,7 +50,7 @@ const cardData = [
     title: "Competitor analysis",
     description:
       "Competitor analysis involves studying competitors' strategies, including SEO, content, and marketing tactics, to identify strengths, weaknesses, and opportunities for improvement",
-    color: "violet",
+    color: "",
   },
 ]
 
@@ -96,18 +96,12 @@ export default function SeoSroll() {
                 >
                   <div
                     className={twMerge(
-                      "absolute size-16 rounded-xl bg-fuchsia-500 top-1.5 right-1.5 -z-10 blur-lg opacity-0 group-hover:opacity-100 transition duration-300",
-                      color === "lime" && "bg-lime-500",
-                      color === "cyan" && "bg-cyan-500",
-                      color === "violet" && "bg-violet-500",
+                      "absolute size-16 rounded-xl  top-1.5 right-1.5 -z-10 blur-lg opacity-0 group-hover:opacity-100 transition duration-300",
                     )}
                   ></div>
                   <div
                     className={twMerge(
-                      "absolute size-16 rounded-xl bg-fuchsia-500 group-hover:bg-fuchsia-400 transition duration-300 top-1.5 right-1.5 -z-10",
-                      color === "lime" && "bg-lime-500 group-hover:bg-lime-400",
-                      color === "cyan" && "bg-cyan-500 group-hover:bg-cyan-400",
-                      color === "violet" && "bg-violet-500 group-hover:bg-violet-400",
+                      "absolute size-16 rounded-xl bg-gray-500 group-hover:bg-gray-400 transition duration-300 top-1.5 right-1.5 -z-10",               
                     )}
                   ></div>
                   <div className="absolute inset-0 bg-white -z-10 rounded-2xl border border-white-700"></div>
