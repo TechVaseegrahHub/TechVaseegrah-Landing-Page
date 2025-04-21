@@ -176,11 +176,12 @@ export const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-10 pt-5 border-t border-gray-800/30 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Tech Vaseegrah, Inc. All rights reserved.
-          </p>
-        </div>
+        <div className="mt-10 pt-5 border-t border-gray-800/30 flex justify-end">
+  <p className="text-xs text-gray-500 text-right">
+    &copy; {new Date().getFullYear()} Tech Vaseegrah, Inc. All rights reserved.
+  </p>
+</div>
+
       </div>
 
       {/* Scroll to Top Button */}
