@@ -1,10 +1,14 @@
+"use client";
+
 import { useState, FormEvent, ChangeEvent } from 'react';
 
 type FormData = {
   name: string;
   email: string;
   company: string;
-  message: string;
+  phone: string;
+  serviceNeeded: string;
+  businessNeeds: string;
 };
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -25,7 +29,7 @@ const StatusMessage = ({ status }: { status: Exclude<FormStatus, 'idle' | 'submi
   const config = {
     success: {
       className: 'bg-green-50 text-green-700',
-      message: "Your message has been sent successfully! We'll get back to you soon."
+      message: "Thank you! Your request has been submitted. You'll hear back within 48 hours."
     },
     error: {
       className: 'bg-red-50 text-red-700',
@@ -47,6 +51,7 @@ const FormField = ({
   type = 'text',
   value,
   onChange,
+  options,
   rows
 }: {
   id: keyof FormData;
@@ -54,7 +59,8 @@ const FormField = ({
   required?: boolean;
   type?: string;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  options?: string[];
   rows?: number;
 }) => (
   <div>
@@ -71,6 +77,20 @@ const FormField = ({
         rows={rows}
         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
       />
+    ) : type === 'select' ? (
+      <select
+        id={id}
+        name={id}
+        value={value}
+        onChange={onChange}
+        required={required}
+        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      >
+        <option value="">Select an option</option>
+        {options?.map(option => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
     ) : (
       <input
         type={type}
@@ -85,16 +105,29 @@ const FormField = ({
   </div>
 );
 
-export default function SplitContactForm() {
+export default function BusinessInquiryForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     company: '',
-    message: '',
+    phone: '',
+    serviceNeeded: '',
+    businessNeeds: '',
   });
   const [status, setStatus] = useState<FormStatus>('idle');
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const serviceOptions = [
+    'IT Services',
+    'Consulting',
+    'Cloud Solutions',
+    'Cybersecurity',
+    'Digital Transformation',
+    'AI & Analytics',
+    'Application Development',
+    'Other'
+  ];
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -108,7 +141,14 @@ export default function SplitContactForm() {
       await new Promise(resolve => setTimeout(resolve, 1500));
       console.log('Form submitted:', formData);
       setStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ 
+        name: '', 
+        email: '', 
+        company: '', 
+        phone: '', 
+        serviceNeeded: '', 
+        businessNeeds: '' 
+      });
     } catch (error) {
       console.error('Submission error:', error);
       setStatus('error');
@@ -118,18 +158,18 @@ export default function SplitContactForm() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 ">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
         {/* Left Side - Heading and Info */}
         <div className="lg:w-1/2 lg:pr-6 xl:pr-8">
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
-            <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">Get Started</p>
+            <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">Business Inquiry</p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mb-3 sm:mb-4">
-              Connect with our Experts
+              Let's Discuss Your Business Needs
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
-              Have questions about web development or want to discuss a potential project? 
-              Fill out the form and we&apos;ll get back to you within 24 hours.
+              Please provide the following information about your business needs to help us serve you better. 
+              This information will enable us to route your request to the appropriate person.
             </p>
           </div>
           <div className="space-y-4 sm:space-y-6">
@@ -140,7 +180,7 @@ export default function SplitContactForm() {
                 </svg>
               }
               title="Email us"
-              value="admin@techvaseegrah.com"
+              value="contact@wipro.com"
             />
             
             <ContactInfoItem
@@ -150,7 +190,7 @@ export default function SplitContactForm() {
                 </svg>
               }
               title="Call us"
-              value="+91 85240 89733"
+              value="+1 (800) 123-4567"
             />
           </div>
         </div>
@@ -183,17 +223,36 @@ export default function SplitContactForm() {
                 <FormField
                   id="company"
                   label="Company Name"
+                  required
                   value={formData.company}
                   onChange={handleChange}
                 />
                 
                 <FormField
-                  id="message"
-                  label="Your Message"
+                  id="phone"
+                  label="Phone Number"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                
+                <FormField
+                  id="serviceNeeded"
+                  label="Service Needed"
+                  type="select"
+                  required
+                  value={formData.serviceNeeded}
+                  onChange={handleChange}
+                  options={serviceOptions}
+                />
+                
+                <FormField
+                  id="businessNeeds"
+                  label="Business Needs Description"
                   type="textarea"
                   required
                   rows={4}
-                  value={formData.message}
+                  value={formData.businessNeeds}
                   onChange={handleChange}
                 />
               </div>
@@ -203,7 +262,7 @@ export default function SplitContactForm() {
                 disabled={status === 'submitting'}
                 className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg text-white font-medium text-sm sm:text-base transition-all ${
                   status === 'submitting'
-                    ? 'bg-gray-600 cursor-not-allowed'
+                    ? 'bg-blue-400 cursor-not-allowed'
                     : 'bg-black hover:bg-blue-700 hover:shadow-md'
                 }`}
               >
@@ -213,9 +272,9 @@ export default function SplitContactForm() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Sending...
+                    Submitting...
                   </span>
-                ) : 'Send Message'}
+                ) : 'Submit Business Inquiry'}
               </button>
             </form>
           </div>

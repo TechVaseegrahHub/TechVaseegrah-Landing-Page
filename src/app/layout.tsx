@@ -11,10 +11,14 @@ export const metadata: Metadata = {
   title: "Tech Vaseegrah",
   description: "Transforming small businesses into smart businesses",
   icons: {
-    icon: "/tech-v.png",
+    icon: [
+      { url: "/tech-v.png", sizes: "32x32", type: "image/png" },
+      { url: "/tech-v.png", sizes: "16x16", type: "image/png" },
+    ],
     apple: "/tech-v.png",
   },
 };
+
 
 export default function RootLayout({
   children,
