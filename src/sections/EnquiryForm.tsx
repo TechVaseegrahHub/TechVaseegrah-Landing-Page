@@ -180,7 +180,7 @@ export default function BusinessInquiryForm() {
                 </svg>
               }
               title="Email us"
-              value="contact@wipro.com"
+              value="admin@techvaseegrah.com"
             />
             
             <ContactInfoItem
@@ -190,7 +190,7 @@ export default function BusinessInquiryForm() {
                 </svg>
               }
               title="Call us"
-              value="+1 (800) 123-4567"
+              value="+91 85240 89733"
             />
           </div>
         </div>
