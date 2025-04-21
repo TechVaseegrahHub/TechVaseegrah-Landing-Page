@@ -4,6 +4,7 @@ import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import Header from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
+import CookieConsent from "@/sections/CookieConsent";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -19,7 +20,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,6 +30,7 @@ export default function RootLayout({
       <body className={twMerge(dmSans.className, "antialiased bg-[#FFF]")}>
         <Header />
         <main>{children}</main>
+        <CookieConsent /> {/* 👈 Inserted here */}
         <Footer />
       </body>
     </html>

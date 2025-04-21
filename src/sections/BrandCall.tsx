@@ -204,7 +204,7 @@ export default function SplitContactForm() {
                 className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg text-white font-medium text-sm sm:text-base transition-all ${
                   status === 'submitting'
                     ? 'bg-gray-600 cursor-not-allowed'
-                    : 'bg-black hover:bg-blue-700 hover:shadow-md'
+                    : 'bg-black hover:shadow-md'
                 }`}
               >
                 {status === 'submitting' ? (
