@@ -165,7 +165,7 @@ export default function BusinessInquiryForm() {
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
             <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">Business Inquiry</p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mb-3 sm:mb-4">
-              Let's Discuss Your Business Needs
+              Let&apos;s Discuss Your Business Needs
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
               Please provide the following information about your business needs to help us serve you better. 
