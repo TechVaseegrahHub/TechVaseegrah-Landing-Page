@@ -7,10 +7,10 @@ import { motion, Variants, useScroll, useSpring, useTransform, useInView, useAni
 import { MapPin, Phone, Mail, Send, Loader2 } from "lucide-react";
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub } from "react-icons/fa";
 import { useRef, useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
-const MotionImage = motion(Image); // Motion-wrapped Image component
+const MotionImage = motion(Image);
 
-// Framer Motion Variants
 const heroVariant: Variants = {
   start: {},
   end: {
@@ -38,22 +38,30 @@ const heroChildVariant: Variants = {
 };
 
 export const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const controls = useAnimation();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    try {
+      await emailjs.sendForm('service_ja96qyy', 'template_tnc6ckm', form.current!, {
+        publicKey: 'VkvBxQ3RnOgrj4gE3',
+      });
+      console.log('Message sent successfully!');
+    } catch (error: any) {
+      console.error('FAILED...', error.text);
+    }
+
     setIsSubmitting(false);
   };
 
-  // ✅ **Trigger animation immediately on page load**
   useEffect(() => {
     controls.start("visible");
   }, [controls]);
 
-  // ✅ **No delay, instant animations**
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -65,7 +73,6 @@ export const Contact = () => {
 
   const sectionRef = useRef(null);
   const heroBannerRef = useRef<HTMLDivElement>(null);
-
   const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
 
   const { scrollYProgress } = useScroll({
@@ -113,21 +120,18 @@ export const Contact = () => {
           </div>
 
           <div className="relative">
-            {/* Blurry glow effect */}
             <motion.div
               className="absolute bg-blue- inset-5 blur-[50px] -z-10"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 2, delay: 0.5, ease: "backInOut" }}
-            ></motion.div>
-
+            />
             <motion.div
               className="absolute inset-0 bg-blue- blur-[200px] scale-y-75 scale-x-125 rounded-full -z-10"
               initial={{ scale: 0.4, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
-            ></motion.div>
-
+            />
             <MotionImage
               variants={heroChildVariant}
               src={stockupImage}
@@ -149,14 +153,12 @@ export const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Form Container with Fade-In-Up Animation */}
         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={fadeInUp}
           className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row mt-20"
         >
-          {/* Contact Information Section */}
           <div className="md:w-1/2 bg-gray-100 p-8 md:p-12">
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Get in Touch</h3>
             <p className="text-gray-600 mt-4">Feel free to contact us through email, phone, or visit our location.</p>
@@ -167,7 +169,6 @@ export const Contact = () => {
               <ContactInfo icon={Mail} content="admin@techvaseegrah.com" link="mailto:admin@techvaseegrah.com" />
             </div>
 
-            {/* Social Media Links */}
             <div className="mt-8 md:mt-10">
               <p className="text-gray-700 font-medium">Connect with us:</p>
               <div className="flex space-x-6 mt-4">
@@ -179,8 +180,7 @@ export const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="md:w-1/2 p-8 md:p-12 space-y-5 md:space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="md:w-1/2 p-8 md:p-12 space-y-5 md:space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Full Name
@@ -188,7 +188,7 @@ export const Contact = () => {
               <input
                 type="text"
                 id="name"
-                name="name"
+                name="user_name"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 outline-none transition-all"
                 placeholder="Your Name"
                 required
@@ -201,7 +201,7 @@ export const Contact = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="user_email"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 outline-none transition-all"
                 placeholder="you@example.com"
                 required

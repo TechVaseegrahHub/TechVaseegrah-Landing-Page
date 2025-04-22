@@ -1,4 +1,5 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, useRef, FormEvent, ChangeEvent } from 'react';
+import emailjs from '@emailjs/browser';
 
 type FormData = {
   name: string;
@@ -64,7 +65,7 @@ const FormField = ({
     {type === 'textarea' ? (
       <textarea
         id={id}
-        name={id}
+        name={`user_${id}`}
         value={value}
         onChange={onChange}
         required={required}
@@ -75,7 +76,7 @@ const FormField = ({
       <input
         type={type}
         id={id}
-        name={id}
+        name={`user_${id}`}
         value={value}
         onChange={onChange}
         required={required}
@@ -90,13 +91,14 @@ export default function SplitContactForm() {
     name: '',
     email: '',
     company: '',
-    message: '',
+    message: ''
   });
   const [status, setStatus] = useState<FormStatus>('idle');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [name.replace('user_', '')]: value }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -104,13 +106,14 @@ export default function SplitContactForm() {
     setStatus('submitting');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', formData);
+      await emailjs.sendForm('service_snukdgn', 'template_tnc6ckm', formRef.current!, {
+        publicKey: 'VkvBxQ3RnOgrj4gE3'
+      });
+
       setStatus('success');
       setFormData({ name: '', email: '', company: '', message: '' });
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('EmailJS Error:', error);
       setStatus('error');
     } finally {
       setTimeout(() => setStatus('idle'), 5000);
@@ -125,30 +128,21 @@ export default function SplitContactForm() {
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
             <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">Get Started</p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mb-3 sm:mb-4">
-              Connect with our Experts
+            Connect with our Experts
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
-              Have questions about web development or want to discuss a potential project? 
-              Fill out the form and we&apos;ll get back to you within 24 hours.
+            Have questions about web development or want to discuss a potential project? 
+            Fill out the form and we'll get back to you within 24 hours.
             </p>
           </div>
           <div className="space-y-4 sm:space-y-6">
             <ContactInfoItem
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              }
+              icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
               title="Email us"
               value="admin@techvaseegrah.com"
             />
-            
             <ContactInfoItem
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              }
+              icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
               title="Call us"
               value="+91 85240 89733"
             />
@@ -158,53 +152,22 @@ export default function SplitContactForm() {
         {/* Right Side - Form */}
         <div className="lg:w-1/2">
           <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {status === 'success' && <StatusMessage status="success" />}
               {status === 'error' && <StatusMessage status="error" />}
 
               <div className="grid grid-cols-1 gap-4 sm:gap-5">
-                <FormField
-                  id="name"
-                  label="Your Name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-                
-                <FormField
-                  id="email"
-                  label="Email Address"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                
-                <FormField
-                  id="company"
-                  label="Company Name"
-                  value={formData.company}
-                  onChange={handleChange}
-                />
-                
-                <FormField
-                  id="message"
-                  label="Your Message"
-                  type="textarea"
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                />
+                <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} />
+                <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} />
+                <FormField id="company" label="Company Name" value={formData.company} onChange={handleChange} />
+                <FormField id="message" label="Your Message" type="textarea" required rows={4} value={formData.message} onChange={handleChange} />
               </div>
-              
+
               <button
                 type="submit"
                 disabled={status === 'submitting'}
                 className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg text-white font-medium text-sm sm:text-base transition-all ${
-                  status === 'submitting'
-                    ? 'bg-gray-600 cursor-not-allowed'
-                    : 'bg-black hover:shadow-md'
+                  status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-black hover:shadow-md'
                 }`}
               >
                 {status === 'submitting' ? (
