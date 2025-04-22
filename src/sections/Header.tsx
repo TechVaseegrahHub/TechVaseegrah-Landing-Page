@@ -414,7 +414,6 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                         <MobileNavItem href="/brand" onClick={onClose}>
                           Branding &amp; Consultation
                         </MobileNavItem>
-                   
 
                         <motion.div
                           whileHover={{ scale: 1.05 }}

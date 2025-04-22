@@ -213,6 +213,9 @@ export const LogoTicker = () => {
             />
           </motion.div>
         </div>
+        <h2 className="section-title text-xl mt-12">
+            Brands Powered by Tech Vaseegrah
+                  </h2>
       </div>
     </div>
   );
