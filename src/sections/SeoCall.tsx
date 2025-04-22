@@ -132,7 +132,7 @@ export default function SplitContactForm() {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
             Looking to boost your online visibility or discuss a custom SEO strategy? 
-            Fill out the form and we'll get back to you within 24 hours.
+            Fill out the form and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
           <div className="space-y-4 sm:space-y-6">
