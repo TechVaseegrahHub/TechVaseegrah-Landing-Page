@@ -131,8 +131,8 @@ export default function SplitContactForm() {
             Connect with our Experts
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
-            Have questions about web development or want to discuss a potential project? 
-            Fill out the form and we&apos;ll get back to you within 24 hours.
+            Have questions about boosting your brand on social media or want to explore a tailored strategy? 
+            Fill out the form and our team will get back to you within 24 hours.
             </p>
           </div>
           <div className="space-y-4 sm:space-y-6">
