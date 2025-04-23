@@ -11,22 +11,35 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "Why is SEO important for a website?",
+    question: "What social media platforms should I focus on for my business?",
     answer:
-      "SEO helps websites rank higher, attract more visitors, and improve credibility. A well-optimized site gets more organic traffic, leading to better conversions and business growth.",
+      "Every business is different, and the best platforms depend on your target audience and goals. We'll help you identify the platforms that bring the best results for your brand.",
   },
 
   {
-    question: "How does Google My Business help local SEO?",
+    question: "How long will it take to see results from social media marketing?",
     answer:
-      "A Google My Business (GMB) profile improves local search visibility, helping businesses appear in Google Maps and local search results.",
+      "Results can vary depending on your goals, industry, and the platforms you are using. Typically, organic growth takes 2 to 4 weeks, but paid ads can show faster results.",
   },
 
   {
-    question: "How do keywords affect SEO?",
+    question: "How much does social media marketing cost?",
     answer:
-      "Keywords help search engines understand your content. Using relevant and well-researched keywords improves rankings and visibility for targeted search queries",
+      "Costs depend on the scope of the services, number of platforms, and the level of content creation or ad spend required. We offer customized packages based on your needs",
   },
+
+  {
+    question: "Can you create content for my social media pages?",
+    answer:
+      "Yes! We offer full content creation services, including images, videos, captions, and post schedules to keep your pages active and engaging",
+  },
+
+  {
+    question: "How do I know if my social media marketing efforts are working?",
+    answer:
+      "We provide detailed performance reports with metrics such as engagement, reach, website traffic, and conversions, so you can track the success of your campaigns.",
+  },
+
 
 ]
 

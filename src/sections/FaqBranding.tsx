@@ -11,21 +11,33 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "Why is SEO important for a website?",
+    question: "What is branding, and why is it important for my business?",
     answer:
-      "SEO helps websites rank higher, attract more visitors, and improve credibility. A well-optimized site gets more organic traffic, leading to better conversions and business growth.",
+      "Branding is the process of defining and establishing your business's identity, including your logo, messaging, values, and overall image. A strong brand helps build trust with customers, differentiate you from competitors, and attract loyal clients.",
   },
 
   {
-    question: "How does Google My Business help local SEO?",
+    question: "How can branding consulting help my business?",
     answer:
-      "A Google My Business (GMB) profile improves local search visibility, helping businesses appear in Google Maps and local search results.",
+      "Branding consulting helps you develop a clear and consistent brand strategy that resonates with your target audience. We'll guide you on how to refine your messaging, visual identity, and customer experience to build a stronger brand presence in the market.",
   },
 
   {
-    question: "How do keywords affect SEO?",
+    question: "How long does it take to see results from branding efforts?",
     answer:
-      "Keywords help search engines understand your content. Using relevant and well-researched keywords improves rankings and visibility for targeted search queries",
+      "Branding is a long-term investment. While some elements (like visual identity) can be seen quickly, the full impact of branding strategies typically takes 3-6 months to fully unfold, depending on your industry and goals.",
+  },
+
+  {
+    question: "What is the difference between branding and marketing?",
+    answer:
+      "Branding is the foundation of how your business is perceived by the public, while marketing is how you communicate and promote that brand. Branding shapes your identity, and marketing helps you reach and engage your audience",
+  },
+
+  {
+    question: "How do I know if my brand is on the right track?",
+    answer:
+      "We offer brand audits and consultations where we analyze your brand's current position, customer perception, and market performance. Based on this, we provide tailored recommendations to help you refine your brand and improve its effectiveness.",
   },
 
 ]

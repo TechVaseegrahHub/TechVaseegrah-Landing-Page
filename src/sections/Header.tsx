@@ -602,7 +602,7 @@ export default function Header() {
             <Link href="/contact" passHref>
               <button
                 onClick={closeAll}
-                className="bg-black text-white rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200 h-10 px-4 py-2"
+                className="bg-black hover:bg-blue-700  text-white rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200 h-10 px-4 py-2"
               >
                 Contact
               </button>
