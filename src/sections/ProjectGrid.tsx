@@ -95,7 +95,7 @@ export const ProjectGrid = () => {
         <div className="max-w-3xl mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 sm:mb-6">Our Case Studies</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
-            Explore our collection of successful projects and discover how we've helped businesses transform their
+            Explore our collection of successful projects and discover how we&apos;ve helped businesses transform their
             digital presence.
           </p>
         </div>
