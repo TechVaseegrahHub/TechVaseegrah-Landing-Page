@@ -220,7 +220,7 @@ export const Contact = () => {
                 required
               ></textarea>
             </div>
-
+            
             <button
               type="submit"
               className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all flex items-center justify-center"
