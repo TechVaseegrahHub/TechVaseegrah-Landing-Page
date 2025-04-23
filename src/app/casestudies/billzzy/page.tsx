@@ -12,7 +12,7 @@ export default function Billz() {
   const images = ["/assets/images/Billzzyimg2.jpg"];
 
   const project = {
-    title: "Billz",
+    title: "Billzzy",
     subtitle: "Billing and Order Management Platform",
     description: "Streamlining customer interactions and order processing for Vaseegrah Veda",
     overview: "Vaseegrah Veda, a renowned brand specializing in high-quality herbal products, offers a variety of skincare, haircare, and wellness solutions. While their products are top-notch, they struggled with managing customer communication and support efficiently, which impacted both customer experience and order management. Billzzy's all-in-one billing and order management platform has provided the solution, streamlining customer interactions, automating the order process, and enhancing overall operational efficiency.",
@@ -52,7 +52,7 @@ export default function Billz() {
               Back to Case Studies
             </button>
           </div>
-       <div> 
+        <div> 
 
         {/* Main Content */}
         <main className="flex-grow">

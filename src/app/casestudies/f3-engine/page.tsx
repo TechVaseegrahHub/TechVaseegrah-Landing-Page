@@ -12,7 +12,7 @@ export default function F3() {
   const images = ["/assets/images/F3.jpg"];
 
   const project = {
-    title: "F3-engine Application",
+    title: "F3-engine",
     subtitle: "Multi-tenant SaaS Platform",
     description: "Automated backend operations for e-commerce businesses",
     overview: "F3-engine is a powerful multi-tenant SaaS platform built to automate and manage backend operations for e-commerce businesses, especially those using WooCommerce. It centralizes key post-order processes such as billing, packing, tracking, printing, and inventory management. Each tenant operates in a secure, isolated environment with custom workflows.",
