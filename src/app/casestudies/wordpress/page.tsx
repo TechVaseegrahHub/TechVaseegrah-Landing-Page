@@ -109,7 +109,6 @@ export default function Ecommerce() {
       </Head>
 
         {/* Navigation */}
-   
           <div className="container mx-auto px-4 py-3 flex items-center mt-10">
             <button
               onClick={() => router.back()}

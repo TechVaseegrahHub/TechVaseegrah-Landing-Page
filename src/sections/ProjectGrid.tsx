@@ -23,14 +23,14 @@ export const ProjectGrid = () => {
     {
       id: 1,
       thumbnail: "/assets/images/GoWhats.png",
-      slug: "gowhat",
+      slug: "goWhats",
       category: "Sass",
       description: "A messaging platform designed for seamless communication",
     },
     {
       id: 2,
       thumbnail: "/assets/images/wordpressimg.png",
-      slug: "wordpress-dev",
+      slug: "wordpress",
       category: "Web Development",
       description: "Custom WordPress solutions for business needs",
     },
@@ -51,14 +51,14 @@ export const ProjectGrid = () => {
     {
       id: 5,
       thumbnail: "/assets/images/Billzzyimg2.jpg",
-      slug: "billz",
+      slug: "billzzy",
       category: "Finance",
       description: "Simplified billing and payment processing solution",
     },
     {
       id: 6,
       thumbnail: "/assets/images/Instaxbot2.jpg",
-      slug: "chatbot",
+      slug: "instaXBot ",
       category: "AI",
       description: "Intelligent conversation assistant for customer support",
     },
