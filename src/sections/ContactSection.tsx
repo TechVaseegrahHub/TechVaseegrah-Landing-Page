@@ -27,10 +27,10 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
               Ready to Get Started?
             </h2>
-            <p className="max-w-[600px] text-lg text-gray-600 dark:text-gray-300">
+            {/* <p className="max-w-[600px] text-lg text-gray-600 dark:text-gray-300">
               Let&apos;s connect and discuss how we can help your business grow. 
               Our team is ready to assist you with all your needs.
-            </p>
+            </p> */}
           </div>
 
           <div className="space-y-6">
@@ -76,9 +76,9 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
               <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
                 Contact Us
               </CardTitle>
-              <CardDescription className="text-gray-600 dark:text-gray-400">
+              {/* <CardDescription className="text-gray-600 dark:text-gray-400">
                 Fill out the form below and we&apos;ll get back to you within 24 hours.
-              </CardDescription>
+              </CardDescription> */}
             </CardHeader>
             <CardContent>
               <form className="space-y-5">
