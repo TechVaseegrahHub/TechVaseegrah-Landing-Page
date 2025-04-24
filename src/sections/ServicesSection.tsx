@@ -5,7 +5,6 @@ import { ChevronRight, Receipt, FileText, Globe, Shield, ShoppingBag } from "luc
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-// Helper component for category icons
 function CategoryIcon({ category }: { category: string }) {
   const getIcon = () => {
     switch (category) {
@@ -125,15 +124,12 @@ export default function ServicesSection() {
     <section id="services" className="w-full py-12 md:py-24 lg:py-32 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
-          <h2 className="text-3xl 
-        md:text-[54px] md:leading-[60px] 
-        font-bold tracking-tighter">Our Services</h2>
+          <h2 className="text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter">Our Services</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl">
             Comprehensive business solutions tailored to your needs
           </p>
         </div>
 
-        {/* Mobile Category Selector */}
         <div className="md:hidden w-full mb-6 overflow-x-auto">
           <div className="flex space-x-2 pb-2">
             {categories.map((category) => (
@@ -203,7 +199,14 @@ export default function ServicesSection() {
                     </ul>
                   </CardContent>
                   <CardFooter className="border-t bg-green-50/50 pt-4">
-                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white">Select Plan</Button>
+                    <a
+                      href="https://wa.me/918524089733"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex justify-center items-center bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                    >
+                      Contact
+                    </a>
                   </CardFooter>
                 </Card>
               ))}

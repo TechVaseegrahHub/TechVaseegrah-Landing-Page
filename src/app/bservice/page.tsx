@@ -4,7 +4,6 @@ import React from "react"
 import  HeroSection  from "@/sections/HeroSection"
 import ServicesSection from "@/sections/ServicesSection"
 import FaqSection from "@/sections/FAQSection"
-import  ContactSection  from "@/sections/ContactSection"
 
 const faqData = [
   {
@@ -31,7 +30,6 @@ export default function InternshipPage() {
       <HeroSection />
       <ServicesSection />
       <FaqSection  />
-      <ContactSection />
       </main>
     </div>
   );
