@@ -23,9 +23,9 @@ interface Product {
 
 const products: Product[] = [
   { id: 1, name: "InstaX Bot", image: product1, href: "#" },
-  { id: 2, name: "F3 Engine", image: product2, href: "https://f3engine.com/" },
+  { id: 2, name: "F3 Engine", image: product2, href: "https://f3engine.com" },
   { id: 3, name: "Billzzy", image: product3, href: "https://billzzy.com" },
-  { id: 4, name: "GoWhats", image: product4, href: "https://gowhats.vercel.app/" },
+  { id: 4, name: "GoWhats", image: product4, href: "https://gowhats.vercel.app" },
 ]
 
 interface DropdownProps {
@@ -39,10 +39,10 @@ interface DropdownProps {
 }
 
 type DropdownLinkProps = {
-  href: string;
-  children: React.ReactNode;
-  onClick?: () => void;
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  href: string
+  children: React.ReactNode
+  onClick?: () => void
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 interface CompactProductCardProps {
   href: string
@@ -52,10 +52,12 @@ interface CompactProductCardProps {
 }
 
 interface MobileNavItemProps {
-  href: string;
-  onClick: () => void;
-  children: React.ReactNode;
-  className?: string;
+  href: string
+  onClick: () => void
+  children: React.ReactNode
+  className?: string
+  target?: string
+  rel?: string
 }
 
 interface MobileProductCardProps {
@@ -90,9 +92,36 @@ function useMobileMenu() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto"
+    if (isOpen) {
+      // Save current scroll position and lock the body
+      const scrollY = window.scrollY
+      document.body.style.overflow = "hidden"
+      document.body.style.touchAction = "none"
+      document.documentElement.style.overflow = "hidden"
+      document.body.style.position = "fixed"
+      document.body.style.width = "100%"
+      document.body.style.top = `-${scrollY}px`
+    } else {
+      // Restore scroll position when menu closes
+      const scrollY = document.body.style.top
+      document.body.style.overflow = ""
+      document.body.style.touchAction = ""
+      document.documentElement.style.overflow = ""
+      document.body.style.position = ""
+      document.body.style.width = ""
+      document.body.style.top = ""
+      if (scrollY) {
+        window.scrollTo(0, Number.parseInt(scrollY || "0") * -1)
+      }
+    }
+
     return () => {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = ""
+      document.body.style.touchAction = ""
+      document.documentElement.style.overflow = ""
+      document.body.style.position = ""
+      document.body.style.width = ""
+      document.body.style.top = ""
     }
   }, [isOpen])
 
@@ -109,9 +138,6 @@ function useMobileMenu() {
 
 const Dropdown = ({ title, isActive, onMouseEnter, onMouseLeave, onClick, onDoubleClick, children }: DropdownProps) => {
   return (
-    
-
-    
     <div className="relative h-full flex items-center" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <button
         className="flex items-center gap-1 text-base font-medium text-gray-800 hover:text-black transition-colors h-full px-1"
@@ -151,8 +177,8 @@ const DropdownLink = ({ href, onClick, children, ...props }: DropdownLinkProps) 
   >
     <Link
       href={href}
-      target="_blank" // Open in a new tab
-      rel="noopener noreferrer" // Secure the link
+      target="_blank"
+      rel="noopener noreferrer"
       className="block px-4 py-2.5 text-base text-gray-700 hover:bg-gray-50 transition-all duration-300 rounded-md"
       onClick={onClick}
       {...props}
@@ -176,67 +202,62 @@ const CompactProductCard = ({ href, image, name, onClick }: CompactProductCardPr
         />
       </div>
       <div className="p-2 mt-1">
-        <h3 className="text-sm font-medium text-gray-900 text-center line-clamp-2" style={{ fontSize: "1rem" }}>
-          {name}
-        </h3>
+        <h3 className="text-sm font-medium text-gray-900 text-center line-clamp-2">{name}</h3>
       </div>
     </div>
   </Link>
 )
 
-const MobileNavItem = ({ href, onClick, children, className }: MobileNavItemProps) => (
+const MobileNavItem: React.FC<MobileNavItemProps> = ({ href, onClick, children, className, target, rel }) => (
   <motion.div
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{
-      type: "spring",
+      type: "none",
       stiffness: 300,
       damping: 20,
       delay: 0.05,
     }}
-    whileHover={{
-      scale: 1.02,
-      backgroundColor: "rgba(243, 244, 246, 0.5)",
-    }}
-    whileTap={{ scale: 0.98 }}
-    className="px-2"
+    
   >
     <Link
       href={href}
       onClick={onClick}
-      className={`block py-3.5 px-4 text-xl font-medium text-gray-800 hover:text-black hover:bg-gray-50 rounded-lg transition-colors duration-200 ${className}`}
+      target={target}
+      rel={rel}
+      className={`block py-4 px-5 text-2xl font-medium text-gray-800 rounded-lg transition-colors duration-200 ${className || ""}`}
     >
       {children}
     </Link>
   </motion.div>
 )
 
+
 const MobileProductCard = ({ href, image, name, onClick }: MobileProductCardProps) => (
-  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-    <Link href={href} onClick={onClick} className="block">
-      <div className="bg-white/80 rounded-lg overflow-hidden shadow-sm w-[140px] h-[140px] flex flex-col items-center justify-center">
-        <div className="relative aspect-square w-16 h-16 overflow-hidden">
+  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+    <Link href={href} onClick={onClick} target="_blank" rel="noopener noreferrer" className="block w-full">
+      <div className="w-full h-[160px] flex flex-col items-center justify-center p-3 mx-auto">
+        <div className="relative w-full h-24 mb-3">
           <Image
             src={image || "/placeholder.svg"}
             alt={name}
-            width={64}
-            height={64}
+            width={96}
+            height={96}
             quality={100}
-            className="object-contain"
+            className="object-contain w-full h-full"
+            priority
           />
         </div>
-        <div className="p-2">
-          <h3 className="text-sm font-medium text-gray-900 text-center truncate px-1" style={{ fontSize: "0.99rem" }}>
-            {name}
-          </h3>
+        <div className="w-full text-center">
+          <h3 className="text-xl font-medium text-black px-1 line-clamp-2">{name}</h3>
         </div>
       </div>
     </Link>
   </motion.div>
 )
-
 const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
   const [openCategory, setOpenCategory] = useState<string | null>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -257,6 +278,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          ref={menuRef}
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -264,35 +286,41 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
           style={{
             top: `${headerHeight}px`,
             height: `calc(100vh - ${headerHeight}px)`,
+            width: "100%", 
+            right: 0,
+            overflowX: "hidden",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            borderLeft: "1px solid rgba(255, 255, 255, 0.1)",
+            position: "fixed",
+            zIndex: 40,
           }}
-          className="fixed inset-x-0 bg-white/95 backdrop-blur-md z-40 overflow-y-auto"
+          className="overflow-y-auto overscroll-none bg-gradient-to-b from-[#FFFFFF] to-[#ffffff] py-4 overflow-x-clip"
         >
-          <div className="container mx-auto px-4 py-6">
-            <motion.div className="flex flex-col space-y-2">
-              <MobileNavItem href="/" onClick={onClose}>
+          
+            
+            <motion.div className="flex flex-col space-y-3 mt-4">
+              <MobileNavItem href="/" onClick={onClose} className="text-xl  font-medium">
                 Home
               </MobileNavItem>
-
+  
+              {/* Products Section */}
               <motion.div className="flex flex-col">
                 <motion.button
-                  onClick={() => {
-                    if (openCategory === "products") {
-                      setOpenCategory(null)
-                    } else {
-                      setOpenCategory("products")
-                    }
-                  }}
-                  className="flex items-center justify-between py-3 px-4 text-lg font-medium text-gray-800 hover:bg-gray-50 rounded-lg"
+                  onClick={() => setOpenCategory(openCategory === "products" ? null : "products")}
+                  className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
+                    openCategory === "products" ? "" : "text-gray-800 "
+                  }`}
                 >
                   <span>Products</span>
                   <motion.span
                     animate={{ rotate: openCategory === "products" ? 180 : 0 }}
                     transition={{ type: "spring" }}
                   >
-                    <ChevronDown className="h-5 w-5" />
+                    <ChevronDown className="h-7 w-7" />
                   </motion.span>
                 </motion.button>
-
+                
                 <AnimatePresence>
                   {openCategory === "products" && (
                     <motion.div
@@ -300,11 +328,10 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="pl-3"
+                      className="pl-5 pr-5"
                     >
-                      
                       <motion.div
-                        className="grid grid-cols-2 gap-3 py-2"
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3 w-full bg-black-900 rounded-lg" // Changed grid to responsive
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ staggerChildren: 0.05 }}
@@ -315,6 +342,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.05 }}
+                            className="flex justify-center"
                           >
                             <MobileProductCard
                               href={product.href}
@@ -329,21 +357,24 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                   )}
                 </AnimatePresence>
               </motion.div>
-
+  
+              {/* Internships Section */}
               <motion.div className="flex flex-col">
                 <motion.button
                   onClick={() => setOpenCategory(openCategory === "internships" ? null : "internships")}
-                  className="flex items-center justify-between py-3 px-4 text-lg font-medium text-gray-800 hover:bg-gray-50 rounded-lg"
+                  className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
+                    openCategory === "internships" ? "" : "text-gray-800 "
+                  }`}
                 >
                   <span>Internships</span>
                   <motion.span
                     animate={{ rotate: openCategory === "internships" ? 180 : 0 }}
                     transition={{ type: "spring" }}
                   >
-                    <ChevronDown className="h-5 w-5" />
+                    <ChevronDown className="h-7 w-7" />
                   </motion.span>
                 </motion.button>
-
+  
                 <AnimatePresence>
                   {openCategory === "internships" && (
                     <motion.div
@@ -353,11 +384,13 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                       exit="closed"
                       className="pl-4"
                     >
-                      <div className="py-2 space-y-2">
-                        <MobileNavItem href="/internship" onClick={onClose}>
+                      <div className="py-2 space-y-1">
+                        <MobileNavItem href="/internship" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
+                        >
                           IT Internships
                         </MobileNavItem>
-                        <MobileNavItem href="/mbaintern" onClick={onClose}>
+                        <MobileNavItem href="/mbaintern" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
+                        >
                           MBA Internships
                         </MobileNavItem>
                       </div>
@@ -365,21 +398,23 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                   )}
                 </AnimatePresence>
               </motion.div>
-
-              <motion.div className="flex flex-col">
+              {/* Solutions Section */}
+              <motion.div className="flex flex-col mb-20">
                 <motion.button
                   onClick={() => setOpenCategory(openCategory === "solutions" ? null : "solutions")}
-                  className="flex items-center justify-between py-3 px-4 text-lg font-medium text-gray-800 hover:bg-gray-50 rounded-lg"
+                  className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
+                    openCategory === "solutions" ? "" : "text-gray-800 "
+                  }`}
                 >
                   <span>Solutions</span>
                   <motion.span
                     animate={{ rotate: openCategory === "solutions" ? 180 : 0 }}
                     transition={{ type: "spring" }}
                   >
-                    <ChevronDown className="h-5 w-5" />
+                    <ChevronDown className="h-7 w-7" />
                   </motion.span>
                 </motion.button>
-
+                
                 <AnimatePresence>
                   {openCategory === "solutions" && (
                     <motion.div
@@ -387,91 +422,103 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                       initial="closed"
                       animate="open"
                       exit="closed"
-                      className="pl-4"
+                      className="pl-7"
                     >
-                      <div className="py-2 space-y-2">
+                      <div className="py- space-y-1">
                         <motion.div
                           initial={{ x: -10, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <MobileNavItem
-                            href="/webdev"
-                            onClick={onClose}
-                            className="text-blue-600 font-bold"
-                          >
-                            Web Development
-                          </MobileNavItem>
-                        </motion.div>
+                         {/* Web Development */}
+                        <MobileNavItem 
+                          href="/webdev" 
+                          onClick={onClose} 
+                          className="text-black text-xl font-medium tracking-wide" // Changed from text-xl/semibold
+                        >
+                          Web Development
+                        </MobileNavItem>
 
-                        <MobileNavItem href="/seo" onClick={onClose}>
+                        {/* Social Media Marketing */}
+                        <MobileNavItem 
+                          href="/social" 
+                          onClick={onClose} 
+                          className="text-black text-xl font-medium tracking-wide"
+                        >
+                          Social Media Marketing
+                        </MobileNavItem>
+
+                        {/* Branding & Consultation */}
+                        <MobileNavItem
+                          href="/undermaintain"
+                          onClick={onClose}
+                          className="text-black text-xl font-medium tracking-wide"
+                        >
+                          Branding & Consultation
+                        </MobileNavItem>
+
+                        {/* SEO Services */}
+                        <MobileNavItem 
+                          href="/seo" 
+                          onClick={onClose} 
+                          className="text-black text-xl font-medium tracking-wide"
+                        >
                           SEO Services
                         </MobileNavItem>
 
-                        <MobileNavItem href="/undermaintain" onClick={onClose}>
-                          Social Media Marketing
-                        </MobileNavItem>
-                        <MobileNavItem href="/brand" onClick={onClose}>
-                          Branding &amp; Consultation
-                        </MobileNavItem>
-
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.98 }}
-                          transition={{ type: "spring", stiffness: 300 }}                    
+                        {/* BServices */}
+                        <MobileNavItem 
+                          href="/bservice" 
+                          onClick={onClose} 
+                          className="text-black text-xl font-medium tracking-wide"
                         >
-                          <a
-                            href="https://b-sevai-service.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={closeAll}
-                            className="flex items-center justify-between py-3 px-6 text-xl font-medium text-gray-800 hover:bg-gray-100 rounded-xl transition-all duration-700 ease-in-out"
-                          >
-                            B-Services
-                          </a>
+                          B-Services
+                        </MobileNavItem>
                         </motion.div>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </motion.div>
-
-              <Link href="/contact" passHref>
-                <motion.button
-                  onClick={onClose}
-                  className="w-full bg-black text-white py-3 px-4 rounded-lg font-medium mt-4"
-                >
-                  Contact
-                </motion.button>
-              </Link>
+              <motion.div 
+                className="fixed bottom-6 left-0 right-0 px-6 flex justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Link href="/contact" className="w-full max-w-xs">
+                  <motion.button
+                    onClick={onClose}
+                    className="w-full bg-black text-white py-3 px-4 rounded-lg font-semibold text-xl shadow-md transition-colors"
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Contact
+                  </motion.button>
+                </Link>
+              </motion.div>
             </motion.div>
-          </div>
+          
         </motion.div>
       )}
     </AnimatePresence>
   )
 }
-
-export default function Header() {
+const Header: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const headerRef = useRef<HTMLHeadElement>(null)
+  const headerRef = useRef<HTMLElement>(null)
   const { isOpen: isMenuOpen, headerHeight, toggle: toggleMenu, close: closeMenu } = useMobileMenu()
 
+  // Modified to use dynamic header height without affecting page content
   useEffect(() => {
-    if (headerRef.current) {
-      const height = headerRef.current.offsetHeight
-      document.body.style.paddingTop = `${height}px`
-    }
-
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
+
     return () => {
       window.removeEventListener("scroll", handleScroll)
-      document.body.style.paddingTop = "0"
     }
-  }, [scrolled])
+  }, [])
 
   const handleDropdownEnter = (dropdown: string) => {
     if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current)
@@ -488,138 +535,156 @@ export default function Header() {
   }
 
   return (
-    <header
-      ref={headerRef}
-      className={`fixed top-0 w-full z-[11000] bg-white/80 backdrop-blur-lg shadow-sm transition-all duration-300 ${
-        scrolled ? "py-2" : "py-4"
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="z-50" onClick={closeAll}>
-            <Image
-              src={logo || "/placeholder.svg"}
-              alt="TechV Logo"
-              width={170}
-              height={60}
-              priority
-              className="object-contain hover:opacity-90 transition-opacity"
-            />
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-7 h-full">
-            <Link
-              href="/"
-              className="text-base font-medium text-gray-800 hover:text-black transition-colors h-full flex items-center px-1"
-            >
-              Home
+    <>
+      <header
+        ref={headerRef}
+         className={`fixed top-0 w-full z-[11000] bg-gradient-to-b from-[#FFFFFF] to-[#fdfdfd] shadow-md flex items-center justify-between px-4 py-4 transition-all duration-300 border ${
+          scrolled ? "shadow-lg" : ""
+        }`}
+      >
+        <div className="container mx-auto px-2 sm:px-4">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="z-50" onClick={closeAll}>
+              <Image
+                src={logo || "/placeholder.svg"}
+                alt="TechV Logo"
+                width={170}
+                height={60}
+                priority
+                className="object-contain hover:opacity-90 transition-opacity w-auto h-auto max-h-[40px] sm:max-h-[50px]"
+              />
             </Link>
 
-            <Dropdown
-              title="Products"
-              isActive={activeDropdown === "products"}
-              onMouseEnter={() => handleDropdownEnter("products")}
-              onMouseLeave={handleDropdownLeave}
-              onClick={() => setActiveDropdown(activeDropdown === "products" ? null : "products")}
-              onDoubleClick={() => {
-                window.location.href = "/projects"
-                closeAll()
-              }}
-            >
-              <div className="grid grid-cols-2 gap-4 p-2 w-[320px]">
-                {products.map((product) => (
-                  <CompactProductCard
-                    key={product.id}
-                    href={product.href}
-                    image={product.image}
-                    name={product.name}
+            <nav className="hidden md:flex items-center gap-7 h-full">
+              <Link
+                href="/"
+                className="text-base font-medium text-gray-800 hover:text-black transition-colors h-full flex items-center px-1"
+              >
+                Home
+              </Link>
+
+              <Dropdown
+                title="Products"
+                isActive={activeDropdown === "products"}
+                onMouseEnter={() => handleDropdownEnter("products")}
+                onMouseLeave={handleDropdownLeave}
+                onClick={() => setActiveDropdown(activeDropdown === "products" ? null : "products")}
+                onDoubleClick={() => {
+                  window.location.href = "/projects"
+                  closeAll()
+                }}
+              >
+                <div className="grid grid-cols-2 gap-4 p-2 w-[320px]">
+                  {products.map((product) => (
+                    <CompactProductCard
+                      key={product.id}
+                      href={product.href}
+                      image={product.image}
+                      name={product.name}
+                      onClick={closeAll}
+                    />
+                  ))}
+                </div>
+              </Dropdown>
+
+              <Dropdown
+                title="Internships"
+                isActive={activeDropdown === "internships"}
+                onMouseEnter={() => handleDropdownEnter("internships")}
+                onMouseLeave={handleDropdownLeave}
+                onClick={() => setActiveDropdown(activeDropdown === "internships" ? null : "internships")}
+              >
+                <div className="py-1 w-[220px]">
+                  <Link
+                    href="/internship"
                     onClick={closeAll}
-                  />
-                ))}
-              </div>
-            </Dropdown>
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    IT Internships
+                  </Link>
+                  <Link
+                    href="/mbaintern"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    MBA Internships
+                  </Link>
+                </div>
+              </Dropdown>
 
-            <Dropdown
-              title="Internships"
-              isActive={activeDropdown === "internships"}
-              onMouseEnter={() => handleDropdownEnter("internships")}
-              onMouseLeave={handleDropdownLeave}
-              onClick={() => setActiveDropdown(activeDropdown === "internships" ? null : "internships")}
-            >
-              <div className="py-1 w-[220px]">
-                <Link 
-                  href="/internship" 
-                  onClick={closeAll}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                >
-                  IT Internships
-                </Link>
-                <Link 
-                  href="/mbaintern" 
-                  onClick={closeAll}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                >
-                  MBA Internships
-                </Link>
-              </div>
-            </Dropdown>
+              <Dropdown
+                title="Solutions"
+                isActive={activeDropdown === "services"}
+                onMouseEnter={() => handleDropdownEnter("services")}
+                onMouseLeave={handleDropdownLeave}
+                onClick={() => setActiveDropdown(activeDropdown === "services" ? null : "services")}
+              >
+                <div className="py-1 w-[220px]">
+                  <Link
+                    href="/webdev"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Web Development
+                  </Link>
+                  <Link
+                    href="/social"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Social Media Marketing
+                  </Link>
+                  <Link
+                    href="/brand"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Branding & Consultation
+                  </Link>
+                  <Link
+                    href="/seo"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    SEO Services
+                  </Link>
+                  <Link
+                    href="/bservice"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    B-Services
+                  </Link>
+                  </div>
+              </Dropdown>
 
-            <Dropdown
-              title="Solutions"
-              isActive={activeDropdown === "services"}
-              onMouseEnter={() => handleDropdownEnter("services")}
-              onMouseLeave={handleDropdownLeave}
-              onClick={() => setActiveDropdown(activeDropdown === "services" ? null : "services")}
-            >
-              <div className="py-1 w-[220px]">
-                <Link href="/webdev" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
-                  Web Development
-                </Link>
-
-                <Link href="/seo" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
-                  SEO Services
-                </Link>
-
-                <Link href="/social" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
-                  Social Media Marketing
-                </Link>
-                <Link href="/brand" onClick={closeAll} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer">
-                  Branding & Consultation
-                </Link>
-            
-                <a
-                  href="https://b-sevai-service.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeAll}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                >          
-                  B-Services
-                </a>
-              </div>
-            </Dropdown>
-
-            <Link href="/contact" passHref>
+             <Link href="/contact" className="inline-block">
               <button
                 onClick={closeAll}
-                className="bg-black hover:bg-blue-700  text-white rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200 h-10 px-4 py-2"
+                className="bg-black text-white rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200 h-10 px-6 py-3 w-30 flex items-center justify-center"
               >
                 Contact
               </button>
             </Link>
-          </nav>
+            </nav>
 
-          <button
-            className="md:hidden p-5 rounded-md hover:bg-gray-100/60 transition-colors"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            <button
+              className="md:hidden p-2 rounded-md hover:bg-gray-100/60 transition-colors"
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
-      </div>
 
-      <MobileMenu isOpen={isMenuOpen} headerHeight={headerHeight} onClose={closeAll} />
-    </header>
+        <MobileMenu isOpen={isMenuOpen} headerHeight={headerHeight} onClose={closeAll} />
+      </header>
+
+      {/* Spacer div to properly handle spacing without overflow */}
+      <div style={{ height: headerHeight }} className="w-full" aria-hidden="true" />
+    </>
   )
 }
+
+export default Header

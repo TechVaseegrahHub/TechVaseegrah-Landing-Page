@@ -169,32 +169,61 @@ export default function BusinessInquiryForm() {
   };
 
   return (
+ 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+          
+          <div className="flex justify-center">
+            <div className="tag">Business Inquiry</div>
+          </div>
+          <h2 className="section-title mt-5">Let&apos;s Discuss Your Business Needs</h2>
+          <p className="section-description mt-5">
+              Please provide the following information about your business needs to help us serve you better. <br/>
+               This information will enable us to route your request to the appropriate person.
+          </p>
+          <div>
+        </div>
       <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
+        
         {/* Left Info */}
-        <div className="lg:w-1/2 lg:pr-6 xl:pr-8">
+        <div className="lg:w-1/2 lg:pr-6 xl:pr-8 sd:mt-16">
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
-            <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">Business Inquiry</p>
+           
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mb-3 sm:mb-4">
-              Let&apos;s Discuss Your Business Needs
-            </h1>
+            Connect with our Experts            </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
-              Please provide the following information about your business needs to help us serve you better.
-              This information will enable us to route your request to the appropriate person.
+            Have questions about web development or want to discuss a potential project? 
+            Fill out the form and we'll get back to you within 24 hours.
             </p>
           </div>
 
           <div className="space-y-4 sm:space-y-6">
-            <ContactInfoItem
-              icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
-              title="Email us"
-              value="admin@techvaseegrah.com"
-            />
-            <ContactInfoItem
-              icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
-              title="Call us"
-              value="+91 85240 89733"
-            />
+          <ContactInfoItem
+          icon={
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  }
+  title="Email us"
+  value={
+    <a href="mailto:techvaseegrah@gmail.com" className="text-blue-600 hover:underline">
+      techvaseegrah@gmail.com
+    </a>
+  }
+  />
+
+<ContactInfoItem
+  icon={
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+  }
+  title="Call us"
+  value={
+    <a href="tel:+918524089733" className="text-blue-600 hover:underline">
+      +91 85240 89733
+    </a>
+  }
+/>
                 <ContactInfoItem
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" className="bi bi-whatsapp h-4 w-4 sm:h-5 sm:w-5 text-green-600">
@@ -217,7 +246,7 @@ export default function BusinessInquiryForm() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="lg:w-1/2">
+        <div className="lg:w-1/2 mt-12">
           <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 md:p-8">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {status === 'success' && <StatusMessage status="success" />}
