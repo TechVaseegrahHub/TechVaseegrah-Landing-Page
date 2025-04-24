@@ -28,7 +28,8 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
               Ready to Get Started?
             </h2>
             <p className="max-w-[600px] text-lg text-gray-600 dark:text-gray-300">
-              Let's connect and discuss how we can help your business grow. Our team is ready to assist you with all your needs.
+              Let&apso;s connect and discuss how we can help your business grow. 
+              Our team is ready to assist you with all your needs.
             </p>
           </div>
 
