@@ -233,7 +233,7 @@ export default function BusinessInquiryForm() {
               title="WhatsApp"
               value={
                 <a
-                  href="https://wa.me/8524089733"
+                  href="https://wa.me/918524089733"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-green-600 hover:underline"

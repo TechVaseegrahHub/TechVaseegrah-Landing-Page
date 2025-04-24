@@ -166,7 +166,7 @@ export const Contact = () => {
             <div className="mt-6 space-y-6">
               <ContactInfo icon={MapPin} content="9, Vijaya Nagar, Reddypalayam Road, Thanjavur-613009" />
               <ContactInfo icon={Phone} content="+91 85240 89733" link="tel:+918524089733" />
-              <ContactInfo icon={Mail} content="admin@techvaseegrah.com" link="mailto:admin@techvaseegrah.com" />
+              <ContactInfo icon={Mail} content="techvaseegrah@gmail.com" link="mailto:techvaseegrah@gmail.com" />
             </div>
 
             <div className="mt-8 md:mt-10">
@@ -175,7 +175,7 @@ export const Contact = () => {
                 <SocialButton link="https://www.linkedin.com/company/tech-vaseegrah/posts/?feedView=all" icon={<FaLinkedin size={24} />} />
                 <SocialButton link="https://www.instagram.com/techvaseegrah/" icon={<FaInstagram size={24} />} />
                 <SocialButton link="https://wa.me/+918524089733" icon={<FaWhatsapp size={24} />} />
-                <SocialButton link="mailto:admin@techvaseegrah.com" icon={<FaEnvelope size={24} />} />
+                <SocialButton link="mailto:techvaseegrah@gmail.com" icon={<FaEnvelope size={24} />} />
               </div>
             </div>
           </div>
