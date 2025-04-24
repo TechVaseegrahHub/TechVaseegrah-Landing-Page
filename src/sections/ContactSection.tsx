@@ -52,7 +52,7 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Office Address</h3>
                 <p className="text-gray-600 dark:text-gray-400">9, Vijaya Nagar, Reddypalayam Road</p>
-                <p className="text-gray-600 dark:text-gray-400">Thanjavur-613009, Tamil Nadu</p>
+                <p className="text-gray-600 dark:text-gray-400">Thanjavur&#8209;613009, Tamil Nadu</p>
               </div>
             </div>
 
