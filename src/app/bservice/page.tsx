@@ -1,10 +1,10 @@
 "use client"
 
 import React from "react"
-import { HeroSection } from "@/sections/HeroSection"
+import  HeroSection  from "@/sections/HeroSection"
 import ServicesSection from "@/sections/ServicesSection"
 import FaqSection from "@/sections/FAQSection"
-import { ContactSection } from "@/sections/ContactSection"
+import  ContactSection  from "@/sections/ContactSection"
 
 const faqData = [
   {
@@ -26,11 +26,13 @@ const faqData = [
 
 export default function InternshipPage() {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col">
+      <main className="flex-1">
       <HeroSection />
       <ServicesSection />
       <FaqSection  />
-      <ContactSection categories={[]} />
+      <ContactSection />
+      </main>
     </div>
   );
 }
