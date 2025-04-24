@@ -466,15 +466,13 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                           SEO Services
                         </MobileNavItem>
 
-                 {/* BServices */}
-                 <MobileNavItem 
-                          href="https://b-sevai-service.vercel.app" 
+                        {/* BServices */}
+                        <MobileNavItem 
+                          href="/bservice" 
                           onClick={onClose} 
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="text-black text-xl font-medium tracking-wide"
                         >
-                          BServices
+                          B-Services
                         </MobileNavItem>
                         </motion.div>
                       </div>
@@ -650,15 +648,13 @@ const Header: React.FC = () => {
                   >
                     SEO Services
                   </Link>
-                  <a
-                    href="https://b-sevai-service.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/bservice"
                     onClick={closeAll}
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
                   >
-                    BServices
-                  </a>
+                    B-Services
+                  </Link>
                   </div>
               </Dropdown>
 
