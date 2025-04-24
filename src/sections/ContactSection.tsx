@@ -28,9 +28,10 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
               Ready to Get Started?
             </h2>
             <p className="max-w-[600px] text-lg text-gray-600 dark:text-gray-300">
-              Let&apso;s connect and discuss how we can help your business grow. 
-              Our team is ready to assist you with all your needs.
-            </p>
+  Let&apos;s connect and discuss how we can help your business grow. 
+  Our team is ready to assist you with all your needs.
+</p>
+
           </div>
 
           <div className="space-y-6">
@@ -77,8 +78,9 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
                 Contact Us
               </CardTitle>
               <CardDescription className="text-gray-600 dark:text-gray-400">
-                Fill out the form below and we&apos;ll get back to you within 24 hours.
-              </CardDescription>
+  Fill out the form below and we&apos;ll get back to you within 24 hours.
+</CardDescription>
+
             </CardHeader>
             <CardContent>
               <form className="space-y-5">
@@ -144,8 +146,7 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
                 </select>
               </div>
 
-
-                <div className="space-y-2">
+              <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     Your Message
                   </label>
@@ -155,7 +156,7 @@ export const ContactSection = ({ categories }: ContactSectionProps) => (
                     className="min-h-[140px]"
                   />
                 </div>
-
+                
                 <Button 
                   type="submit" 
                   className="w-full h-12 bg-green-600 hover:bg-green-700 text-white text-base font-medium transition-colors"
