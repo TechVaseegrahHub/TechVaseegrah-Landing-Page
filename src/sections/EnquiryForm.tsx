@@ -175,7 +175,7 @@ export default function BusinessInquiryForm() {
           <div className="flex justify-center">
             <div className="tag">Business Inquiry</div>
           </div>
-          <h2 className="section-title mt-5">Let&apos;s Discuss Your Business Need</h2>
+          <h2 className="section-title mt-5">Let&apos;s Discuss Your Business Needs</h2>
           <p className="section-description mt-5 mb-6">
               Please provide the following information about your business needs to help us serve you better. <br/>
                This information will enable us to route your request to the appropriate person.
