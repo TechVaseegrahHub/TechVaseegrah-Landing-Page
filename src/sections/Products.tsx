@@ -270,7 +270,7 @@ export default function Products() {
           <motion.div variants={tagVariants}>
             <Tag>Products</Tag>
           </motion.div>
-          <motion.h2 className="section-title mt-3 md:mt-5 text-center text-3xl md:text-3xl lg:text-4xl" variants={headerVariants}>
+          <motion.h2 className="section-title mt-5 " variants={headerVariants}>
             Our Major Products for <br className="hidden md:block" /> E‑commerce Industry
           </motion.h2>
         </motion.div>
