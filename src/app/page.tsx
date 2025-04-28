@@ -20,8 +20,7 @@
     <Testimonials />  
     <EnquiryForm />
     <InternHomeExplore /> 
-    
-
+  
     </>
   );
 };
