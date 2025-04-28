@@ -307,7 +307,14 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
               {/* Products Section */}
               <motion.div className="flex flex-col">
                 <motion.button
-                  onClick={() => setOpenCategory(openCategory === "products" ? null : "products")}
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent any default navigation
+                    setOpenCategory(openCategory === "products" ? null : "products");
+                  }}
+                  onDoubleClick={() => {
+                    window.location.href = "/projects"
+                    closeAll()
+                  }}
                   className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
                     openCategory === "products" ? "" : "text-gray-800 "
                   }`}
@@ -331,7 +338,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                       className="pl-5 pr-5"
                     >
                       <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3 w-full bg-black-900 rounded-lg" // Changed grid to responsive
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3 w-full bg-black-900 rounded-lg"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ staggerChildren: 0.05 }}
@@ -480,16 +487,17 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                   )}
                 </AnimatePresence>
               </motion.div>
+              {/* Contact Button - Moved to bottom without overlapping */}
               <motion.div 
-                className="fixed bottom-6 left-0 right-0 px-6 flex justify-center"
+                className="px-5 pt-8 pb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <Link href="/contact" className="w-full max-w-xs">
+                <Link href="/contact" className="block w-full">
                   <motion.button
                     onClick={onClose}
-                    className="w-full bg-black text-white py-3 px-4 rounded-lg font-semibold text-xl shadow-md transition-colors"
+                    className="w-full bg-black hover:bg-blue-700  text-white py-3 px-2 rounded-lg font-semibold text-xl shadow-md transition-colors"
                     whileTap={{ scale: 0.98 }}
                   >
                     Contact
@@ -661,7 +669,7 @@ const Header: React.FC = () => {
              <Link href="/contact" className="inline-block">
               <button
                 onClick={closeAll}
-                className="bg-black text-white rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200 h-10 px-6 py-3 w-30 flex items-center justify-center"
+                className="bg-black text-white rounded-lg font-medium tracking-tight hover:bg-blue-700  transition-all duration-200 h-10 px-6 py-3 w-30 flex items-center justify-center"
               >
                 Contact
               </button>
