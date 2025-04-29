@@ -38,11 +38,9 @@ export default function RootLayout({
             __html: `
 <!--
 
-
  /\_/\  
 ( - . - ) (prem)
  > 🍃 <
-
 
  -->
   `,
