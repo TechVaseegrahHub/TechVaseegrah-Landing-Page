@@ -7,11 +7,9 @@
   import   Products  from "@/sections/Products";
   import EnquiryForm from "@/sections/EnquiryForm";
 
-
   export default function Home () {
     return (
     <>
-    
     <Hero />
     <LogoTicker />
     <BoostYourProductivity />
@@ -20,7 +18,6 @@
     <Testimonials />  
     <EnquiryForm />
     <InternHomeExplore /> 
-  
     </>
   );
 };
