@@ -37,13 +37,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
 <!--
-
-──────▄▀▄─────▄▀▄       
-─────▄█░░▀▀▀▀▀░░█▄      p r e m 
-─▄▄──█░░░░░░░░░░░█──▄▄
-█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█
-
-
+p
+  r
+    e 
+      m 
+        *t(-_-t) *
  -->
   `,
           }}
