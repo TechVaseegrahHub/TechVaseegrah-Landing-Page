@@ -303,6 +303,10 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
               <MobileNavItem href="/" onClick={onClose} className="text-xl  font-medium">
                 Home
               </MobileNavItem>
+
+              <MobileNavItem href="/about" onClick={onClose} className="text-xl  font-medium">
+                About Us
+              </MobileNavItem>
   
               {/* Products Section */}
               <motion.div className="flex flex-col">
