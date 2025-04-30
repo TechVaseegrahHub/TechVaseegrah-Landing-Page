@@ -3,8 +3,8 @@ import Image from "next/image"
 export default function AboutHeading() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24 mb-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:ml-4">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="space-y-6 lg:ml-4">
           <h2
             className="text-xl md:text-3xl font-bold leading-tight tracking-tighter 
         bg-gradient-to-b from-black to-[#001E80] 
@@ -15,30 +15,67 @@ export default function AboutHeading() {
             <br /> <span className="block text-right">- Sreekarrthikeyan</span>
           </h2>
         </div>
-        <div className="w-full max-w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col md:mr-4">
-          <div className="w-full  rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300">
-            <Image
-              src={"/ceo3.jpg"}
-              alt="CEO Portrait"
-              width={600}
-              height={600}
-              className="h-full w-full  scale-105 group-hover:scale-100  group-hover:grayscale-0 object-cover transition-all duration-300"
-            />
-          </div>
-          <article className="relative overflow-hidden  flex-grow">
-            <div className="info p-2 translate-y-0 group-hover:-translate-y-20 transition-all duration-300">
-              <p className="text-xl md:text-2xl font-semibold bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
-                Mr.Sreekarrthikeyan Mahadevan
-              </p>
-              <p className="sm:text-base text-sm   text-[#010D3E]">CEO &amp; Co-founder | Tech Vaseegrah</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+             {/* Second Person Card */}
+             <div className="w-full max-w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col">
+            <div className="w-full rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300">
+              <Image
+                src={"/sharan-sivakumar.png"}
+                alt="CTO Portrait"
+                width={600}
+                height={600}
+                className="h-full w-full scale-105 group-hover:scale-100 group-hover:grayscale-0 object-cover transition-all duration-300"
+              />
             </div>
-            <button
-              className="absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3  text-3xl  transition-all duration-300 w-full text-center bg-gradient-to-b from-black to-[#001E80] 
-        text-transparent bg-clip-text font-bold tracking-tighter"
-            >
-              CEO &amp; Co-founder
-            </button>
-          </article>
+            <article className="relative overflow-hidden flex-grow">
+              <div className="info p-2 translate-y-0 group-hover:-translate-y-20 transition-all duration-300">
+                <p className="text-xl md:text-2xl font-semibold bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+                Mr.Sharan Sivakumar
+                </p>
+                <p className="sm:text-base text-sm text-[#010D3E] group-hover:opacity-0 transition-opacity duration-300">
+                Co-founder &amp; Chief Sales Executive
+                </p>
+              </div>
+              <button
+                className="absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3 text-3xl transition-all duration-300 w-full text-center bg-gradient-to-b from-black to-[#001E80] 
+          text-transparent bg-clip-text font-bold tracking-tighter"
+              >
+                Co-founder 
+              </button>
+            </article>
+          </div>
+          {/* First Person Card */}
+          <div className="w-full max-w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col">
+            <div className="w-full rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300">
+              <Image
+                src={"/ceo3.jpg"}
+                alt="CEO Portrait"
+                width={600}
+                height={600}
+                className="h-full w-full scale-105 group-hover:scale-100 group-hover:grayscale-0 object-cover transition-all duration-300"
+              />
+            </div>
+            <article className="relative overflow-hidden flex-grow">
+              <div className="info p-2 translate-y-0 group-hover:-translate-y-20 transition-all duration-300">
+                <p className="text-xl md:text-2xl font-semibold bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+                  Mr.Sreekarrthikeyan Mahadevan
+                </p>
+                <p className="sm:text-base text-sm text-[#010D3E] group-hover:opacity-0 transition-opacity duration-300">
+                  CEO &amp; Co-founder 
+                </p>
+              </div>
+              <button
+                className="absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3 text-3xl transition-all duration-300 w-full text-center bg-gradient-to-b from-black to-[#001E80] 
+          text-transparent bg-clip-text font-bold tracking-tighter"
+              >
+                CEO &amp; Co-founder
+              </button>
+            </article>
+          </div>
+
+       
         </div>
       </div>
     </div>

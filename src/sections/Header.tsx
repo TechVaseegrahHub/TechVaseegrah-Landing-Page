@@ -571,6 +571,13 @@ const Header: React.FC = () => {
                 Home
               </Link>
 
+              <Link
+                href="/about"
+                className="text-base font-medium text-gray-800 hover:text-black transition-colors h-full flex items-center px-1"
+              >
+                About Us
+              </Link>
+
               <Dropdown
                 title="Products"
                 isActive={activeDropdown === "products"}

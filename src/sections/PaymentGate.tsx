@@ -6,7 +6,7 @@ import { useRef } from "react"
 import Tag from "@/components/Tag"
 import Link from "next/link"
 // Fixed import path to use the public directory
-import qrCodeImage from "@/assets/wise_qr.jpeg"
+import qrCodeImage from "@/assets/wise-qr-2.jpeg"
 
 // Framer motion variants
 const heroVariant: Variants = {
@@ -110,7 +110,7 @@ export const PaymentGate = () => {
             whileTap="tap"
           >
             <Link
-              href="https://wise.com/pay/r/N6MDZf5RZ4Rk938"
+              href="https://wise.com/pay/r/2JvrWrmwNULFomA"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#2e4369] text-white px-5 py-3 rounded-lg font-medium tracking-tight transition-colors duration-200 hover:bg-[#1d2b45] flex items-center justify-center w-full sm:w-auto min-w-[180px]"

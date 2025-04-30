@@ -25,18 +25,18 @@ export default function AboutTeam() {
   const [expandedMember, setExpandedMember] = useState<number | null>(null)
 
   const teamSections: TeamSection[] = [
-    {
-      title: "Chief Sales Executive",
-      members: [
-        {
-          id: 1,
-          name: "Mr. Sharan Sivakumar",
-          title: "Co-founder & Chief Sales Executive", 
-          image: "/sharan-sivakumar.png",
-          bio: "",
-        },
-      ],
-    },
+    // {
+    //   title: "Chief Sales Executive",
+    //   members: [
+    //     {
+    //       id: 1,
+    //       name: "Mr. Sharan Sivakumar",
+    //       title: "Co-founder & Chief Sales Executive", 
+    //       image: "/sharan-sivakumar.png",
+    //       bio: "",
+    //     },
+    //   ],
+    // },
     {
       title: "Software Development Team",
       members: [
