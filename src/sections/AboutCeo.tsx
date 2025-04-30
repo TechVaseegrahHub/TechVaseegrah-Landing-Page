@@ -30,13 +30,13 @@ export default function AboutHeading() {
               <p className="text-xl md:text-2xl font-semibold bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
                 Mr.Sreekarrthikeyan Mahadevan
               </p>
-              <p className="sm:text-base text-sm   text-[#010D3E]">CEO &amp; Founder | Tech Vaseegrah</p>
+              <p className="sm:text-base text-sm   text-[#010D3E]">CEO &amp; Co-founder | Tech Vaseegrah</p>
             </div>
             <button
               className="absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3  text-3xl  transition-all duration-300 w-full text-center bg-gradient-to-b from-black to-[#001E80] 
         text-transparent bg-clip-text font-bold tracking-tighter"
             >
-              CEO &amp; Founder
+              CEO &amp; Co-founder
             </button>
           </article>
         </div>

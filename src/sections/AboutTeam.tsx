@@ -26,24 +26,36 @@ export default function AboutTeam() {
 
   const teamSections: TeamSection[] = [
     {
-      title: "Software Development Team",
+      title: "Chief Sales Executive",
       members: [
         {
           id: 1,
+          name: "Mr. Sharan Sivakumar",
+          title: "Co-founder & Chief Sales Executive", 
+          image: "/sharan-sivakumar.png",
+          bio: "",
+        },
+      ],
+    },
+    {
+      title: "Software Development Team",
+      members: [
+        {
+          id: 2,
           name: "Sujitha Kumaran",
           title: "Meta Developer",
           image: "/sujitha3.jpg",
           bio: "",
         },
         {
-          id: 2,
+          id: 3,
           name: "Peararulselvi",
           title: "Software Developer",
           image: "/peruarul.png",
           bio: "",
         },
         {
-          id: 3,
+          id: 4,
           name: "Hari Prasanth",
           title: "Software Developer",
           image: "/hariprasath.jpg",
