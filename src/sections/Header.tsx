@@ -305,7 +305,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
               </MobileNavItem>
 
               <MobileNavItem href="/about" onClick={onClose} className="text-xl  font-medium">
-                About Us
+                About 
               </MobileNavItem>
   
               {/* Products Section */}
@@ -579,7 +579,7 @@ const Header: React.FC = () => {
                 href="/about"
                 className="text-base font-medium text-gray-800 hover:text-black transition-colors h-full flex items-center px-1"
               >
-                About Us
+                About
               </Link>
 
               <Dropdown
