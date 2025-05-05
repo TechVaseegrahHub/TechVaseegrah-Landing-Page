@@ -25,102 +25,205 @@ export default function AboutTeam() {
   const [expandedMember, setExpandedMember] = useState<number | null>(null)
 
   const teamSections: TeamSection[] = [
-    // {
-    //   title: "Chief Sales Executive",
-    //   members: [
-    //     {
-    //       id: 1,
-    //       name: "Mr. Sharan Sivakumar",
-    //       title: "Co-founder & Chief Sales Executive", 
-    //       image: "/sharan-sivakumar.png",
-    //       bio: "",
-    //     },
-    //   ],
-    // },
+
     {
-      title: "Software Development Team",
+      title: "Software Development",
       members: [
         {
-          id: 2,
+          id: 1,
           name: "Sujitha Kumaran",
           title: "Meta Developer",
-          image: "/sujitha3.jpg",
+          image: "/su.jpeg",
+          bio: "",
+        },
+        {
+          id: 2,
+          name: "Peararulselvi",
+          title: "Software Developer",
+          image: "/ps-2.png",
           bio: "",
         },
         {
           id: 3,
-          name: "Peararulselvi",
-          title: "Software Developer",
-          image: "/peruarul.png",
-          bio: "",
-        },
-        {
-          id: 4,
           name: "Hari Prasanth",
           title: "Software Developer",
-          image: "/hariprasath.jpg",
+          image: "/hari-prasanth.png",
+          bio: "",
+        },
+
+        {
+          id: 4,
+          name: "Harisanjay",
+          title: "Software Developer",
+          image: "/hari-sanjai.png",
+          bio: "",
+        },
+
+        {
+          id: 4,
+          name: "Naveen Kumar",
+          title: "Software Developer",
+          image: "/nv.jpeg",
+          bio: "",
+        },
+
+        {
+          id: 4,
+          name: "Varun Prasanna",
+          title: "Software Developer",
+          image: "/pras.jpg",
+          bio: "",
+        },
+
+        {
+          id: 4,
+          name: "Eshwar",
+          title: "Software Developer",
+          image: "/esw.jpeg",
+          bio: "",
+        },
+
+        {
+          id: 4,
+          name: "Santhosh",
+          title: "Software Developer",
+          image: "/sa1.png",
           bio: "",
         },
       ],
     },
     {
-      title: "Website Development Team",
+      title: "Website Development",
       members: [
         {
           id: 5,
           name: "Balaji Selvaraj",
           title: "Website Developer",
-          image: "/balaji1.jpg",
+          image: "/balaji-selvaraj.png",
           bio: "",
         },
+
         {
           id: 6,
           name: "Priyadharshini",
           title: "Website Developer",
-          image: "/priya.png",
-          bio: "",
-        },
-        {
-          id: 7,
-          name: "Hari Sanjay",
-          title: "MERN Stack Developer",
-          image: "/hari.png",
-          bio: "",
-        },
-        {
-          id: 8,
-          name: "ManiKandan",
-          title: "Website Developer & Designer",
-          image: "/mani.png",
-          bio: "",
-        },
-        {
-            id: 10,
-            name: "Parthasarathi",
-            title: "Product Designer",
-            image: "/partha.png",
-            bio: "",
-          },
-      ],
-    },
-    {
-      title: "Finance & Marketing Team",
-      members: [
-        {
-          id: 9,
-          name: "RamKishore",
-          title: "Financial Analyst & Full Stack Marketer ",
-          image: "/ramkishore.jpeg",
+          image: "/priyadharshini.png",
           bio: "",
         },
       
         {
-          id: 11,
-          name: "Shalini",
-          title: "Accountant",
-          image: "/shalini.png",
+          id: 7,
+          name: "Prem Kumar",
+          title: "MERN Stack Developer",
+          image: "/prmc.png",
           bio: "",
         },
+
+        {
+          id: 8,
+          name: "Yogesh",
+          title: "MERN Stack Developer",
+          image: "/yogesh.png",
+          bio: "",
+        },
+        {
+          id: 9,
+          name: "ManiKandan",
+          title: "Website Developer & Designer",
+          image: "/maan.png",
+          bio: "",
+        },
+      ],
+    },
+
+
+
+    {
+      title: "Search Engine Optimization",
+      members: [
+        {
+          id: 11,
+          name: "Kishore Edwin ",
+          title: "SEO Specialist",
+          image: "/edwin.png",
+          bio: "",
+        },
+      
+      ],
+    },
+
+    {
+      title: "Video Editing & Graphic Design",
+      members: [
+        {
+          id: 10,
+          name: "Kawinmozhi",
+          title: "Creative Head",
+          image: "/kawinm.jpeg",
+          bio: "",
+        },
+
+        {
+          id: 10,
+          name: "Parthasarathi",
+          title: "Product Designer",
+          image: "/parhe.png",
+          bio: "",
+        },
+      
+      ],
+    },
+
+    {
+      title: "Finance & Marketing",
+      members: [
+        {
+          id: 12,
+          name: "RamKishore",
+          title: "Financial Analyst & Full Stack Marketer",
+          image: "/kisram.png",
+          bio: "",
+        },
+
+        {
+          id: 12,
+          name: "Ajay Martin",
+          title: "Social Media Manager",
+          image: "/aj.png",
+          bio: "",
+        },
+
+        {
+          id: 12,
+          name: "Yugeshwaran",
+          title: "Social Media Manager",
+          image: "/yu.png",
+          bio: "",
+        },
+      
+        {
+          id: 13,
+          name: "Shalini",
+          title: "Accountant",
+          image: "/shal.png",
+          bio: "",
+        },
+
+
+      ],
+    },
+
+    {
+      title: "Administrative",
+      members: [
+        {
+          id: 11,
+          name: "Durgadevi",
+          title: "Administrative",
+          image: "/ds.png",
+          bio: "",
+        },
+      
       ],
     },
   ]

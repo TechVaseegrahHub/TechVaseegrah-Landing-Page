@@ -44,7 +44,7 @@ export default function ServicesSection() {
     () => ({
       "business-registration": [
         {
-          title: "Private Limited",
+          title: "Sole Proprietorship",
           description: "For medium to large businesses",
           price: "₹1000",
           features: [
