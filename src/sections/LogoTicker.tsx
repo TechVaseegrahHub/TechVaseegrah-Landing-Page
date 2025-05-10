@@ -3,10 +3,11 @@ import apfLogo from "@/assets/apf.png";
 import amzLogo from "@/assets/amzf.png";
 import bgLogo from "@/assets/bg.png";
 import cleansoLogo from "@/assets/cleanso.png";
-import decaraLogo from "@/assets/de-cara.png";
 import colorcrackersLogo from "@/assets/colour-crackers.png";
+import kirscollectionLogo from "@/assets/krish-collections.png";
+import futurenatureLogo from "@/assets/future-nature.png";
+import nimalasLogo from "@/assets/nimalas.png";
 import frelaLogo from "@/assets/frela.png";
-import hasiniaariLogo from "@/assets/hasini-aari.png";
 import hunnyLogo from "@/assets/hunny-bi.png";
 import jaiLogo from "@/assets/jai.png";
 import jungleLogo from "@/assets/jungle-meet.png";
@@ -65,18 +66,6 @@ export const LogoTicker = () => {
             />
 
             <Image
-              src={hasiniaariLogo}
-              alt="Hasini Aari Works"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={decaraLogo}
-              alt="De Cara"
-              className="logo-ticker-image h-14 w-18"  
-            /> 
-
-            <Image
               src={hunnyLogo}
               alt="Hunny Bi"
               className="logo-ticker-image h-14 w-18" 
@@ -116,6 +105,27 @@ export const LogoTicker = () => {
               alt="Color Crackers"
               className="logo-ticker-image h-14 w-18"  
             />
+
+            <Image
+              src={kirscollectionLogo}
+              alt="Krish collection"
+              className="logo-ticker-image h-16 w-18"  
+            />
+
+            <Image
+              src={futurenatureLogo}
+              alt="Future Nature"
+              className="logo-ticker-image h-16 w-18"  
+            />
+
+            
+            <Image
+              src={nimalasLogo}
+              alt="Nimalas"
+              className="logo-ticker-image h-16 w-18"  
+            />
+
+
             <Image
               src={sribariyaLogo}
               alt="Sri Bariya Skin Care"
@@ -152,19 +162,6 @@ export const LogoTicker = () => {
             />
 
             <Image
-              src={hasiniaariLogo}
-              alt="Hasini Aari Works"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-
-            <Image
-              src={decaraLogo}
-              alt="De Cara"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
               src={hunnyLogo}
               alt="Hunny Bi"
               className="logo-ticker-image h-14 w-18"  
@@ -204,6 +201,25 @@ export const LogoTicker = () => {
               src={colorcrackersLogo}
               alt="Color Crackers"
               className="logo-ticker-image h-14 w-18"  
+            />
+
+            <Image
+              src={kirscollectionLogo}
+              alt="Krish collection"
+              className="logo-ticker-image h-16 w-18"  
+            />
+
+            <Image
+              src={futurenatureLogo}
+              alt="Future Nature"
+              className="logo-ticker-image h-16 w-18"  
+            />
+
+            
+            <Image
+              src={nimalasLogo}
+              alt="Nimalas"
+              className="logo-ticker-image h-16 w-18"  
             />
 
             <Image
