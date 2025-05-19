@@ -114,7 +114,7 @@ export default function AboutTeam() {
         {
           id: 7,
           name: "Prem Kumar",
-          title: "MERN Stack Developer",
+          title: "Full Stack Developer",
           image: "/prmc.png",
           bio: "",
         },

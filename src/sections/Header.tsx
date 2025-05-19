@@ -304,9 +304,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                 Home
               </MobileNavItem>
 
-              <MobileNavItem href="/about" onClick={onClose} className="text-xl  font-medium">
-                About 
-              </MobileNavItem>
+
   
               {/* Products Section */}
               <motion.div className="flex flex-col">
@@ -369,46 +367,8 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                 </AnimatePresence>
               </motion.div>
   
-              {/* Internships Section */}
-              <motion.div className="flex flex-col">
-                <motion.button
-                  onClick={() => setOpenCategory(openCategory === "internships" ? null : "internships")}
-                  className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
-                    openCategory === "internships" ? "" : "text-gray-800 "
-                  }`}
-                >
-                  <span>Internships</span>
-                  <motion.span
-                    animate={{ rotate: openCategory === "internships" ? 180 : 0 }}
-                    transition={{ type: "spring" }}
-                  >
-                    <ChevronDown className="h-7 w-7" />
-                  </motion.span>
-                </motion.button>
-  
-                <AnimatePresence>
-                  {openCategory === "internships" && (
-                    <motion.div
-                      variants={dropdownVariants}
-                      initial="closed"
-                      animate="open"
-                      exit="closed"
-                      className="pl-4"
-                    >
-                      <div className="py-2 space-y-1">
-                        <MobileNavItem href="/internship" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
-                        >
-                          IT Internships
-                        </MobileNavItem>
-                        <MobileNavItem href="/mbaintern" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
-                        >
-                          MBA Internships
-                        </MobileNavItem>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+
+
               {/* Solutions Section */}
               <motion.div className="flex flex-col mb-20">
                 <motion.button
@@ -491,6 +451,53 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                   )}
                 </AnimatePresence>
               </motion.div>
+
+                            {/* Internships Section */}
+                            <motion.div className="flex flex-col">
+                <motion.button
+                  onClick={() => setOpenCategory(openCategory === "internships" ? null : "internships")}
+                  className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
+                    openCategory === "internships" ? "" : "text-gray-800 "
+                  }`}
+                >
+                  <span>Internships</span>
+                  <motion.span
+                    animate={{ rotate: openCategory === "internships" ? 180 : 0 }}
+                    transition={{ type: "spring" }}
+                  >
+                    <ChevronDown className="h-7 w-7" />
+                  </motion.span>
+                </motion.button>
+  
+                <AnimatePresence>
+                  {openCategory === "internships" && (
+                    <motion.div
+                      variants={dropdownVariants}
+                      initial="closed"
+                      animate="open"
+                      exit="closed"
+                      className="pl-4"
+                    >
+                      <div className="py-2 space-y-1">
+                        <MobileNavItem href="/internship" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
+                        >
+                          IT Internships
+                        </MobileNavItem>
+                        <MobileNavItem href="/mbaintern" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
+                        >
+                          MBA Internships
+                        </MobileNavItem>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+
+              <MobileNavItem href="/about" onClick={onClose} className="text-xl  font-medium">
+                About 
+              </MobileNavItem>
+
               {/* Contact Button - Moved to bottom without overlapping */}
               <motion.div 
                 className="px-5 pt-8 pb-12"
@@ -606,30 +613,7 @@ const Header: React.FC = () => {
                 </div>
               </Dropdown>
 
-              <Dropdown
-                title="Internships"
-                isActive={activeDropdown === "internships"}
-                onMouseEnter={() => handleDropdownEnter("internships")}
-                onMouseLeave={handleDropdownLeave}
-                onClick={() => setActiveDropdown(activeDropdown === "internships" ? null : "internships")}
-              >
-                <div className="py-1 w-[220px]">
-                  <Link
-                    href="/internship"
-                    onClick={closeAll}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                  >
-                    IT Internships
-                  </Link>
-                  <Link
-                    href="/mbaintern"
-                    onClick={closeAll}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                  >
-                    MBA Internships
-                  </Link>
-                </div>
-              </Dropdown>
+
 
               <Dropdown
                 title="Solutions"
@@ -675,6 +659,31 @@ const Header: React.FC = () => {
                     B-Services
                   </Link>
                   </div>
+              </Dropdown>
+
+              <Dropdown
+                title="Internships"
+                isActive={activeDropdown === "internships"}
+                onMouseEnter={() => handleDropdownEnter("internships")}
+                onMouseLeave={handleDropdownLeave}
+                onClick={() => setActiveDropdown(activeDropdown === "internships" ? null : "internships")}
+              >
+                <div className="py-1 w-[220px]">
+                  <Link
+                    href="/internship"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    IT Internships
+                  </Link>
+                  <Link
+                    href="/mbaintern"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    MBA Internships
+                  </Link>
+                </div>
               </Dropdown>
 
              <Link href="/contact" className="inline-block">
