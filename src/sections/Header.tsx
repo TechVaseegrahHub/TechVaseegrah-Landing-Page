@@ -25,7 +25,7 @@ const products: Product[] = [
   { id: 1, name: "InstaX Bot", image: product1, href: "#" },
   { id: 2, name: "F3 Engine", image: product2, href: "https://f3engine.com" },
   { id: 3, name: "Billzzy", image: product3, href: "https://billzzy.com" },
-  { id: 4, name: "GoWhats", image: product4, href: "https://gowhats.vercel.app" },
+  { id: 4, name: "GoWhats", image: product4, href: "https://gowhatslandingpage.netlify.app/" },
 ]
 
 interface DropdownProps {
