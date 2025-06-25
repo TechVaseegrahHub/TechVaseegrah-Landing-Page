@@ -15,7 +15,7 @@ export default function AboutHeading() {
             <br /> <span className="block text-right">- Sreekarrthikeyan</span>
           </h2>
         </div>
-        <div className="w-full max-w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col md:mr-4">
+        <div className="w-full max-w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black bg-yellow dark:border-0 border rounded-md dark:text-white text-black flex flex-col md:mr-4">
           <div className="w-full  rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300">
             <Image
               src={"/ceo3.jpg"}
