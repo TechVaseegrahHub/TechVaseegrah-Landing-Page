@@ -1,8 +1,15 @@
 import { useState, useRef, FormEvent, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { Input } from '@/components/ui/input';
 
 type FormData = {
   name: string;
+  dob: string;
+  gender: string;
+  college: string;
+  degree: string;
+  regno: string;
+  altphone: string;
   email: string;
   phone: string;
   message: string;
@@ -87,9 +94,16 @@ const FormField = ({
 export default function SplitContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
+    dob: '',
+    gender: '',
+    college: '',
+    degree: '',
+    regno: '',
+    altphone: '',
     email: '',
     phone: '',
-    message: ''
+    year: ''
+
   });
   const [status, setStatus] = useState<FormStatus>('idle');
   const form = useRef<HTMLFormElement>(null);
@@ -189,10 +203,23 @@ export default function SplitContactForm() {
               {status === 'error' && <StatusMessage status="error" />}
 
               <div className="grid grid-cols-1 gap-4 sm:gap-5">
-                <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} />
-                <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} />
+                <FormField id="name" label="Full Name" required value={formData.name} onChange={handleChange} />
+                <FormField id="dob" label="Date Of Birth" type="Date" required value={formData.dob} onChange={handleChange} />
+                <label ClassName="font-medium text-sm">Gender *</label>
+                <div className="flex gap-4 mt-1">
+                <label className="flex items-center gap-2">
+                <input type="radio" name="gender" values="male" checked={formData.gender==="male"}onChange={handleChange} />male</label>
+                <label className="flex items-center gap-2">
+                <input type="radio" name="gender" value="female" checked={formData.gender ==="female"}onChange={handleChange} />female</label>
+                <label className="flex items-center gap-2">
+                <input type="radio" name="gender" value="other" checked={formData.gender ==="other"}onChange={handleChange} />other</label>
+                <FormField id="college" label="College Name" required value={formData.college} onChange={handleChange} />
+                <FormField id="degree" label="Degree & Major" required value={formData.degree} onChange={handleChange} />
+                <FormField id="regno" label="Registration Number" required value={formData.reno} onChange={handleChange} />
+                <FormField id="altphone" label="Alternative Contact Number" type="tell" required value={formData.altphone} onChange={handleChange} />
+                <FormField id="email" label="Email" type="email" required value={formData.email} onChange={handleChange} />
                 <FormField id="phone" label="Phone Number" value={formData.phone} onChange={handleChange} />
-                <FormField id="message" label="Your Message" type="textarea" required rows={4} value={formData.message} onChange={handleChange} />
+                <FormField id="year" label="Year of study" type="number" required value={formData.year} onChange={handleChange} />
               </div>
 
               <button
@@ -208,10 +235,10 @@ export default function SplitContactForm() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
                     </svg>
-                    Sending...
+                    submitting...
                   </span>
                 ) : (
-                  'Send Message'
+                  'submit'
                 )}
               </button>
             </form>
