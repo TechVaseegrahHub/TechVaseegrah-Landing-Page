@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [  "images.unsplash.com",
-      "assets.aceternity.com","your-external-image-domain.com" ], // ✅ Allow images from Unsplash
+    remotepatterns: [  
+      { protocol:'https',
+        hostname:'images.unplash.com',
+      }
+      {
+        protocol:'https',
+        hostname:
+        'assests.aceternity.com' ,
+      },
+    ],
   },
-
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+      rule.test?.test?.('.svg')
     );
 
     config.module.rules.push(
@@ -34,4 +41,5 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports=nextConfig;
+
