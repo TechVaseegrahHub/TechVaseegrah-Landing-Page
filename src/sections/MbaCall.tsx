@@ -1,5 +1,5 @@
 import { useState, useRef, FormEvent, ChangeEvent } from 'react';
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser' ;
 import { Input } from '@/components/ui/input';
 
 type FormData = {
@@ -13,6 +13,7 @@ type FormData = {
   email: string;
   phone: string;
   message: string;
+  year: string;
 };
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -102,6 +103,7 @@ export default function SplitContactForm() {
     altphone: '',
     email: '',
     phone: '',
+    message: '',
     year: ''
 
   });
@@ -124,7 +126,7 @@ export default function SplitContactForm() {
       });
 
       setStatus('success');
-      setFormData({ name: '',dob: '',gender: '',college: '',degree: '',regno: '',altphone: '', email: '', phone: '', year: '' });
+      setFormData({ name: '',dob: '',gender: '',college: '',degree: '',regno: '',altphone: '', email: '', phone: '',message: '', year: '' });
     } catch (error) {
       setStatus('error');
     } finally {
@@ -202,20 +204,20 @@ export default function SplitContactForm() {
               {status === 'success' && <StatusMessage status="success" />}
               {status === 'error' && <StatusMessage status="error" />}
 
-              <div className="grid grid-cols-1 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 gap-4 sm:gap-5" />
                 <FormField id="name" label="Full Name" required value={formData.name} onChange={handleChange} />
                 <FormField id="dob" label="Date Of Birth" type="Date" required value={formData.dob} onChange={handleChange} />
-                <label ClassName="font-medium text-sm">Gender *</label>
+                <label className="font-medium text-sm">Gender *</label>
                 <div className="flex gap-4 mt-1">
                 <label className="flex items-center gap-2">
-                <input type="radio" name="gender" values="male" checked={formData.gender==="male"}onChange={handleChange} />male</label>
+                <input type="radio" name="gender" value="male" checked={formData.gender==="male"}onChange={handleChange} />male</label>
                 <label className="flex items-center gap-2">
                 <input type="radio" name="gender" value="female" checked={formData.gender ==="female"}onChange={handleChange} />female</label>
                 <label className="flex items-center gap-2">
                 <input type="radio" name="gender" value="other" checked={formData.gender ==="other"}onChange={handleChange} />other</label>
                 <FormField id="college" label="College Name" required value={formData.college} onChange={handleChange} />
                 <FormField id="degree" label="Degree & Major" required value={formData.degree} onChange={handleChange} />
-                <FormField id="regno" label="Registration Number" required value={formData.reno} onChange={handleChange} />
+                <FormField id="regno" label="Registration Number" required value={formData.regno} onChange={handleChange} />
                 <FormField id="altphone" label="Alternative Contact Number" type="tell" required value={formData.altphone} onChange={handleChange} />
                 <FormField id="email" label="Email" type="email" required value={formData.email} onChange={handleChange} />
                 <FormField id="phone" label="Phone Number" value={formData.phone} onChange={handleChange} />
