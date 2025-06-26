@@ -1,7 +1,5 @@
 import { useState, useRef, FormEvent, ChangeEvent } from 'react';
-import emailjs from '@emailjs/browser' ;
-import { Input } from '@/components/ui/input';
-
+import emailjs from '@emailjs/browser';
 type FormData = {
   name: string;
   dob: string;
