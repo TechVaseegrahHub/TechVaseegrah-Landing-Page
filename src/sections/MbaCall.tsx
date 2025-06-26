@@ -124,7 +124,7 @@ export default function SplitContactForm() {
       });
 
       setStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '',dob: '',gender: '',college: '',degree: '',regno: '',altphone: '', email: '', phone: '', year: '' });
     } catch (error) {
       setStatus('error');
     } finally {
