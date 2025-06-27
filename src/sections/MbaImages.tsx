@@ -30,7 +30,7 @@ export default function MbaImages() {
           <div>
             <div className="relative h-72 sm:h-80 md:h-96 w-full overflow-hidden rounded-lg">
               <Image
-                src="/public/Mba-intern.jpeg"
+                src="/Mba-intern.jpeg"
                 alt="intern photo 1"
                 fill
                 className="object-cover"
@@ -46,7 +46,7 @@ export default function MbaImages() {
           <div className="absolute left-0 bottom-0 w-1/4 h-3/5 md:h-2/3">
             <div className="relative h-full w-full overflow-hidden rounded-lg">
               <Image
-                src="/public/Mba-intern2.jpeg"
+                src="/Mba-intern2.jpeg"
                 alt="intern photo 2"
                 fill
                 className="object-cover"
@@ -58,7 +58,7 @@ export default function MbaImages() {
           <div className="absolute left-[28%] top-0 w-[42%] h-full">
             <div className="relative h-full w-full overflow-hidden rounded-lg">
               <Image
-                src="/public/Mba-intern3.jpeg"
+                src="/Mba-intern3.jpeg"
                 alt="intern photo 3"
                 fill
                 className="object-cover"
@@ -70,7 +70,7 @@ export default function MbaImages() {
           <div className="absolute right-0 top-0 w-[26%] h-3/4">
             <div className="relative h-full w-full overflow-hidden rounded-lg">
               <Image
-                src="/public/mba-intern4.jpeg"
+                src="/mba-intern4.jpeg"
                 alt="intern photo 4"
                 fill
                 className="object-cover"
