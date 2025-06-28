@@ -192,8 +192,8 @@ export default function SplitContactForm() {
               {status === 'error' && <StatusMessage status="error" />}
 
               <div className="grid grid-cols-1 gap-4 sm:gap-5">
-                <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} />
-                <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} />
+                <FormField id="name" label="Name" required value={formData.name} onChange={handleChange} />
+                <FormField id="email" label="DOB" type="email" required value={formData.email} onChange={handleChange} />
                 <FormField id="company" label="Company Name" value={formData.company} onChange={handleChange} />
                 <FormField id="message" label="Your Message" type="textarea" required rows={4} value={formData.message} onChange={handleChange} />
               </div>
