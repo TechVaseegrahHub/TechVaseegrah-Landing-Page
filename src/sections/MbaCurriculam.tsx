@@ -1,4 +1,5 @@
-import { BookOpen, Briefcase, GraduationCap, Clock, Users } from "lucide-react"
+import { BookOpen, Briefcase, GraduationCap, Clock, Users, TrendingUp } from "lucide-react"
+import { title } from "process"
 
 export default function MbaCurriculam() {
   const benefits = [
@@ -32,6 +33,12 @@ export default function MbaCurriculam() {
         "Enjoy flexible scheduling options and hybrid work arrangements that accommodate your academic commitments.",
       icon: <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
     },
+      {
+        title: "Start your Startup",
+        description:
+          "Explore the end-to-end startup journey — from ideation and rapid prototyping to market entry strategies, scaling operations, and fundraising.",
+         icon: <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
+      },
   ]
   return (
     <section className="bg-gradient-to-b from-[#EAEEFE] to-[#FFFF] py-8 md:pt-10 md:pb-16 lg:pb-24 overflow-x-clip mt-8 md:mt-12 lg:mt-16">
