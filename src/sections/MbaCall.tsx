@@ -1,4 +1,4 @@
- import { useState, useRef, FormEvent, ChangeEvent } from 'react';
+import { useState, useRef, FormEvent, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
 type FormData = {
@@ -6,8 +6,8 @@ type FormData = {
   dob: string;
   gender: string;
   college: string;
-  degree: string;
   regno: string;
+  degree: string;
   altphone: string;
   email: string;
   phone: string;
@@ -25,14 +25,7 @@ type FormFieldProps = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const FormField = ({
-  id,
-  label,
-  required,
-  type = 'text',
-  value,
-  onChange,
-}: FormFieldProps) => (
+const FormField = ({ id, label, required = false, type = 'text', value, onChange }: FormFieldProps) => (
   <div className="col-span-1">
     <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
       {label} {required && <span className="text-red-500">*</span>}
@@ -40,7 +33,7 @@ const FormField = ({
     <input
       type={type}
       id={id}
-      name={'user_${id}'}
+      name={id}
       value={value}
       onChange={onChange}
       required={required}
@@ -50,52 +43,57 @@ const FormField = ({
 );
 
 export default function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     dob: '',
     gender: '',
     college: '',
-    degree: '',
     regno: '',
+    degree: '',
     altphone: '',
     email: '',
     phone: '',
     year: '',
   });
+
   const [status, setStatus] = useState<FormStatus>('idle');
-  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const key = name.replace('user_', '') as keyof FormData;
-    setFormData((prev) => ({ ...prev, [key]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+
     try {
-      await emailjs.sendForm('service_n9jpa8v', 'template_tnc6ckm', formRef.current!, {
-        publicKey: 'VkvBxQ3RnOgrj4gE3',
-      });
+      await emailjs.sendForm(
+        'service_n9jpa8v',
+        'template_tnc66km',
+        formRef.current!,
+        'Vkxv8xQ3Rn0grJ4gE3'
+      );
       setFormData({
         name: '',
         dob: '',
         gender: '',
         college: '',
-        degree: '',
         regno: '',
+        degree: '',
         altphone: '',
         email: '',
         phone: '',
         year: '',
       });
       setStatus('success');
-    } catch {
+    } catch (error) {
       setStatus('error');
-    } finally {
-      setTimeout(() => setStatus('idle'), 4000);
     }
+
+    setTimeout(() => setStatus('idle'), 4000);
   };
 
   return (
@@ -108,7 +106,7 @@ export default function ContactForm() {
           <FormField id="name" label="Full Name" required value={formData.name} onChange={handleChange} />
           <FormField id="dob" label="Date of Birth" type="date" required value={formData.dob} onChange={handleChange} />
 
-          {/* Gender Field */}
+          {/* Gender Radio Buttons */}
           <div className="col-span-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Gender <span className="text-red-500">*</span>
@@ -118,7 +116,7 @@ export default function ContactForm() {
                 <label key={option} className="flex items-center gap-1.5 text-sm text-gray-700">
                   <input
                     type="radio"
-                    name="user_gender"
+                    name="gender"
                     value={option}
                     checked={formData.gender === option}
                     onChange={handleChange}
@@ -150,14 +148,10 @@ export default function ContactForm() {
         </button>
 
         {status === 'success' && (
-          <p className="text-green-600 mt-4 text-sm text-center">
-            Form submitted successfully!
-          </p>
+          <p className="text-green-600 mt-4 text-sm text-center">Form submitted successfully!</p>
         )}
         {status === 'error' && (
-          <p className="text-red-600 mt-4 text-sm text-center">
-            Submission failed. Please try again.
-          </p>
+          <p className="text-red-600 mt-4 text-sm text-center">Submission failed. Please try again.</p>
         )}
       </form>
     </div>
