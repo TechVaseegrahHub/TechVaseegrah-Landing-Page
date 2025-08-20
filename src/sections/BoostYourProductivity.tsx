@@ -61,17 +61,18 @@ export const BoostYourProductivity = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-white  py-24 overflow-x-clip"
+
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag">
-              Boost your productivity
+              BOOST YOUR PRODUCTVITY
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-            A more effective way to track progress
+            A more effective way to <span className="text-green-600">track progress</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5">
             Effortlessly turn your ideas into a fully functional, responsive,

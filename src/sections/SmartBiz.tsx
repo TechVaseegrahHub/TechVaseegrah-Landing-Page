@@ -1,52 +1,52 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, Variants, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 
-
-const heroVariant: Variants = {
-  start: { y: 30, opacity: 0, filter: "blur(2px)" },
-  end: {
+const sectionVariant: Variants = {
+  start: { opacity: 0, y: 20 },
+  end: { 
+    opacity: 1, 
     y: 0,
-    opacity: 1,
-    filter: "blur(0px)",
-    transition:{ duration: 1.5, delay: 0.5, ease: "backInOut" }
+    transition: { duration: 0.8, ease: "easeOut", delay: 0.2 }
   },
-}
-
-
+};
 
 export const SmartBiz = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-50px" })
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="py-1 relative mb-10">
-      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
+    <section ref={sectionRef} className="py-24 md:py-32 relative bg-white">
+      <div className="absolute inset-0 -z-0 h-full w-full]"></div>
+      
+      <motion.div 
+        variants={sectionVariant} 
+        initial="start" 
+        animate={isInView ? "end" : "start"} 
+        className="container relative z-10"
+      >
         <div className="flex items-center justify-center">
-          <p className=" section-title sm:text-3xl md:text-4xl lg:text-5xl  text-black/40 text-center">
+          <p className="section-title text-4xl md:text-5xl lg:text-6xl text-center bg-gradient-to-b from-zinc-800 to-zinc-600 bg-clip-text text-transparent">
             Transforming small businesses into{" "}
-            <span className="relative">
-              <span className="group inline-block">
-                <span className="bg-[#001E80] bg-clip-text text-transparent animate-pulse">
-                  Smart biz
-                </span>
+            <span className="relative group">
+              {/* 1. THE FLUID PULSE: Applying our new custom animation */}
+              <span className="inline-block bg-gradient-to-b from-primary to-green-600 bg-clip-text text-transparent animate-fluid-pulse">
+                Smart biz
+              </span>
+
+              {/* Polished video reveal */}
+              <div className="absolute bottom-full left-1/2 mb-4 w-[220px] h-auto -translate-x-1/2 p-1  rounded-2xl transition-all duration-300 ease-in-out pointer-events-none
+                           opacity-0 scale-90 -translate-y-4 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-y-0 blur-md group-hover:blur-0">
                 <video
                   src="/assets/incredible.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="absolute bottom-full left-1/2 -translate-x-1/2 rounded-2xl shadow-xl opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
+                  className="w-full h-full object-cover rounded-[14px]"
                 />
-              </span>
+              </div>
             </span>
           </p>
         </div>

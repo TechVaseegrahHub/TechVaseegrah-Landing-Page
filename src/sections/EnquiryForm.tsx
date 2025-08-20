@@ -173,9 +173,9 @@ export default function BusinessInquiryForm() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
           
           <div className="flex justify-center">
-            <div className="tag">Business Inquiry</div>
+            <div className="tag">BUSINESS ENQUIRY</div>
           </div>
-          <h2 className="section-title mt-5">Let&apos;s Discuss Your Business Needs</h2>
+          <h2 className="section-title mt-5">Let&apos;s Discuss Your <span className="text-green-600">Business Needs</span></h2>
           <p className="section-description mt-5 mb-6">
               Please provide the following information about your business needs to help us serve you better. <br/>
                This information will enable us to route your request to the appropriate person.
@@ -188,9 +188,9 @@ export default function BusinessInquiryForm() {
         <div className="lg:w-1/2 lg:pr-6 xl:pr-8 sd:mt-16">
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
            
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mb-3 sm:mb-4">
-            Connect with our Experts            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter text-black  bg-clip-text mb-3 sm:mb-4">
+            Connect with our Experts </h1>
+            <p className="text-base sm:text-lg md:text-xl section-description text-left leading-relaxed">
             Have questions about web development or want to discuss a potential project? 
             Fill out the form and we&apos;ll get back to you within 24 hours.
             </p>
@@ -265,7 +265,7 @@ export default function BusinessInquiryForm() {
                 type="submit"
                 disabled={status === 'submitting'}
                 className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg text-white font-medium text-sm sm:text-base transition-all ${
-                  status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-black hover:bg-blue-700 hover:shadow-md'
+                  status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-[#1B9D4A] hover:bg-blue-700 hover:shadow-md'
                 }`}
               >
                 {status === 'submitting' ? (

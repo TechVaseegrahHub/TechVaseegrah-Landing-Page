@@ -83,11 +83,11 @@ export default function AboutMission() {
             <div>
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-tighter 
-                    text-[#010D3E] mb-4"
+                    text-green-600 mb-4"
               >
                 Our Mission
               </h2>
-              <p className="text-lg sm:text-xl md:text-[22px] leading-relaxed tracking-tight text-[#010D3E]">
+              <p className="text-lg sm:text-xl md:text-[22px] leading-relaxed tracking-tight section-description text-left">
                 At Tech Vaseegrah, our mission is to transform small businesses into smart businesses by providing
                 innovative technology solutions, streamlining operations, and driving sustainable growth. We are
                 committed to empowering entrepreneurs with tools and insights to thrive in a digital world.
@@ -97,11 +97,11 @@ export default function AboutMission() {
             <div>
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-tighter 
-                            text-[#010D3E] mb-4"
+                            text-green-600  mb-4"
               >
                 Our Vision
               </h2>
-              <p className="text-lg sm:text-xl md:text-[22px] leading-relaxed tracking-tight text-[#010D3E]">
+              <p className="text-lg sm:text-xl md:text-[22px] leading-relaxed tracking-tight section-description text-left">
                 Our vision at Tech Vaseegrah is to be a leading catalyst in the digital transformation of small
                 businesses, fostering innovation and sustainability. We aim to create a future where every business,
                 regardless of size, thrives through smart technology and seamless integration.
@@ -113,28 +113,28 @@ export default function AboutMission() {
           <div className="flex flex-col justify-center items-center lg:items-end">
             <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 lg:grid-cols-1">
               <div className="text-center lg:text-right">
-                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-[#010D3E] text-center">
+                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-600 text-center">
                   <span ref={websiteRef}>0+</span>
                 </h3>
-                <p className="text-lg sm:text-xl leading-relaxed tracking-tight text-[#010D3E] mt-2 text-center">
+                <p className="text-lg sm:text-xl leading-relaxed tracking-tight  mt-2 text-center">
                   Websites Developed
                 </p>
               </div>
 
               <div className="text-center lg:text-right">
-                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-[#010D3E] text-center">
+                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-600 text-center">
                   <span ref={studentsRef}>0+</span>
                 </h3>
-                <p className="text-lg sm:text-xl leading-relaxed tracking-tight text-[#010D3E] mt-2 text-center">
+                <p className="text-lg sm:text-xl leading-relaxed tracking-tight  mt-2 text-center">
                   Trained Students
                 </p>
               </div>
 
               <div className="text-center lg:text-right">
-                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-[#010D3E] text-center">
+                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-600 text-center">
                   <span ref={clientsRef}>0+</span>
                 </h3>
-                <p className="text-lg sm:text-xl leading-relaxed tracking-tight text-[#010D3E] mt-2 text-center">Happy Clients</p>
+                <p className="text-lg sm:text-xl leading-relaxed tracking-tight  mt-2 text-center">Happy Clients</p>
               </div>
             </div>
           </div>

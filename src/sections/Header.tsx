@@ -367,8 +367,6 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                 </AnimatePresence>
               </motion.div>
   
-
-
               {/* Solutions Section */}
               <motion.div className="flex flex-col mb-20">
                 <motion.button
@@ -508,7 +506,7 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                 <Link href="/contact" className="block w-full">
                   <motion.button
                     onClick={onClose}
-                    className="w-full bg-black hover:bg-blue-700  text-white py-3 px-2 rounded-lg font-semibold text-xl shadow-md transition-colors"
+                    className="w-full bg-[#1B9D4A] hover:bg-blue-700  text-white py-3 px-2 rounded-lg font-semibold text-xl shadow-md transition-colors"
                     whileTap={{ scale: 0.98 }}
                   >
                     Contact
@@ -613,8 +611,6 @@ const Header: React.FC = () => {
                 </div>
               </Dropdown>
 
-
-
               <Dropdown
                 title="Solutions"
                 isActive={activeDropdown === "services"}
@@ -689,7 +685,7 @@ const Header: React.FC = () => {
              <Link href="/contact" className="inline-block">
               <button
                 onClick={closeAll}
-                className="bg-black text-white rounded-lg font-medium tracking-tight hover:bg-blue-700  transition-all duration-200 h-10 px-6 py-3 w-30 flex items-center justify-center"
+                className="bg-[#1B9D4A] text-white rounded-lg font-medium tracking-tight hover:bg-blue-700  transition-all duration-200 h-10 px-6 py-3 w-30 flex items-center justify-center"
               >
                 Contact
               </button>

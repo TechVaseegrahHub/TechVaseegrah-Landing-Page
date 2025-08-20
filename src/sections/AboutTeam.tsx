@@ -43,13 +43,6 @@ export default function AboutTeam() {
           image: "/ps-2.png",
           bio: "",
         },
-        {
-          id: 3,
-          name: "Hari Prasanth",
-          title: "Software Developer",
-          image: "/hari-prasanth.png",
-          bio: "",
-        },
 
         {
           id: 4,
@@ -60,7 +53,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 4,
+          id: 5,
           name: "Naveen Kumar",
           title: "Software Developer",
           image: "/nv.jpeg",
@@ -68,7 +61,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 4,
+          id: 6,
           name: "Varun Prasanna",
           title: "Software Developer",
           image: "/pras.jpg",
@@ -76,7 +69,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 4,
+          id: 7,
           name: "Eshwar",
           title: "Software Developer",
           image: "/esw.jpeg",
@@ -84,10 +77,26 @@ export default function AboutTeam() {
         },
 
         {
-          id: 4,
+          id: 8,
           name: "Santhosh",
           title: "Software Developer",
           image: "/sa1.png",
+          bio: "",
+        },
+
+        {
+          id: 9,
+          name: "Yogesh",
+          title: "MERN Stack Developer",
+          image: "/yogesh.png",
+          bio: "",
+        },
+
+        {
+          id: 10,
+          name: "Prem Kumar",
+          title: "Full Stack Developer",
+          image: "/prmc.png",
           bio: "",
         },
       ],
@@ -96,7 +105,7 @@ export default function AboutTeam() {
       title: "Website Development",
       members: [
         {
-          id: 5,
+          id: 11,
           name: "Balaji Selvaraj",
           title: "Website Developer",
           image: "/balaji-selvaraj.png",
@@ -104,7 +113,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 6,
+          id: 12,
           name: "Priyadharshini",
           title: "Website Developer",
           image: "/priyadharshini.png",
@@ -112,22 +121,7 @@ export default function AboutTeam() {
         },
       
         {
-          id: 7,
-          name: "Prem Kumar",
-          title: "Full Stack Developer",
-          image: "/prmc.png",
-          bio: "",
-        },
-
-        {
-          id: 8,
-          name: "Yogesh",
-          title: "MERN Stack Developer",
-          image: "/yogesh.png",
-          bio: "",
-        },
-        {
-          id: 9,
+          id: 13,
           name: "ManiKandan",
           title: "Website Developer & Designer",
           image: "/maan.png",
@@ -136,27 +130,11 @@ export default function AboutTeam() {
       ],
     },
 
-
-
-    {
-      title: "Search Engine Optimization",
-      members: [
-        {
-          id: 11,
-          name: "Kishore Edwin ",
-          title: "SEO Specialist",
-          image: "/edwin.png",
-          bio: "",
-        },
-      
-      ],
-    },
-
     {
       title: "Video Editing & Graphic Design",
       members: [
         {
-          id: 10,
+          id: 14,
           name: "Kawinmozhi",
           title: "Creative Head",
           image: "/kawinm.jpeg",
@@ -164,7 +142,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 10,
+          id: 15,
           name: "Parthasarathi",
           title: "Product Designer",
           image: "/parhe.png",
@@ -178,7 +156,7 @@ export default function AboutTeam() {
       title: "Finance & Marketing",
       members: [
         {
-          id: 12,
+          id: 16,
           name: "RamKishore",
           title: "Financial Analyst & Full Stack Marketer",
           image: "/kisram.png",
@@ -186,7 +164,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 12,
+          id: 17,
           name: "Ajay Martin",
           title: "Social Media Manager",
           image: "/aj.png",
@@ -194,7 +172,7 @@ export default function AboutTeam() {
         },
 
         {
-          id: 12,
+          id: 18,
           name: "Yugeshwaran",
           title: "Social Media Manager",
           image: "/yu.png",
@@ -202,7 +180,7 @@ export default function AboutTeam() {
         },
       
         {
-          id: 13,
+          id: 19,
           name: "Shalini",
           title: "Accountant",
           image: "/shal.png",
@@ -217,7 +195,7 @@ export default function AboutTeam() {
       title: "Administrative",
       members: [
         {
-          id: 11,
+          id: 20,
           name: "Durgadevi",
           title: "Administrative",
           image: "/ds.png",
@@ -239,7 +217,7 @@ export default function AboutTeam() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
               <div className="lg:col-span-1 lg:sticky lg:top-24">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter  text-green-600 bg-clip-text">
                   {section.title}
                 </h2>
               </div>
@@ -267,7 +245,7 @@ export default function AboutTeam() {
                         <p className="text-gray-600 mt-1">{member.title}</p>
 
                         {expandedMember === member.id && member.bio && (
-                          <div className="mt-3 text-sm text-gray-700 transition-all duration-300">
+                          <div className="mt-3 text-sm text-gray-700 transition-all section-description duration-300">
                             <p>{member.bio}</p>
                           </div>
                         )}

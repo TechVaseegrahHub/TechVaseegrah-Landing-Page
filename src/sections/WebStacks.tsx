@@ -36,7 +36,7 @@ export default function WebStacks() {
   const filteredTechnologies = technologies.filter((tech) => tech.category === activeCategory)
 
   return (
-    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFFFF] to-[#E6ECFF] text-black">
+    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 text-black">
       <div className="max-w-7xl mx-auto">
         {/* Heading with editorial style */}
         <div className="mb-10 md:mb-16">
@@ -47,9 +47,7 @@ export default function WebStacks() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl 
-                          font-bold tracking-tighter 
-                          bg-gradient-to-b from-black to-[#001E80] 
-                          text-transparent bg-clip-text">
+                          font-bold tracking-tighter text-green-700 bg-clip-text">
                           
                           Technology Stack
               </motion.h2>
@@ -58,7 +56,7 @@ export default function WebStacks() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-[#001A66] text-base sm:text-lg md:text-xl font-normal max-w-xl"
+              className="text-base font-body sm:text-lg md:text-xl font-normal max-w-xl"
             >
             We use advanced technologies to create robust, scalable applications that offer seamless digital experiences.
             </motion.p>
@@ -67,7 +65,7 @@ export default function WebStacks() {
 
         {/* Mobile Category Tabs */}
         <div className="md:hidden mb-8">
-          <h3 className="text-sm uppercase tracking-wider text-[#001A66] font-medium mb-4">Categories</h3>
+          <h3 className="text-sm uppercase tracking-wider  font-medium mb-4">Categories</h3>
           <div className="flex overflow-x-auto pb-2 gap-3 no-scrollbar">
             {allCategories.map((category) => (
               <button
@@ -75,7 +73,7 @@ export default function WebStacks() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`py-2 px-4 rounded-full whitespace-nowrap transition-all duration-200 text-sm shadow-sm ${
                   activeCategory === category.id
-                    ? "bg-[#0033CC] text-white font-medium"
+                    ? "bg-[#308d4c] text-white font-medium"
                     : "bg-white text-[#4D4D4D] hover:bg-white/90"
                 }`}
               >
@@ -89,7 +87,7 @@ export default function WebStacks() {
           {/* Desktop Categories - Hidden on mobile */}
           <div className="hidden md:block md:col-span-3 lg:col-span-2">
             <div className="md:sticky md:top-24 bg-white/90 p-5 rounded-lg shadow-sm">
-              <h3 className="text-sm uppercase tracking-wider text-[#001A66] font-semibold mb-5">Categories</h3>
+              <h3 className="text-sm uppercase tracking-wider text-black font-semibold mb-5">Categories</h3>
               <div className="flex md:flex-col gap-3">
                 {allCategories.map((category) => (
                   <button
@@ -97,8 +95,8 @@ export default function WebStacks() {
                     onClick={() => setActiveCategory(category.id)}
                     className={`group flex items-center transition-all duration-200 py-2 px-3 rounded-md ${
                       activeCategory === category.id
-                        ? "text-[#0033CC] font-medium bg-[#E6ECFF]"
-                        : "text-[#4D4D4D] hover:text-[#0033CC] hover:bg-[#F5F7FF]"
+                        ? "bg-[#308d4c] font-medium text-white"
+                        : "text-[#4D4D4D] hover:text-green-600 hover:bg-[#F5F7FF]"
                     }`}
                   >
                     <span className="text-base">{category.name}</span>
@@ -162,7 +160,7 @@ function TechItem({ tech, index }: { tech: any; index: number }) {
           />
         </div>
       </div>
-      <h3 className="text-xs sm:text-sm font-medium text-center text-[#333333] group-hover:text-[#0033CC] transition-colors duration-200">
+      <h3 className="text-xs sm:text-sm font-medium text-center text-[#333333] group-hover:text-green-600 transition-colors duration-200">
         {tech.name}
       </h3>
     </motion.div>

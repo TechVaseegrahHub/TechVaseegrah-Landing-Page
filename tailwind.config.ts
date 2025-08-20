@@ -16,6 +16,9 @@ const config: Config = {
   	},
   	extend: {
   		fontFamily: {
+			sans: ["var(--font-space-grotesk)"],
+			mono: ["var(--font-space-mono)"], 
+			body: ["var(--font-dm-sans)"],
   			parabole: [
   				'Parabole',
   				'sans-serif'
@@ -78,10 +81,26 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+
+
+		  keyframes: {
+			"fluid-pulse": {
+			  "0%, 100%": {
+				transform: "scale(1)",
+				opacity: "1",
+			  },
+			  "50%": {
+				transform: "scale(1.03)",
+				opacity: "0.8",
+			  },
+			},
+		  },
+		  animation: {
+			"smooth-pulse": "smooth-pulse 4s ease-in-out infinite",
+		  }
   	}
   },
-
      animation: {
         "fast-pulse": "fast-pulse 0.4s infinite ease-in-out",
       },

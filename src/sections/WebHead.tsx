@@ -62,17 +62,17 @@ const translateY = useTransform(sectionScrollYProgress, [0, 1], [150, -150]);
 return (
     <section
     ref={sectionRef}
-    className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-20  pb-24 overflow-x-clip"
+    className="bg-white pt-20  pb-24 overflow-x-clip"
     >
     <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
         <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-            Web Solutions
+            WEB SOLUTIONS
             </motion.div>
         </div>
         <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-        Build Smarter Websites with Us
+        Build Smarter <span className="text-green-600">Websites with Us</span>
         </motion.h2>
         <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
         Unlock the full potential of your business with our specialized website development services for superior functionality, flexibility, and scalability

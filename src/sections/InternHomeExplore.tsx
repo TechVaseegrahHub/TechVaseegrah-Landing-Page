@@ -42,7 +42,7 @@ export const InternHomeExplore = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip">
+      className="bg-gradient-to-b from-white to-green-100 py-24 overflow-x-clip">
       
       <motion.div
         variants={heroVariant}
@@ -56,14 +56,14 @@ export const InternHomeExplore = () => {
               variants={heroChildVariant} 
               className="flex justify-center mb-6">
         
-              <Tag>Career Boost</Tag>
+              <Tag>CAREER BOOST</Tag>
           
           </motion.div>
           
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-           Exciting Internship Opportunities
+           Exciting Internship  <span className="text-green-600">Opportunities</span>
           </motion.h2>
           
           <motion.p
@@ -101,7 +101,7 @@ export const InternHomeExplore = () => {
 
           <div className="flex gap-2 mt-10 justify-center ">
          <Link href="/internship">
-         <motion.button variants={heroChildVariant} className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200">
+         <motion.button variants={heroChildVariant} className="bg-[#1B9D4A] text-white px-4 py-2 rounded-lg font-medium tracking-tight active:bg-opacity-70 active:text-opacity-90 transition-all duration-200">
             Explore
           </motion.button>
          </Link>

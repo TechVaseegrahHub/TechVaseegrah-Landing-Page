@@ -126,11 +126,11 @@ export default function SplitContactForm() {
         {/* Left Side - Heading and Info */}
         <div className="lg:w-1/2 lg:pr-6 xl:pr-8">
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
-            <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">Get Started</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mb-3 sm:mb-4">
+            <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">GET STARTED</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter  bg-clip-text mb-3 sm:mb-4">
               Connect with our Experts
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#010D3E] leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl font-body leading-relaxed">
               Have questions about web development or want to discuss a potential project? 
               Fill out the form and we&apos;ll get back to you within 24 hours.
             </p>
@@ -202,7 +202,7 @@ export default function SplitContactForm() {
                 type="submit"
                 disabled={status === 'submitting'}
                 className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg text-white font-medium text-sm sm:text-base transition-all ${
-                  status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-black hover:shadow-md'
+                  status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-green-600 hover:shadow-md'
                 }`}
               >
                 {status === 'submitting' ? (

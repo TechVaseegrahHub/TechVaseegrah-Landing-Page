@@ -68,11 +68,11 @@ export const Project = () => {
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag">
-            What&#39;s new
+            WHAT&#39;S NEW
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-            A more effective way to track progress
+            A more effective way to <span className="text-green-600">track progress</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5">
           Select a Platform and Input some basic information 
