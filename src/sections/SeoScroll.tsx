@@ -74,9 +74,9 @@ export default function SeoSroll() {
       <div className="container">
         <div className="section-heading md:text-5xl lg:text-6xl text-center">
           <div className="flex justify-center">
-            <Tag>Services</Tag>
+            <Tag>SERVICES</Tag>
           </div>
-          <h2 className="section-title mt-5">Boost Your Online Visibility with SEO</h2>
+          <h2 className="section-title mt-5"><span className="text-green-700">Boost Your Online</span> Visibility with SEO</h2>
           <p className="section-description mt-5">
             Our comprehensive SEO services help businesses improve their search rankings, drive targeted traffic, and
             achieve sustainable growth through data-driven strategies.

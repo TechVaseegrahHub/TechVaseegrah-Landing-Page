@@ -555,7 +555,7 @@ const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-         className={`fixed top-0 w-full z-[11000] bg-gradient-to-b from-[#FFFFFF] to-[#fdfdfd] shadow-md flex items-center justify-between px-4 py-4 transition-all duration-300 border ${
+         className={`fixed top-0 w-full z-[11000] bg-gradient-to-b from-[#FFFFFF] to-[#fdfdfd] shadow-md flex items-center justify-between px-3 py-3 transition-all duration-300 border ${
           scrolled ? "shadow-lg" : ""
         }`}
       >

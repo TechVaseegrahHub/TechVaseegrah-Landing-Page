@@ -7,7 +7,7 @@ export default function MbaImages() {
       <div className="space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-5">
-            <h2 className="md:text-5xl text-4xl font-bold tracking-tight section-title text-left">Our Intern</h2>
+            <h2 className="md:text-5xl text-4xl font-bold tracking-tight section-title text-left text-green-700">Our Intern</h2>
             <div className="space-y-4">
               <p className="section-description text-left text-base">
               The MBA Business Program is designed for entrepreneurs, 

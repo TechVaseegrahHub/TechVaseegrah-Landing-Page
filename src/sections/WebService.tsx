@@ -10,7 +10,7 @@ export default function TechServicesSection() {
             OUR EXPERTISE
           </div>
           <h2 className="section-title">
-          Innovative digital solutions for <span className="text-green-600">modern businesses</span>.
+          Innovative digital solutions for <span className="text-green-700">modern businesses</span>.
           </h2>
           {/* <p className="section-description ">
             Innovative digital solutions for modern businesses
@@ -23,7 +23,7 @@ export default function TechServicesSection() {
             {/* <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-gray-100 rounded-full opacity-70"></div> */}
             <div className="p-8 relative">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl  mb-6">
-                <Globe className="h-6 w-6 text-green-600" />
+                <Globe className="h-6 w-6 text-green-700" />
               </div>
               <h3 className="text-2xl mb-3 font-bold tracking-tighter bg-clip-text">Web Applications</h3>
               <p className="font-body mb-6">
@@ -52,7 +52,7 @@ export default function TechServicesSection() {
             {/* <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-gray-100 rounded-full opacity-70"></div> */}
             <div className="p-8 relative">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl  mb-6">
-                <RefreshCw className="h-6 w-6 text-green-600" />
+                <RefreshCw className="h-6 w-6 text-green-700" />
               </div>
               <h3 className="text-2xl  mb-3 font-bold tracking-tighter  bg-clip-text">
                               Website Revamp</h3>
@@ -89,7 +89,7 @@ export default function TechServicesSection() {
             {/* <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-gray-100 rounded-full opacity-70"></div> */}
             <div className="p-8 relative">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl  mb-6">
-                <Layers className="h-6 w-6 text-green-600" />
+                <Layers className="h-6 w-6 text-green-700" />
               </div>
               <h3 className="text-2xl mb-3 font-bold tracking-tighter 
                             bg-clip-text">E-commerce Website</h3>
@@ -126,7 +126,7 @@ export default function TechServicesSection() {
             {/* <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-gray-100 rounded-full opacity-70"></div> */}
             <div className="p-8 relative">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl mb-6">
-                <Layout className="h-6 w-6 text-green-600" />
+                <Layout className="h-6 w-6 text-green-700" />
               </div>
               <h3 className="text-2xl font-bold tracking-tighter bg-clip-text mb-3">
                               Front-End Development</h3>
@@ -159,7 +159,7 @@ export default function TechServicesSection() {
             {/* <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-gray-100 rounded-full opacity-70"></div> */}
             <div className="p-8 relative">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl mb-6">
-                <Database className="h-6 w-6 text-green-600" />
+                <Database className="h-6 w-6 text-green-700" />
               </div>
               <h3 className="text-2xl mb-3 font-bold tracking-tighter 
                               bg-clip-text">Back-End Development</h3>
@@ -192,7 +192,7 @@ export default function TechServicesSection() {
             {/* <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-gray-100 rounded-full opacity-70"></div> */}
             <div className="p-8 relative">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl mb-6">
-                <Palette className="h-6 w-6 text-green-600" />
+                <Palette className="h-6 w-6 text-green-700" />
               </div>
               <h3 className="text-2xl mb-3 font-bold tracking-tighter 
                              bg-clip-text">UI/UX Design</h3>

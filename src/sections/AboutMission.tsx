@@ -83,7 +83,7 @@ export default function AboutMission() {
             <div>
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-tighter 
-                    text-green-600 mb-4"
+                    text-green-700 mb-4"
               >
                 Our Mission
               </h2>
@@ -97,7 +97,7 @@ export default function AboutMission() {
             <div>
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-tighter 
-                            text-green-600  mb-4"
+                            text-green-700  mb-4"
               >
                 Our Vision
               </h2>
@@ -113,7 +113,7 @@ export default function AboutMission() {
           <div className="flex flex-col justify-center items-center lg:items-end">
             <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 lg:grid-cols-1">
               <div className="text-center lg:text-right">
-                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-600 text-center">
+                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-700 text-center">
                   <span ref={websiteRef}>0+</span>
                 </h3>
                 <p className="text-lg sm:text-xl leading-relaxed tracking-tight  mt-2 text-center">
@@ -122,7 +122,7 @@ export default function AboutMission() {
               </div>
 
               <div className="text-center lg:text-right">
-                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-600 text-center">
+                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-700 text-center">
                   <span ref={studentsRef}>0+</span>
                 </h3>
                 <p className="text-lg sm:text-xl leading-relaxed tracking-tight  mt-2 text-center">
@@ -131,7 +131,7 @@ export default function AboutMission() {
               </div>
 
               <div className="text-center lg:text-right">
-                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-600 text-center">
+                <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-green-700 text-center">
                   <span ref={clientsRef}>0+</span>
                 </h3>
                 <p className="text-lg sm:text-xl leading-relaxed tracking-tight  mt-2 text-center">Happy Clients</p>

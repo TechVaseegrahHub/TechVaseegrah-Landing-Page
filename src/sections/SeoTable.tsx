@@ -6,35 +6,35 @@ export default function SeoTable() {
       title: "Industry-Relevant Curriculum",
       description:
         "Stay ahead with a syllabus curated by successful business leaders, entrepreneurs, and industry experts.",
-      icon: <Users className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
+      icon: <Users className="h-4 w-4 md:h-5 md:w-5 " />,
     },
     {
       title: "Real-World Case Studies",
       description:
         "Gain insights through real-world business case studies, live projects, and interactive workshops.",
-      icon: <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
+      icon: <Briefcase className="h-4 w-4 md:h-5 md:w-5 " />,
     },
     {
       title: "Professional Development",
       description:
         "Attend workshops, networking events, and career coaching sessions designed to enhance your skills and career prospects.",
-      icon: <GraduationCap className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
+      icon: <GraduationCap className="h-4 w-4 md:h-5 md:w-5 " />,
     },
     {
       title: "Learning Resources",
       description:
         "Access to premium online courses, internal knowledge bases, and educational materials to support continuous learning.",
-      icon: <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
+      icon: <BookOpen className="h-4 w-4 md:h-5 md:w-5 " />,
     },
     {
       title: "Flexible Work Environment",
       description:
         "Enjoy flexible scheduling options and hybrid work arrangements that accommodate your academic commitments.",
-      icon: <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#001E80]" />,
+      icon: <Clock className="h-4 w-4 md:h-5 md:w-5 " />,
     },
   ]
   return (
-    <section className="bg-gradient-to-b from-[#FFFF] to-[#EAEEFE] lg:pb-24 overflow-x-clip mb-12 ">
+    <section className="bg-gradient-to-b from-[#FFFF] to-green-50 lg:pb-24 overflow-x-clip mb-12 ">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
         {/* <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mt-3 md:mt-5 mb-2 md:mb-3 section-title">Why Choose Our MBA Business Program?</h2>

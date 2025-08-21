@@ -49,13 +49,13 @@ const FeatureCard = ({ feature }: { feature: (typeof featuresData)[0] }) => {
   const Icon = feature.icon
   return (
     <div
-      className={`p-8 bg-white border-2 ${feature.borderColor} rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
+      className={`p-5 bg-white border-2 ${feature.borderColor} rounded-xl ...`} // p-8 -> p-6, rounded-2xl -> rounded-xl
     >
-      <div className={`w-12 h-12 flex items-center justify-center rounded-lg ${feature.iconBgColor} mb-6`}>
-        <Icon className={feature.textColor} size={24} />
+      <div className={`w-10 h-7 ... mb-1`}> {/* w-12 h-12 -> w-10 h-10, mb-6 -> mb-4 */}
+        <Icon className={feature.textColor} size={20} /> {/* size 24 -> 20 */}
       </div>
-      <h3 className={`text-xl font-semibold ${feature.textColor} mb-3`}>{feature.title}</h3>
-      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+      <h3 className={`text-lg font-semibold ... mb-1`}>{feature.title}</h3> {/* text-xl -> text-lg, mb-3 -> mb-2 */}
+      <p className="text-gray-600 leading-normal text-sm">{feature.description}</p> {/* leading-relaxed -> leading-normal, added text-sm */}
     </div>
   )
 }
@@ -81,9 +81,9 @@ export default function Hero() {
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150])
 
   return (
-    <section ref={heroRef} className="bg-gray-50 min-h-screen">
+    <section ref={heroRef} className="bg-[radial-gradient(ellipse_at_bottom_left,_#fff,_#f0fdf4_100%)] min-h-screen ">
       {/* Main Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-16">
+      <div className="max-w-7xl mx-auto px-6 pt-10 pb-5">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
@@ -110,7 +110,7 @@ export default function Hero() {
               </div>
             </h1>
 
-            <p className="section-description text-left text-xl text-gray-700 leading-relaxed max-w-lg">
+            <p className="section-description text-left text-2xl text-gray-700 leading-relaxed max-w-lg">
             Boost your business with smart websites, AI, and software that improve efficiency, productivity, and growth
             </p>
 
@@ -134,11 +134,11 @@ export default function Hero() {
 
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Build. Test. Deploy</h2>
+        <div className="text-center mb-7">
+          <h2 className="text-4xl font-bold text-slate-900 ">Build. Test. Deploy</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuresData.map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))}

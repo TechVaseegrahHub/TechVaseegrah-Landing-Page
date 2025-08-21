@@ -138,7 +138,7 @@ export default function ServicesSection() {
                 onClick={() => handleCategoryClick(category.id)}
                 className={`flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-md transition-all ${
                   activeCategory === category.id
-                    ? "bg-green-600 text-white font-medium"
+                    ? "bg-green-700 text-white font-medium"
                     : "bg-green-50 hover:bg-green-100"
                 }`}
               >
@@ -161,7 +161,7 @@ export default function ServicesSection() {
                     key={category.id}
                     onClick={() => handleCategoryClick(category.id)}
                     className={`flex items-center gap-3 text-left px-4 py-3 rounded-md transition-all ${
-                      activeCategory === category.id ? "bg-green-600 text-white font-medium" : "hover:bg-green-50"
+                      activeCategory === category.id ? "bg-green-700 text-white font-medium" : "hover:bg-green-50"
                     }`}
                   >
                     <CategoryIcon category={category.id} />
@@ -188,11 +188,11 @@ export default function ServicesSection() {
                     <CardDescription>{service.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="pt-6">
-                    <div className="text-3xl font-bold text-green-600">{service.price}</div>
+                    <div className="text-3xl font-bold text-green-700">{service.price}</div>
                     <ul className="mt-4 space-y-3 text-sm">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-start">
-                          <ChevronRight className="mr-2 h-4 w-4 mt-0.5 text-green-600 group-hover:translate-x-0.5 transition-transform" />
+                          <ChevronRight className="mr-2 h-4 w-4 mt-0.5 text-green-700 group-hover:translate-x-0.5 transition-transform" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -203,7 +203,7 @@ export default function ServicesSection() {
                       href="https://wa.me/918524089733"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex justify-center items-center bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                      className="w-full inline-flex justify-center items-center bg-green-700 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
                     >
                       Contact
                     </a>

@@ -10,7 +10,7 @@ export default function AboutHeading() {
           >
             Under my leadership Tech Vaseegrah isn&apos;t just a tech company - it&apos;s a military squad, fiercely
             trained and highly equipped to conquer the digital world.
-            <br /> <span className="block text-right text-green-600">- Sreekarrthikeyan</span>
+            <br /> <span className="block text-right text-green-700">- Sreekarrthikeyan</span>
           </h2>
         </div>
         <div className="w-full max-w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col md:mr-4">
@@ -28,10 +28,10 @@ export default function AboutHeading() {
               <p className="text-xl md:text-2xl font-semibold bg-clip-text ">
                 Mr.Sreekarrthikeyan Mahadevan
               </p>
-              <p className="sm:text-base section-description text-left text-sm text-green-600">CEO &amp; Founder | Tech Vaseegrah</p>
+              <p className="sm:text-base section-description text-left text-sm text-green-700">CEO &amp; Founder | Tech Vaseegrah</p>
             </div>
             <button
-              className="absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3  text-3xl  transition-all duration-300 w-full text-center bg-clip-text font-bold tracking-tighter text-green-600"
+              className="absolute h-10 -bottom-8 opacity-0 group-hover:opacity-100 cursor-pointer group-hover:bottom-3  text-3xl  transition-all duration-300 w-full text-center bg-clip-text font-bold tracking-tighter text-green-700"
             >
               CEO &amp; Founder
             </button>

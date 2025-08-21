@@ -23,18 +23,18 @@ export default function ServicesSection({ activeCategory, services, categories }
                 <CardDescription>{service.description}</CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-green-600">{service.price}</div>
+                <div className="text-3xl font-bold text-green-700">{service.price}</div>
                 <ul className="mt-4 space-y-3 text-sm">
                   {service.features.map((feature: any, i: number) => (
                     <li key={i} className="flex items-start">
-                      <ChevronRight className="mr-2 h-4 w-4 mt-0.5 text-green-600 group-hover:translate-x-0.5 transition-transform" />
+                      <ChevronRight className="mr-2 h-4 w-4 mt-0.5 text-green-700 group-hover:translate-x-0.5 transition-transform" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter className="border-t bg-green-50/50 pt-4">
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">Select Plan</Button>
+                <Button className="w-full bg-green-700 hover:bg-green-700 text-white">Select Plan</Button>
               </CardFooter>
             </Card>
           ))}

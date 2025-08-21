@@ -62,18 +62,18 @@ export const MbaInternship = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-[#FFFFFF] to-green-50 py-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag mb-8">
-            MBA Business Program 
+            MBA BUSINESS PROGRAM
             </motion.div>
           </div>
           <div className="w-full flex justify-center">
           <motion.h2 variants={heroChildVariant} className="section-title mt-3 w-auto whitespace-nowrap">
-           MBA Program for <br/>Entrepreneurs &amp; Students
+           MBA Program for <br/><span className="text-green-700">Entrepreneurs &amp; Students</span>
           </motion.h2>
           </div>
           <motion.p variants={heroChildVariant} className="section-description mt-5" >

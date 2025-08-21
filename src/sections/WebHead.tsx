@@ -72,7 +72,7 @@ return (
             </motion.div>
         </div>
         <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-        Build Smarter <span className="text-green-600">Websites with Us</span>
+        Build Smarter <span className="text-green-700">Websites with Us</span>
         </motion.h2>
         <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
         Unlock the full potential of your business with our specialized website development services for superior functionality, flexibility, and scalability

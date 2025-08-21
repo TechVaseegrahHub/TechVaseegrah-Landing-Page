@@ -32,7 +32,7 @@ const FAQsections: React.FC<FAQsectionsProps> = ({ faqs }) => {
                 style={{ transition: "none" }}
               >
                 <div className="flex items-center gap-2 justify-center">
-                  <HelpCircle className="w-5 h-5 text-green-600" />
+                  <HelpCircle className="w-5 h-5 text-green-700" />
                   <span>{faq.question}</span>
                 </div>
               </AccordionTrigger>

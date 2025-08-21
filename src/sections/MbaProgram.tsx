@@ -40,11 +40,11 @@ export default function MbaProgram() {
       <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4 lg:pr-6">
           <span className="tag mb-8">
-            MBA Program
+            MBA PROGRAM
           </span>
 
-          <h2 className="text-3xl tracking-tight text-left md:text-4xl section-title mb-4">Program Curriculum</h2>
-          <p className="text-sm section-description md:text-xl text-left mb-3 leading-relaxed max-w-md">
+          <h2 className="text-3xl tracking-tight text-left md:text-4xl section-title mb-4 text-green-700">Program Curriculum</h2>
+          <p className="text-sm section-description md:text-xl text-left mb-3 leading-relaxed max-w-md ">
             Our comprehensive MBA curriculum is designed to equip you with essential business skills across key domains.
           </p>
   

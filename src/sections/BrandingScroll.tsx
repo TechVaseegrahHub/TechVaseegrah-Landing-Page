@@ -89,7 +89,7 @@ export default function BrandingScroll() {
             transition={{ duration: 0.4 }}
             className="inline-block mb-4"
           >
-            <span className="tag mb-6">Brand Development</span>
+            <span className="tag mb-6">BRAND DEVELOPMENT</span>
           </motion.div>
 
           <motion.h2
@@ -97,17 +97,16 @@ export default function BrandingScroll() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-center text-3xl sm:text-4xl md:text-5xl 
-               font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] 
-               text-transparent bg-clip-text mb-6"
+               font-bold tracking-tighter bg-clip-text mb-6"
           >
-            Professional Branding Solutions
+            Professional <span className="text-green-700">Branding Solutions</span>
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-center text-xl leading-[30px] tracking-tight text-[#010D3E] max-w-2xl mx-auto"
+            className="text-center text-xl leading-[30px] tracking-tight font-body max-w-2xl mx-auto"
           >
             We create cohesive brand identities that communicate your values and connect with your target audience
             through strategic design and positioning.
@@ -123,14 +122,14 @@ export default function BrandingScroll() {
                   key={service.id}
                   onClick={() => handleTabChange(service.id)}
                   className={`relative px-5 py-3 text-base transition-all duration-200 ${
-                    activeTab === service.id ? "text-[#010D3E] font-medium" : "text-gray-500 hover:text-gray-800"
+                    activeTab === service.id ? " font-medium" : "text-gray-500 hover:text-gray-800"
                   }`}
                 >
                   {service.title}
                   {activeTab === service.id && (
                     <motion.div
                       layoutId="activeTabLine"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-[#010D3E]"
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-green-700"
                       initial={false}
                       transition={{ duration: 0.3 }}
                     />
@@ -183,8 +182,7 @@ export default function BrandingScroll() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5 }}
                           className="text-3xl lg:text-4xl mb-6 font-bold tracking-tight 
-                                    bg-gradient-to-b from-black to-[#001E80] 
-                                    text-transparent bg-clip-text inline-block relative"
+                                  text-green-700 bg-clip-text inline-block relative"
                         >
                           {service.title}
                           {/* <span className="absolute -bottom-3 left-0 h-1 w-24 bg-gradient-to-r from-[#001E80] to-blue-400"></span> */}
@@ -194,7 +192,7 @@ export default function BrandingScroll() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.5, delay: 0.1 }}
-                          className="text-[#010D3E]/80 mb-12 text-xl leading-relaxed"
+                          className="font-body/80 mb-12 text-xl leading-relaxed"
                         >
                           {service.description}
                         </motion.p>
@@ -210,19 +208,17 @@ export default function BrandingScroll() {
                               className="flex items-start gap-4 group"
                             >
                               <div className="flex-shrink-0 mt-1">
-                                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center text-[#001E80] group-hover:shadow-md transition-all duration-300 border border-blue-100">
+                                <div className="w-14 h-14 rounded-xl  flex items-center justify-center text-green-700 group-hover:shadow-md transition-all duration-300 border border-blue-100">
                                   <Icon name={feature.icon} />
                                 </div>
                               </div>
                               <div>
                                 <p
-                                  className="font-semibold text-lg tracking-tight 
-                                              bg-gradient-to-b from-black to-[#001E80] 
-                                              text-transparent bg-clip-text mb-2"
+                                  className="font-semibold text-lg tracking-tight bg-clip-text mb-2"
                                 >
                                   {feature.text}
                                 </p>
-                                <p className="text-[#010D3E]/70">{feature.description}</p>
+                                <p className="font-body">{feature.description}</p>
                               </div>
                             </motion.div>
                           ))}

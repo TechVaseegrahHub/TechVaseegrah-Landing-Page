@@ -62,17 +62,17 @@ export const SocialMedia = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-20  pb-24 overflow-x-clip"
+      className="bg-gradient-to-b from-white to-green-50  pt-20  pb-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-            Digital Presence Boost
+            DIGITAL PRESENCE BOOST
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-          We&apos;re changing the way people connect
+          We&apos;re changing the <span className="text-green-700">way people connect</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           We help brands build authentic connections with their audience through creative storytelling, strategic content, and engaging campaigns. Grow your presence, reach the right people, and turn followers into loyal customers.

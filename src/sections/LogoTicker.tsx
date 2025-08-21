@@ -17,10 +17,11 @@ import samudraLogo from "@/assets/samudra.png";
 import sribariyaLogo from "@/assets/sai-bariya.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import logo from "@/assets/techvl.png";
 
 export const LogoTicker = () => {
   return (
-    <div className="py-8 md:py-12 bg-white">
+    <div className="py-8 md:py-12 bg-gradient-to-b from-white to-green-50 ">
       <div className="container">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
           <motion.div
@@ -229,9 +230,15 @@ export const LogoTicker = () => {
             />
           </motion.div>
         </div>
-        <h2 className="section-title text-xl mt-12">
-            Brands Powered by Tech Vaseegrah
-                  </h2>
+
+        <h2 className="section-title text-xl mt-12 flex items-center justify-center gap-2">
+    <span>Brands Powered by</span>
+    <Image 
+        src={logo} 
+        alt="Vaseegrah Logo" 
+        className="h-12 w-auto" // Adjusted height for better visual balance
+    /> 
+</h2>
       </div>
     </div>
   );

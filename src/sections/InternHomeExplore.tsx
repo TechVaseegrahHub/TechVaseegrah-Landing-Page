@@ -63,7 +63,7 @@ export const InternHomeExplore = () => {
           <motion.h2            
            variants={heroChildVariant}
            className="section-title">
-           Exciting Internship  <span className="text-green-600">Opportunities</span>
+           Exciting Internship  <span className="text-green-700">Opportunities</span>
           </motion.h2>
           
           <motion.p

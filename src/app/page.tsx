@@ -21,14 +21,14 @@ const projectCards: ProjectCardType[] = [
   {
     src: billzzyImage,
     title: "Billzzy",
-    // category: "App",
+     category: "",
     link: "https://billzzy.com"
   },
 
   {
     src: eComImage, 
     title: "F3 Engine",
-    // category: "Technology",
+     category: "",
     link: "https://f3engine.com"
   },
 
@@ -36,14 +36,14 @@ const projectCards: ProjectCardType[] = [
   {
     src: f3Image, 
     title: "GoWhats",
-    // category: "AI",
+     category: "",
     link: "https://gowhats.vercel.app"
   },
 
   {
     src: aiChatBotImage, 
     title: "InstaX Bot",
-    // category: "AI",
+     category: "",
     link: "https://insta-xbot-l.vercel.app/" // Add the correct link for InstaX Bot
   },
 
@@ -56,7 +56,6 @@ export default function Home () {
       <LogoTicker />
       <Project />
       
-      {/* 3. USE THE NEW COMPONENT with the corrected data */}
       <ProjectCarousel items={projectCards} />
       
       <SmartBiz />

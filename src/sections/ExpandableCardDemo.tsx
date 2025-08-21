@@ -64,7 +64,7 @@ export function ExpandableCardDemo() {
               <div className="p-6 flex flex-col gap-5"> {/* ✅ Increased spacing between elements */}
                 <motion.h3
                   layoutId={`title-${active.title}-${id}`}
-                  className="text-3xl  font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
+                  className="text-3xl  font-bold tracking-tighter text-green-700 bg-clip-text"
                 >
                   {active.title}
                 </motion.h3>
@@ -72,7 +72,7 @@ export function ExpandableCardDemo() {
                 {/* ✅ Ensuring Internship Description Always Visible */}
                 <motion.p
                   layout
-                  className="text-xl font-medium  tracking-tight text-[#010D3E] mt-1"
+                  className="text-xl font-medium  tracking-tight  mt-1"
                 >
                   {active.description}
                 </motion.p>
@@ -120,14 +120,14 @@ export function ExpandableCardDemo() {
               <div className="text-center md:text-left w-full">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="text-3xl  font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+                  className="text-3xl  font-bold tracking-tighter bg-clip-text">
                   {card.title}
                 </motion.h3>
 
                 {/* ✅ Ensuring Internship Description Always Visible */}
                 <motion.p
                   layout
-                  className="text-xl font-medium  tracking-tight text-[#010D3E] mt-1">
+                  className="text-xl font-medium  tracking-tight  mt-1">
                   {card.description}
                 </motion.p>
               </div>

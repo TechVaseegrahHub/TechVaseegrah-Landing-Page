@@ -71,7 +71,7 @@ export const SeoTableHead = () => {
             </motion.div>
           </div> */}
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-          Why Choose Tech Vaseegrah
+          Why Choose <span className="text-green-700">Tech Vaseegrah</span> 
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           We&apos;re a team of passionate developers, designers, and strategists dedicated to transforming ideas into powerful digital experiences.

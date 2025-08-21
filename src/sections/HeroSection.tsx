@@ -15,7 +15,7 @@ export default function HeroSection() {
           business.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="group bg-green-600 hover:bg-green-700 text-white min-w-[180px]" asChild>
+          <Button size="lg" className="group bg-green-700 hover:bg-green-700 text-white min-w-[180px]" asChild>
             <a href="#services">
               Explore Services
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -24,7 +24,7 @@ export default function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="border-green-600 text-green-700 hover:bg-green-50 min-w-[180px]"
+            className="border-green-700 text-green-700 hover:bg-green-50 min-w-[180px]"
             asChild
           >
             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">

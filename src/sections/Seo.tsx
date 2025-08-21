@@ -61,7 +61,7 @@ export const Seo = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24  overflow-x-clip"
+      className="bg-gradient-to-b from-[#FFFF] to-green-50 py-24  overflow-x-clip"
     >
       <motion.div
         variants={heroVariant}
@@ -72,7 +72,7 @@ export const Seo = () => {
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag mb-6">
-              Search Engine Optimization
+            SEARCH ENGINE OPTIMIZATION
             </motion.div>
           </div>
           <div className="w-full flex justify-center">
@@ -80,7 +80,7 @@ export const Seo = () => {
               variants={heroChildVariant}
               className="section-title mt-3 w-auto whitespace-normal md:whitespace-nowrap md:text-5xl"
             >
-              Professional SEO Services <br /> for Driving Traffic, Leads, & Sales
+              <span className="text-green-700">Professional SEO Services</span> <br /> for Driving Traffic, Leads, & Sales
             </motion.h2>
           </div>
           <motion.p variants={heroChildVariant} className="section-description mt-5">

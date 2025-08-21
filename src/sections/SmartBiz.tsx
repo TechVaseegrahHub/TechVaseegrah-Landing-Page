@@ -31,7 +31,7 @@ export const SmartBiz = () => {
             Transforming small businesses into{" "}
             <span className="relative group">
               {/* 1. THE FLUID PULSE: Applying our new custom animation */}
-              <span className="inline-block bg-gradient-to-b from-primary to-green-600 bg-clip-text text-transparent animate-fluid-pulse">
+              <span className="inline-block bg-gradient-to-b from-primary to-green-700 bg-clip-text text-transparent animate-fluid-pulse">
                 Smart biz
               </span>
 

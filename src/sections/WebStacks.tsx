@@ -96,7 +96,7 @@ export default function WebStacks() {
                     className={`group flex items-center transition-all duration-200 py-2 px-3 rounded-md ${
                       activeCategory === category.id
                         ? "bg-[#308d4c] font-medium text-white"
-                        : "text-[#4D4D4D] hover:text-green-600 hover:bg-[#F5F7FF]"
+                        : "text-[#4D4D4D] hover:text-green-700 hover:bg-[#F5F7FF]"
                     }`}
                   >
                     <span className="text-base">{category.name}</span>
@@ -160,7 +160,7 @@ function TechItem({ tech, index }: { tech: any; index: number }) {
           />
         </div>
       </div>
-      <h3 className="text-xs sm:text-sm font-medium text-center text-[#333333] group-hover:text-green-600 transition-colors duration-200">
+      <h3 className="text-xs sm:text-sm font-medium text-center text-[#333333] group-hover:text-green-700 transition-colors duration-200">
         {tech.name}
       </h3>
     </motion.div>

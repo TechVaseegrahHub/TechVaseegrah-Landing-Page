@@ -62,7 +62,7 @@ export const Project = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b-[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-green-50 to-white py-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
@@ -72,7 +72,7 @@ export const Project = () => {
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-            A more effective way to <span className="text-green-600">track progress</span>
+            A more effective way to <span className="text-green-700">track progress</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5">
           Select a Platform and Input some basic information 

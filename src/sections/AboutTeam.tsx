@@ -217,7 +217,7 @@ export default function AboutTeam() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
               <div className="lg:col-span-1 lg:sticky lg:top-24">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter  text-green-600 bg-clip-text">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter  text-green-700 bg-clip-text">
                   {section.title}
                 </h2>
               </div>

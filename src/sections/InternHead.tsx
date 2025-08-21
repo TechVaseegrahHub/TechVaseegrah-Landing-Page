@@ -60,17 +60,17 @@ export const InternHead = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-20  pb-24 overflow-x-clip">
+      className="bg-gradient-to-b from-[#FFFFFF] to-green-50 pt-20  pb-24 overflow-x-clip">
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-            Internship
+            INTERNSHIP
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
           Develop your skills with
-          Tech Vaseegrah!
+          <span className="text-green-700">Tech Vaseegrah!</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           We offer internships that provide hands-on experience, 

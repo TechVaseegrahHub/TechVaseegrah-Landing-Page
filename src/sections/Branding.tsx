@@ -62,17 +62,17 @@ export const Branding = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] pt-24 pb-24 overflow-x-clip"
+      className="bg-gradient-to-b from-white to-green-50  pt-24 pb-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">
-            Digital Presence Boost
+           DIGITAL PRESENCE
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="text-2xl md:text-3xl lg:text-5xl font-bold mt-3 md:mt-5 mb-2 md:mb-3 section-title">
-          Branding & Consultation
+          Branding & <span className="text-green-700">Consultation</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5 mb-8">
           At Tech Vaseegrah, we believe your brand is your voice, your story, 

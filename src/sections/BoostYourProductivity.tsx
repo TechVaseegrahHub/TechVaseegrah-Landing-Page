@@ -72,7 +72,7 @@ export const BoostYourProductivity = () => {
             </motion.div>
           </div>
           <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-            A more effective way to <span className="text-green-600">track progress</span>
+            A more effective way to <span className="text-green-700">track progress</span>
           </motion.h2>
           <motion.p variants={heroChildVariant} className="section-description mt-5">
             Effortlessly turn your ideas into a fully functional, responsive,

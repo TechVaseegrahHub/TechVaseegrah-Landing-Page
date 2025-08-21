@@ -110,7 +110,7 @@ export default function SocialMediaServices() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50 overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-green-50 overflow-hidden"
       id="social-services"
       style={{
         scrollbarWidth: "none",
@@ -124,12 +124,10 @@ export default function SocialMediaServices() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto mb-12 md:mb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter 
-                        bg-gradient-to-b from-black to-[#001E80] 
-                        text-transparent bg-clip-text mb-6">
-            Make Your Brand Unmissable
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text mb-6">
+            Make Your <span className="text-green-700">Brand Unmissable</span>
           </h2>
-          <p className="text-lg md:text-xl leading-[30px] tracking-tight text-[#010D3E] max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl leading-[30px] tracking-tight font-body max-w-2xl mx-auto">
             At Tech Vaseegrah, we turn social media into your brand&apos;s growth engine through strategic, creative
             solutions.
           </p>
@@ -153,7 +151,7 @@ export default function SocialMediaServices() {
                   onClick={() => setSelectedId(service.id)}
                   className={`relative flex-shrink-0 px-5 py-4 rounded-xl transition-all duration-300 text-left w-full ${
                     selectedId === service.id
-                      ? "bg-[#e0e7ff] text-[#0033CC] shadow-lg"
+                      ? "text-green-700 shadow-lg"
                       : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50"
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -189,14 +187,11 @@ export default function SocialMediaServices() {
 
                 <div className="grid md:grid-cols-2 gap-8 md:gap-0">
                   <div className="p-6 md:p-8 lg:p-10">
-                    <h3 className="text-2xl md:text-3xl mb-4 font-bold tracking-tighter 
-                                    bg-gradient-to-b from-black to-[#001E80] 
-                                    text-transparent bg-clip-text">
+                    <h3 className="text-2xl md:text-3xl mb-4 font-bold tracking-tighter text-green-700 bg-clip-text">
                       {selectedService.title}
                     </h3>
 
-                    <p className=" leading-[30px] tracking-tight 
-                                  text-[#010D3E] text-lg mb-6">{selectedService.description}</p>
+                    <p className=" leading-[30px] tracking-tight font-body text-lg mb-6">{selectedService.description}</p>
 
                     {/* <div className="inline-block px-4 py-2 rounded-full bg-slate-100 text-slate-800 font-medium text-sm mb-6">
                       <span className="font-semibold">Perfect for:</span> {selectedService.idealFor}
@@ -220,9 +215,7 @@ export default function SocialMediaServices() {
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className=" font-bold tracking-tighter 
-                                      bg-gradient-to-b from-black to-[#001E80] 
-                                      text-transparent bg-clip-text text-lg">
+                      <h4 className=" font-bold tracking-tighter text-green-700 bg-clip-text text-lg">
                                       Key Benefits
                       </h4>
                       <div className="space-y-3">
@@ -234,8 +227,8 @@ export default function SocialMediaServices() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.3, delay: index * 0.1 }}
                           >
-                            <CheckCircle className="h-5 w-5 text-[#010D3E] mr-3 flex-shrink-0" />
-                            <span className="text-[#010D3E]">{benefit}</span>
+                            <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                            <span className="font-body">{benefit}</span>
                           </motion.div>
                         ))}
                       </div>
