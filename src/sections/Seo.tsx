@@ -61,7 +61,7 @@ export const Seo = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFFF] to-green-50 py-24  overflow-x-clip"
+      className="bg-gradient-to-b from-green-50 to-[#FFFFFF]  py-24  overflow-x-clip"
     >
       <motion.div
         variants={heroVariant}

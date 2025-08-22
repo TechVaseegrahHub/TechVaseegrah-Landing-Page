@@ -93,7 +93,7 @@ export const ProjectGrid = () => {
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 sm:mb-6">Our Case Studies</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 sm:mb-6 text-green-700">Our Case Studies</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
             Explore our collection of successful projects and discover how we&apos;ve helped businesses transform their
             digital presence.

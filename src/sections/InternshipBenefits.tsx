@@ -8,30 +8,35 @@ export default function InternshipBenefits() {
         "Work directly with industry experts who provide guidance and structured training to accelerate your professional growth.",
       icon: <Users className="h-4 w-4 md:h-5 md:w-5 " />,
     },
+
     {
       title: "Real-World Experience",
       description:
         "Gain hands-on experience working on actual projects that impact the business and build your portfolio with meaningful work.",
       icon: <Briefcase className="h-4 w-4 md:h-5 md:w-5 " />,
     },
+
     {
       title: "Professional Development",
       description:
         "Attend workshops, networking events, and career coaching sessions designed to enhance your skills and career prospects.",
       icon: <GraduationCap className="h-4 w-4 md:h-5 md:w-5 " />,
     },
+
     {
       title: "Learning Resources",
       description:
         "Access to premium online courses, internal knowledge bases, and educational materials to support continuous learning.",
       icon: <BookOpen className="h-4 w-4 md:h-5 md:w-5 " />,
     },
+
     {
       title: "Flexible Work Environment",
       description:
         "Enjoy flexible scheduling options and hybrid work arrangements that accommodate your academic commitments.",
       icon: <Clock className="h-4 w-4 md:h-5 md:w-5" />,
     },
+    
   ]
   return (
     <section className="bg-gradient-to-b from-[#ffff] to-green-50 py-8 md:pt-10 md:pb-16 lg:pb-24 overflow-x-clip mt-8 md:mt-12 lg:mt-16">

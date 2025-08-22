@@ -87,7 +87,7 @@ export default function AboutTeam() {
         {
           id: 9,
           name: "Yogesh",
-          title: "MERN Stack Developer",
+          title: "Software Developer",
           image: "/yogesh.png",
           bio: "",
         },

@@ -106,11 +106,11 @@ export const Contact = () => {
           <div className="section-heading">
             <div className="flex justify-center">
               <motion.div variants={heroChildVariant} className="tag">
-                Contact Us
+                CONTACT US
               </motion.div>
             </div>
             <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-              Get in Touch with Us
+              Get in <span className="text-green-700">Touch with Us</span>
             </motion.h2>
             <motion.p variants={heroChildVariant} className="section-description mt-5">
               Have questions, feedback, or need assistance? Feel free to reach out to us. Our team is here to help you
@@ -161,9 +161,9 @@ export const Contact = () => {
         >
           <div className="md:w-1/2 bg-gray-100 p-8 md:p-12">
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Get in Touch</h3>
-            <p className="text-gray-600 mt-4">Feel free to contact us through email, phone, or visit our location.</p>
+            <p className="text-gray-600 mt-4 font-body">Feel free to contact us through email, phone, or visit our location.</p>
 
-            <div className="mt-6 space-y-6">
+            <div className="mt-6 space-y-6 font-body">
               <ContactInfo icon={MapPin} content="9, Vijaya Nagar, Reddypalayam Road, Thanjavur-613009" />
               <ContactInfo icon={Phone} content="+91 85240 89733" link="tel:+918524089733" />
               <ContactInfo icon={Mail} content="techvaseegrah@gmail.com" link="mailto:techvaseegrah@gmail.com" />
@@ -223,7 +223,7 @@ export const Contact = () => {
             
             <button
               type="submit"
-              className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all flex items-center justify-center"
+              className="w-full bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all flex items-center justify-center"
               disabled={isSubmitting}
             >
               {isSubmitting ? <Loader2 className="animate-spin h-5 w-5 mr-2" /> : <Send className="h-5 w-5 mr-2" />}

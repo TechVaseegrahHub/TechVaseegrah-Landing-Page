@@ -62,7 +62,7 @@ export const Branding = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-green-50  pt-24 pb-24 overflow-x-clip"
+      className="bg-gradient-to-b from-green-50 to-[#FFFFFF]  pt-24 pb-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">

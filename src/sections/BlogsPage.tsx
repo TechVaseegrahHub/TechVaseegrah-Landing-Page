@@ -79,7 +79,7 @@ const ServiceTab = ({
 }) => (
   <button
     className={`px-4 py-2 rounded-md transition-all duration-300 text-sm ${
-      isActive ? `bg-black text-white shadow-sm` : `bg-gray-100 text-gray-700 hover:bg-gray-200`
+      isActive ? `bg-green-700 text-white shadow-sm` : `bg-gray-100 text-gray-700 hover:bg-gray-200`
     } font-medium`}
     onClick={onClick}
   >
@@ -105,7 +105,7 @@ export default function BlogPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Hero section with minimal design */}
         <div className="mb-16 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-left">Blog </h1>
+          <h1 className="text-3xl md:text-4xl font-bold  mb-4 text-left text-green-700">Blog </h1>
           <p className="text-lg text-gray-600 text-left">
             Empowering your business with cutting-edge digital solutions
           </p>
@@ -161,7 +161,7 @@ export default function BlogPage() {
 
               {/* Content section with minimal design */}
               <div className="flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                <h3 className="text-2xl font-bold text-green-700 mb-4">{service.title}</h3>
                 <p className="text-gray-700 mb-6 text-lg">{service.intro}</p>
                 <div className="space-y-3">
                   {service.points.map((point, i) => {

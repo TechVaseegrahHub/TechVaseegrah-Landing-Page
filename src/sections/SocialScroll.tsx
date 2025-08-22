@@ -110,7 +110,7 @@ export default function SocialMediaServices() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-green-50 overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 overflow-hidden"
       id="social-services"
       style={{
         scrollbarWidth: "none",

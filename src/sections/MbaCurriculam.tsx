@@ -34,7 +34,7 @@ export default function MbaCurriculam() {
     },
   ]
   return (
-    <section className="bg-gradient-to-b from-green-50 to-white py-8 md:pt-10 md:pb-16 lg:pb-24 overflow-x-clip mt-8 md:mt-12 lg:mt-16">
+    <section className="bg-gradient-to-b from-white to-green-50 py-8 md:pt-10 md:pb-16 lg:pb-24 overflow-x-clip mt-8 md:mt-12 lg:mt-16">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mt-3 md:mt-5 mb-2 md:mb-3 section-title">Why Choose <span className="text-green-700">Our MBA Business Program?</span></h2>

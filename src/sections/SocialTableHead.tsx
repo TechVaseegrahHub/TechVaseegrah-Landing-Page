@@ -62,7 +62,7 @@ export const SocialTableHead = () => {
   return (
     <section
       ref={sectionRef}
-      className="  pt-20  pb-24 overflow-x-clip"
+      className=" pt-20  pb-24 overflow-x-clip"
     >
       <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">

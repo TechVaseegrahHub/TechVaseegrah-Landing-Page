@@ -4,11 +4,11 @@ export default function TermsOfService() {
   return (
     <section className="bg-white py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-black mb-8 ">
+        <h2 className="text-3xl font-extrabold text-black mb-8 font-body">
         Tech Vaseegrah - Terms of Service
         </h2>
 
-        <div className=" text-black max-w-none space-y-6 text-lg">
+        <div className=" text-black max-w-none space-y-6 text-lg font-body">
 
           <h3>
             <strong>1. Services </strong>
