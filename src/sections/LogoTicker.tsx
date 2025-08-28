@@ -19,13 +19,38 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import logo from "@/assets/techvl.png";
 
+// --- 1. Refactor logos into a data array for easier management ---
+const logoData = [
+  { src: apfLogo, alt: "Apf" },
+  { src: amzLogo, alt: "Amz Farm" },
+  { src: bgLogo, alt: "BG" },
+  { src: cleansoLogo, alt: "CleanSo" },
+  { src: frelaLogo, alt: "Frela" },
+  { src: hunnyLogo, alt: "Hunny Bi" },
+  { src: jaiLogo, alt: "Jai" },
+  { src: jungleLogo, alt: "Jungle Meet" },
+  { src: magizhamLogo, alt: "Magizham" },
+  { src: mamiveeduLogo, alt: "Maami Veedu" },
+  { src: samudraLogo, alt: "Samudra" },
+  { src: colorcrackersLogo, alt: "Color Crackers" },
+  // These logos had a different height, so we'll give them a specific class
+  { src: kirscollectionLogo, alt: "Krish collection", className: "h-12 md:h-16" },
+  { src: futurenatureLogo, alt: "Future Nature", className: "h-12 md:h-16" },
+  { src: nimalasLogo, alt: "Nimalas", className: "h-12 md:h-16" },
+  { src: sribariyaLogo, alt: "Sri Bariya Skin Care" },
+];
+
 export const LogoTicker = () => {
+  // We create a combined array for the seamless loop
+  const combinedLogos = [...logoData, ...logoData];
+
   return (
     <div className="py-8 md:py-12 bg-gradient-to-b from-white to-green-50 ">
       <div className="container">
-        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <motion.div
-            className="flex gap-14 flex-none pr-14"
+            // --- 2. Added responsive gap and padding ---
+            className="flex gap-10 md:gap-14 flex-none pr-10 md:pr-14"
             animate={{
               translateX: "-50%",
             }}
@@ -36,209 +61,32 @@ export const LogoTicker = () => {
               repeatType: "loop",
             }}
           >
-            <Image
-              src={apfLogo}
-              alt="Apf"
-              className="logo-ticker-image h-14 w-18"  // Increased size
-            />
-
-            <Image
-              src={amzLogo}
-              alt="Amz Farm"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={bgLogo}
-              alt="BG"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={cleansoLogo}
-              alt="CleanSo"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={frelaLogo}
-              alt="Frela"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={hunnyLogo}
-              alt="Hunny Bi"
-              className="logo-ticker-image h-14 w-18" 
-            />
-
-            <Image
-              src={jaiLogo}
-              alt="Jai"
-              className="logo-ticker-image h-14 w-18" 
-            />
-
-            <Image
-              src={jungleLogo}
-              alt="Jungle Meet"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={magizhamLogo}
-              alt="Magizham"
-              className="logo-ticker-image h-14 w-18" 
-            />
-
-            <Image
-              src={mamiveeduLogo}
-              alt="Maami Veedu"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={samudraLogo}
-              alt="Samudra"
-              className="logo-ticker-image h-14 w-18"  
-            />
-            <Image
-              src={colorcrackersLogo}
-              alt="Color Crackers"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={kirscollectionLogo}
-              alt="Krish collection"
-              className="logo-ticker-image h-16 w-18"  
-            />
-
-            <Image
-              src={futurenatureLogo}
-              alt="Future Nature"
-              className="logo-ticker-image h-16 w-18"  
-            />
-
-            
-            <Image
-              src={nimalasLogo}
-              alt="Nimalas"
-              className="logo-ticker-image h-16 w-18"  
-            />
-
-
-            <Image
-              src={sribariyaLogo}
-              alt="Sri Bariya Skin Care"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            {/* Second set of logos for animation */}
-            <Image
-              src={apfLogo}
-              alt="Apf"
-              className="logo-ticker-image h-14 w-18" 
-            />
-
-            <Image
-              src={amzLogo}
-              alt="Amz Farm"
-              className="logo-ticker-image h-14 w-18"  
-            />
-            <Image
-              src={bgLogo}
-              alt="BG"
-              className="logo-ticker-image h-14 w-18"  
-            />
-            <Image
-              src={cleansoLogo}
-              alt="CleanSo"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={frelaLogo}
-              alt="Frela"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={hunnyLogo}
-              alt="Hunny Bi"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={jaiLogo}
-              alt="Jai"
-              className="logo-ticker-image h-14 w-18" 
-            />
-
-            <Image
-              src={jungleLogo}
-              alt="Jungle Meet"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={magizhamLogo}
-              alt="Magizham"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={mamiveeduLogo}
-              alt="Maami Veedu"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={samudraLogo}
-              alt="Samudra"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={colorcrackersLogo}
-              alt="Color Crackers"
-              className="logo-ticker-image h-14 w-18"  
-            />
-
-            <Image
-              src={kirscollectionLogo}
-              alt="Krish collection"
-              className="logo-ticker-image h-16 w-18"  
-            />
-
-            <Image
-              src={futurenatureLogo}
-              alt="Future Nature"
-              className="logo-ticker-image h-16 w-18"  
-            />
-
-            
-            <Image
-              src={nimalasLogo}
-              alt="Nimalas"
-              className="logo-ticker-image h-16 w-18"  
-            />
-
-            <Image
-              src={sribariyaLogo}
-              alt="Sri Bariya Skin Care"
-              className="logo-ticker-image h-14 w-18"  
-            />
+            {/* --- 3. Mapped over the data array for cleaner code --- */}
+            {combinedLogos.map((logo, index) => (
+              <Image
+                key={`${logo.alt}-${index}`} // Unique key for each item
+                src={logo.src}
+                alt={logo.alt}
+                // --- 4. Applied responsive sizing classes ---
+                className={
+                  logo.className
+                    ? `${logo.className} w-auto object-contain`
+                    : "h-10 md:h-14 w-auto object-contain"
+                }
+              />
+            ))}
           </motion.div>
         </div>
 
-        <h2 className="section-title text-xl mt-12 flex items-center justify-center gap-2">
-    <span>Brands Powered by</span>
-    <Image 
-        src={logo} 
-        alt="Vaseegrah Logo" 
-        className="h-12 w-auto" // Adjusted height for better visual balance
-    /> 
-</h2>
+        {/* --- 5. Made the heading responsive --- */}
+        <h2 className="text-lg md:text-xl mt-12 flex items-center justify-center gap-2 section-title">
+          <span>Brands Powered by</span>
+          <Image 
+            src={logo} 
+            alt="Vaseegrah Logo" 
+            className="h-8 md:h-12 w-auto" // Responsive height
+          /> 
+        </h2>
       </div>
     </div>
   );

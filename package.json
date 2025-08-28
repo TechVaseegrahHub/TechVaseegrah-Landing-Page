@@ -46,7 +46,7 @@
     "react-router-dom": "^7.1.5",
     "react-scroll": "^1.9.0",
     "styled-components": "^6.1.15",
-    "swiper": "^11.2.1",
+    "swiper": "^11.2.10",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.174.0",
     "three-globe": "^2.42.2"

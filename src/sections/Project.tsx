@@ -1,6 +1,7 @@
 "use client";
+
 import rocketImage from "@/assets/rocket-launch.png";
-import aiImage from "@/assets/ai-scanner.png";
+import aiImage from "@/assets/stock-up.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -42,7 +43,7 @@ export const Project = () => {
 
   const { scrollYProgress } = useScroll({
     target: heroBannerRef,
-    offset: ["start 1080px", "50% start"],
+    offset: ["start end", "end start"],
   });
 
   const scrollYTransform = useTransform(scrollYProgress, [0, 1], [0.85, 1.15]);
@@ -60,26 +61,31 @@ export const Project = () => {
   const translateY = useTransform(sectionScrollYProgress, [0, 1], [150, -150]);
 
   return (
+    // Responsive padding for mobile, while keeping overflow-clip
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-green-50 to-white py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-green-50 to-white py-20 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-x-clip"
     >
-      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
+      <motion.div 
+        ref={heroBannerRef}
+        variants={heroVariant} 
+        initial="start" 
+        animate={isInView ? "end" : "start"} 
+        className="container" // Reverted to original container class
+      >
+        {/* Reverted to original heading structure to preserve desktop layout */}
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag">
-            WHAT&#39;S NEW
+            OUR PRODUCTS SUITES
             </motion.div>
           </div>
-          <motion.h2 variants={heroChildVariant} className="section-title mt-5">
-            A more effective way to <span className="text-green-700">track progress</span>
+          {/* Kept responsive text sizes, which adapt without changing layout */}
+          <motion.h2 variants={heroChildVariant} className="section-title mt-5 ">
+          Powerful solutions for <span className="text-green-700">E-commerce Industry</span>.
           </motion.h2>
-          <motion.p variants={heroChildVariant} className="section-description mt-5">
-          Select a Platform and Input some basic information 
-          about your idea, brand, product, or service, 
-          and the AI would generate a unique, 
-          engaging piece of content in seconds.
-          
+          <motion.p variants={heroChildVariant} className="section-description mt-5 ">
+            Select a platform, provide your business details, and start using powerful tools to manage your brand, products, and services with ease. 
           </motion.p>
         </div>
         
@@ -100,10 +106,11 @@ export const Project = () => {
             transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
           ></motion.div>
 
+          {/* Images are hidden on mobile and appear on medium screens up, with original desktop styling */}
           <MotionImage
             variants={heroChildVariant}
             src={rocketImage}
-            alt="Rocket Lanuch"
+            alt="Rocket Launch"
             height={262}
             width={262}
             className="hidden md:block absolute -right-36 -top-32"
@@ -112,9 +119,9 @@ export const Project = () => {
           <MotionImage
             variants={heroChildVariant}
             src={aiImage}
-            alt="AI Scanner "
-            height={240}
-            width={240}
+            alt="AI Scanner"
+            height={310}
+            width={310}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
           />        

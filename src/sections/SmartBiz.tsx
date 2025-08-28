@@ -27,7 +27,7 @@ export const SmartBiz = () => {
         className="container relative z-10"
       >
         <div className="flex items-center justify-center">
-          <p className="section-title text-4xl md:text-5xl lg:text-6xl text-center bg-gradient-to-b from-zinc-800 to-zinc-600 bg-clip-text text-transparent">
+          <p className="section-title text-4xl md:text-5xl lg:text-6xl text-center bg-black bg-clip-text text-transparent">
             Transforming small businesses into{" "}
             <span className="relative group">
               {/* 1. THE FLUID PULSE: Applying our new custom animation */}
