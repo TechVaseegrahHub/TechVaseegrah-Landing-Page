@@ -45,7 +45,7 @@ export const LogoTicker = () => {
   const combinedLogos = [...logoData, ...logoData];
 
   return (
-    <div className="py-8 md:py-12 bg-gradient-to-b from-white to-green-50 ">
+    <div className="py-8 md:py-12 bg-gradient-to-b to-white">
       <div className="container">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <motion.div

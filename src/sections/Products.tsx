@@ -4,54 +4,43 @@ import { useRef } from "react"
 import FeatureCard from "@/components/FeaturesCard"
 import { motion, useInView } from "framer-motion"
 
-// --- SWIPER IMPORTS ---
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Autoplay } from "swiper/modules"
-
-// --- SWIPER STYLES ---
-import "swiper/css"
-import "swiper/css/pagination"
-
-interface ProductCard {
+interface CategoryCard {
   id: string
   title: string
-  description: string
-  logoUrl: string
-  learnMoreLink: string
+  description?: string
+  logoUrl?: string
+  borderColor: string
+  logoBackground: string
 }
 
-const productCards: ProductCard[] = [
+const categoryCards: CategoryCard[] = [
   {
-    id: "billzzy",
+    id: "android",
     title: "Billzzy",
-    description:
-      "Billzzy automates invoicing with AI, generating bills and tracking payments. It provides smart financial insights while reducing admin work.",
+    borderColor: "border-indigo-500",
+    logoBackground: "bg-white",
     logoUrl: "/billzzy-logo.png",
-    learnMoreLink: "https://billzzy.com",
   },
   {
-    id: "f3engine",
+    id: "ai",
     title: "F3 Engine",
-    description:
-      "F3 Engine simplifies e-commerce with automated printing, packing, tracking, and inventory management, letting you focus on growth.",
+    borderColor: "border-blue-500",
+    logoBackground: "bg-white",
     logoUrl: "/f3-icon.png",
-    learnMoreLink: "https://f3engine.com",
   },
   {
-    id: "gowhats",
+    id: "web",
     title: "GoWhats",
-    description:
-      "Simplify customer connections with GoWhats! Manage orders, automate messages, and offer real-time support using our powerful WhatsApp API.",
+    borderColor: "border-green-500",
+    logoBackground: "bg-white",
     logoUrl: "/gowhatswordmark.png",
-    learnMoreLink: "https://gowhats.vercel.app",
   },
   {
-    id: "instaxbot",
-    title: "InstaX Bot",
-    description:
-      "InstaXBot AI-powered Instagram automation handles direct message replies and comment responses, saving you time and boosting engagement.",
+    id: "cloud",
+    title: "Insta X Bot",
+    borderColor: "border-purple-500",
+    logoBackground: "bg-white",
     logoUrl: "/insta-x-bot.png",
-    learnMoreLink: "#",
   },
 ]
 
@@ -60,173 +49,72 @@ export default function Products() {
   const isInView = useInView(sectionRef, { once: true, margin: "-50px" })
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50/30 overflow-hidden" ref={sectionRef}>
-      <div className="container max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section
+      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
+      ref={sectionRef}
+    >
+      <div className="relative container max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="section-heading text-center"> {/* Added text-center for better alignment */}
+          <div className="flex justify-center">
+            <div className="tag">OUR PRODUCTS</div>
+          </div>
+          {/* --- RESPONSIVE TEXT CHANGES --- */}
+          <h2 className="section-title mt-5 text-3xl sm:text-4xl lg:text-5xl">Our Major Products for <span className="text-green-700">E‑commerce Industry</span>.</h2>
+          <p className="section-description mt-5 mb-12 lg:mb-16 text-base sm:text-lg">
+            From intuitive design to powerful features, our app has become an
+            essential tool for users around the world.
+          </p>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 4500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            className="w-full pb-16 sm:pb-18 lg:pb-20"
-            breakpoints={{
-              480: {
-                slidesPerView: 1.1,
-                spaceBetween: 20,
-                centeredSlides: true,
-              },
-              640: {
-                slidesPerView: 1.8,
-                spaceBetween: 24,
-                centeredSlides: false,
-              },
-              768: {
-                slidesPerView: 2.2,
-                spaceBetween: 28,
-              },
-              1024: {
-                slidesPerView: 2.8,
-                spaceBetween: 32,
-              },
-              1280: {
-                slidesPerView: 3.5,
-                spaceBetween: 36,
-              },
-              1536: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-              },
-            }}
-          >
-            {productCards.map((card, index) => (
-              <SwiperSlide key={card.id} className="h-auto">
-                <motion.div
-                  className="h-full"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{
-                    duration: 0.5,
-                    ease: "easeOut",
-                    delay: 0.4 + index * 0.1,
-                  }}
-                >
-                  <FeatureCard
-                    title={card.title}
-                    description={card.description}
-                    button={card.learnMoreLink}
-                    className="group h-full hover:border-blue-200/80 hover:shadow-xl hover:shadow-blue-900/8 transition-all duration-300 ease-in-out hover:-translate-y-2"
-                  >
-                    <motion.div
-                      className="w-full h-full flex items-center justify-center"
-                      whileHover={{ scale: 1.08 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    >
-                      <img
-                        src={card.logoUrl || "/placeholder.svg"}
-                        alt={`${card.title} logo`}
-                        className="transition-all duration-300 ease-in-out group-hover:scale-105 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain drop-shadow-sm"
-                      />
-                    </motion.div>
-                  </FeatureCard>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {categoryCards.map((card, index) => (
+            <motion.div
+              key={card.id}
+              className="h-full"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.6 + index * 0.1,
+              }}
+              whileHover={{
+                y: -8,
+                transition: { duration: 0.3, ease: "easeOut" },
+              }}
+            >
+              <FeatureCard
+                title={card.title}
+                description={card.description || ""}
+                borderColor={card.borderColor}
+                logoBackground={card.logoBackground}
+                className="h-full"
+              >
+                {/* --- RESPONSIVE LOGO CHANGES --- */}
+                <div className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
+                  {card.logoUrl ? (
+                    <img
+                      src={card.logoUrl || "/placeholder.svg"}
+                      alt={`${card.title} icon`}
+                      className="w-28 h-28 sm:w-32 sm:h-32 object-contain"
+                    />
+                  ) : (
+                    // Placeholder for user's logo
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-xs font-medium">
+                      Logo
+                    </div>
+                  )}
+                </div>
+              </FeatureCard>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
-
-      <style jsx global>{`
-        .swiper-pagination {
-          position: relative !important;
-          margin-top: 2rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .swiper-pagination-bullet {
-          background-color: #e5e7eb;
-          width: 14px;
-          height: 14px;
-          opacity: 0.5;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          margin: 0 8px;
-          border-radius: 50%;
-          cursor: pointer;
-          position: relative;
-        }
-        .swiper-pagination-bullet::before {
-          content: '';
-          position: absolute;
-          top: -4px;
-          left: -4px;
-          right: -4px;
-          bottom: -4px;
-          border-radius: 50%;
-          background: transparent;
-          transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active {
-          background-color: #2563eb;
-          opacity: 1;
-          transform: scale(1.4);
-          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-        }
-        .swiper-pagination-bullet:hover {
-          opacity: 0.8;
-          transform: scale(1.2);
-          background-color: #9ca3af;
-        }
-        .swiper-pagination-bullet:hover::before {
-          background: rgba(156, 163, 175, 0.1);
-        }
-        .swiper-pagination-bullet-active:hover {
-          background-color: #1d4ed8;
-          transform: scale(1.4);
-        }
-        @media (min-width: 640px) {
-          .swiper-pagination {
-            margin-top: 2.5rem;
-          }
-          .swiper-pagination-bullet {
-            width: 16px;
-            height: 16px;
-            margin: 0 10px;
-          }
-        }
-        @media (min-width: 1024px) {
-          .swiper-pagination-bullet {
-            width: 18px;
-            height: 18px;
-            margin: 0 12px;
-          }
-        }
-        @media (min-width: 1280px) {
-          .swiper-pagination-bullet {
-            width: 24px;
-            height: 24px;
-            margin: 0 16px;
-          }
-        }
-        @media (min-width: 1536px) {
-          .swiper-pagination-bullet {
-            width: 26px;
-            height: 26px;
-            margin: 0 18px;
-          }
-        }
-      `}</style>
     </section>
   )
 }

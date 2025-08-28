@@ -15,9 +15,8 @@ export default function Home () {
     <>
       <Hero />
       <LogoTicker />
-       <Project /> 
+      {/* <Project />  */}
       <Products />
-        
       <SmartBiz />
       <Testimonials />  
       <EnquiryForm />

@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import logo from "@/assets/tech-v-logo.png"
 import product1 from "../assets/instaxbot.png"
 import product2 from "../assets/f3-icon.png"
-import product3 from "../assets/bill-icon.png"
-import product4 from "../assets/go.png"
+import product3 from "../assets/billzzy-logo.png"
+import product4 from "../assets/gowhatswordmark.png"
 
 interface Product {
   id: number
@@ -22,10 +22,11 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: "InstaX Bot", image: product1, href: "#" },
-  { id: 2, name: "F3 Engine", image: product2, href: "https://f3engine.com" },
   { id: 3, name: "Billzzy", image: product3, href: "https://billzzy.com" },
+  { id: 2, name: "F3 Engine", image: product2, href: "https://f3engine.com" },
   { id: 4, name: "GoWhats", image: product4, href: "https://gowhatslandingpage.netlify.app/" },
+  { id: 1, name: "InstaX Bot", image: product1, href: "https://insta-xbot-l.vercel.app/" },
+  
 ]
 
 interface DropdownProps {
@@ -191,7 +192,7 @@ const DropdownLink = ({ href, onClick, children, ...props }: DropdownLinkProps) 
 const CompactProductCard = ({ href, image, name, onClick }: CompactProductCardProps) => (
   <Link href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} className="group">
     <div className="bg-white/80 rounded-lg overflow-hidden transition-all p-2 w-[150px] h-[150px] flex flex-col items-center justify-center">
-      <div className="relative aspect-square w-20 h-20 overflow-hidden rounded-md">
+      <div className="relative aspect-square w-20 h-20 overflow-hidden rounded-md flex items-center justify-center">
         <Image
           src={image || "/placeholder.svg"}
           alt={name}
@@ -237,14 +238,14 @@ const MobileProductCard = ({ href, image, name, onClick }: MobileProductCardProp
   <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
     <Link href={href} onClick={onClick} target="_blank" rel="noopener noreferrer" className="block w-full">
       <div className="w-full h-[160px] flex flex-col items-center justify-center p-3 mx-auto">
-        <div className="relative w-full h-24 mb-3">
+        <div className="relative w-full h-24 mb-3 flex items-center justify-center">
           <Image
             src={image || "/placeholder.svg"}
             alt={name}
             width={96}
             height={96}
             quality={100}
-            className="object-contain w-full h-full"
+            className="object-contain max-w-36 max-h-20"
             priority
           />
         </div>
@@ -313,10 +314,10 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                     e.preventDefault(); // Prevent any default navigation
                     setOpenCategory(openCategory === "products" ? null : "products");
                   }}
-                  onDoubleClick={() => {
-                    window.location.href = "/projects"
-                    closeAll()
-                  }}
+                  // onDoubleClick={() => {
+                  //   window.location.href = "/projects"
+                  //   closeAll()
+                  // }}
                   className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
                     openCategory === "products" ? "" : "text-gray-800 "
                   }`}
@@ -593,10 +594,10 @@ const Header: React.FC = () => {
                 onMouseEnter={() => handleDropdownEnter("products")}
                 onMouseLeave={handleDropdownLeave}
                 onClick={() => setActiveDropdown(activeDropdown === "products" ? null : "products")}
-                onDoubleClick={() => {
-                  window.location.href = "/projects"
-                  closeAll()
-                }}
+                // onDoubleClick={() => {
+                //   window.location.href = "/projects"
+                //   closeAll()
+                // }}
               >
                 <div className="grid grid-cols-2 gap-4 p-2 w-[320px]">
                   {products.map((product) => (
