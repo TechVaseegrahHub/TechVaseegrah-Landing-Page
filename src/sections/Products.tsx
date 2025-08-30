@@ -21,6 +21,7 @@ const categoryCards: CategoryCard[] = [
     logoBackground: "bg-white",
     logoUrl: "/billzzy-logo.png",
   },
+
   {
     id: "ai",
     title: "F3 Engine",
@@ -28,6 +29,7 @@ const categoryCards: CategoryCard[] = [
     logoBackground: "bg-white",
     logoUrl: "/f3-icon.png",
   },
+
   {
     id: "web",
     title: "GoWhats",
@@ -35,6 +37,7 @@ const categoryCards: CategoryCard[] = [
     logoBackground: "bg-white",
     logoUrl: "/gowhatswordmark.png",
   },
+
   {
     id: "cloud",
     title: "Insta X Bot",

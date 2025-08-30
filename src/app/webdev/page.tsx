@@ -6,6 +6,7 @@ import WebFaq from "@/sections/WebFaq";
 import ChooseWeb from "@/sections/ChooseWeb";
 import { WebTableHead } from "@/sections/WebTableHead";
 import { WebHead } from "@/sections/WebHead";
+import PortfolioSection from "@/sections/PortfolioSection";
 
 export default function WebDev() {
   return (
@@ -13,6 +14,7 @@ export default function WebDev() {
       <WebHead/>
       <WebService />
       <WebStacks/>
+      <PortfolioSection/>
       <WebTableHead />
       <ChooseWeb/>
       <WebCall /> 

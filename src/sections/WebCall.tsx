@@ -5,6 +5,7 @@ type FormData = {
   name: string;
   email: string;
   company: string;
+  budget: string;
   message: string;
 };
 
@@ -48,21 +49,39 @@ const FormField = ({
   type = 'text',
   value,
   onChange,
-  rows
+  rows,
+  options
 }: {
   id: keyof FormData;
   label: string;
   required?: boolean;
   type?: string;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
   rows?: number;
+  options?: string[];
 }) => (
   <div>
     <label htmlFor={id} className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
       {label} {required && <span className="text-red-500">*</span>}
     </label>
-    {type === 'textarea' ? (
+    {options ? (
+      <select
+        id={id}
+        name={`user_${id}`}
+        value={value}
+        onChange={onChange}
+        required={required}
+        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      >
+        <option value="">Select {label}</option>
+        {options.map((opt, i) => (
+          <option key={i} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
+    ) : type === 'textarea' ? (
       <textarea
         id={id}
         name={`user_${id}`}
@@ -91,15 +110,24 @@ export default function SplitContactForm() {
     name: '',
     email: '',
     company: '',
+    budget: '', 
     message: ''
   });
   const [status, setStatus] = useState<FormStatus>('idle');
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name.replace('user_', '')]: value }));
-  };
+  // const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prev => ({ ...prev, [name.replace('user_', '')]: value }));
+  // };
+
+  const handleChange = (
+  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+) => {
+  const { name, value } = e.target;
+  setFormData(prev => ({ ...prev, [name.replace('user_', '')]: value }));
+};
+
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -111,7 +139,7 @@ export default function SplitContactForm() {
       });
 
       setStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', budget: '', message: '' });
     } catch (error) {
       console.error('EmailJS Error:', error);
       setStatus('error');
@@ -195,6 +223,7 @@ export default function SplitContactForm() {
                 <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} />
                 <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} />
                 <FormField id="company" label="Company Name" value={formData.company} onChange={handleChange} />
+                 <FormField  id="budget" label="Your Budget" value={formData.budget} onChange={handleChange} options={["Above 40K","Approx 30K ","Approx 20K","Approx 10K"]}/>
                 <FormField id="message" label="Your Message" type="textarea" required rows={4} value={formData.message} onChange={handleChange} />
               </div>
 
