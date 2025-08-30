@@ -104,7 +104,10 @@ const config: Config = {
      animation: {
         "fast-pulse": "fast-pulse 0.4s infinite ease-in-out",
       },
-  plugins: [require("tailwindcss-animate")],
+   plugins: [
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar-hide"),  
+  ]
 };
 
 

@@ -1,5 +1,7 @@
+
 import React, { useState } from "react";
 
+// --- Your images ---
 import futurenature from "../assets/futurenature.png";
 import vaseegrahveda from "../assets/vaseegrahveda.png";
 import littledevotee from "../assets/littledevotee.png";

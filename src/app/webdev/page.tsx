@@ -6,7 +6,7 @@ import WebFaq from "@/sections/WebFaq";
 import ChooseWeb from "@/sections/ChooseWeb";
 import { WebTableHead } from "@/sections/WebTableHead";
 import { WebHead } from "@/sections/WebHead";
-import PortfolioSection from "@/sections/PortfolioSection";
+import PortfolioSection from "@/sections/WebPortfolioSection";
 import WebRoadmap from "@/sections/WebRoadmap";
 
 
