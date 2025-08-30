@@ -7,14 +7,17 @@ import ChooseWeb from "@/sections/ChooseWeb";
 import { WebTableHead } from "@/sections/WebTableHead";
 import { WebHead } from "@/sections/WebHead";
 import PortfolioSection from "@/sections/PortfolioSection";
+import WebRoadmap from "@/sections/WebRoadmap";
+
 
 export default function WebDev() {
   return (
     <div>
       <WebHead/>
       <WebService />
-      <WebStacks/>
+      <WebRoadmap />
       <PortfolioSection/>
+      <WebStacks/>
       <WebTableHead />
       <ChooseWeb/>
       <WebCall /> 

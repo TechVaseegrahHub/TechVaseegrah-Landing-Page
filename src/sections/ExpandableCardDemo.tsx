@@ -3,6 +3,10 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
+import WebDevForm from "@/components/webDevelopment";
+import WebAppDevForm from "@/components/webAppDevelopment";
+import UiUxForm from "@/components/Uiux"; 
+import DSMLForm from "@/components/DSML";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | null>(null);
@@ -42,61 +46,55 @@ export function ExpandableCardDemo() {
       </AnimatePresence>
 
       {/* ✅ Expanded View */}
-      <AnimatePresence>
-        {active ? (
-          <div className="fixed inset-0 flex justify-center items-center z-[100] p-4">
-            <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="w-full max-w-[450px] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
+<AnimatePresence>
+  {active ? (
+    <div className="fixed inset-0 z-[100] bg-black/30 overflow-y-auto">
+      <div className="flex justify-center items-start min-h-screen pt-[100px] pb-6 px-4">
+        <motion.div
+          layoutId={`card-${active.title}-${id}`}
+          ref={ref}
+          className="w-full max-w-[480px] bg-white dark:bg-neutral-900 rounded-3xl shadow-xl"
+        >
+          {/* Image */}
+          <motion.div layoutId={`image-${active.title}-${id}`}>
+            <Image
+              priority
+              width={350}
+              height={350}
+              src={active.src}
+              alt={active.title}
+              className="w-full h-auto object-cover"
+            />
+          </motion.div>
+
+          {/* Content */}
+          <div className="p-6 flex flex-col gap-5">
+            <motion.h3
+              layoutId={`title-${active.title}-${id}`}
+              className="text-3xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
             >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                <Image
-                  priority
-                  width={350}
-                  height={350}
-                  src={active.src}
-                  alt={active.title}
-                  className="w-full h-auto"
-                />
-              </motion.div>
+              {active.title}
+            </motion.h3>
 
-              <div className="p-6 flex flex-col gap-5"> {/* ✅ Increased spacing between elements */}
-                <motion.h3
-                  layoutId={`title-${active.title}-${id}`}
-                  className="text-3xl  font-bold tracking-tighter text-green-700 bg-clip-text"
-                >
-                  {active.title}
-                </motion.h3>
+            <motion.p
+              layout
+              className="text-xl font-medium tracking-tight text-[#010D3E] mt-1"
+            >
+              {active.description}
+            </motion.p>
 
-                {/* ✅ Ensuring Internship Description Always Visible */}
-                <motion.p
-                  layout
-                  className="text-xl font-medium  tracking-tight  mt-1"
-                >
-                  {active.description}
-                </motion.p>
-
-                <motion.p layout className="text-left text-gray-700">
-                  {typeof active.content === "function"
-                    ? active.content()
-                    : active.content}
-                </motion.p>
-
-                {/* ✅ Increased Space Before Apply Button */}
-                <motion.a
-                  layoutId={`button-${active.title}-${id}`}
-                  href={active.ctaLink}
-                  target="_blank"
-                  className="px-4 py-3 mt-6 btn btn-primary inline-block self-center md:self-start"
-                >
-                  {active.ctaText}
-                </motion.a>
-              </div>
+            <motion.div layout className="text-left text-gray-700">
+              {typeof active.content === "function"
+                ? active.content()
+                : active.content}
             </motion.div>
           </div>
-        ) : null}
-      </AnimatePresence>
+        </motion.div>
+      </div>
+    </div>
+  ) : null}
+</AnimatePresence>
+
 
       {/* ✅ Card List */}
       <ul className="max-w-2xl mx-auto w-full flex flex-col gap-6">
@@ -154,9 +152,14 @@ const cards = [
     ctaText: "Apply",
     ctaLink: "",
     content: () => (
-      <p>
-        Effortlessly integrate and manage blockchain data with our cutting-edge API, designed for seamless.
-      </p>
+       <>
+       <div>
+        {/* <p> */}
+          Effortlessly integrate and manage blockchain data with our cutting-edge API, designed for seamless.
+        {/* </p> */}
+        </div>
+        <WebDevForm />
+      </>
     ),
   },
   {
@@ -166,9 +169,14 @@ const cards = [
     ctaText: "Apply",
     ctaLink: "",
     content: () => (
-      <p>
-        Empower your applications with decentralized data solutions, ensuring security and transparency at every step.
-      </p>
+       <>
+      <div>
+        <p>
+          Empower your applications with decentralized data solutions, ensuring security and transparency at every step.
+        </p></div>
+        <WebAppDevForm />
+      </>
+     
     ),
   },
   {
@@ -178,9 +186,13 @@ const cards = [
     ctaText: "Apply",
     ctaLink: "",
     content: () => (
-      <p>
-        Unlock the potential of next-gen smart contracts with our robust and scalable API, tailored for modern blockchain needs.
-      </p>
+      <>
+      <div>
+        <p>
+          Unlock the potential of next-gen smart contracts with our robust and scalable API, tailored for modern blockchain needs.
+        </p></div>
+        <UiUxForm/>
+      </>
     ),
   },
   {
@@ -190,9 +202,14 @@ const cards = [
     ctaText: "Apply",
     ctaLink: "",
     content: () => (
-      <p>
-        Integrate blockchain technology seamlessly into your projects, with minimal effort and maximum efficiency.
-      </p>
+     <>
+       <div>
+        <p>
+          Integrate blockchain technology seamlessly into your projects, with minimal effort and maximum efficiency.
+        </p></div>
+        <DSMLForm />
+      </>
     ),
   },
 ];
+
