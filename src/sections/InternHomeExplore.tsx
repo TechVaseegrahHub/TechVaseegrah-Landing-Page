@@ -75,7 +75,7 @@ export const InternHomeExplore = () => {
             your professional journey.
           </motion.p>
           
-          <motion.img
+          {/* <motion.img
             variants={heroChildVariant}
             src={internImage.src}
             alt="Star Image"
@@ -95,7 +95,7 @@ export const InternHomeExplore = () => {
             className="absolute -right-[331px] -bottom-[10px]"
             style={{
               translateY,
-            }}/>
+            }}/> */}
         
           </div>
 

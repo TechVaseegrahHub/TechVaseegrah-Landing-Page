@@ -94,7 +94,7 @@ export const SeoTableHead = () => {
             transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
           ></motion.div>
 
-          <MotionImage
+          {/* <MotionImage
             variants={heroChildVariant}
             src={stockupImage}
             alt="Stock Up"
@@ -110,7 +110,7 @@ export const SeoTableHead = () => {
             height={220}
             width={220}
             className="hidden md:block absolute bottom-24 -left-32"
-            style={{ translateY }}/>
+            style={{ translateY }}/> */}
 
         </div>
       </motion.div>

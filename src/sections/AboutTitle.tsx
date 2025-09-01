@@ -95,23 +95,23 @@ export const AboutTitle = () => {
             transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
           ></motion.div>
 
-          <MotionImage
+          {/* <MotionImage
             variants={heroChildVariant}
             src={rightSide}
             alt="Leaf"
             height={300}
             width={300}
             className="hidden md:block absolute -right-36 -top-32"
-            style={{ translateY }}/>
+            style={{ translateY }}/> */}
           
-          <MotionImage
+          {/* <MotionImage
             variants={heroChildVariant}
             src={leftSide}
             alt="Bulb"
             height={270}
             width={270}
             className="hidden md:block absolute bottom-24 -left-36"
-            style={{ translateY }}/>
+            style={{ translateY }}/> */}
         </div>
       </motion.div>
     </section>

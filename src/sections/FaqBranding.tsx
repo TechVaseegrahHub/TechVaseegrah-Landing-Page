@@ -52,9 +52,10 @@ export default function FaqBranding() {
   return (
     <section className="w-full max-w-4xl mx-auto py-8 md:py-12 lg:py-16 px-4 sm:px-6">
       <div className="mb-12">
-        <h2 className="section-title text-3xl md:text-4xl lg:text-5xl mt-6 md:mt-8 mb-4 md:mb-6">
-          Frequently Asked Questions.
+        <h2 className="section-title text-3xl md:text-4xl lg:text-5xl mt-6 md:mt-8 mb-4 md:mb-6 text-green-700">
+         Frequently Asked Questions.
         </h2>
+
       </div>
 
       <div className="space-y-4">

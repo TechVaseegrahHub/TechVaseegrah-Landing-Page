@@ -106,7 +106,7 @@ export const Seo = () => {
             transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
           ></motion.div>
 
-          <MotionImage
+          {/* <MotionImage
             variants={heroChildVariant}
             src={rocketImage}
             alt="Rocket Launch"
@@ -123,7 +123,7 @@ export const Seo = () => {
             width={220}
             className="hidden md:block absolute bottom-24 -left-36"
             style={{ translateY }}
-          />
+          /> */}
         </div>
       </motion.div>
     </section>

@@ -98,7 +98,7 @@ export const Branding = () => {
             transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
           ></motion.div>
 
-          <MotionImage
+          {/* <MotionImage
             variants={heroChildVariant}
             src={rightSide}
             alt="Team"
@@ -114,7 +114,7 @@ export const Branding = () => {
             height={240}
             width={240}
             className="hidden md:block absolute bottom-24 -left-36"
-            style={{ translateY }}/>
+            style={{ translateY }}/> */}
         </div>
       </motion.div>
     </section>

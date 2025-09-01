@@ -127,9 +127,10 @@ export default function SplitContactForm() {
         <div className="lg:w-1/2 lg:pr-6 xl:pr-8">
           <div className="mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-24">
             <p className="tag mb-4 sm:mb-6 text-sm sm:text-base">GET STARTED</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter  bg-clip-text mb-3 sm:mb-4">
-            Connect with our Experts
-            </h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter bg-clip-text mb-3 sm:mb-4">
+             Connect with <span className="text-green-700">Our Experts</span>
+             </h1>
+
             <p className="text-base sm:text-lg md:text-xl font-body leading-relaxed">
             Have questions about boosting your brand on social media or want to explore a tailored strategy? 
             Fill out the form and our team will get back to you within 24 hours.

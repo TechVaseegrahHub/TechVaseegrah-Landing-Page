@@ -96,7 +96,7 @@ return (
             transition={{ duration: 2, delay: 1.5, ease: "backOut" }}
         ></motion.div>
 
-        <MotionImage
+        {/* <MotionImage
             variants={heroChildVariant}
             src={rightSide}
             alt="Stock Up"
@@ -111,7 +111,7 @@ return (
             height={280}
             width={280}
             className="hidden md:block absolute bottom-24 -left-36"
-            style={{ translateY }}/>
+            style={{ translateY }}/> */}
 
         </div>
     </motion.div>

@@ -7,6 +7,7 @@ type FormData = {
   company: string;
   budget: string;
   message: string;
+  whatsapp: string;   
 };
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -111,7 +112,8 @@ export default function SplitContactForm() {
     email: '',
     company: '',
     budget: '', 
-    message: ''
+    message: '',
+    whatsapp: ''  
   });
   const [status, setStatus] = useState<FormStatus>('idle');
   const formRef = useRef<HTMLFormElement>(null);
@@ -139,7 +141,7 @@ export default function SplitContactForm() {
       });
 
       setStatus('success');
-      setFormData({ name: '', email: '', company: '', budget: '', message: '' });
+      setFormData({ name: '', email: '', whatsapp:'', company: '', budget: '', message: '' });
     } catch (error) {
       console.error('EmailJS Error:', error);
       setStatus('error');
@@ -221,8 +223,9 @@ export default function SplitContactForm() {
 
               <div className="grid grid-cols-1 gap-4 sm:gap-5">
                 <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} />
-                <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} />
-                <FormField id="company" label="Company Name" value={formData.company} onChange={handleChange} />
+                {/* <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} /> */}
+                <FormField id="whatsapp" label="WhatsApp Number" type="text" required value={formData.whatsapp} onChange={handleChange} />
+                {/* <FormField id="company" label="Company Name" value={formData.company} onChange={handleChange} /> */}
                  <FormField  id="budget" label="Your Budget" value={formData.budget} onChange={handleChange} options={["Above 40K","Approx 30K ","Approx 20K","Approx 10K"]}/>
                 <FormField id="message" label="Your Message" type="textarea" required rows={4} value={formData.message} onChange={handleChange} />
               </div>

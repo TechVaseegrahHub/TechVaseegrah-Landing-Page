@@ -13,31 +13,31 @@ const faqs: FAQItem[] = [
   {
     question: "What services do you offer?",
     answer:
-      "We offer a comprehensive range of digital services including web development, mobile app development, UI/UX design, digital marketing, and SEO optimization tailored to meet your business needs.",
+      "We offer website design, development, e-commerce solutions, UI/UX design, and website maintenance.",
   },
 
   {
     question: "How long does it take to complete a project?",
     answer:
-      "Project timelines vary depending on scope and complexity. A simple website might take 2-4 weeks, while more complex applications can take 2-3 months. We'll provide a detailed timeline during our initial consultation.",
+      "A simple website takes about 2–3 weeks, while larger projects may take 4–6 weeks.",
   },
 
   {
     question: "What is your pricing structure?",
     answer:
-      "We offer flexible pricing options including project-based quotes, hourly rates, and retainer packages. Each solution is customized based on your specific requirements and budget constraints.",
+      "Pricing depends on the type of website and features required. We provide flexible and affordable packages.",
   },
 
   {
     question: "Do you offer ongoing support after project completion?",
     answer:
-      "Yes, we provide comprehensive post-launch support and maintenance packages to ensure your digital products remain up-to-date, secure, and performing optimally.",
+      "Yes, we provide continuous support, updates, and maintenance services.",
   },
 
   {
     question: "How do you handle revisions and feedback?",
     answer:
-      "We incorporate a collaborative feedback process with dedicated revision rounds at key project milestones. Our iterative approach ensures your vision is accurately implemented throughout development.",
+      "We include revisions in our process and work closely with clients to make sure the final website matches their expectations.",
   },
 ]
 

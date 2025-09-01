@@ -31,20 +31,20 @@ const categories: Category[] = [
   {
     title: "₹40,000 Websites",
     projects: [
-      { img: futurenature.src, link: "https://futurenature.in/" },
-      { img: vaseegrahveda.src, link: "https://vaseegrahveda.shop/" },
       { img: littledevotee.src, link: "https://littledevotee.in/" },
+      { img: futurenature.src, link: "https://futurenature.in/" },
+      { img: nimalas.src, link: "https://nimalas.com/" },
       { img: sarusmagizham.src, link: "https://sarusmagizham.com/" },
     ],
   },
   {
     title: "₹30,000 Websites",
     projects: [
-      { img: nimalas.src, link: "https://nimalas.com/" },
-      { img: saibariya.src, link: "https://saibariya.com/" },
+      { img: vaseegrahveda.src, link: "https://vaseegrahveda.shop/" },
       { img: hunnybi.src, link: "https://hunnybi.com/" },
       { img: inficlothing.src, link: "https://inficlothing.in/" },
       { img: gulla.src, link: "https://gulla.ca/" },
+      { img: saibariya.src, link: "https://saibariya.com/" },
     ],
   },
   {
