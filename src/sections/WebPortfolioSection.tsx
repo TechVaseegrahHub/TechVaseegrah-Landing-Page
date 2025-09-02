@@ -6,7 +6,7 @@ import futurenature from "../assets/futurenature.png";
 import vaseegrahveda from "../assets/vaseegrahveda.png";
 import littledevotee from "../assets/littledevotee.png";
 import sarusmagizham from "../assets/sarusmagizham.png";
-import nimalas from "../assets/nimalas.png";
+import nimalas from "../assets/nimalas1.png";
 import saibariya from "../assets/saibariya.png";
 import hunnybi from "../assets/hunnybi.png";
 import inficlothing from "../assets/inficlothing.png";
