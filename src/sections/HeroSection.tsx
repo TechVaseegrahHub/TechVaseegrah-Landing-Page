@@ -1,3 +1,4 @@
+// src\sections\HeroSection.tsx --landing page code 
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -27,7 +28,7 @@ export default function HeroSection() {
             className="border-green-700 text-green-700 hover:bg-green-50 min-w-[180px]"
             asChild
           >
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/919047484484" target="_blank" rel="noopener noreferrer">
               Contact Us
             </a>
           </Button>
