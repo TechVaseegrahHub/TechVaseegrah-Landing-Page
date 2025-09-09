@@ -78,71 +78,70 @@ const PortfolioSection: React.FC = () => {
         Our Website Packages
       </h2>
 
-      <div className="flex gap-8">
-        {/* Sidebar */}
-        <div className="w-48 flex flex-col gap-3">
-          <h4 className="font-semibold text-gray-700 mb-2">CATEGORIES</h4>
-          {categories.map((cat, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveIndex(idx)}
-              className={`text-left px-4 py-2 rounded-lg transition ${
-                activeIndex === idx
-                  ? "bg-green-600 text-white font-semibold"
-                  : "hover:bg-gray-100 text-gray-700"
-              }`}
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+  {/* Sidebar */}
+  <div className="w-full md:w-48 flex flex-col gap-3">
+    <h4 className="font-semibold text-gray-700 mb-2">CATEGORIES</h4>
+    {categories.map((cat, idx) => (
+      <button
+        key={idx}
+        onClick={() => setActiveIndex(idx)}
+        className={`text-left px-4 py-2 rounded-lg transition ${
+          activeIndex === idx
+            ? "bg-green-600 text-white font-semibold"
+            : "hover:bg-gray-100 text-gray-700"
+        }`}
+      >
+        {cat.title}
+      </button>
+    ))}
+  </div>
+
+  {/* Projects section */}
+  <div className="flex-1 overflow-hidden">
+    <h3 className="text-2xl font-semibold mb-6">
+      {categories[activeIndex].title}
+    </h3>
+
+    <div
+      className="
+        flex flex-nowrap gap-6 overflow-x-auto
+        scrollbar-hide pb-2
+        snap-x snap-mandatory
+      "
+      style={{ scrollBehavior: "smooth" }}
+    >
+      {categories[activeIndex].projects.map((project, idx) => (
+        <div
+          key={idx}
+          className="
+            w-[220px] sm:w-[260px] md:w-[300px] flex-shrink-0
+            rounded-xl overflow-hidden shadow hover:shadow-lg transition
+            bg-white snap-start
+          "
+        >
+          <img
+            src={project.img}
+            alt="Website preview"
+            className="w-full h-40 object-cover"
+            loading="lazy"
+          />
+          <div className="text-center py-3">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-600 font-semibold hover:underline"
             >
-              {cat.title}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects section */}
-        <div className="flex-1 overflow-hidden">
-          <h3 className="text-2xl font-semibold mb-6">
-            {categories[activeIndex].title}
-          </h3>
-
-          {/* Scrollable row without visible scrollbar */}
-          <div
-            className="
-              flex flex-nowrap gap-6 overflow-x-auto
-              scrollbar-hide pb-2
-              snap-x snap-mandatory
-            "
-            style={{ scrollBehavior: "smooth" }}
-          >
-            {categories[activeIndex].projects.map((project, idx) => (
-              <div
-                key={idx}
-                className="
-                  w-[260px] sm:w-[300px] flex-shrink-0
-                  rounded-xl overflow-hidden shadow hover:shadow-lg transition
-                  bg-white snap-start
-                "
-              >
-                <img
-                  src={project.img}
-                  alt="Website preview"
-                  className="w-full h-40 object-cover"
-                  loading="lazy"
-                />
-                <div className="text-center py-3">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 font-semibold hover:underline"
-                  >
-                    🔗 View Site
-                  </a>
-                </div>
-              </div>
-            ))}
+              🔗 View Site
+            </a>
           </div>
         </div>
+      ))}
       </div>
     </div>
+  </div>
+</div>
   );
 };
 
