@@ -138,4 +138,25 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
   }
+
+  /* 🔥 Infinite scroll animation for images */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* move one full set */
+    }
+  }
+
+  .animate-scroll {
+    display: flex;
+    animation: scroll 60s linear infinite; /* adjust 30s for speed */
+  }
+
+  /* ✨ Optional: pause animation when hovering */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
 }
+

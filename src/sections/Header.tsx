@@ -371,12 +371,12 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
               {/* Solutions Section */}
               <motion.div className="flex flex-col mb-20">
                 <motion.button
-                  onClick={() => setOpenCategory(openCategory === "solutions" ? null : "solutions")}
+                  onClick={() => setOpenCategory(openCategory === "services" ? null : "services")}
                   className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
-                    openCategory === "solutions" ? "" : "text-gray-800 "
+                    openCategory === "services" ? "" : "text-gray-800 "
                   }`}
                 >
-                  <span>Solutions</span>
+                  <span>Services</span>
                   <motion.span
                     animate={{ rotate: openCategory === "solutions" ? 180 : 0 }}
                     transition={{ type: "spring" }}
@@ -487,6 +487,9 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                         <MobileNavItem href="/mbaintern" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
                         >
                           MBA Internships
+                        </MobileNavItem>
+                        <MobileNavItem href="/tktm" onClick={onClose} className="text-black text-xl font-medium tracking-wide">
+                         தோள் கொடுப்போம் தொழில் முனைந்திட
                         </MobileNavItem>
                       </div>
                     </motion.div>
@@ -682,6 +685,13 @@ const Header: React.FC = () => {
                   >
                     MBA Internships
                   </Link>
+                  <Link
+                   href="/tktm"
+                   onClick={closeAll}
+                   className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                   >
+                  தோள் கொடுப்போம் தொழில் முனைந்திட
+                 </Link>
                 </div>
               </Dropdown>
 

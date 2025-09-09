@@ -1,6 +1,6 @@
 "use client";
-import rightSide from "@/assets/devs.png";
-import leftSide from "@/assets/books.png";
+// import rightSide from "@/assets/devs.png";
+// import leftSide from "@/assets/books.png";
 import Image from "next/image";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
