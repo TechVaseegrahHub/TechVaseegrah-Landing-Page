@@ -371,12 +371,12 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
               {/* Solutions Section */}
               <motion.div className="flex flex-col mb-20">
                 <motion.button
-                  onClick={() => setOpenCategory(openCategory === "solutions" ? null : "solutions")}
+                  onClick={() => setOpenCategory(openCategory === "services" ? null : "services")}
                   className={`flex items-center justify-between py-3 px-5 text-xl font-medium rounded-lg ${
-                    openCategory === "solutions" ? "" : "text-gray-800 "
+                    openCategory === "services" ? "" : "text-gray-800 "
                   }`}
                 >
-                  <span>Solutions</span>
+                  <span>Services</span>
                   <motion.span
                     animate={{ rotate: openCategory === "solutions" ? 180 : 0 }}
                     transition={{ type: "spring" }}
@@ -400,31 +400,41 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ duration: 0.3 }}
                         >
-                         {/* Web Development */}
+
+                         {/* BServices */}
                         <MobileNavItem 
-                          href="/webdev" 
+                          href="/bservice" 
                           onClick={onClose} 
                           className="text-black text-xl font-medium tracking-wide" // Changed from text-xl/semibold
                         >
-                          Web Development
-                        </MobileNavItem>
-
-                        {/* Social Media Marketing */}
-                        <MobileNavItem 
-                          href="/social" 
-                          onClick={onClose} 
-                          className="text-black text-xl font-medium tracking-wide"
-                        >
-                          Social Media Marketing
+                          B-Services
                         </MobileNavItem>
 
                         {/* Branding & Consultation */}
-                        <MobileNavItem
-                          href="/undermaintain"
-                          onClick={onClose}
+                        <MobileNavItem 
+                          href=" /undermaintain" 
+                          onClick={onClose} 
                           className="text-black text-xl font-medium tracking-wide"
                         >
                           Branding & Consultation
+                        </MobileNavItem>
+
+                         {/* Social Media Marketing */}
+                        <MobileNavItem
+                          href="/social"
+                          onClick={onClose}
+                          className="text-black text-xl font-medium tracking-wide"
+                        >
+                          Marketing
+                        </MobileNavItem>
+
+                        {/* Web Development */}
+                        <MobileNavItem 
+                          href="/webdev" 
+                          onClick={onClose} 
+                          className="text-black text-xl font-medium tracking-wide"
+                        >
+                         Web Development
                         </MobileNavItem>
 
                         {/* SEO Services */}
@@ -433,17 +443,9 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                           onClick={onClose} 
                           className="text-black text-xl font-medium tracking-wide"
                         >
-                          SEO Services
+                          SEO & Optimization
                         </MobileNavItem>
-
-                        {/* BServices */}
-                        <MobileNavItem 
-                          href="/bservice" 
-                          onClick={onClose} 
-                          className="text-black text-xl font-medium tracking-wide"
-                        >
-                          B-Services
-                        </MobileNavItem>
+                        
                         </motion.div>
                       </div>
                     </motion.div>
@@ -485,6 +487,9 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                         <MobileNavItem href="/mbaintern" onClick={onClose}className="text-black text-xl font-medium tracking-wide"
                         >
                           MBA Internships
+                        </MobileNavItem>
+                        <MobileNavItem href="/tktm" onClick={onClose} className="text-black text-xl font-medium tracking-wide">
+                         தோள் கொடுப்போம் தொழில் முனைந்திட
                         </MobileNavItem>
                       </div>
                     </motion.div>
@@ -613,7 +618,7 @@ const Header: React.FC = () => {
               </Dropdown>
 
               <Dropdown
-                title="Solutions"
+                title="Services"
                 isActive={activeDropdown === "services"}
                 onMouseEnter={() => handleDropdownEnter("services")}
                 onMouseLeave={handleDropdownLeave}
@@ -621,18 +626,11 @@ const Header: React.FC = () => {
               >
                 <div className="py-1 w-[220px]">
                   <Link
-                    href="/webdev"
+                    href="/bservice"
                     onClick={closeAll}
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
                   >
-                    Web Development
-                  </Link>
-                  <Link
-                    href="/social"
-                    onClick={closeAll}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                  >
-                    Social Media Marketing
+                    B-Services
                   </Link>
                   <Link
                     href="/brand"
@@ -642,18 +640,25 @@ const Header: React.FC = () => {
                     Branding & Consultation
                   </Link>
                   <Link
+                    href="/social"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Marketing
+                  </Link>
+                  <Link
+                    href="/webdev"
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Web Development
+                  </Link>
+                  <Link
                     href="/seo"
                     onClick={closeAll}
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
                   >
-                    SEO Services
-                  </Link>
-                  <Link
-                    href="/bservice"
-                    onClick={closeAll}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
-                  >
-                    B-Services
+                    SEO & Optimization
                   </Link>
                   </div>
               </Dropdown>
@@ -680,6 +685,13 @@ const Header: React.FC = () => {
                   >
                     MBA Internships
                   </Link>
+                  <Link
+                   href="/tktm"
+                   onClick={closeAll}
+                   className="block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+                   >
+                  தோள் கொடுப்போம் தொழில் முனைந்திட
+                 </Link>
                 </div>
               </Dropdown>
 
