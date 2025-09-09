@@ -60,7 +60,8 @@ const FormField = ({
   value,
   onChange,
   options,
-  rows
+  rows,
+  placeholder="Enter your Requirements...."
 }: {
   id: keyof FormData;
   label: string;
@@ -70,6 +71,7 @@ const FormField = ({
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
   options?: string[];
   rows?: number;
+  placeholder?: string; 
 }) => (
   <div>
     <label htmlFor={id} className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
@@ -83,6 +85,7 @@ const FormField = ({
         onChange={onChange}
         required={required}
         rows={rows}
+        placeholder={placeholder}
         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
       />
     ) : type === 'select' ? (
@@ -107,6 +110,7 @@ const FormField = ({
         value={value}
         onChange={onChange}
         required={required}
+        placeholder={placeholder}
         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
       />
     )}
@@ -127,13 +131,15 @@ export default function BusinessInquiryForm() {
   const formRef = useRef<HTMLFormElement>(null);
 
   const serviceOptions = [
-    'IT Services',
-    'Consulting',
-    'Cloud Solutions',
-    'Cybersecurity',
-    'Digital Transformation',
-    'AI & Analytics',
-    'Application Development',
+    
+    'B-Services',
+    'Web Development',
+    'F3 Engine',
+    'Go Whats',
+    'Insta X Bot',
+    'Billzzy',
+    'Saas Application Development',
+    'Mobile Application Development',
     'Other'
   ];
 
@@ -259,7 +265,7 @@ export default function BusinessInquiryForm() {
                 <FormField id="company" label="Company Name" required value={formData.company} onChange={handleChange} />
                 <FormField id="phone" label="Phone Number" type="tel" value={formData.phone} onChange={handleChange} />
                 <FormField id="serviceNeeded" label="Service Needed" type="select" required value={formData.serviceNeeded} onChange={handleChange} options={serviceOptions} />
-                <FormField id="businessNeeds" label="Business Needs Description" type="textarea" required rows={4} value={formData.businessNeeds} onChange={handleChange} />
+                <FormField id="businessNeeds" label="Description" type="textarea" required rows={4} value={formData.businessNeeds} onChange={handleChange} />
               </div>
 
               <button
