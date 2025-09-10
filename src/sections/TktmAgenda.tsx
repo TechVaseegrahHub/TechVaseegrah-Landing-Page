@@ -721,6 +721,13 @@ export default function TktmAgenda() {
   // Green line progress for trunk
   const lineProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+  //  Precompute arcProgress for each item
+  const arcProgressArray = agenda.map((_, index) => {
+    const dotStart = index / agenda.length;
+    const dotEnd = (index + 1) / agenda.length;
+    return useTransform(scrollYProgress, [dotStart, dotEnd], [0, 1]);
+  });
+
   return (
     <section ref={containerRef} className="relative container mx-auto px-4 py-20">
       {/* Event Intro */}
@@ -755,11 +762,12 @@ export default function TktmAgenda() {
 
         {agenda.map((item, index) => {
           const isLeft = index % 2 === 0;
-          const dotStart = index / agenda.length;
-          const dotEnd = (index + 1) / agenda.length;
+          // const dotStart = index / agenda.length;
+          // const dotEnd = (index + 1) / agenda.length;
+          const arcProgress = arcProgressArray[index];
 
           // For arc green overlay (only starts when trunk reaches dot)
-          const arcProgress = useTransform(scrollYProgress, [dotStart, dotEnd], [0, 1]);
+          // const arcProgress = useTransform(scrollYProgress, [dotStart, dotEnd], [0, 1]);
 
           return (
             <div key={index} className="relative flex justify-between items-center w-full">
