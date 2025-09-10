@@ -260,10 +260,10 @@ export default function BusinessInquiryForm() {
               {status === 'error' && <StatusMessage status="error" />}
 
               <div className="grid grid-cols-1 gap-4 sm:gap-5">
-                <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} />
-                <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} />
-                <FormField id="company" label="Company Name" required value={formData.company} onChange={handleChange} />
-                <FormField id="phone" label="Phone Number" type="tel" value={formData.phone} onChange={handleChange} />
+                <FormField id="name" label="Your Name" required value={formData.name} onChange={handleChange} placeholder='Enter your name...' />
+                <FormField id="email" label="Email Address" type="email" required value={formData.email} onChange={handleChange} placeholder='Enter Your Email Address' />
+                <FormField id="company" label="Company Name" required value={formData.company} onChange={handleChange} placeholder='Enter Your Company Name' />
+                <FormField id="phone" label="Whatsapp Number" type="tel" value={formData.phone} onChange={handleChange} placeholder='Enter Your WhatsApp Number' />
                 <FormField id="serviceNeeded" label="Service Needed" type="select" required value={formData.serviceNeeded} onChange={handleChange} options={serviceOptions} />
                 <FormField id="businessNeeds" label="Description" type="textarea" required rows={4} value={formData.businessNeeds} onChange={handleChange} />
               </div>

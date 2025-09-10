@@ -1,118 +1,3 @@
-// "use client";
-
-// import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
-// import { useRef } from "react";
-
-// const heroVariant: Variants = {
-//   start: {},
-//   end: {
-//     transition: {
-//       staggerChildren: 0.4,
-//     },
-//   },
-// };
-
-// const heroChildVariant: Variants = {
-//   start: {
-//     y: 30,
-//     opacity: 0,
-//     filter: "blur(0px)",
-//   },
-//   end: {
-//     y: 0,
-//     opacity: 1,
-//     filter: "blur(0px)",
-//     transition: {
-//       duration: 0.5,
-//       ease: "easeOut",
-//     },
-//   },
-// };
-
-// export const TktmHead = () => {
-//   const sectionRef = useRef(null);
-//   const heroBannerRef = useRef<HTMLDivElement>(null);
-
-//   const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
-
-//   const { scrollYProgress } = useScroll({
-//     target: heroBannerRef,
-//     offset: ["start 1080px", "50% start"],
-//   });
-
-//   const scrollYTransform = useTransform(scrollYProgress, [0, 1], [0.85, 1.15]);
-//   const scale = useSpring(scrollYTransform, {
-//     stiffness: 300,
-//     damping: 30,
-//     restDelta: 0.001,
-//   });
-
-//   const { scrollYProgress: sectionScrollYProgress } = useScroll({
-//     target: sectionRef,
-//     offset: ["start end", "end start"],
-//   });
-
-//   const translateY = useTransform(sectionScrollYProgress, [0, 1], [150, -150]);
-
-//   return (
-//     <section
-//       ref={sectionRef}
-//       className="bg-gradient-to-b from-green-50 to-white pt-20 pb-24 overflow-x-clip"
-//     >
-//       <motion.div
-//         variants={heroVariant}
-//         initial="start"
-//         animate={isInView ? "end" : "start"}
-//         className="container"
-//       >
-//         <div className="section-heading">
-//           {/* Badge */}
-//           {/* <div className="flex justify-center">
-//             <motion.div
-//               variants={heroChildVariant}
-//               className="inline-block bg-green-100 text-green-800 px-6 py-2 rounded-full text-lg font-semibold mb-6 shadow"
-//             >
-//                 லட்சம் தொழில்முனைவோரை உருவாக்கும் லட்சியம் 
-//             </motion.div>
-//           </div> */}
-//           <div className="flex justify-center">
-//   <motion.div
-//     variants={heroChildVariant}
-//     className="inline-block bg-green-100 text-green-800 px-4 py-1.5 rounded-full text-sm font-medium mb-6 shadow"
-//   >
-//     லட்சம் தொழில்முனைவோரை உருவாக்கும் லட்சியம்
-//   </motion.div>
-// </div>
-
-
-//           {/* Title */}
-//           <motion.h2 variants={heroChildVariant} className="section-title mt-5 text-center">
-//             <span className="text-green-700">தோள் கொடுப்போம் </span>தொழில் முனைந்திட
-//           </motion.h2>
-
-//           {/* Description */}
-//           <motion.p
-//             variants={heroChildVariant}
-//             className="section-description mt-5 mb-8 max-w-3xl mx-auto text-center"
-//           >
-//             என் ஐம்பதாவது வயதில், விவசாயம் சார்ந்த சுயப்பராமரிப்புப் பொருட்களைத் தயாரிக்கத் தொடங்கினேன். இது சமூக வலைத்தளங்கள் வழியாக பலருக்கு ஊக்கமளித்தது. "தோள் கொடுப்போம் தொழில் முனைந்திட" என்ற என்னுடைய இந்த பயணம், ஒரு லட்சம் தொழில்முனைவோரை உருவாக்கும் லட்சியத்தோடு இன்று தொடர்கிறது.
-//           </motion.p>
-//         </div>
-
-//         {/* Optional animated glow background */}
-//         <div className="relative">
-//           <motion.div
-//             className="absolute inset-5 bg-green-200 blur-[50px] -z-10 rounded-full"
-//             initial={{ scale: 0.8, opacity: 0 }}
-//             animate={{ scale: 1, opacity: 1 }}
-//             transition={{ duration: 2, delay: 0.5, ease: "backInOut" }}
-//           />
-//         </div>
-//       </motion.div>
-//     </section>
-//   );
-// };
-
 "use client";
 import { motion, Variants, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -156,12 +41,7 @@ export const TktmHead = () => {
         className="max-w-4xl mx-auto px-4 text-center"
       >
         {/* Tagline Badge */}
-        {/* <motion.div
-          variants={heroChildVariant}
-          className="inline-block bg-green-100 text-green-800 px-4 py-1 text-sm font-medium rounded-full mb-6"
-        >
-          லட்சம் தொழில்முனைவோரை உருவாக்கும் லட்சியம்
-        </motion.div> */}
+        
         <motion.div
   variants={heroChildVariant}
   className="inline-block bg-green-300 text-black px-4 py-1 text-sm font-medium rounded-full mb-6"
@@ -192,10 +72,8 @@ export const TktmHead = () => {
           variants={heroChildVariant}
           className="mt-10 text-gray-800 max-w-2xl mx-auto text-lg leading-relaxed"
         >
-         2017 ஆம் ஆண்டு, என் ஐம்பதாவது வயதில், விவசாயம் சார்ந்த சுயப்பராமரிப்புப் பொருட்களைத்
-         தயாரிக்கும் சிறு முயற்சியைத் தொடங்கினேன். இதன் விளைவாக, “தோள் கொடுப்போம் தொழில்
-         முனைந்திட” என்ற என்னுடைய இந்த பயணம், ஒரு லட்சம் தொழில்முனைவோரை உருவாக்கும் லட்சியத்தோடு
-         தொடர்கிறது...
+         எனது ஐம்பதாவது வயதில் தொடங்கப்பட்ட <span className="text-yellow-600 text-2xl">வசீகர வேதா </span>நிறுவனத்தின் வளர்ச்சி என்னைப்போல் இருக்கும் தொழில் முனைவோருக்கு ஊக்கம் அளிப்பதை கண்டு தோள் கொடுப்போம் 
+         தொழில்முனைந்திட என்ற இந்த பயணத்தில் ஒரு லட்சம் தொழில் முனைவோருக்கு வழிகாட்டியாக இருக்க வேண்டும் என்ற  லட்சியத்தோடு எனது பயணம் தொடர்கிறது..
         </motion.p>
 
       </motion.div>

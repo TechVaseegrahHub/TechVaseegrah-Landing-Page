@@ -63,7 +63,7 @@ export const AboutTitle = () => {
       ref={sectionRef}
       className="bg-gradient-to-b from-green-50 to-[#FFFFFF] pt-20  pb-24 overflow-x-clip"
     >
-      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
+      <motion.div  ref={heroBannerRef} variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">

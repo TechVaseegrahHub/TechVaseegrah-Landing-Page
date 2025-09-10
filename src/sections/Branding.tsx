@@ -41,7 +41,7 @@ export const Branding = () => {
   const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
 
   const { scrollYProgress } = useScroll({
-    target: heroBannerRef,
+    target: sectionRef,
     offset: ["start 1080px", "50% start"],
   });
 
@@ -64,7 +64,7 @@ export const Branding = () => {
       ref={sectionRef}
       className="bg-gradient-to-b from-green-50 to-[#FFFFFF]  pt-24 pb-24 overflow-x-clip"
     >
-      <motion.div variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
+      <motion.div  variants={heroVariant} initial="start" animate={isInView ? "end" : "start"} className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <motion.div variants={heroChildVariant} className="tag ">

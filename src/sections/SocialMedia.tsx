@@ -41,7 +41,7 @@ export const SocialMedia = () => {
   const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
 
   const { scrollYProgress } = useScroll({
-    target: heroBannerRef,
+    target: sectionRef,
     offset: ["start 1080px", "50% start"],
   });
 
