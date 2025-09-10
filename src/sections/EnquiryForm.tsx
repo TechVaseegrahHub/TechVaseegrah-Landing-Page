@@ -1,3 +1,4 @@
+// src\sections\EnquiryForm.tsx--landing page project
 "use client";
 import { useState, useRef, FormEvent, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
@@ -35,15 +36,15 @@ const ContactInfoItem = ({
 
 const StatusMessage = ({ status }: { status: Exclude<FormStatus, 'idle' | 'submitting'> }) => {
   const config = {
-    success: {
-      className: 'bg-green-50 text-green-700',
-      message: "Thank you! Your request has been submitted. You'll hear back within 48 hours."
-    },
-    error: {
-      className: 'bg-red-50 text-red-700',
-      message: "Something went wrong. Please try again later."
-    }
-  };
+  success: {
+    className: 'bg-green-50 text-green-700',
+    message: "Thank you! Your inquiry has been submitted successfully. You'll hear back within 24 hours via WhatsApp or email."
+  },
+  error: {
+    className: 'bg-red-50 text-red-700',
+    message: "Something went wrong. Please try again or contact us directly at +91 85240 89733."
+  }
+};
 
   return (
     <div className={`p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm ${config[status].className}`}>
@@ -148,15 +149,25 @@ export default function BusinessInquiryForm() {
     setFormData(prev => ({ ...prev, [name.replace('user_', '')]: value }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
+// Update the handleSubmit function in EnquiryForm.tsx
 
-    try {
-      await emailjs.sendForm('service_1z4ohjw', 'template_tnc6ckm', formRef.current!, {
-        publicKey: 'VkvBxQ3RnOgrj4gE3'
-      });
+const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  setStatus('submitting');
 
+  try {
+    // Update the URL to point to your backend server
+    const response = await fetch('http://localhost:5000/api/business-inquiry', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
       setStatus('success');
       setFormData({
         name: '',
@@ -166,14 +177,16 @@ export default function BusinessInquiryForm() {
         serviceNeeded: '',
         businessNeeds: ''
       });
-    } catch (error) {
-      console.error('Submission error:', error);
-      setStatus('error');
-    } finally {
-      setTimeout(() => setStatus('idle'), 5000);
+    } else {
+      throw new Error(result.error || 'Submission failed');
     }
-  };
-
+  } catch (error) {
+    console.error('Submission error:', error);
+    setStatus('error');
+  } finally {
+    setTimeout(() => setStatus('idle'), 5000);
+  }
+};
   return (
  
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
