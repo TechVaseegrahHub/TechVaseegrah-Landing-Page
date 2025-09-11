@@ -12,7 +12,7 @@ export default function AboutMission() {
 
   useEffect(() => {
     // Enhanced counting animation with easing
-    const startCounting = (ref: React.RefObject<HTMLSpanElement>, target: number, duration = 2000) => {
+    const startCounting = (ref: React.RefObject<HTMLSpanElement | null>, target: number, duration = 2000) => {
       const node = ref.current
       if (!node) return
 
@@ -52,9 +52,8 @@ export default function AboutMission() {
         { threshold: 0.1, rootMargin: "50px" }, // More sensitive threshold and margin
       )
 
-      if (node) {
+      
         observer.observe(node)
-      }
 
       return () => {
         if (node) {
@@ -68,11 +67,7 @@ export default function AboutMission() {
     startCounting(websiteRef, 80, 2000)
     setTimeout(() => startCounting(studentsRef, 50, 1800), 200)
     setTimeout(() => startCounting(clientsRef, 100, 2200), 400)
-
-    return () => {
-      // Cleanup is handled within each startCounting function
-    }
-  }, [])
+}, [])
 
   return (
     <section className="w-full bg-white py-12 sm:py-16 md:py-20">
