@@ -3,7 +3,8 @@
 import Tag from "@/components/Tag";
 import { twMerge } from "tailwind-merge";
 import { useEffect, useState, useRef } from "react";
-import { motion, useMotionValue, animate, useInView, useAnimation } from "framer-motion";
+// import { motion, useMotionValue, animate, useInView, useAnimation } from "framer-motion";
+import { motion, useMotionValue, useInView, useAnimation, Variants } from "framer-motion";
 import { usePathname } from "next/navigation"; // ✅ Detects page change
 
 const cardData = [
@@ -57,7 +58,7 @@ export const SeoService = () => {
   }, [controls, inView, pathname]); // ✅ Re-trigger animation on page change
 
   // ✅ Heading Animation (Bottom-to-Top)
-  const fadeInUpVariants = {
+  const fadeInUpVariants : Variants= {
     hidden: { opacity: 0, y: 50 }, // Start below
     visible: (i: number) => ({
       opacity: 1,
@@ -67,7 +68,7 @@ export const SeoService = () => {
   };
 
   // ✅ JobCards Animation (Right-to-Left with Staggered Effect)
-  const jobCardsVariants = {
+  const jobCardsVariants : Variants = {
     hidden: { opacity: 0, x: 100 }, // Start from right
     visible: (i: number) => ({
       opacity: 1,
