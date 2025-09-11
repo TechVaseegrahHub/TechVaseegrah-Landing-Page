@@ -216,15 +216,25 @@
 //   );
 // }
 
+
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useMemo } from "react";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { useRef } from "react";
 
 // Define the type for a single agenda item
 interface AgendaItem {
   title: string;
   time: string;
+}
+
+// Define the props for the new AgendaItemComponent
+interface AgendaItemProps {
+  item: AgendaItem;
+  index: number;
+  isLeft: boolean;
+  scrollYProgress: MotionValue<number>;
+  agendaLength: number;
 }
 
 // Data for the agenda timeline
@@ -241,6 +251,94 @@ const agenda: AgendaItem[] = [
   { title: "One-to-One consultation with Vijaya Mahadevan", time: "15 min/person" },
 ];
 
+/**
+ * NEW: AgendaItemComponent
+ * This component renders a single item in the timeline.
+ * By moving the logic here, we can use hooks correctly at the top level.
+ */
+function AgendaItemComponent({ item, index, isLeft, scrollYProgress, agendaLength }: AgendaItemProps) {
+  // This is the exact point in the scroll progress (from 0.0 to 1.0) where
+  // the green line will be perfectly aligned with the center of the dot.
+  const dotPosition = index / agendaLength;
+
+  // ---- TIMING FOR THE ARC "FLOW" ANIMATION ----
+  const arcStart = dotPosition;
+  const arcEnd = dotPosition + 0.03;
+  const arcProgress = useTransform(scrollYProgress, [arcStart, arcEnd], [0, 1]);
+
+  // ---- TIMING FOR THE DOT COLOR CHANGE ----
+  const checkPoint = dotPosition - 0.005;
+  const dotColor = useTransform(scrollYProgress, [checkPoint, dotPosition], ["#d1d5db", "#16a34a"]);
+
+  return (
+    <div className="relative flex justify-between items-center w-full">
+      {/* LEFT CARD */}
+      {isLeft ? (
+        <motion.div
+          className="w-5/12 flex justify-end"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative bg-white shadow-md rounded-lg p-5 w-72 border-l-4 border-gray-300">
+            <h4 className="text-base font-semibold">{item.title}</h4>
+            <p className="text-sm text-gray-500 mt-2">{item.time}</p>
+            <svg
+              className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-full"
+              width="110" height="60" viewBox="0 0 110 60" fill="none"
+            >
+              <path d="M0 30 Q55 60 110 30" stroke="#d1d5db" strokeWidth="6" strokeLinecap="round" />
+              <motion.path
+                d="M0 30 Q55 60 110 30"
+                stroke="#16a34a" strokeWidth="6" strokeLinecap="round"
+                style={{ pathLength: arcProgress }}
+              />
+            </svg>
+          </div>
+        </motion.div>
+      ) : (
+        <div className="w-5/12" />
+      )}
+
+      {/* Central Dot */}
+      <motion.div
+        style={{ borderColor: dotColor }}
+        className="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 bg-white z-20"
+      />
+
+      {/* RIGHT CARD */}
+      {!isLeft ? (
+        <motion.div
+          className="w-5/12 flex justify-start"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative bg-white shadow-md rounded-lg p-5 w-72 border-r-4 border-gray-300">
+            <h4 className="text-base font-semibold">{item.title}</h4>
+            <p className="text-sm text-gray-500 mt-2">{item.time}</p>
+            <svg
+              className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-full"
+              width="110" height="60" viewBox="0 0 110 60" fill="none"
+            >
+              <path d="M110 30 Q55 60 0 30" stroke="#d1d5db" strokeWidth="6" strokeLinecap="round" />
+              <motion.path
+                d="M110 30 Q55 60 0 30"
+                stroke="#16a34a" strokeWidth="6" strokeLinecap="round"
+                style={{ pathLength: arcProgress }}
+              />
+            </svg>
+          </div>
+        </motion.div>
+      ) : (
+        <div className="w-5/12" />
+      )}
+    </div>
+  );
+}
+
 export default function TktmAgenda() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -250,31 +348,6 @@ export default function TktmAgenda() {
   });
 
   const lineProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
-  const progressSegments = useMemo(() => {
-    return agenda.map((_, index) => {
-      // This is the exact point in the scroll progress (from 0.0 to 1.0) where
-      // the green line will be perfectly aligned with the center of the dot.
-      const dotPosition = index / agenda.length;
-
-      // ---- TIMING FOR THE ARC "FLOW" ANIMATION ----
-      // The animation starts exactly at dotPosition.
-      // It finishes a very short time later (e.g., after 3% of the total scroll height).
-      // This makes the arc draw itself quickly, right after the line arrives.
-      const arcStart = dotPosition;
-      const arcEnd = dotPosition + 0.03; 
-      const arcProgress = useTransform(scrollYProgress, [arcStart, arcEnd], [0, 1]);
-
-      // ---- TIMING FOR THE DOT COLOR CHANGE ----
-      // The color change also happens exactly when the line reaches the dot.
-      // We start the change slightly before (-0.005) so it's fully green *by* the time
-      // the line is centered, ensuring a seamless visual transition.
-      const checkPoint = dotPosition - 0.005;
-      const dotColor = useTransform(scrollYProgress, [checkPoint, dotPosition], ["#d1d5db", "#16a34a"]);
-
-      return { arcProgress, dotColor };
-    });
-  }, [scrollYProgress]);
 
   return (
     <section ref={containerRef} className="relative container mx-auto px-4 py-20">
@@ -309,78 +382,18 @@ export default function TktmAgenda() {
           style={{ height: lineProgress }}
         />
 
+        {/* MAPPING to the new component */}
         {agenda.map((item, index) => {
           const isLeft = index % 2 === 0;
-          const { arcProgress, dotColor } = progressSegments[index];
-
           return (
-            <div key={index} className="relative flex justify-between items-center w-full">
-              {/* LEFT CARD */}
-              {isLeft ? (
-                <motion.div
-                  className="w-5/12 flex justify-end"
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="relative bg-white shadow-md rounded-lg p-5 w-72 border-l-4 border-gray-300">
-                    <h4 className="text-base font-semibold">{item.title}</h4>
-                    <p className="text-sm text-gray-500 mt-2">{item.time}</p>
-
-                    <svg
-                      className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-full"
-                      width="110" height="60" viewBox="0 0 110 60" fill="none"
-                    >
-                      <path d="M0 30 Q55 60 110 30" stroke="#d1d5db" strokeWidth="6" strokeLinecap="round" />
-                      <motion.path
-                        d="M0 30 Q55 60 110 30"
-                        stroke="#16a34a" strokeWidth="6" strokeLinecap="round"
-                        style={{ pathLength: arcProgress }}
-                      />
-                    </svg>
-                  </div>
-                </motion.div>
-              ) : (
-                <div className="w-5/12" />
-              )}
-
-              {/* Central Dot */}
-              <motion.div
-                style={{ borderColor: dotColor }}
-                className="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 bg-white z-20"
-              />
-
-              {/* RIGHT CARD */}
-              {!isLeft ? (
-                <motion.div
-                  className="w-5/12 flex justify-start"
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="relative bg-white shadow-md rounded-lg p-5 w-72 border-r-4 border-gray-300">
-                    <h4 className="text-base font-semibold">{item.title}</h4>
-                    <p className="text-sm text-gray-500 mt-2">{item.time}</p>
-
-                    <svg
-                      className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-full"
-                      width="110" height="60" viewBox="0 0 110 60" fill="none"
-                    >
-                      <path d="M110 30 Q55 60 0 30" stroke="#d1d5db" strokeWidth="6" strokeLinecap="round" />
-                      <motion.path
-                        d="M110 30 Q55 60 0 30"
-                        stroke="#16a34a" strokeWidth="6" strokeLinecap="round"
-                        style={{ pathLength: arcProgress }}
-                      />
-                    </svg>
-                  </div>
-                </motion.div>
-              ) : (
-                <div className="w-5/12" />
-              )}
-            </div>
+            <AgendaItemComponent
+              key={index}
+              item={item}
+              index={index}
+              isLeft={isLeft}
+              scrollYProgress={scrollYProgress}
+              agendaLength={agenda.length}
+            />
           );
         })}
       </div>
