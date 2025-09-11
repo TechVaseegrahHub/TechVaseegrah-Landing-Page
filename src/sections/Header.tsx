@@ -214,7 +214,7 @@ const MobileNavItem: React.FC<MobileNavItemProps> = ({ href, onClick, children, 
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{
-      type: "none",
+      type: "spring",
       stiffness: 300,
       damping: 20,
       delay: 0.05,
@@ -378,14 +378,14 @@ const MobileMenu = ({ isOpen, headerHeight, onClose }: MobileMenuProps) => {
                 >
                   <span>Services</span>
                   <motion.span
-                    animate={{ rotate: openCategory === "solutions" ? 180 : 0 }}
+                    animate={{ rotate: openCategory === "services" ? 180 : 0 }}
                     transition={{ type: "spring" }}
                   >
                     <ChevronDown className="h-7 w-7" />
                   </motion.span>
                 </motion.button>
                  <AnimatePresence>
-                  {openCategory === "solutions" && (
+                  {openCategory === "services" && (
                     <motion.div
                       variants={dropdownVariants}
                       initial="closed"
