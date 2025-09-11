@@ -10,7 +10,7 @@ import DSMLForm from "@/components/DSML";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null!);
   const id = useId();
 
   useEffect(() => {
