@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 
 // Utility to convert slug to Title Case
@@ -76,7 +76,7 @@ export const ProjectGrid = () => {
   }
 
   // Item animation
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
