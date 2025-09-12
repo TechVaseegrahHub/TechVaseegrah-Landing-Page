@@ -184,7 +184,7 @@ export default function TholKoduppomContact() {
                     அனுப்பப்படுகிறது...
                   </span>
                 ) : (
-                  'செய்தியை அனுப்பவும் (sendForm)'
+                  'செய்தியை அனுப்பவும் (Send Form)'
                 )}
               </button>
             </form>

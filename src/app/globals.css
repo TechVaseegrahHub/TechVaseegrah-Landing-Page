@@ -139,24 +139,25 @@
     scrollbar-width: none;     /* Firefox */
   }
 
-  /* 🔥 Infinite scroll animation for images */
-  @keyframes scroll {
-    0% {
+  /*Infinite scroll animation */
+   @keyframes scroll {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(-100%); /* move one full set */
+    to {
+      transform: translateX(-50%); /* ✅ FIX: Move by half the width */
     }
   }
 
   .animate-scroll {
-    display: flex;
-    animation: scroll 60s linear infinite; /* adjust 30s for speed */
+    /* We removed `display: flex` because the child element is `inline-block` */
+    animation: scroll 60s linear infinite;
+  }
+  /*  pause animation when hovering */
+  /* .animate-scroll:hover {
+    animation-play-state: paused;
+
+} */
   }
 
-  /* ✨ Optional: pause animation when hovering */
-  .animate-scroll:hover {
-    animation-play-state: paused;
-  }
-}
 
